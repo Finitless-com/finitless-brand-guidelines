@@ -38,6 +38,7 @@ The Finitless mark merges the letter "N" with an infinity symbol into one icon, 
 | | White | `#FFFFFF` | Primary text on dark backgrounds |
 | | Error | `#ff3b45` | Error states |
 | | Success | `#22c55e` | Success states |
+| | Warning | `#f59e0b` | Warning / caution states |
 
 **Brand gradient (CSS)**: `linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)`
 
@@ -63,6 +64,19 @@ Finitless is **confident, not arrogant** -- **practical, not visionary** -- **di
 Target audience: Restaurant owners and operators.
 Key metrics: $31,000/year in missed orders, 40% of calls go unanswered during peak hours.
 
+### AI Terminology
+
+We say **AI agents** and **AI ordering agents** -- never "chatbot," "bot," "artificial intelligence," or "virtual assistant."
+
+| Use | Avoid |
+|-----|-------|
+| AI agents | chatbot, bot |
+| AI ordering agents | artificial intelligence (say "AI") |
+| AI-powered (as modifier) | intelligent agents, smart |
+| | virtual assistant, conversational AI |
+
+**Rule**: Lead with what the product does, not the technology category. Restaurant owners care about revenue, not labels.
+
 > See `voice/BRAND-VOICE.md` for the full voice guide with tone-by-context examples and copy templates.
 
 ---
@@ -71,8 +85,8 @@ Key metrics: $31,000/year in missed orders, 40% of calls go unanswered during pe
 
 | Asset | Path | Count |
 |-------|------|-------|
-| Logo lockups (PNG) | `assets/logos/` | 5 files |
-| Icons and brand mark (SVG + PNG) | `assets/icons/` | 12 files |
+| Logo lockups (PNG) | `assets/logos/` | 31+ files |
+| Icons and brand mark (SVG + PNG) | `assets/icons/` | 48+ files |
 | Reference materials | `assets/reference/` | 2 files (brand PDF + HubSpot screenshot) |
 | Color specification | `colors/COLORS.md` | -- |
 | Typography specification | `typography/TYPOGRAPHY.md` | -- |

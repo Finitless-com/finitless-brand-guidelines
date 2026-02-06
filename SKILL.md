@@ -206,5 +206,5 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 - **Practical, not visionary.** Talk about what the product does today.
 - **Direct, not salesy.** No fluff. Get to the point.
 - Use specific numbers: $31,000/year, 40% missed calls, 24/7.
-- Words to use: recover, capture, own, direct, efficient, never miss.
-- Words to avoid: chatbot, automate, disrupt, maybe, try.
+- Words to use: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, never miss.
+- Words to avoid: chatbot, bot, artificial intelligence (say "AI"), intelligent agents, smart, virtual assistant, conversational AI, automate, disrupt, maybe, try.

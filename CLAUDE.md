@@ -218,9 +218,9 @@ When generating copy for Finitless:
 5. **Lead with the problem**, then deliver the solution.
 6. **Target audience**: Restaurant owners and operators.
 
-**Words to use**: recover, capture, own, direct, efficient, 24/7, never miss
+**Words to use**: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss
 
-**Words to avoid**: chatbot, automate, disrupt, maybe, try, revolutionize, leverage, synergy
+**Words to avoid**: chatbot, bot, artificial intelligence (say "AI"), intelligent agents, smart, virtual assistant, conversational AI, automate, disrupt, maybe, try, revolutionize, leverage, synergy
 
 **Tone mapping**:
 - Marketing copy: Bold, results-focused, data-driven

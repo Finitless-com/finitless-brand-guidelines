@@ -148,6 +148,9 @@ These words align with the brand personality. Reach for them first.
 
 | Word | Why |
 |------|-----|
+| AI agents | What we build. Specific, modern, accurate. |
+| AI ordering agents | Even better -- describes exactly what the product does. |
+| AI-powered | Good as a modifier: "AI-powered voice agents." Use sparingly. |
 | recover | Implies revenue that already belongs to you |
 | capture | Active, precise -- every order is caught |
 | own | Power, independence, control |
@@ -165,6 +168,12 @@ These words are either off-brand or too generic. Do not use them.
 | Word | Why We Avoid It |
 |------|-----------------|
 | chatbot | Sounds cheap and outdated. We build AI agents. |
+| bot | Diminishes what the product does. Same energy as "chatbot." |
+| artificial intelligence | Too formal and corporate. Sounds like a whitepaper, not a product. Say "AI." |
+| intelligent agents | Vague. "Intelligent" is a weak adjective -- show, do not tell. |
+| smart | Same issue as "intelligent." Marketing fluff. |
+| virtual assistant | Overused and generic. Sounds like Siri or Alexa, not a revenue tool. |
+| conversational AI | Industry buzzword. Restaurant owners do not care about the category name. |
 | automate | Too generic. Every SaaS product says "automate." Be specific about what we do. |
 | disrupt | Overused tech-bro jargon. We are practical, not disruptive. |
 | maybe | Weak. We are confident. |
@@ -172,6 +181,15 @@ These words are either off-brand or too generic. Do not use them.
 | revolutionize | Too grandiose. Show results instead. |
 | leverage | Corporate jargon. Say "use." |
 | synergy | No. |
+
+### AI Terminology Quick Reference
+
+The right way to talk about the technology:
+
+- **Yes**: "AI agents," "AI ordering agents," "AI-powered voice agents"
+- **No**: "artificial intelligence solution," "intelligent virtual assistant," "smart chatbot"
+
+**Rule**: Our audience (restaurant owners) does not care about the technology label. They care about what it does. Always lead with the outcome, not the technology category.
 
 ---
 

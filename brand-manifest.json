@@ -157,8 +157,8 @@
       "Always-on — 24/7, never sick, never quits",
       "Measurable ROI — specific dollar amounts, not vague promises"
     ],
-    "wordsWeUse": ["recover", "capture", "own", "direct", "efficient", "24/7", "never miss", "revenue", "every order"],
-    "wordsWeAvoid": ["chatbot", "automate", "disrupt", "leverage", "synergy", "maybe", "try", "hopefully"]
+    "wordsWeUse": ["AI agents", "AI ordering agents", "AI-powered", "recover", "capture", "own", "direct", "efficient", "24/7", "never miss", "revenue", "every order"],
+    "wordsWeAvoid": ["chatbot", "bot", "artificial intelligence", "intelligent agents", "smart", "virtual assistant", "conversational AI", "automate", "disrupt", "leverage", "synergy", "maybe", "try", "hopefully"]
   },
 
   "visualIdentity": {
