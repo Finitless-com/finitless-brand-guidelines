@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finitless Brand Guidelines</title>
+  <link rel="icon" href="assets/icons/finitless-icon-favicon-72.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00B7FF;
+      --purple: #7A2EFF;
+      --magenta: #C300FF;
+      --bg: #0a0a0a;
+      --bg-card: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.1);
+      --text: #FFFFFF;
+      --text-secondary: rgba(255,255,255,0.6);
+      --error: #ff3b45;
+      --success: #22c55e;
+      --info: #eaf4ff;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 96px 24px 64px;
+    }
+    .hero img { max-width: 280px; height: auto; margin-bottom: 32px; }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .gradient-text {
+      background: linear-gradient(to right, var(--cyan), var(--purple), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section { padding: 64px 0; border-top: 1px solid var(--border); }
+    section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    section h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      margin-top: 32px;
+    }
+    section p, section li {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    /* Logo Grid */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .logo-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .logo-card:hover { border-color: rgba(0,183,255,0.3); }
+    .logo-card .preview {
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    .logo-card .preview.dark { background: #000; }
+    .logo-card .preview.light { background: #fff; }
+    .logo-card .preview img { max-width: 100%; max-height: 120px; }
+    .logo-card .label {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Color Swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .color-swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .color-swatch .preview {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+    }
+    .color-swatch .info {
+      padding: 12px;
+      background: var(--bg-card);
+    }
+    .color-swatch .info .name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .color-swatch .info .hex {
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* Gradient Bar */
+    .gradient-bar {
+      height: 80px;
+      border-radius: 16px;
+      background: linear-gradient(to right, var(--cyan), var(--purple), var(--magenta));
+      margin-bottom: 16px;
+    }
+    .gradient-label {
+      font-family: ui-monospace, monospace;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    /* Typography Preview */
+    .type-scale { list-style: none; }
+    .type-scale li {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .type-scale .token {
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      color: var(--cyan);
+      min-width: 80px;
+    }
+    .type-scale .meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+      min-width: 120px;
+    }
+
+    /* Code Block */
+    .code-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-x: auto;
+      color: var(--text-secondary);
+      margin: 16px 0;
+    }
+
+    /* API Banner */
+    .api-banner {
+      background: linear-gradient(135deg, rgba(0,183,255,0.1), rgba(122,46,255,0.1));
+      border: 1px solid rgba(0,183,255,0.2);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .api-banner h3 { margin-top: 0; color: var(--text); }
+    .api-banner a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-family: ui-monospace, monospace;
+    }
+    .api-banner a:hover { text-decoration: underline; }
+
+    /* Voice Cards */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .voice-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .voice-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .voice-card p { font-size: 14px; margin-bottom: 0; }
+
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="assets/logos/finitless-logo-horizontal-on-dark.png" alt="Finitless Logo">
+    <h1><span class="gradient-text">Brand Guidelines</span></h1>
+    <p>The single source of truth for the Finitless brand identity. For humans and AI agents.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Logo Section -->
+    <section>
+      <h2>Logo</h2>
+      <p>The Finitless mark combines the letter <strong>N</strong> with the <strong>infinity symbol</strong>, representing limitless possibilities. The wordmark uses the BEASIGNE typeface.</p>
+
+      <h3>Variants</h3>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="preview dark">
+            <img src="assets/logos/finitless-logo-horizontal-on-dark.png" alt="Logo on dark">
+          </div>
+          <div class="label">Color on dark (preferred) &mdash; <code>finitless-logo-horizontal-on-dark.png</code></div>
+        </div>
+        <div class="logo-card">
+          <div class="preview light">
+            <img src="assets/logos/finitless-logo-horizontal-on-light.png" alt="Logo on light">
+          </div>
+          <div class="label">Color on light &mdash; <code>finitless-logo-horizontal-on-light.png</code></div>
+        </div>
+      </div>
+
+      <h3>Brand Stamp (Icon)</h3>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="preview dark">
+            <img src="assets/icons/finitless-icon-on-dark-2000.png" alt="Icon on dark" style="max-height: 100px;">
+          </div>
+          <div class="label">On dark background &mdash; <code>finitless-icon-on-dark-2000.png</code></div>
+        </div>
+        <div class="logo-card">
+          <div class="preview light">
+            <img src="assets/icons/finitless-icon-on-light-2000.png" alt="Icon on light" style="max-height: 100px;">
+          </div>
+          <div class="label">On light background &mdash; <code>finitless-icon-on-light-2000.png</code></div>
+        </div>
+      </div>
+
+      <h3>Rules</h3>
+      <ul>
+        <li>Never stretch the logo &mdash; always resize proportionately</li>
+        <li>Never modify or recreate the icon &mdash; use supplied files only</li>
+        <li>Minimum clear space: 50% of icon height on all sides</li>
+        <li>Minimum logo height: 24px (icon), 80px width (full logo)</li>
+      </ul>
+    </section>
+
+    <!-- Colors Section -->
+    <section>
+      <h2>Colors</h2>
+
+      <h3>Brand Gradient</h3>
+      <div class="gradient-bar"></div>
+      <div class="gradient-label">
+        linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)
+      </div>
+
+      <h3>Primary Palette</h3>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="preview" style="background: #00B7FF;"></div>
+          <div class="info">
+            <div class="name">Finitless Cyan</div>
+            <div class="hex">#00B7FF &middot; rgb(0, 183, 255)</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background: #7A2EFF;"></div>
+          <div class="info">
+            <div class="name">Finitless Purple</div>
+            <div class="hex">#7A2EFF &middot; rgb(122, 46, 255)</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background: #C300FF;"></div>
+          <div class="info">
+            <div class="name">Finitless Magenta</div>
+            <div class="hex">#C300FF &middot; rgb(195, 0, 255)</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Neutral Palette</h3>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="preview" style="background: #000000; border-bottom: 1px solid var(--border);"></div>
+          <div class="info">
+            <div class="name">Black</div>
+            <div class="hex">#000000</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background: #0a0a0a; border-bottom: 1px solid var(--border);"></div>
+          <div class="info">
+            <div class="name">Background</div>
+            <div class="hex">#0a0a0a &middot; Primary dark bg</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background: #FFFFFF;"></div>
+          <div class="info">
+            <div class="name">White</div>
+            <div class="hex">#FFFFFF</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Semantic Colors</h3>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="preview" style="background: #ff3b45;"></div>
+          <div class="info">
+            <div class="name">Error / Alert</div>
+            <div class="hex">#ff3b45</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background: #22c55e;"></div>
+          <div class="info">
+            <div class="name">Success</div>
+            <div class="hex">#22c55e</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background: #eaf4ff;"></div>
+          <div class="info">
+            <div class="name">Info Tint</div>
+            <div class="hex">#eaf4ff</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section>
+      <h2>Typography</h2>
+      <p><strong>Logo font:</strong> BEASIGNE (Regular) &mdash; used exclusively for the wordmark.</p>
+      <p><strong>UI font:</strong> Inter &mdash; weights 400, 600, 700, 800 &mdash; used for all text.</p>
+
+      <h3>Type Scale</h3>
+      <ul class="type-scale">
+        <li>
+          <span class="token">display</span>
+          <span style="font-size: 48px; font-weight: 800; line-height: 1.1;">Never Miss</span>
+          <span class="meta">72px / 800</span>
+        </li>
+        <li>
+          <span class="token">h1</span>
+          <span style="font-size: 36px; font-weight: 800;">Brand Guidelines</span>
+          <span class="meta">48px / 800</span>
+        </li>
+        <li>
+          <span class="token">h2</span>
+          <span style="font-size: 28px; font-weight: 700;">Section Heading</span>
+          <span class="meta">36px / 700</span>
+        </li>
+        <li>
+          <span class="token">h3</span>
+          <span style="font-size: 20px; font-weight: 700;">Sub-Section</span>
+          <span class="meta">24px / 700</span>
+        </li>
+        <li>
+          <span class="token">body-lg</span>
+          <span style="font-size: 18px; font-weight: 400;">AI-powered voice and WhatsApp agents.</span>
+          <span class="meta">18px / 400</span>
+        </li>
+        <li>
+          <span class="token">body</span>
+          <span style="font-size: 16px; font-weight: 400;">Default body text for paragraphs and descriptions.</span>
+          <span class="meta">16px / 400</span>
+        </li>
+        <li>
+          <span class="token">caption</span>
+          <span style="font-size: 12px; font-weight: 400;">Labels and fine print</span>
+          <span class="meta">12px / 400</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Voice Section -->
+    <section>
+      <h2>Voice &amp; Tone</h2>
+      <p>How we communicate across every touchpoint.</p>
+
+      <h3>Personality</h3>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <h4>Confident, not arrogant</h4>
+          <p>We know this works. We let results speak.</p>
+        </div>
+        <div class="voice-card">
+          <h4>Revolutionary, not combative</h4>
+          <p>We empower restaurants. We don't attack platforms.</p>
+        </div>
+        <div class="voice-card">
+          <h4>Practical, not visionary</h4>
+          <p>Dollars saved today, not a distant future.</p>
+        </div>
+        <div class="voice-card">
+          <h4>Direct, not salesy</h4>
+          <p>Straight talk about ROI and results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- API Section -->
+    <section>
+      <h2>For AI Agents</h2>
+      <p>This brand guide is machine-readable. Fetch the complete brand identity in one request:</p>
+
+      <div class="code-block">
+        <span style="color: var(--cyan);">GET</span> /brand-manifest.json<br><br>
+        <span style="color: var(--text-secondary);">// Returns: colors, typography, assets, voice, gradients &mdash; everything.</span><br>
+        <span style="color: var(--text-secondary);">// CORS enabled. Accessible from any origin.</span>
+      </div>
+
+      <div class="api-banner">
+        <h3>brand-manifest.json</h3>
+        <p>Complete brand identity for programmatic consumption.</p>
+        <p><a href="brand-manifest.json">View the manifest &rarr;</a></p>
+      </div>
+
+      <p style="margin-top: 16px;">Full documentation: <a href="https://github.com/Finitless-com/brand-guidelines" style="color: var(--cyan);">GitHub Repository</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Finitless. All rights reserved.</p>
+    <p><a href="https://github.com/Finitless-com/brand-guidelines">GitHub</a> &middot; <a href="https://finitless.com">finitless.com</a></p>
+  </footer>
+
+</body>
+</html>

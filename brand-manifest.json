@@ -1,0 +1,203 @@
+{
+  "$schema": "https://brand-guidelines.finitless.com/schema/v1",
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-05",
+
+  "company": {
+    "name": "Finitless",
+    "legalName": "Finitless",
+    "tagline": "Never Miss a Sale. Ever.",
+    "description": "AI ordering agents that recover missed revenue for restaurants via voice, WhatsApp, and web chat.",
+    "website": "https://finitless.com",
+    "founder": "Sergio Khoury",
+    "industry": "Restaurant Technology / AI",
+    "targetAudience": "Restaurant owners and operators"
+  },
+
+  "logo": {
+    "concept": "Letter N merged with the infinity symbol. Two interlocking angular shapes with a cyan-to-magenta gradient.",
+    "wordmark": "FINITLESS in BEASIGNE font, all caps, geometric sans-serif with distinctive letter cuts.",
+    "rules": {
+      "clearSpace": "Minimum 50% of icon height on all sides",
+      "minimumSize": "24px height for icon, 80px width for full logo",
+      "restrictions": [
+        "Never stretch — resize proportionately only",
+        "Never modify or recreate the icon",
+        "Use only supplied brand stamp files",
+        "Never add effects (shadows, outlines, glow) to the logo itself"
+      ]
+    },
+    "variants": {
+      "colorOnDark": {
+        "description": "Full gradient icon + white wordmark on dark background (PREFERRED)",
+        "icon": "assets/icons/finitless-icon-on-dark-2000.png",
+        "logo": "assets/logos/finitless-logo-horizontal-on-dark.png"
+      },
+      "colorOnLight": {
+        "description": "Full gradient icon + black wordmark on light background",
+        "icon": "assets/icons/finitless-icon-on-light-2000.png",
+        "logo": "assets/logos/finitless-logo-horizontal-on-light.png"
+      },
+      "monochromeWhite": {
+        "description": "All-white version for dark backgrounds",
+        "logo": "assets/logos/finitless-logo-square-on-dark.png"
+      },
+      "monochromeBlack": {
+        "description": "All-black version for light backgrounds",
+        "logo": "assets/logos/finitless-logo-square-on-light.png"
+      }
+    }
+  },
+
+  "colors": {
+    "designerOriginal": {
+      "note": "Original 2-stop gradient specified by the brand designer (for print/reference)",
+      "gradientStart": { "hex": "#00CCFF", "rgb": [0, 204, 255], "name": "Cyan" },
+      "gradientEnd": { "hex": "#FF00FF", "rgb": [255, 0, 255], "name": "Magenta" }
+    },
+    "primary": {
+      "note": "Web-adapted 3-stop gradient (recommended for all digital use)",
+      "cyan": { "hex": "#00B7FF", "rgb": [0, 183, 255], "hsl": [197, 100, 50], "name": "Finitless Cyan", "usage": "Primary accent, links, CTAs, gradient start" },
+      "purple": { "hex": "#7A2EFF", "rgb": [122, 46, 255], "hsl": [262, 100, 59], "name": "Finitless Purple", "usage": "Gradient midpoint, secondary accent" },
+      "magenta": { "hex": "#C300FF", "rgb": [195, 0, 255], "hsl": [286, 100, 50], "name": "Finitless Magenta", "usage": "Gradient end, tertiary accent" }
+    },
+    "neutral": {
+      "black": { "hex": "#000000", "rgb": [0, 0, 0], "usage": "Pure black, maximum contrast" },
+      "background": { "hex": "#0a0a0a", "rgb": [10, 10, 10], "usage": "Primary dark background" },
+      "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "Primary text on dark, light backgrounds" }
+    },
+    "semantic": {
+      "error": { "hex": "#ff3b45", "rgb": [255, 59, 69], "usage": "Errors, alerts, problem states" },
+      "success": { "hex": "#22c55e", "rgb": [34, 197, 94], "usage": "Success, positive states" },
+      "info": { "hex": "#eaf4ff", "rgb": [234, 244, 255], "usage": "Informational, light tint" }
+    },
+    "gradients": {
+      "brand": {
+        "css": "linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)",
+        "tailwind": "bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF]",
+        "stops": ["#00B7FF", "#7A2EFF", "#C300FF"],
+        "usage": "Hero text, logo accent, key brand moments"
+      },
+      "cta": {
+        "css": "linear-gradient(to right, #00B7FF, #7A2EFF)",
+        "tailwind": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF]",
+        "stops": ["#00B7FF", "#7A2EFF"],
+        "usage": "Buttons, interactive elements, CTAs"
+      },
+      "glow": {
+        "css": "linear-gradient(to right, rgba(0,183,255,0.2), rgba(122,46,255,0.2))",
+        "tailwind": "bg-gradient-to-r from-[#00B7FF]/20 to-[#7A2EFF]/20",
+        "usage": "Background tints, hover states, subtle accents"
+      }
+    },
+    "platformDiscrepancies": {
+      "hubspot": {
+        "note": "HubSpot has incorrect values — should be updated to match canonical colors",
+        "current": { "primary": "#18a3f5", "secondary": "#5c53eb", "accent": "#d93bff" },
+        "shouldBe": { "primary": "#00B7FF", "secondary": "#7A2EFF", "accent": "#C300FF" }
+      },
+      "salesPresentations": {
+        "note": "Sales presentation uses 2-stop gradient — should add purple midpoint",
+        "current": { "cyan": "#00D4FF", "magenta": "#DD00FF" },
+        "shouldBe": { "cyan": "#00B7FF", "purple": "#7A2EFF", "magenta": "#C300FF" }
+      }
+    }
+  },
+
+  "typography": {
+    "logoFont": {
+      "family": "BEASIGNE",
+      "weight": "Regular",
+      "usage": "Logo wordmark only — never use for body text or UI",
+      "case": "All caps (uppercase) for logo, Sentence case available"
+    },
+    "uiFont": {
+      "family": "Inter",
+      "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "weights": { "regular": 400, "semibold": 600, "bold": 700, "extrabold": 800 },
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap",
+      "usage": "All UI text, headings, body, captions"
+    },
+    "monoFont": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace",
+      "usage": "Code blocks, technical content"
+    },
+    "scale": {
+      "display": { "size": "72px", "weight": 800, "lineHeight": 1.1, "tailwind": "text-7xl font-extrabold", "usage": "Hero headings" },
+      "h1": { "size": "48px", "weight": 800, "lineHeight": 1.2, "tailwind": "text-5xl font-extrabold", "usage": "Page titles" },
+      "h2": { "size": "36px", "weight": 700, "lineHeight": 1.25, "tailwind": "text-4xl font-bold", "usage": "Section headings" },
+      "h3": { "size": "24px", "weight": 700, "lineHeight": 1.3, "tailwind": "text-2xl font-bold", "usage": "Sub-section headings" },
+      "h4": { "size": "20px", "weight": 600, "lineHeight": 1.4, "tailwind": "text-xl font-semibold", "usage": "Card titles" },
+      "bodyLg": { "size": "18px", "weight": 400, "lineHeight": 1.6, "tailwind": "text-lg", "usage": "Lead text, intros" },
+      "body": { "size": "16px", "weight": 400, "lineHeight": 1.6, "tailwind": "text-base", "usage": "Default body text" },
+      "bodySm": { "size": "14px", "weight": 400, "lineHeight": 1.5, "tailwind": "text-sm", "usage": "Secondary text" },
+      "caption": { "size": "12px", "weight": 400, "lineHeight": 1.5, "tailwind": "text-xs", "usage": "Labels, fine print" },
+      "overline": { "size": "12px", "weight": 600, "lineHeight": 1.5, "letterSpacing": "0.1em", "tailwind": "text-xs font-semibold uppercase tracking-widest", "usage": "Category labels" }
+    }
+  },
+
+  "voice": {
+    "personality": [
+      "Confident, not arrogant — we know this works",
+      "Revolutionary, not combative — empowering, not attacking",
+      "Practical, not visionary — dollars saved today, not distant future",
+      "Direct, not salesy — straight talk about ROI and results"
+    ],
+    "targetAudience": "Restaurant owners and operators who lose revenue to missed calls, high commissions, and understaffing",
+    "toneByContext": {
+      "marketing": "Bold, results-focused, data-driven. Use specific numbers. Example: 'Stop losing $31,000/year to missed calls.'",
+      "product": "Clear, helpful, efficient. No jargon. Example: 'Order placed successfully. The customer will receive confirmation on WhatsApp.'",
+      "support": "Warm, patient, solution-oriented. Example: 'Let me help you get that sorted out right away.'",
+      "error": "Honest, reassuring, actionable. Example: 'Something went wrong with the order sync. We're reconnecting now — your orders are safe.'"
+    },
+    "keyThemes": [
+      "Revenue recovery — every missed call is lost money",
+      "Ownership — own your customers, don't rent marketplace space",
+      "Always-on — 24/7, never sick, never quits",
+      "Measurable ROI — specific dollar amounts, not vague promises"
+    ],
+    "wordsWeUse": ["recover", "capture", "own", "direct", "efficient", "24/7", "never miss", "revenue", "every order"],
+    "wordsWeAvoid": ["chatbot", "automate", "disrupt", "leverage", "synergy", "maybe", "try", "hopefully"]
+  },
+
+  "visualIdentity": {
+    "theme": "Dark-mode-first",
+    "backgrounds": ["#000000 (pure black)", "#0a0a0a (near-black, preferred)"],
+    "preferGradientFor": ["Hero headings", "Primary CTAs", "Brand accent moments"],
+    "cardStyle": "bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm",
+    "hoverStyle": "hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10",
+    "buttonPrimary": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold",
+    "buttonSecondary": "border border-white/20 bg-white/5 rounded-xl text-white",
+    "borderRadius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "24px" },
+    "spacing": "4px grid: 4, 8, 12, 16, 24, 32, 48, 64, 96",
+    "glowEffect": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)"
+  },
+
+  "assets": {
+    "icons": [
+      { "path": "assets/icons/finitless-icon-master.svg", "format": "svg", "background": "none", "usage": "Vector master — scales to any size" },
+      { "path": "assets/icons/finitless-icon-favicon-72.png", "format": "png", "dimensions": "72x72", "usage": "Browser tab favicon" },
+      { "path": "assets/icons/finitless-icon-app-512.png", "format": "png", "dimensions": "512x512", "background": "black", "usage": "PWA icon, app stores" },
+      { "path": "assets/icons/finitless-icon-social-1000.png", "format": "png", "dimensions": "1000x1000", "background": "black", "usage": "Social media avatar" },
+      { "path": "assets/icons/finitless-icon-on-dark-2000.png", "format": "png", "dimensions": "2000x2000", "background": "black", "usage": "High-res for dark contexts" },
+      { "path": "assets/icons/finitless-icon-on-light-2000.png", "format": "png", "dimensions": "2000x2000", "background": "white", "usage": "High-res for light contexts" },
+      { "path": "assets/icons/finitless-icon-print-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print / ultra-high-res" },
+      { "path": "assets/icons/finitless-icon-print-2552-alt.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print variant" },
+      { "path": "assets/icons/finitless-icon-transparent.png", "format": "png", "dimensions": "1627x1099", "background": "transparent", "usage": "Overlay on any background" },
+      { "path": "assets/icons/finitless-icon-square-on-dark-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Square format, dark contexts" },
+      { "path": "assets/icons/finitless-icon-square-on-dark-4793.png", "format": "png", "dimensions": "4793x4793", "background": "black", "usage": "Square format, dark, largest" },
+      { "path": "assets/icons/finitless-icon-square-on-light-4793.png", "format": "png", "dimensions": "4793x4793", "background": "white", "usage": "Square format, light, largest" }
+    ],
+    "logos": [
+      { "path": "assets/logos/finitless-logo-horizontal-on-dark.png", "format": "png", "dimensions": "3653x237", "background": "transparent", "textColor": "white", "usage": "Header logo for dark backgrounds" },
+      { "path": "assets/logos/finitless-logo-horizontal-on-light.png", "format": "png", "dimensions": "3653x237", "background": "transparent", "textColor": "black", "usage": "Header logo for light backgrounds" },
+      { "path": "assets/logos/finitless-logo-square-on-dark.png", "format": "png", "dimensions": "5000x5000", "background": "black", "textColor": "white", "usage": "Square logo for dark backgrounds" },
+      { "path": "assets/logos/finitless-logo-square-on-light.png", "format": "png", "dimensions": "5000x5000", "background": "transparent", "textColor": "black", "usage": "Square logo for light backgrounds" },
+      { "path": "assets/logos/finitless-logo-rect-on-dark.png", "format": "png", "dimensions": "2885x1736", "background": "black", "textColor": "white", "usage": "Rectangle format, marketing materials" }
+    ],
+    "reference": [
+      { "path": "assets/reference/finitless-brand-guidelines.pdf", "description": "Original brand guidelines PDF from designer" },
+      { "path": "assets/reference/hubspot-brand-colors.png", "description": "Screenshot of HubSpot brand color configuration (needs updating)" }
+    ]
+  }
+}
