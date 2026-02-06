@@ -1390,6 +1390,61 @@ const inter = Inter({
         </div>
       </div>
 
+      <!-- Select / Dropdown Do/Don't -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:24px; margin-bottom:16px;"><strong style="color:var(--text)">Select / Dropdown:</strong> Elevated panel, subtle cyan hover, comfortable option padding. Never use native browser select or gradient hover.</p>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <div style="width:100%; max-width:320px; position:relative;">
+              <div style="width:100%; height:48px; padding:12px 16px; padding-right:40px; font-size:16px; font-family:Inter,sans-serif;
+                         color:rgba(255,255,255,0.40); background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);
+                         border-radius:12px 12px 0 0; display:flex; align-items:center; position:relative;">
+                Select an option
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.50)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:50%; transform:translateY(-50%);">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:0 0 12px 12px;
+                         box-shadow:0 8px 32px rgba(0,0,0,0.4); padding:4px; overflow:hidden;">
+                <div style="padding:12px 16px; font-size:15px; color:rgba(255,255,255,0.80); border-radius:8px; cursor:pointer;">Option One</div>
+                <div style="padding:12px 16px; font-size:15px; color:rgba(255,255,255,0.90); border-radius:8px; background:rgba(0,183,255,0.12); cursor:pointer;">Option Two (hover)</div>
+                <div style="padding:12px 16px; font-size:15px; color:#fff; border-radius:8px; background:rgba(0,183,255,0.15); cursor:pointer; display:flex; align-items:center; justify-content:space-between;">Option Three (selected) <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B7FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div style="padding:12px 16px; font-size:15px; color:rgba(255,255,255,0.80); border-radius:8px; cursor:pointer;">Option Four</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Elevated panel, subtle cyan hover, padded options</span></div>
+            <button class="copy-btn" onclick="copyText('/* Panel */ background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.4); backdrop-filter:blur(12px);\n/* Option hover */ background:rgba(0,183,255,0.12);\n/* Option selected */ background:rgba(0,183,255,0.15); color:#FFFFFF;','Dropdown CSS')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <div style="width:100%; max-width:320px; position:relative;">
+              <div style="width:100%; height:48px; padding:12px 16px; padding-right:40px; font-size:16px; font-family:Inter,sans-serif;
+                         color:rgba(255,255,255,0.40); background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);
+                         border-radius:12px 12px 0 0; display:flex; align-items:center; position:relative;">
+                Select an option
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.50)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:50%; transform:translateY(-50%);">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:0 0 12px 12px; padding:0; overflow:hidden;">
+                <div style="padding:8px 16px; font-size:15px; color:rgba(255,255,255,0.80); cursor:pointer;">Option One</div>
+                <div style="padding:8px 16px; font-size:15px; color:#fff; background:linear-gradient(to right,#00B7FF,#7A2EFF); cursor:pointer;">Option Two (hover)</div>
+                <div style="padding:8px 16px; font-size:15px; color:rgba(255,255,255,0.80); cursor:pointer;">Option Three</div>
+                <div style="padding:8px 16px; font-size:15px; color:rgba(255,255,255,0.80); cursor:pointer;">Option Four</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Gradient hover, flat panel, cramped options</span></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Button Sizes -->
       <p style="color:var(--text-secondary); font-size:14px; margin-top:24px; margin-bottom:16px;"><strong style="color:var(--text)">Button sizes:</strong> sm (36px), md (44px, default), lg (48px). Use lg for forms and hero CTAs.</p>
       <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:12px;">
@@ -1572,7 +1627,7 @@ const inter = Inter({
   </main>
 
   <footer>
-    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.3.0 &middot; February 2026</span></p>
+    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.4.0 &middot; February 2026</span></p>
     <p style="margin-top:8px;">
       <a href="https://github.com/Finitless-com/brand-guidelines">GitHub</a> &middot;
       <a href="https://finitless.com">finitless.com</a> &middot;

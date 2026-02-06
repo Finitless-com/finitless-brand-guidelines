@@ -1,6 +1,6 @@
 {
   "$schema": "https://brand-guidelines.finitless.com/schema/v1",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "lastUpdated": "2026-02-06",
   "baseUrl": "https://brand.finitless.com/",
 
@@ -235,6 +235,41 @@
       "lineStyle": { "tailwind": "flex-1 h-px bg-white/10", "css": "flex: 1; height: 1px; background: rgba(255,255,255,0.10);" },
       "textStyle": { "tailwind": "text-xs text-white/40", "css": "font-size: 12px; color: rgba(255,255,255,0.40);" }
     },
+    "formSelect": {
+      "trigger": {
+        "note": "Same as formInput, with right-aligned chevron",
+        "tailwind": "w-full h-12 px-4 pr-10 text-base text-left text-white bg-white/5 border border-white/10 rounded-xl focus:border-[#00B7FF]/50 focus:outline-none transition-all",
+        "css": "width: 100%; height: 48px; padding: 12px 16px; padding-right: 40px; font-size: 16px; color: #FFFFFF; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; outline: none; transition: all 150ms ease; text-align: left;",
+        "chevron": { "color": "rgba(255,255,255,0.50)", "size": "16px" },
+        "placeholder": { "color": "rgba(255,255,255,0.40)" }
+      },
+      "panel": {
+        "tailwind": "bg-white/[0.08] border border-white/[0.12] rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl max-h-80 overflow-y-auto p-1 mt-1",
+        "css": "background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); backdrop-filter: blur(12px); max-height: 320px; overflow-y: auto; padding: 4px; margin-top: 4px;"
+      },
+      "option": {
+        "tailwind": "px-4 py-3 text-[15px] text-white/80 rounded-lg cursor-pointer transition-colors",
+        "css": "padding: 12px 16px; font-size: 15px; color: rgba(255,255,255,0.80); border-radius: 8px; cursor: pointer; transition: background 150ms ease;"
+      },
+      "optionHover": {
+        "tailwind": "bg-[#00B7FF]/[0.12] text-white/90",
+        "css": "background: rgba(0,183,255,0.12); color: rgba(255,255,255,0.90);"
+      },
+      "optionSelected": {
+        "tailwind": "bg-[#00B7FF]/[0.15] text-white",
+        "css": "background: rgba(0,183,255,0.15); color: #FFFFFF;"
+      },
+      "optionDisabled": {
+        "tailwind": "text-white/40 cursor-not-allowed",
+        "css": "color: rgba(255,255,255,0.40); cursor: not-allowed;"
+      },
+      "scrollbar": {
+        "width": "thin",
+        "trackColor": "transparent",
+        "thumbColor": "rgba(255,255,255,0.15)",
+        "thumbHoverColor": "rgba(255,255,255,0.25)"
+      }
+    },
     "oauthButton": {
       "tailwind": "w-full h-12 flex items-center justify-center gap-2 bg-white/5 border border-white/20 rounded-xl text-white font-medium transition-all hover:border-[#00B7FF]/50 hover:bg-[#00B7FF]/5",
       "css": "width: 100%; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.20); border-radius: 12px; color: #FFFFFF; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 150ms ease;"
@@ -276,6 +311,13 @@
         "Never place multiple gradient buttons on one page — only ONE gradient button (primary action)",
         "Never use colors outside the brand palette for any button",
         "Never use button height below 36px — minimum is sm (36px)"
+      ],
+      "formSelects": [
+        "Never use the native browser <select> without custom styling — it renders with OS-default light styling",
+        "Never use the brand gradient (cyan→purple) as hover/selected background on dropdown options — kills text readability, use subtle rgba(0,183,255,0.12) tint",
+        "Never use the same background as the page for the dropdown panel — must appear elevated with bg rgba(255,255,255,0.08) minimum",
+        "Never omit padding between dropdown option items — use 12px 16px per option",
+        "Never let the placeholder option be selectable — disable it and style as rgba(255,255,255,0.40)"
       ],
       "formLogos": [
         "Never render the logo as text using BEASIGNE or any font — always use the supplied image asset from assets/logos/",

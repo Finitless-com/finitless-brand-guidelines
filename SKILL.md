@@ -259,6 +259,32 @@ Use the **secondary button pattern** (glass bg + border). NEVER use the CTA grad
 </div>
 ```
 
+### Select / Dropdown
+
+Custom-styled dropdowns. Never use native browser `<select>` without restyling.
+
+**Trigger (closed):** Same as text input (`bg-white/5`, `border-white/10`, `rounded-xl`, `h-12`). Right-aligned chevron in `text-white/50`.
+
+**Dropdown panel (open):**
+```html
+<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4); backdrop-filter: blur(12px);
+            max-height: 320px; overflow-y: auto; padding: 4px; margin-top: 4px;">
+  <!-- Options go here -->
+</div>
+```
+
+**Option items:**
+```html
+<div style="padding: 12px 16px; font-size: 15px; color: rgba(255,255,255,0.80);
+            border-radius: 8px; cursor: pointer; transition: background 150ms ease;">
+  Option text
+</div>
+<!-- Hover: background: rgba(0,183,255,0.12) -->
+<!-- Selected: background: rgba(0,183,255,0.15); color: #FFFFFF; + check icon -->
+<!-- Disabled/Placeholder: color: rgba(255,255,255,0.40); no hover -->
+```
+
 ---
 
 ## Button Size Scale
@@ -326,6 +352,25 @@ Use the **secondary button pattern** (glass bg + border). NEVER use the CTA grad
 
 <!-- Form container -->
 <div class="max-w-[480px] mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
+
+<!-- Select trigger (same as input, add chevron) -->
+<button class="w-full h-12 px-4 pr-10 text-base text-left text-white bg-white/5 border border-white/10 rounded-xl
+               focus:border-[#00B7FF]/50 focus:outline-none transition-all relative">
+  <span class="text-white/40">Select an option</span>
+  <!-- Chevron icon right-aligned, text-white/50 -->
+</button>
+
+<!-- Dropdown panel -->
+<div class="bg-white/[0.08] border border-white/[0.12] rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+            backdrop-blur-xl max-h-80 overflow-y-auto p-1 mt-1">
+  <!-- Option: default -->
+  <div class="px-4 py-3 text-[15px] text-white/80 rounded-lg cursor-pointer transition-colors
+              hover:bg-[#00B7FF]/[0.12] hover:text-white/90">Option text</div>
+  <!-- Option: selected -->
+  <div class="px-4 py-3 text-[15px] text-white rounded-lg bg-[#00B7FF]/[0.15]">Selected option</div>
+  <!-- Option: disabled/placeholder -->
+  <div class="px-4 py-3 text-[15px] text-white/40 rounded-lg cursor-not-allowed">Placeholder</div>
+</div>
 ```
 
 ---
@@ -406,6 +451,7 @@ Use the **secondary button pattern** (glass bg + border). NEVER use the CTA grad
 **Cards**: Never use solid white backgrounds, sharp corners (0px), or omit hover states.
 **Gradient text**: Never omit the cyan stop, use top-to-bottom direction, or apply to body copy.
 **Form inputs**: Never use unstyled browser defaults. Always apply dark glass background (`bg-white/5`), 12px radius, and cyan focus glow. Never use font-size below 16px (prevents iOS zoom).
+**Select / Dropdown**: Never use the native browser `<select>` without custom styling. Never use the brand gradient as hover/selected background on options -- use subtle `bg-[#00B7FF]/12` tint. Dropdown panel must be elevated (`bg-white/[0.08]`, not same as page). Always include padding between options.
 **Form buttons**: Never use flat solid colors for the primary submit — always CTA gradient, full width. OAuth/social buttons use the secondary pattern, never the gradient.
 **Logo in forms**: Never render the logo as text or from a font. Always use `<img>` with the horizontal logo asset.
 

@@ -401,6 +401,81 @@ A horizontal line with centered text, used between OAuth and email login section
 | Text | 12px (caption), `rgba(255,255,255,0.40)`, centered |
 | Vertical margin | 24px |
 
+### Select / Dropdown
+
+Custom-styled select menus for choosing from a list of options. Never use the native browser `<select>` on dark backgrounds -- it renders with OS-default light styling.
+
+#### Trigger (Closed State)
+
+Same styling as text inputs, with a right-aligned chevron indicator.
+
+| Property | Value | Notes |
+|----------|-------|-------|
+| Background | `rgba(255,255,255,0.05)` | Same as input / card surface |
+| Border | `1px solid rgba(255,255,255,0.10)` | Same as input |
+| Border radius | 12px | Default `md` radius |
+| Height | 48px | Same as text input |
+| Padding | 12px 16px | Same as input, right padding 40px for chevron |
+| Font size | 16px | Prevents iOS zoom |
+| Placeholder text | `rgba(255,255,255,0.40)` | Same as input placeholder |
+| Selected value text | #FFFFFF | Full white |
+| Chevron icon | `rgba(255,255,255,0.50)` | 16px, right-aligned, centered vertically |
+| Focus state | Same as input | Cyan border glow: `border-color: rgba(0,183,255,0.5); box-shadow: 0 0 0 3px rgba(0,183,255,0.15)` |
+
+#### Dropdown Panel (Open State)
+
+The dropdown panel must be visually elevated above the page. Do **not** use the same background as the page.
+
+| Property | Value | Notes |
+|----------|-------|-------|
+| Background | `rgba(255,255,255,0.08)` | Slightly brighter than card surface for elevation |
+| Border | `1px solid rgba(255,255,255,0.12)` | Slightly more visible than card border |
+| Border radius | 12px | Same as trigger |
+| Box shadow | `0 8px 32px rgba(0,0,0,0.4)` | Depth / floating appearance |
+| Backdrop filter | `blur(12px)` | Glass effect |
+| Max height | 320px | Scroll for long lists |
+| Overflow | `overflow-y: auto` | Thin scrollbar |
+| Padding | 4px | Inner padding around option list |
+| Margin top | 4px | Gap between trigger and panel |
+
+#### Option Items
+
+| Property | Value | Notes |
+|----------|-------|-------|
+| Padding | 12px 16px | Comfortable touch targets |
+| Font size | 15px | Slightly smaller than trigger text |
+| Text color | `rgba(255,255,255,0.80)` | Slightly muted for comfortable reading |
+| Border radius | 8px | Inner rounding within the panel |
+| Transition | `background 150ms ease` | Smooth hover feedback |
+
+#### Option States
+
+| State | Background | Text | Additional |
+|-------|-----------|------|-----------|
+| Default | transparent | `rgba(255,255,255,0.80)` | -- |
+| Hover | `rgba(0,183,255,0.12)` | `rgba(255,255,255,0.90)` | Subtle cyan tint |
+| Selected | `rgba(0,183,255,0.15)` | #FFFFFF | Check mark icon (white, 16px) right-aligned |
+| Disabled | transparent | `rgba(255,255,255,0.30)` | `cursor: not-allowed`, no hover effect |
+
+#### Placeholder Option
+
+The placeholder option (e.g., "Please select...") should be visually distinct and non-selectable.
+
+| Property | Value |
+|----------|-------|
+| Text color | `rgba(255,255,255,0.40)` | Same as input placeholder |
+| Selectable | No (`disabled`) |
+| Hover | No effect |
+
+#### Scrollbar Styling (for long lists)
+
+| Property | Value |
+|----------|-------|
+| Width | `scrollbar-width: thin` |
+| Track | transparent |
+| Thumb | `rgba(255,255,255,0.15)` |
+| Thumb hover | `rgba(255,255,255,0.25)` |
+
 ### Form Do's
 
 - Use `<img>` with horizontal logo asset -- never render the logo from a font.
@@ -419,6 +494,10 @@ A horizontal line with centered text, used between OAuth and email login section
 - Don't omit the focus state on inputs.
 - Don't use border-radius below 8px on inputs or buttons.
 - Don't render the logo as text using BEASIGNE or any font.
+- Don't use the native browser `<select>` element without custom styling.
+- Don't use the brand gradient (cyan→purple) as a hover/selected background on dropdown options -- it kills text readability.
+- Don't use the same background color as the page for the dropdown panel -- it must appear elevated.
+- Don't omit padding between dropdown option items in long lists.
 
 ---
 

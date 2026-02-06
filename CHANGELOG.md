@@ -4,6 +4,19 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [2.4.0] -- 2026-02-06
+
+### Added
+
+- **Select / Dropdown component patterns**: Complete specification for custom-styled select menus including trigger (closed state), dropdown panel, option items, hover/selected/disabled states, placeholder options, and scrollbar styling.
+- **brand-manifest.json**: `formSelect` object with `trigger`, `panel`, `option`, `optionHover`, `optionSelected`, `optionDisabled`, and `scrollbar` entries in `visualIdentity`. New `formSelects` anti-pattern list.
+- **SKILL.md**: Select/Dropdown component pattern with HTML examples. Tailwind quick reference for trigger, panel, and option states. Dropdown anti-patterns.
+- **CLAUDE.md**: Select trigger, dropdown panel, and dropdown option rows in Visual Rules table. Select/Dropdown row in Anti-Patterns table.
+- **BRAND-GUIDELINES.md**: New "Select / Dropdown" subsection in Form Components with trigger, panel, option, placeholder, and scrollbar specification tables. Dropdown don'ts in Form Don'ts list.
+- **index.html**: Select/Dropdown Do/Don't card with visual comparison (elevated subtle hover vs. gradient hover with flat panel).
+
+---
+
 ## [2.3.0] -- 2026-02-06
 
 ### Added

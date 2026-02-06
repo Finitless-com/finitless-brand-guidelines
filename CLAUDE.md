@@ -277,6 +277,9 @@ When generating copy for Finitless:
 | OAuth / social button | Secondary button pattern: `w-full h-12 flex items-center justify-center gap-2 bg-white/5 border border-white/20 rounded-xl` |
 | Form divider | `flex items-center gap-4 my-6` with `h-px bg-white/10` lines and `text-xs text-white/40` text |
 | Form container | `max-w-[480px] mx-auto bg-white/5 border border-white/10 rounded-2xl p-8` |
+| Select trigger | Same as form input + right chevron (`text-white/50`). Placeholder: `text-white/40`, selected value: `text-white` |
+| Dropdown panel | `bg-white/[0.08] border-white/[0.12] rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl max-h-80 overflow-y-auto p-1` |
+| Dropdown option | `px-4 py-3 text-[15px] text-white/80 rounded-lg`. Hover: `bg-[#00B7FF]/[0.12]`. Selected: `bg-[#00B7FF]/[0.15] text-white` |
 | Gradient text | `bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent` |
 | Border radius | 8px (sm), 12px (md), 16px (lg), 24px (xl) |
 | Spacing grid | 4px base (4, 8, 12, 16, 24, 32, 48, 64, 96) |
@@ -300,6 +303,7 @@ When generating copy for Finitless:
 | Form inputs | Unstyled browser defaults, white/light backgrounds, missing focus state, font-size below 16px, radius below 8px |
 | Form buttons | Flat solid color for primary submit (use CTA gradient), gradient on OAuth buttons (use secondary pattern) |
 | Logo in forms | Rendering from a font (BEASIGNE or other) -- always use `<img>` with horizontal logo asset |
+| Select / Dropdown | Native browser `<select>` without custom styling, brand gradient as hover/selected bg on options, same background as page for dropdown panel, missing option padding |
 
 ---
 
