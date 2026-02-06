@@ -9,15 +9,35 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
 
 ---
 
+## Resources
+
+| Resource | URL |
+|----------|-----|
+| Brand guidelines site | https://brand.finitless.com/ |
+| brand-manifest.json | https://brand.finitless.com/brand-manifest.json |
+| CLAUDE.md (full agent instructions) | https://brand.finitless.com/CLAUDE.md |
+| GitHub repository | https://github.com/Finitless-com/finitless-brand-guidelines |
+
+**This skill is a concise reference.** For deeper info:
+- **Complete specifications** -- fetch `brand-manifest.json` (structured JSON with every token, asset path, and pattern)
+- **Logo/icon assets** -- browse `https://brand.finitless.com/` for visual picker with downloads
+- **Full voice guide with examples** -- see BRAND-VOICE.md in the repo
+- **Full color spec with HSL** -- see colors/COLORS.md in the repo
+
+---
+
 ## Colors
 
-### Brand Gradient
+### Primary Palette
 
 | Token | Hex | RGB |
 |-------|-----|-----|
 | cyan (primary) | #00B7FF | rgb(0, 183, 255) |
 | purple (secondary) | #7A2EFF | rgb(122, 46, 255) |
 | magenta (tertiary) | #C300FF | rgb(195, 0, 255) |
+| blue | #377BFF | rgb(55, 123, 255) |
+
+*The brand gradient uses cyan, purple, and magenta (see Gradients section below).*
 
 ### Neutrals
 
@@ -51,6 +71,7 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
+  --color-blue: #377BFF;
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;

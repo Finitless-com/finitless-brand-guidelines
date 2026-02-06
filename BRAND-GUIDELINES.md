@@ -99,6 +99,7 @@ Available icon files (in `assets/icons/`):
 | Primary | Cyan | #00B7FF | rgb(0, 183, 255) | Primary accent, links, CTAs |
 | Secondary | Purple | #7A2EFF | rgb(122, 46, 255) | Gradient midpoint, secondary accent |
 | Tertiary | Magenta | #C300FF | rgb(195, 0, 255) | Gradient end, tertiary accent |
+| Quaternary | Blue | #377BFF | rgb(55, 123, 255) | UI backgrounds, link color, data visualization, alternate accent |
 
 ### Neutral Palette
 

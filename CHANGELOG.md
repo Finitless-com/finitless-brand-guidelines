@@ -4,6 +4,20 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [2.2.0] -- 2026-02-06
+
+### Added
+
+- **Finitless Blue (#377BFF)**: New 4th primary brand color for UI backgrounds, link color, data visualization, and alternate accent. Added across all files.
+- CSS custom property: `--color-blue: #377BFF`
+- Tailwind config: `brand.blue: '#377BFF'`
+
+### Note
+
+- The 3-stop brand gradient (cyan → purple → magenta) is unchanged. Blue is a standalone primary.
+
+---
+
 ## [2.1.0] -- 2026-02-05
 
 ### Added
@@ -14,6 +28,9 @@ All notable changes to the Finitless Brand Guidelines repository.
 - **CLAUDE.md**: Surface/opacity and transition tokens in CSS custom properties. Monospace font stack section. Expanded Visual Rules table with transitions, focus, reduced motion, font smoothing, and breakpoints. Anti-patterns table, icon style section, and imagery guidelines.
 - **index.html**: Word pills for "revenue" and "every order" (use) and "hopefully" (avoid).
 - **voice/BRAND-VOICE.md**: Rows for "revenue", "every order" (use) and "hopefully" (avoid).
+- **index.html**: Base URL (`https://brand.finitless.com/`) prepended to all clipboard-copied asset paths (Quick Pick table, icon picker).
+- **brand-manifest.json**: `baseUrl` field added for programmatic full-URL construction.
+- **SKILL.md**: Resources section with links to manifest, brand site, CLAUDE.md, and GitHub repo.
 
 ### Fixed
 

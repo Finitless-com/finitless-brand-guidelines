@@ -112,6 +112,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
 | primary (cyan) | #00B7FF | Links, CTAs, primary accent |
 | secondary (purple) | #7A2EFF | Gradient midpoint, secondary accent |
 | tertiary (magenta) | #C300FF | Gradient end, decorative |
+| blue | #377BFF | UI backgrounds, link color, data viz, alternate accent |
 | background | #0a0a0a | Primary dark background |
 | black | #000000 | Maximum contrast |
 | white | #FFFFFF | Text on dark backgrounds |
@@ -127,6 +128,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
+  --color-blue: #377BFF;
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;
@@ -154,6 +156,7 @@ colors: {
     cyan: '#00B7FF',
     purple: '#7A2EFF',
     magenta: '#C300FF',
+    blue: '#377BFF',
   },
   surface: {
     DEFAULT: '#0a0a0a',
@@ -169,6 +172,7 @@ const brandColors = {
   primary: '#00B7FF',
   secondary: '#7A2EFF',
   tertiary: '#C300FF',
+  blue: '#377BFF',
   background: '#0a0a0a',
   white: '#FFFFFF',
   error: '#ff3b45',

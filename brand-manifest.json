@@ -1,7 +1,8 @@
 {
   "$schema": "https://brand-guidelines.finitless.com/schema/v1",
-  "version": "2.1.0",
-  "lastUpdated": "2026-02-05",
+  "version": "2.2.0",
+  "lastUpdated": "2026-02-06",
+  "baseUrl": "https://brand.finitless.com/",
 
   "company": {
     "name": "Finitless",
@@ -59,7 +60,8 @@
       "note": "Web-adapted 3-stop gradient (recommended for all digital use)",
       "cyan": { "hex": "#00B7FF", "rgb": [0, 183, 255], "hsl": [197, 100, 50], "name": "Finitless Cyan", "usage": "Primary accent, links, CTAs, gradient start" },
       "purple": { "hex": "#7A2EFF", "rgb": [122, 46, 255], "hsl": [262, 100, 59], "name": "Finitless Purple", "usage": "Gradient midpoint, secondary accent" },
-      "magenta": { "hex": "#C300FF", "rgb": [195, 0, 255], "hsl": [286, 100, 50], "name": "Finitless Magenta", "usage": "Gradient end, tertiary accent" }
+      "magenta": { "hex": "#C300FF", "rgb": [195, 0, 255], "hsl": [286, 100, 50], "name": "Finitless Magenta", "usage": "Gradient end, tertiary accent" },
+      "blue": { "hex": "#377BFF", "rgb": [55, 123, 255], "hsl": [220, 100, 61], "name": "Finitless Blue", "usage": "UI backgrounds, link color, data visualization, alternate accent" }
     },
     "neutral": {
       "black": { "hex": "#000000", "rgb": [0, 0, 0], "usage": "Pure black, maximum contrast" },

@@ -19,6 +19,7 @@
       --cyan: #00B7FF;
       --purple: #7A2EFF;
       --magenta: #C300FF;
+      --blue: #377BFF;
       --bg: #0a0a0a;
       --bg-card: rgba(255,255,255,0.05);
       --border: rgba(255,255,255,0.1);
@@ -629,7 +630,7 @@
     <div class="hero-logo-wrap">
       <img src="assets/logos/finitless-logo-horizontal-on-dark.png" alt="Finitless Logo">
     </div>
-    <span class="overline">Brand Guidelines v2.1</span>
+    <span class="overline">Brand Guidelines v2.2</span>
     <h1><span class="gradient-text">Brand Guidelines</span></h1>
     <p>The single source of truth for the Finitless brand identity. For humans and AI agents.</p>
     <div class="hero-ctas">
@@ -846,16 +847,16 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
             <tr><th>Context</th><th>Recommended Asset</th><th>Size</th><th></th></tr>
           </thead>
           <tbody>
-            <tr><td>Website header (dark bg)</td><td><code>finitless-logo-horizontal-on-dark.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText('assets/logos/finitless-logo-horizontal-on-dark-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Website header (light bg)</td><td><code>finitless-logo-horizontal-on-light.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText('assets/logos/finitless-logo-horizontal-on-light-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Favicon</td><td><code>finitless-icon-on-dark-32.png</code></td><td>32px</td><td><button class="copy-btn" onclick="copyText('assets/icons/finitless-icon-on-dark-32.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Social media avatar</td><td><code>finitless-icon-on-dark-1000.png</code></td><td>1000px</td><td><button class="copy-btn" onclick="copyText('assets/icons/finitless-icon-on-dark-1000.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>PWA / App icon</td><td><code>finitless-icon-on-dark-512.png</code></td><td>512px</td><td><button class="copy-btn" onclick="copyText('assets/icons/finitless-icon-on-dark-512.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Android launcher</td><td><code>finitless-icon-on-dark-192.png</code></td><td>192px</td><td><button class="copy-btn" onclick="copyText('assets/icons/finitless-icon-on-dark-192.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Apple App Store</td><td><code>finitless-icon-on-dark-1024.png</code></td><td>1024px</td><td><button class="copy-btn" onclick="copyText('assets/icons/finitless-icon-on-dark-1024.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>OG / Social card image</td><td><code>finitless-logo-square-on-dark-1024.png</code></td><td>1024px</td><td><button class="copy-btn" onclick="copyText('assets/logos/finitless-logo-square-on-dark-1024.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Print (high-res)</td><td><code>finitless-icon-print-2552.png</code></td><td>2552px</td><td><button class="copy-btn" onclick="copyText('assets/icons/finitless-icon-print-2552.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
-            <tr><td>Overlay / custom bg</td><td><code>finitless-logo-horizontal-on-dark.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText('assets/logos/finitless-logo-horizontal-on-dark-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Website header (dark bg)</td><td><code>finitless-logo-horizontal-on-dark.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-horizontal-on-dark-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Website header (light bg)</td><td><code>finitless-logo-horizontal-on-light.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-horizontal-on-light-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Favicon</td><td><code>finitless-icon-on-dark-32.png</code></td><td>32px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-32.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Social media avatar</td><td><code>finitless-icon-on-dark-1000.png</code></td><td>1000px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-1000.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>PWA / App icon</td><td><code>finitless-icon-on-dark-512.png</code></td><td>512px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-512.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Android launcher</td><td><code>finitless-icon-on-dark-192.png</code></td><td>192px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-192.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Apple App Store</td><td><code>finitless-icon-on-dark-1024.png</code></td><td>1024px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-1024.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>OG / Social card image</td><td><code>finitless-logo-square-on-dark-1024.png</code></td><td>1024px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-square-on-dark-1024.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Print (high-res)</td><td><code>finitless-icon-print-2552.png</code></td><td>2552px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-print-2552.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Overlay / custom bg</td><td><code>finitless-logo-horizontal-on-dark.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-horizontal-on-dark-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
           </tbody>
         </table>
       </div>
@@ -923,6 +924,17 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
               <button class="copy-btn" onclick="copyText('#C300FF','Hex')">#C300FF</button>
               <button class="copy-btn" onclick="copyText('rgb(195, 0, 255)','RGB')">rgb(195,0,255)</button>
               <button class="copy-btn" onclick="copyText('hsl(286, 100%, 50%)','HSL')">hsl(286,100%,50%)</button>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#377BFF;"></div>
+          <div class="info">
+            <div class="name">Finitless Blue</div>
+            <div class="color-values">
+              <button class="copy-btn" onclick="copyText('#377BFF','Hex')">#377BFF</button>
+              <button class="copy-btn" onclick="copyText('rgb(55, 123, 255)','RGB')">rgb(55,123,255)</button>
+              <button class="copy-btn" onclick="copyText('hsl(220, 100%, 61%)','HSL')">hsl(220,100%,61%)</button>
             </div>
           </div>
         </div>
@@ -995,6 +1007,7 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
+  --color-blue: #377BFF;
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;
@@ -1022,6 +1035,7 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
     cyan: '#00B7FF',
     purple: '#7A2EFF',
     magenta: '#C300FF',
+    blue: '#377BFF',
   },
   surface: {
     DEFAULT: '#0a0a0a',
@@ -1397,7 +1411,7 @@ const inter = Inter({
   </main>
 
   <footer>
-    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.1.0 &middot; February 2026</span></p>
+    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.2.0 &middot; February 2026</span></p>
     <p style="margin-top:8px;">
       <a href="https://github.com/Finitless-com/brand-guidelines">GitHub</a> &middot;
       <a href="https://finitless.com">finitless.com</a> &middot;
@@ -1409,6 +1423,9 @@ const inter = Inter({
   <div class="toast" id="toast"></div>
 
   <script>
+    // ── Brand Base URL ──
+    const BRAND_BASE_URL = 'https://brand.finitless.com/';
+
     // ── Toast ──
     let toastTimeout;
     function showToast(msg) {
@@ -1538,14 +1555,14 @@ const inter = Inter({
       const path = 'assets/icons/' + filename;
       document.getElementById('icon-preview-img').src = path;
       document.getElementById('icon-preview-img').alt = filename;
-      document.getElementById('icon-filename').textContent = filename;
+      document.getElementById('icon-filename').textContent = BRAND_BASE_URL + 'assets/icons/' + filename;
       document.getElementById('icon-download-btn').href = path;
       document.getElementById('icon-download-btn').download = filename;
     }
 
     function copyIconPath() {
       const filename = 'finitless-icon-' + currentIconVariant + '-' + currentIconSize + '.png';
-      copyText('assets/icons/' + filename, 'icon path');
+      copyText(BRAND_BASE_URL + 'assets/icons/' + filename, 'icon path');
     }
 
     // ── Logo Size Variants ──
