@@ -4,6 +4,24 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [2.1.0] -- 2026-02-05
+
+### Added
+
+- **brand-manifest.json**: 7 new sections -- surface/opacity tokens, motion/transitions, gradient text pattern, anti-patterns (buttons, cards, gradient text), responsive breakpoints, accessibility guidelines, imagery guidelines, icon style guidelines.
+- **brand-manifest.json**: Component patterns (cardStyle, hoverStyle, buttonPrimary, buttonSecondary) now include both Tailwind and CSS equivalents.
+- **SKILL.md**: CSS custom properties block with all tokens including surface and transitions. Surface/opacity token table. Transitions & motion rules. Responsive breakpoints. Anti-patterns section. Icon style and imagery sections.
+- **CLAUDE.md**: Surface/opacity and transition tokens in CSS custom properties. Monospace font stack section. Expanded Visual Rules table with transitions, focus, reduced motion, font smoothing, and breakpoints. Anti-patterns table, icon style section, and imagery guidelines.
+- **index.html**: Word pills for "revenue" and "every order" (use) and "hopefully" (avoid).
+- **voice/BRAND-VOICE.md**: Rows for "revenue", "every order" (use) and "hopefully" (avoid).
+
+### Fixed
+
+- **Overline letter-spacing**: Corrected from `0.1em` to `0.05em` in brand-manifest.json and index.html to match TYPOGRAPHY.md canonical value. Also updated Tailwind class from `tracking-widest` to `tracking-wider`.
+- **Word list alignment**: Unified words across all 6 files (index.html, SKILL.md, CLAUDE.md, BRAND-GUIDELINES.md, BRAND-VOICE.md, brand-manifest.json). Added missing words: "revenue", "every order" (use); "revolutionize", "hopefully" (avoid).
+
+---
+
 ## [2.0.0] -- 2026-02-05
 
 ### Added

@@ -130,6 +130,9 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;
+  --color-card-surface: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-muted-text: rgba(255, 255, 255, 0.60);
   --color-error: #ff3b45;
   --color-success: #22c55e;
   --color-warning: #f59e0b;
@@ -137,6 +140,8 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
   --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
   --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
   --glow-primary: 0 0 20px rgba(0, 183, 255, 0.3);
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
 }
 ```
 
@@ -216,6 +221,14 @@ export default function RootLayout({ children }) {
 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 ```
 
+### Monospace stack
+
+```css
+font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+```
+
+Use for code blocks, technical content, file paths, and data values.
+
 **Logo font**: BEASIGNE is used only in the logo/wordmark. Never use it for UI text. Always render the logo from the supplied image assets, not from the font.
 
 ---
@@ -231,9 +244,9 @@ When generating copy for Finitless:
 5. **Lead with the problem**, then deliver the solution.
 6. **Target audience**: Restaurant owners and operators.
 
-**Words to use**: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss
+**Words to use**: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss, revenue, every order
 
-**Words to avoid**: chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt, maybe, try, revolutionize, leverage, synergy
+**Words to avoid**: chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt, maybe, try, revolutionize, leverage, synergy, hopefully
 
 **Tone mapping**:
 - Marketing copy: Bold, results-focused, data-driven
@@ -255,6 +268,40 @@ When generating copy for Finitless:
 | Gradient text | `bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent` |
 | Border radius | 8px (sm), 12px (md), 16px (lg), 24px (xl) |
 | Spacing grid | 4px base (4, 8, 12, 16, 24, 32, 48, 64, 96) |
+| Transition (fast) | `transition: all 150ms ease` -- hover states, button feedback |
+| Transition (normal) | `transition: all 250ms ease` -- card hovers, panel reveals |
+| Focus outline | `:focus-visible { outline: 2px solid #00B7FF; outline-offset: 2px; }` |
+| Reduced motion | `@media (prefers-reduced-motion: reduce)` -- collapse all durations |
+| Font smoothing | `-webkit-font-smoothing: antialiased` on body |
+| Breakpoint (tablet) | `768px` -- h1 36px, h2 28px, single-column grids |
+| Breakpoint (mobile) | `640px` -- stack side-by-side layouts |
+
+---
+
+## Anti-Patterns (Never Do)
+
+| Component | Never Do |
+|-----------|----------|
+| Buttons | Flat solid blue (#2563eb), radius below 8px, Arial or system default font |
+| Cards | Solid white backgrounds, sharp corners (0px radius), missing hover state |
+| Gradient text | Omit cyan stop, use top-to-bottom direction, apply to body copy |
+
+---
+
+## Icon Style
+
+- **Style**: Outlined (stroke-based), 1.5px stroke width.
+- **Default size**: 24px. Grid: 16px (sm), 24px (md), 32px (lg).
+- **Colors**: White (#FFFFFF) on dark, #0a0a0a on light. Brand gradient for emphasis.
+- **Library**: Lucide Icons (lucide.dev) for standard UI patterns.
+
+---
+
+## Imagery Guidelines
+
+- **Photography**: Dark, high-contrast, selective brand color accents. Restaurant environments, tech in use.
+- **Illustrations**: Geometric, minimal, gradient fills from the brand palette on dark backgrounds.
+- **Textures**: Dot-grid or line patterns at 5-10% opacity. Gradient mesh at 10-20%. Glassmorphism: `backdrop-filter: blur(4px)` + `bg-white/5` + `border-white/10`.
 
 ---
 

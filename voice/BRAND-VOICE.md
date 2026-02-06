@@ -158,6 +158,8 @@ These words align with the brand personality. Reach for them first.
 | efficient | Respects their time and operations |
 | 24/7 | Always on, never misses |
 | never miss | The core brand promise |
+| revenue | Grounds every claim in money -- what they care about |
+| every order | Reinforces the completeness of the solution |
 
 ---
 
@@ -178,6 +180,7 @@ These words are either off-brand or too generic. Do not use them.
 | revolutionize | Too grandiose. Show results instead. |
 | leverage | Corporate jargon. Say "use." |
 | synergy | No. |
+| hopefully | Weak and uncertain. We are confident in our product. |
 
 ### AI Terminology Quick Reference
 

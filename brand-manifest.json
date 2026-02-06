@@ -1,6 +1,6 @@
 {
   "$schema": "https://brand-guidelines.finitless.com/schema/v1",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "lastUpdated": "2026-02-05",
 
   "company": {
@@ -65,6 +65,11 @@
       "black": { "hex": "#000000", "rgb": [0, 0, 0], "usage": "Pure black, maximum contrast" },
       "background": { "hex": "#0a0a0a", "rgb": [10, 10, 10], "usage": "Primary dark background" },
       "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "Primary text on dark, light backgrounds" }
+    },
+    "surface": {
+      "cardBackground": { "value": "rgba(255,255,255,0.05)", "tailwind": "bg-white/5" },
+      "border": { "value": "rgba(255,255,255,0.10)", "tailwind": "border-white/10" },
+      "mutedText": { "value": "rgba(255,255,255,0.60)", "tailwind": "text-white/60" }
     },
     "semantic": {
       "error": { "hex": "#ff3b45", "rgb": [255, 59, 69], "usage": "Errors, alerts, problem states" },
@@ -133,7 +138,7 @@
       "body": { "size": "16px", "weight": 400, "lineHeight": 1.6, "tailwind": "text-base", "usage": "Default body text" },
       "bodySm": { "size": "14px", "weight": 400, "lineHeight": 1.5, "tailwind": "text-sm", "usage": "Secondary text" },
       "caption": { "size": "12px", "weight": 400, "lineHeight": 1.5, "tailwind": "text-xs", "usage": "Labels, fine print" },
-      "overline": { "size": "12px", "weight": 600, "lineHeight": 1.5, "letterSpacing": "0.1em", "tailwind": "text-xs font-semibold uppercase tracking-widest", "usage": "Category labels" }
+      "overline": { "size": "12px", "weight": 600, "lineHeight": 1.5, "letterSpacing": "0.05em", "tailwind": "text-xs font-semibold uppercase tracking-wider", "usage": "Category labels" }
     }
   },
 
@@ -158,20 +163,105 @@
       "Measurable ROI — specific dollar amounts, not vague promises"
     ],
     "wordsWeUse": ["AI agents", "AI ordering agents", "AI-powered", "recover", "capture", "own", "direct", "efficient", "24/7", "never miss", "revenue", "every order"],
-    "wordsWeAvoid": ["chatbot", "bot", "artificial intelligence", "smart", "virtual assistant", "disrupt", "leverage", "synergy", "maybe", "try", "hopefully"]
+    "wordsWeAvoid": ["chatbot", "bot", "artificial intelligence", "smart", "virtual assistant", "disrupt", "leverage", "synergy", "maybe", "try", "revolutionize", "hopefully"]
   },
 
   "visualIdentity": {
     "theme": "Dark-mode-first",
     "backgrounds": ["#000000 (pure black)", "#0a0a0a (near-black, preferred)"],
     "preferGradientFor": ["Hero headings", "Primary CTAs", "Brand accent moments"],
-    "cardStyle": "bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm",
-    "hoverStyle": "hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10",
-    "buttonPrimary": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold",
-    "buttonSecondary": "border border-white/20 bg-white/5 rounded-xl text-white",
+    "cardStyle": {
+      "tailwind": "bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm",
+      "css": "background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(4px);"
+    },
+    "hoverStyle": {
+      "tailwind": "hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10",
+      "css": "border-color: rgba(0,183,255,0.5); box-shadow: 0 4px 20px rgba(0,183,255,0.1);"
+    },
+    "buttonPrimary": {
+      "tailwind": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold",
+      "css": "background: linear-gradient(to right, #00B7FF, #7A2EFF); border-radius: 12px; color: #fff; font-weight: 600;"
+    },
+    "buttonSecondary": {
+      "tailwind": "border border-white/20 bg-white/5 rounded-xl text-white",
+      "css": "border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); border-radius: 12px; color: #fff;"
+    },
+    "gradientText": {
+      "tailwind": "bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent",
+      "css": "background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;",
+      "usage": "Hero headings and key brand moments only — never on body text"
+    },
     "borderRadius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "24px" },
     "spacing": "4px grid: 4, 8, 12, 16, 24, 32, 48, 64, 96",
-    "glowEffect": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)"
+    "glowEffect": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)",
+    "antiPatterns": {
+      "buttons": [
+        "Never use flat solid blue (#2563eb) — always use CTA gradient",
+        "Never use border-radius below 8px — minimum is 8px, default 12px",
+        "Never use Arial or system default — always use Inter"
+      ],
+      "cards": [
+        "Never use solid white backgrounds — use rgba(255,255,255,0.05)",
+        "Never use sharp corners (0px radius) — minimum is 8px",
+        "Always include a hover state with cyan border glow"
+      ],
+      "gradientText": [
+        "Never omit the cyan stop — all three stops required (cyan, purple, magenta)",
+        "Never use top-to-bottom direction — always left-to-right",
+        "Never apply gradient text to body copy — headings and hero text only"
+      ]
+    }
+  },
+
+  "motion": {
+    "transitionFast": { "duration": "150ms", "easing": "ease", "css": "transition: all 150ms ease;", "usage": "Hover states, button feedback, small UI changes" },
+    "transitionNormal": { "duration": "250ms", "easing": "ease", "css": "transition: all 250ms ease;", "usage": "Card hovers, panel reveals, nav transitions" },
+    "reducedMotion": { "css": "@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }" }
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "tablet": { "maxWidth": "768px", "adjustments": ["Hero padding: 64px 16px", "h1: 36px", "h2: 28px", "Single-column grids"] },
+      "mobile": { "maxWidth": "640px", "adjustments": ["Word panels stack to single column", "Reduce font sizes further"] }
+    }
+  },
+
+  "accessibility": {
+    "focusOutline": { "css": ":focus-visible { outline: 2px solid #00B7FF; outline-offset: 2px; }", "usage": "All interactive elements" },
+    "reducedMotion": "See motion.reducedMotion",
+    "fontSmoothing": { "css": "-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;", "usage": "Apply to body element" },
+    "minContrastRatio": "4.5:1 for text, 3:1 for large text (WCAG AA)"
+  },
+
+  "imagery": {
+    "photography": {
+      "tone": "Dark, modern, tech-forward. High contrast with selective color accents.",
+      "subjects": ["Restaurant environments", "Technology in use", "Food ordering in action", "Busy kitchens", "Happy restaurant owners"],
+      "colorTreatment": "Desaturated backgrounds with brand-colored highlights (cyan/purple glow). Dark-mode aesthetic."
+    },
+    "illustrations": {
+      "style": "Geometric, minimal, line-based with gradient fills using the brand palette.",
+      "colorUsage": "Use the brand gradient (cyan to magenta) on dark backgrounds.",
+      "avoid": "Hand-drawn, cartoonish, or overly detailed styles."
+    },
+    "textures": {
+      "patterns": "Subtle dot-grid or line patterns at 5-10% opacity for background texture.",
+      "gradientMesh": "Brand colors at 10-20% opacity for depth.",
+      "glassmorphism": "backdrop-filter: blur(4px) with bg-white/5 and border-white/10."
+    }
+  },
+
+  "iconStyle": {
+    "style": "Outlined (stroke-based)",
+    "strokeWidth": "1.5px",
+    "defaultSize": "24px",
+    "sizeGrid": { "sm": "16px", "md": "24px", "lg": "32px" },
+    "colors": {
+      "onDark": "#FFFFFF",
+      "onLight": "#0a0a0a",
+      "accent": "Brand gradient for emphasis"
+    },
+    "library": "Lucide Icons (lucide.dev) for standard UI patterns, supplemented by custom brand icons"
   },
 
   "assets": {

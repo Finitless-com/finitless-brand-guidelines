@@ -36,6 +36,39 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
 | warning | #f59e0b |
 | info | #eaf4ff |
 
+### Surface / Opacity Tokens
+
+| Token | Value | Tailwind |
+|-------|-------|----------|
+| card-surface | rgba(255,255,255,0.05) | bg-white/5 |
+| border | rgba(255,255,255,0.10) | border-white/10 |
+| muted-text | rgba(255,255,255,0.60) | text-white/60 |
+
+### CSS Custom Properties
+
+```css
+:root {
+  --color-primary: #00B7FF;
+  --color-secondary: #7A2EFF;
+  --color-tertiary: #C300FF;
+  --color-background: #0a0a0a;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-card-surface: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-muted-text: rgba(255, 255, 255, 0.60);
+  --color-error: #ff3b45;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-info: #eaf4ff;
+  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
+  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
+  --glow-primary: 0 0 20px rgba(0, 183, 255, 0.3);
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+```
+
 ---
 
 ## Typography
@@ -212,5 +245,47 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 - **Practical, not visionary.** Talk about what the product does today.
 - **Direct, not salesy.** No fluff. Get to the point.
 - Use specific numbers: $31,000/year, 40% missed calls, 24/7.
-- Words to use: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, never miss.
-- Words to avoid: chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt, maybe, try.
+- Words to use: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss, revenue, every order.
+- Words to avoid: chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt, maybe, try, revolutionize, leverage, synergy, hopefully.
+
+---
+
+## Transitions & Motion
+
+- **Fast** (150ms ease): Hover states, button feedback, small UI changes.
+- **Normal** (250ms ease): Card hovers, panel reveals, nav transitions.
+- **Reduced motion**: Respect `prefers-reduced-motion: reduce` -- collapse all durations to near-zero.
+- **Focus**: `:focus-visible { outline: 2px solid #00B7FF; outline-offset: 2px; }`
+- **Font smoothing**: `-webkit-font-smoothing: antialiased` on body.
+
+---
+
+## Responsive Breakpoints
+
+- **768px** (tablet): Hero padding shrinks, h1 → 36px, h2 → 28px, grids collapse to single column.
+- **640px** (mobile): Word panels and side-by-side layouts stack vertically.
+
+---
+
+## Anti-Patterns (Never Do)
+
+**Buttons**: Never use flat solid blue (#2563eb), border-radius below 8px, or Arial/system fonts.
+**Cards**: Never use solid white backgrounds, sharp corners (0px), or omit hover states.
+**Gradient text**: Never omit the cyan stop, use top-to-bottom direction, or apply to body copy.
+
+---
+
+## Icon Style
+
+- **Style**: Outlined, 1.5px stroke width.
+- **Default size**: 24px. Grid: 16px (sm), 24px (md), 32px (lg).
+- **Colors**: White (#FFFFFF) on dark backgrounds, #0a0a0a on light. Brand gradient for emphasis.
+- **Library**: Lucide Icons for standard UI patterns.
+
+---
+
+## Imagery
+
+- **Photography**: Dark, high-contrast, selective brand color accents. Restaurant environments, tech in use.
+- **Illustrations**: Geometric, minimal, gradient fills from the brand palette on dark backgrounds.
+- **Textures**: Dot-grid or line patterns at 5-10% opacity. Gradient mesh at 10-20% opacity. Glassmorphism with `backdrop-filter: blur(4px)`, `bg-white/5`, `border-white/10`.

@@ -231,11 +231,11 @@ Restaurant owners and operators -- people who are busy, results-driven, and skep
 
 ### Words We Use
 
-AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss
+AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss, revenue, every order
 
 ### Words We Avoid
 
-chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt (overused), maybe, try
+chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt (overused), maybe, try, revolutionize, hopefully
 
 ### AI Terminology Rule
 
