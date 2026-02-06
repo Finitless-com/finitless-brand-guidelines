@@ -231,11 +231,15 @@ Restaurant owners and operators -- people who are busy, results-driven, and skep
 
 ### Words We Use
 
-recover, capture, own, direct, efficient, 24/7, never miss
+AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss
 
 ### Words We Avoid
 
-chatbot (too generic), automate (too vague), disrupt (overused), maybe, try
+chatbot, bot, artificial intelligence (say "AI"), intelligent agents, smart, virtual assistant, conversational AI, automate (too vague), disrupt (overused), maybe, try
+
+### AI Terminology Rule
+
+Our audience (restaurant owners) does not care about the technology label. They care about what it does. Always lead with the outcome, not the technology category. Say "AI agents that capture every order" -- not "our artificial intelligence solution."
 
 > See `voice/BRAND-VOICE.md` for the full voice guide with extended examples.
 
@@ -311,6 +315,10 @@ Track which brand assets are present in this repository:
 - [x] Brand voice guide (`voice/BRAND-VOICE.md`)
 - [x] Reference PDF (`assets/reference/finitless-brand-guidelines.pdf`)
 - [x] HubSpot color reference screenshot (`assets/reference/hubspot-brand-colors.png`)
+- [x] Icon variants: on-dark, on-light, transparent at 12 sizes each (16-1024px)
+- [x] Logo size variants: horizontal (6 widths), square (5 sizes), rect (4 widths)
+- [x] brand-manifest.json -- machine-readable brand identity (v2.0.0)
+- [x] Interactive brand guidelines page (`index.html`) with copy-to-clipboard and downloads
 - [ ] Logo -- SVG versions of all lockups
 - [ ] Logo -- monochrome (black on white) standalone file
 - [ ] Logo -- monochrome (white on black) standalone file

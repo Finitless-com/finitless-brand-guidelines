@@ -4,6 +4,31 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [2.0.0] -- 2026-02-05
+
+### Added
+
+- **Interactive brand guidelines page** (`index.html`): Full-featured toolkit with sticky nav, scroll-spy, copy-to-clipboard on all values, asset downloads with size picker, live do's/don'ts component examples, and LLM integration guide.
+- **"Copy Everything to Clipboard" button**: Single click copies SKILL.md + CLAUDE.md combined for fast LLM feeding.
+- **62 new asset size variants**: Icons in 3 variants (on-dark, on-light, transparent) x 12 sizes each. Logo size variants for horizontal (6 widths), square (5 sizes), and rectangular (4 widths).
+- **AI terminology guidance**: Added to BRAND-VOICE.md, SKILL.md, CLAUDE.md, README.md, brand-manifest.json, and index.html. Words to use: AI agents, AI ordering agents, AI-powered. Words to avoid: chatbot, bot, artificial intelligence, intelligent agents, smart, virtual assistant, conversational AI.
+- **Warning color** (`#f59e0b`): Added across all documentation files (COLORS.md, SKILL.md, CLAUDE.md, README.md, brand-manifest.json, index.html).
+- **Background type labels** on logo lockup cards (transparent bg / black bg).
+- **CSS custom properties block** and **Tailwind config block** with copy buttons in Colors section.
+- **Font loading code blocks** (HTML, Next.js, CSS fallback) with copy buttons.
+- **Quick Pick table** mapping common contexts to recommended asset files.
+- **Logo Size Variants section** with downloadable pills for every generated size.
+- **Brand Icon picker** with variant tabs (Dark/Light/Transparent) and size grid.
+
+### Changed
+
+- **brand-manifest.json** restructured from flat asset arrays to organized hierarchy (v1.0.0 → v2.0.0). Now includes complete asset inventory with all size variants, quick pick recommendations, and AI terminology in voice section.
+- **CLAUDE.md** expanded with comprehensive asset sizes, naming patterns, and quick pick table.
+- **SKILL.md** expanded with complete asset library section and naming conventions.
+- **README.md** updated with AI terminology table, corrected asset counts (48+ icons, 31+ logos), and warning color.
+
+---
+
 ## [1.0.0] -- 2026-02-05
 
 ### Added

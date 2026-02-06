@@ -81,6 +81,18 @@ We say **AI agents** and **AI ordering agents** -- never "chatbot," "bot," "arti
 
 ---
 
+## Interactive Brand Guidelines
+
+Open `index.html` (or visit the deployed Vercel URL) for an interactive brand guidelines viewer with:
+
+- **Copy-to-clipboard** on all color values, code blocks, and asset paths
+- **Asset downloads** with size picker for every icon and logo variant
+- **"Copy Everything" button** to feed SKILL.md + CLAUDE.md to any LLM in one click
+- **Live do's and don'ts** component examples (buttons, cards, gradient text)
+- **LLM integration guide** with quick-start code for manifest fetching
+
+---
+
 ## Asset Locations
 
 | Asset | Path | Count |
