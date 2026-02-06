@@ -61,6 +61,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
 | Email signature | `assets/logos/finitless-logo-rect-on-dark-300w.png` | 300w |
 | Print (high res) | `assets/icons/finitless-icon-print-2552.png` | 2552px |
 | Any overlay / compositing | `assets/icons/finitless-icon-transparent-512.png` | 512px |
+| Overlay / custom bg (logo) | `assets/logos/finitless-logo-horizontal-on-dark-300w.png` | 300w |
 | Vector / scalable source | `assets/icons/finitless-icon-master.svg` | any |
 
 ### Available Icon Sizes
@@ -80,6 +81,18 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
 
 **Rectangular**: `assets/logos/finitless-logo-rect-on-dark-{width}w.png`
 - Widths: 300, 600, 1200, 1800
+
+### Logo Background Types
+
+| Logo | Background | Use When |
+|------|-----------|----------|
+| horizontal-on-dark | Transparent | Placing on any dark or colored background |
+| horizontal-on-light | Transparent | Placing on any light or colored background |
+| square-on-dark | Solid black | Social cards, OG images, app stores (self-contained) |
+| square-on-light | Transparent | Placing on any light background |
+| rect-on-dark | Solid black | Email signatures, marketing (self-contained) |
+
+**Rule**: Use horizontal logos for overlay on custom backgrounds. Use square/rect on-dark for self-contained images where the black background is part of the design.
 
 ### Rules
 

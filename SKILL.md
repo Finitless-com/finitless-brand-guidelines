@@ -196,6 +196,12 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 - Square: `finitless-logo-square-{on-dark|on-light}-{size}.png` (128, 256, 512, 1024, 2000)
 - Rectangular: `finitless-logo-rect-on-dark-{width}w.png` (300, 600, 1200, 1800)
 
+**Logo background types**:
+- Horizontal (on-dark, on-light): transparent background -- place on any color
+- Square on-light: transparent background
+- Square on-dark, Rect on-dark: solid black background (baked in)
+- For overlaying on custom backgrounds, use horizontal or square-on-light variants
+
 **Rules**: Never recreate/modify logos. Resize proportionately only. Prefer dark variant.
 
 ---
