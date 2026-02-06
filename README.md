@@ -72,8 +72,7 @@ We say **AI agents** and **AI ordering agents** -- never "chatbot," "bot," "arti
 |-----|-------|
 | AI agents | chatbot, bot |
 | AI ordering agents | artificial intelligence (say "AI") |
-| AI-powered (as modifier) | intelligent agents, smart |
-| | virtual assistant, conversational AI |
+| AI-powered (as modifier) | smart, virtual assistant |
 
 **Rule**: Lead with what the product does, not the technology category. Restaurant owners care about revenue, not labels.
 

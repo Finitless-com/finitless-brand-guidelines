@@ -764,7 +764,7 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
           </div>
         </div>
         <div class="logo-card">
-          <div class="preview checkerboard">
+          <div class="preview light">
             <img src="assets/logos/finitless-logo-square-on-light.png" alt="Square logo on light" style="max-height:140px" loading="lazy">
           </div>
           <div class="card-footer">
@@ -1352,11 +1352,8 @@ const inter = Inter({
             <span class="word-pill">chatbot</span>
             <span class="word-pill">bot</span>
             <span class="word-pill">artificial intelligence</span>
-            <span class="word-pill">intelligent agents</span>
             <span class="word-pill">smart</span>
             <span class="word-pill">virtual assistant</span>
-            <span class="word-pill">conversational AI</span>
-            <span class="word-pill">automate</span>
             <span class="word-pill">disrupt</span>
             <span class="word-pill">maybe</span>
             <span class="word-pill">try</span>
@@ -1557,6 +1554,7 @@ const inter = Inter({
           label: 'Horizontal',
           prefix: 'finitless-logo-horizontal',
           sizes: [120, 200, 300, 480, 800, 1200],
+          heights: {120:8, 200:13, 300:19, 480:31, 800:52, 1200:78},
           suffix: 'w',
           variants: ['on-dark', 'on-light'],
           dir: 'assets/logos/'
@@ -1565,6 +1563,7 @@ const inter = Inter({
           label: 'Square',
           prefix: 'finitless-logo-square',
           sizes: [128, 256, 512, 1024, 2000],
+          heights: {128:128, 256:256, 512:512, 1024:1024, 2000:2000},
           suffix: '',
           variants: ['on-dark', 'on-light'],
           dir: 'assets/logos/'
@@ -1573,6 +1572,7 @@ const inter = Inter({
           label: 'Rectangular',
           prefix: 'finitless-logo-rect',
           sizes: [300, 600, 1200, 1800],
+          heights: {300:181, 600:361, 1200:722, 1800:1083},
           suffix: 'w',
           variants: ['on-dark'],
           dir: 'assets/logos/'
@@ -1597,12 +1597,16 @@ const inter = Inter({
             const filename = type.prefix + '-' + variant + '-' + sizeLabel + '.png';
             const path = type.dir + filename;
 
+            const h = type.heights[size];
+            const pxLabel = ' (' + size + '\u00D7' + h + 'px)';
+
             const btn = document.createElement('a');
             btn.href = path;
             btn.download = filename;
             btn.className = 'download-btn';
             btn.innerHTML = '<svg width="12" height="12"><use href="#icon-download"/></svg>' +
-              (variant === 'on-dark' ? 'Dark' : 'Light') + ' ' + sizeLabel;
+              (variant === 'on-dark' ? 'Dark' : 'Light') + ' ' + sizeLabel +
+              '<span style="opacity:0.5;font-size:11px">' + pxLabel + '</span>';
             btn.onclick = () => showToast('Downloading ' + filename);
             grid.appendChild(btn);
           });

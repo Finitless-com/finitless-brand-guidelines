@@ -170,11 +170,8 @@ These words are either off-brand or too generic. Do not use them.
 | chatbot | Sounds cheap and outdated. We build AI agents. |
 | bot | Diminishes what the product does. Same energy as "chatbot." |
 | artificial intelligence | Too formal and corporate. Sounds like a whitepaper, not a product. Say "AI." |
-| intelligent agents | Vague. "Intelligent" is a weak adjective -- show, do not tell. |
-| smart | Same issue as "intelligent." Marketing fluff. |
+| smart | Vague marketing fluff -- show, do not tell. |
 | virtual assistant | Overused and generic. Sounds like Siri or Alexa, not a revenue tool. |
-| conversational AI | Industry buzzword. Restaurant owners do not care about the category name. |
-| automate | Too generic. Every SaaS product says "automate." Be specific about what we do. |
 | disrupt | Overused tech-bro jargon. We are practical, not disruptive. |
 | maybe | Weak. We are confident. |
 | try | Implies uncertainty. We say "start" or "see" or "get." |

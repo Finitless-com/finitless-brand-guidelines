@@ -235,7 +235,7 @@ AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, effici
 
 ### Words We Avoid
 
-chatbot, bot, artificial intelligence (say "AI"), intelligent agents, smart, virtual assistant, conversational AI, automate (too vague), disrupt (overused), maybe, try
+chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt (overused), maybe, try
 
 ### AI Terminology Rule
 
