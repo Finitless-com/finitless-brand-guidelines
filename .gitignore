@@ -12,3 +12,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+# Vercel
+.vercel/
+
+# Node (defensive — no deps but just in case)
+node_modules/

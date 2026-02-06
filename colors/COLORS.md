@@ -1,70 +1,165 @@
 # Finitless Color Palette
 
-## Primary Colors
+Complete color specification for the Finitless brand. This document covers the primary gradient palette, neutral tones, semantic colors, gradient definitions, and implementation snippets for CSS and Tailwind.
+
+---
+
+## Primary Colors (Brand Gradient)
 
 | Role | Name | Hex | RGB | HSL | Usage |
 |------|------|-----|-----|-----|-------|
-| Primary | _TBD_ | _TBD_ | _TBD_ | _TBD_ | Main brand color, buttons, links |
-| Secondary | _TBD_ | _TBD_ | _TBD_ | _TBD_ | Supporting UI elements |
-| Accent | _TBD_ | _TBD_ | _TBD_ | _TBD_ | Highlights, notifications |
+| Primary | Cyan | #00B7FF | rgb(0, 183, 255) | hsl(197, 100%, 50%) | Main brand color, links, CTAs, primary accent |
+| Secondary | Purple | #7A2EFF | rgb(122, 46, 255) | hsl(262, 100%, 59%) | Gradient midpoint, secondary accent, hover states |
+| Tertiary | Magenta | #C300FF | rgb(195, 0, 255) | hsl(286, 100%, 50%) | Gradient end, tertiary accent, decorative elements |
+
+### Original Designer Specification (from brand PDF)
+
+The original brand PDF specifies a "Blue to Pink" gradient:
+
+| Role | Hex | RGB | Notes |
+|------|-----|-----|-------|
+| Gradient start | #00CCFF | rgb(0, 204, 255) | Original "Blue" |
+| Gradient end | #FF00FF | rgb(255, 0, 255) | Original "Pink" |
+
+The digital/web palette above (#00B7FF, #7A2EFF, #C300FF) is the production adaptation used on finitless.com. **Use the web palette for all digital work.**
+
+---
 
 ## Neutral Colors
 
 | Role | Name | Hex | RGB | Usage |
 |------|------|-----|-----|-------|
-| Black | _TBD_ | _TBD_ | _TBD_ | Primary text |
-| Dark Gray | _TBD_ | _TBD_ | _TBD_ | Secondary text |
-| Gray | _TBD_ | _TBD_ | _TBD_ | Placeholder text, borders |
-| Light Gray | _TBD_ | _TBD_ | _TBD_ | Backgrounds, dividers |
-| White | White | #FFFFFF | 255, 255, 255 | Backgrounds |
+| Background | Near Black | #0a0a0a | rgb(10, 10, 10) | Primary background (dark mode default) |
+| Pure Black | Black | #000000 | rgb(0, 0, 0) | Maximum contrast backgrounds, logo backgrounds |
+| White | White | #FFFFFF | rgb(255, 255, 255) | Primary text on dark backgrounds |
+| Card surface | White 5% | rgba(255, 255, 255, 0.05) | -- | Card and panel backgrounds |
+| Border | White 10% | rgba(255, 255, 255, 0.10) | -- | Borders, dividers |
+| Muted text | White 60% | rgba(255, 255, 255, 0.60) | -- | Secondary / muted text |
+
+---
 
 ## Semantic Colors
 
-| Role | Hex | Usage |
-|------|-----|-------|
-| Success | _TBD_ | Positive actions, confirmations |
-| Warning | _TBD_ | Warnings, pending states |
-| Error | _TBD_ | Errors, destructive actions |
-| Info | _TBD_ | Informational messages |
+| Role | Hex | RGB | Usage |
+|------|-----|-----|-------|
+| Error / Danger | #ff3b45 | rgb(255, 59, 69) | Error messages, destructive actions, validation failures |
+| Success | #22c55e | rgb(34, 197, 94) | Confirmations, positive states, success indicators |
+| Info tint | #eaf4ff | rgb(234, 244, 255) | Informational backgrounds, light blue tint |
+| Warning | #f59e0b | rgb(245, 158, 11) | Caution states, pending actions (use Tailwind amber-500) |
+
+---
 
 ## Gradients
 
-| Name | Colors | Usage |
-|------|--------|-------|
-| _TBD_ | _TBD_ | _TBD_ |
+| Name | CSS Value | Tailwind | Usage |
+|------|-----------|---------|-------|
+| Brand gradient | `linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)` | `bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF]` | Full brand expression, hero sections, decorative bars |
+| CTA gradient | `linear-gradient(to right, #00B7FF, #7A2EFF)` | `bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF]` | Primary buttons, calls to action |
+| Glow effect | `box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)` | `shadow-[0_0_20px_rgba(0,183,255,0.3)]` | Hover states, emphasis, floating elements |
+| Hover border glow | `border-color: rgba(0, 183, 255, 0.5)` | `hover:border-[#00B7FF]/50` | Interactive card hover states |
 
-## CSS Variables
+---
+
+## Platform Discrepancy Note
+
+HubSpot currently uses **incorrect** brand colors. These need to be corrected:
+
+| Role | HubSpot (current -- wrong) | Correct value |
+|------|----------------------------|---------------|
+| Primary | #18a3f5 | **#00B7FF** |
+| Secondary | #5c53eb | **#7A2EFF** |
+| Accent | #d93bff | **#C300FF** |
+
+Reference screenshot: `assets/reference/hubspot-brand-colors.png`
+
+---
+
+## CSS Custom Properties
 
 ```css
 :root {
-  /* Primary */
-  --color-primary: ;
-  --color-secondary: ;
-  --color-accent: ;
+  /* Primary (Brand Gradient) */
+  --color-primary: #00B7FF;
+  --color-secondary: #7A2EFF;
+  --color-tertiary: #C300FF;
 
   /* Neutral */
-  --color-black: ;
-  --color-dark-gray: ;
-  --color-gray: ;
-  --color-light-gray: ;
+  --color-background: #0a0a0a;
+  --color-black: #000000;
   --color-white: #FFFFFF;
+  --color-card-surface: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-muted-text: rgba(255, 255, 255, 0.60);
 
   /* Semantic */
-  --color-success: ;
-  --color-warning: ;
-  --color-error: ;
-  --color-info: ;
+  --color-error: #ff3b45;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-info: #eaf4ff;
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
+  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
+  --glow-primary: 0 0 20px rgba(0, 183, 255, 0.3);
 }
 ```
+
+---
 
 ## Tailwind Config
 
 ```js
-// Add to tailwind.config.js
-colors: {
-  primary: '',
-  secondary: '',
-  accent: '',
-  // ... extend as needed
-}
+// tailwind.config.js -- extend the colors object
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          cyan: '#00B7FF',
+          purple: '#7A2EFF',
+          magenta: '#C300FF',
+        },
+        surface: {
+          DEFAULT: '#0a0a0a',
+          black: '#000000',
+        },
+        semantic: {
+          error: '#ff3b45',
+          success: '#22c55e',
+          warning: '#f59e0b',
+          info: '#eaf4ff',
+        },
+      },
+      boxShadow: {
+        glow: '0 0 20px rgba(0, 183, 255, 0.3)',
+        'glow-lg': '0 0 40px rgba(0, 183, 255, 0.2)',
+      },
+    },
+  },
+};
+```
+
+### Common Tailwind Patterns
+
+```html
+<!-- Primary button -->
+<button class="bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold px-6 py-3">
+  Get Started
+</button>
+
+<!-- Secondary button -->
+<button class="border border-white/20 bg-white/5 rounded-xl text-white px-6 py-3">
+  Learn More
+</button>
+
+<!-- Card -->
+<div class="bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm p-6
+            hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10 transition-all">
+  Card content
+</div>
+
+<!-- Brand gradient text -->
+<span class="bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent">
+  Gradient Text
+</span>
 ```
