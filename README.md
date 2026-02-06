@@ -58,6 +58,32 @@ The Finitless mark merges the letter "N" with an infinity symbol into one icon, 
 
 ---
 
+## Form Components (v2.3.0)
+
+Specifications for login pages, sign-up flows, and any form UI.
+
+| Element | Pattern |
+|---------|---------|
+| Input field | `bg-white/5 border-white/10 rounded-xl h-12` -- focus: cyan border glow |
+| Label | `text-sm font-semibold text-white/70 mb-2` |
+| Form submit | CTA gradient, full width, 48px height. **Only ONE gradient button per view.** |
+| OAuth button | Secondary pattern (glass bg + border). **Never** use the CTA gradient. |
+| Divider ("or") | `h-px bg-white/10` lines with `text-xs text-white/40` text |
+| Form container | `max-w-[480px] mx-auto bg-white/5 border-white/10 rounded-2xl p-8` |
+| Logo in forms | Always `<img>` asset -- never render from a font |
+
+### Button Sizes
+
+| Size | Height | Usage |
+|------|--------|-------|
+| sm | 36px | Inline actions, table rows |
+| md (default) | 44px | Nav CTAs, card actions |
+| lg | 48px | Form submit, hero CTAs |
+
+> See `BRAND-GUIDELINES.md` Section 8 for full form specs, input states, and do's/don'ts.
+
+---
+
 ## Brand Voice
 
 Finitless is **confident, not arrogant** -- **practical, not visionary** -- **direct, not salesy**.
@@ -88,7 +114,8 @@ Open `index.html` (or visit the deployed Vercel URL) for an interactive brand gu
 - **Copy-to-clipboard** on all color values, code blocks, and asset paths
 - **Asset downloads** with size picker for every icon and logo variant
 - **"Copy Everything" button** to feed SKILL.md + CLAUDE.md to any LLM in one click
-- **Live do's and don'ts** component examples (buttons, cards, gradient text)
+- **Live do's and don'ts** component examples (buttons, cards, gradient text, form inputs, OAuth buttons)
+- **Complete login form demo** showing all form patterns applied together
 - **LLM integration guide** with quick-start code for manifest fetching
 
 ---
