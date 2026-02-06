@@ -127,20 +127,9 @@ This repository is designed to be consumed by AI coding agents and LLMs.
 
 ---
 
-## Deploying to Vercel
+## Deployment
 
-This repository can be deployed as a static site for easy access to brand assets and the manifest.
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Link to project
-vercel link --project finitless-brand-guidelines --yes
-
-# Deploy
-vercel --prod
-```
+This repository is connected to Vercel and **deploys automatically** on every push to `main`. No manual steps needed.
 
 Once deployed, assets are available at their Vercel URL paths (e.g., `/assets/logos/finitless-logo-horizontal-on-dark.png`).
 
