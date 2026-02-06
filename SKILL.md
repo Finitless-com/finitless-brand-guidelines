@@ -135,8 +135,12 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 1. **Dark-mode-first**: Always default to `background-color: #0a0a0a` with white text.
 2. **Cards**: Use `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.1)`, `border-radius: 12px`, and `backdrop-filter: blur(4px)`.
 3. **Hover states**: On cards, add `border-color: rgba(0,183,255,0.5)` and `box-shadow: 0 4px 20px rgba(0,183,255,0.1)`.
-4. **Primary buttons**: Use the CTA gradient (`#00B7FF` to `#7A2EFF`), `border-radius: 12px`, white text, `font-weight: 600`.
+4. **Primary buttons**: Use the CTA gradient (`#00B7FF` to `#7A2EFF`), `border-radius: 12px`, white text, `font-weight: 600`. Only ONE gradient button per view.
 5. **Secondary buttons**: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.2)`, `border-radius: 12px`, white text.
+6. **Button sizes**: sm `36px` / md `44px` (default) / lg `48px` (forms, hero). Full-width in forms and modals.
+7. **Form inputs**: `bg-white/5`, `border-white/10`, `rounded-xl`, `h-12`, `text-base`, `placeholder:text-white/40`. Focus: cyan border glow.
+8. **Form labels**: `text-sm font-semibold text-white/70 mb-2`.
+9. **Logo in forms**: ALWAYS use `<img>` with a horizontal logo asset. NEVER render from font.
 6. **Gradient text**: Apply the full brand gradient as `background-image`, then `background-clip: text` and `color: transparent`.
 7. **Border radius**: 8px (small), 12px (default), 16px (large), 24px (extra-large).
 8. **Spacing**: 4px grid -- use multiples of 4 (4, 8, 12, 16, 24, 32, 48, 64, 96).
@@ -191,6 +195,82 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 </div>
 ```
 
+### Form Input
+
+```html
+<div style="margin-bottom: 16px;">
+  <label style="display: block; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.70); margin-bottom: 8px;">
+    Email address
+  </label>
+  <input type="email" placeholder="you@example.com"
+    style="width: 100%; height: 48px; padding: 12px 16px; font-size: 16px; font-family: 'Inter', sans-serif;
+           color: #FFFFFF; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+           border-radius: 12px; outline: none; transition: all 150ms ease;">
+  <!-- Focus state: border-color: rgba(0,183,255,0.5); box-shadow: 0 0 0 3px rgba(0,183,255,0.15); -->
+  <!-- Error state: border-color: #ff3b45; box-shadow: 0 0 0 3px rgba(255,59,69,0.15); -->
+</div>
+```
+
+### Form Page Layout (Login / Sign-Up)
+
+```html
+<div style="max-width: 480px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; padding: 32px;">
+  <!-- Logo: ALWAYS use an <img> asset, NEVER render from font -->
+  <img src="assets/logos/finitless-logo-horizontal-on-dark-200w.png" alt="Finitless"
+       style="height: 32px; margin-bottom: 32px;">
+  <h2 style="font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">
+    Sign in to your account
+  </h2>
+  <p style="font-size: 14px; color: rgba(255,255,255,0.60); margin-bottom: 32px;">
+    Enter your email and password to continue.
+  </p>
+  <!-- Form fields here (see Form Input pattern above) -->
+  <!-- Primary submit: ALWAYS use CTA gradient, full width, 48px height -->
+  <button style="width: 100%; height: 48px; background: linear-gradient(to right, #00B7FF, #7A2EFF);
+                 color: #fff; font-weight: 600; font-size: 16px; border: none; border-radius: 12px;
+                 cursor: pointer; font-family: 'Inter', sans-serif;">
+    Sign In
+  </button>
+</div>
+```
+
+### OAuth / Social Login Button
+
+Use the **secondary button pattern** (glass bg + border). NEVER use the CTA gradient for OAuth buttons.
+
+```html
+<button style="width: 100%; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px;
+               background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.20);
+               border-radius: 12px; color: #FFFFFF; font-size: 15px; font-weight: 500;
+               font-family: 'Inter', sans-serif; cursor: pointer; transition: all 150ms ease;">
+  <img src="google-g-icon.svg" alt="" style="width: 20px; height: 20px;">
+  Continue with Google
+</button>
+<!-- Hover: border-color: rgba(0,183,255,0.5); background: rgba(0,183,255,0.05); -->
+```
+
+### Form Divider ("or" separator)
+
+```html
+<div style="display: flex; align-items: center; gap: 16px; margin: 24px 0;">
+  <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.10);"></div>
+  <span style="font-size: 12px; color: rgba(255,255,255,0.40);">or</span>
+  <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.10);"></div>
+</div>
+```
+
+---
+
+## Button Size Scale
+
+| Size | Height | Padding | Font Size | Radius | Usage |
+|------|--------|---------|-----------|--------|-------|
+| sm | 36px | 8px 16px | 14px | 8px | Inline actions, table rows |
+| md | 44px | 10px 24px | 15px | 12px | Nav CTAs, card actions (DEFAULT) |
+| lg | 48px | 12px 32px | 16px | 12px | Form submit, hero CTAs, full-width |
+
+**Rule**: Full-width buttons (`w-full`) in forms/modals use `lg`. Only ONE gradient button per view.
+
 ---
 
 ## Tailwind Quick Reference
@@ -214,6 +294,38 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 
 <!-- Overline label -->
 <span class="text-xs font-semibold tracking-widest uppercase text-[#00B7FF]">
+
+<!-- Form label -->
+<label class="block text-sm font-semibold text-white/70 mb-2">Email</label>
+
+<!-- Form input -->
+<input class="w-full h-12 px-4 text-base text-white bg-white/5 border border-white/10 rounded-xl
+              placeholder:text-white/40 focus:border-[#00B7FF]/50 focus:outline-none transition-all"
+       placeholder="you@example.com">
+
+<!-- Error input -->
+<input class="w-full h-12 px-4 text-base text-white bg-white/5 border border-[#ff3b45] rounded-xl
+              ring-[3px] ring-[#ff3b45]/15 focus:outline-none transition-all">
+
+<!-- Error text -->
+<p class="text-xs text-[#ff3b45] mt-1">Please enter a valid email address.</p>
+
+<!-- Full-width CTA in form (lg size) -->
+<button class="w-full h-12 bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold text-base">
+
+<!-- OAuth / social button (secondary pattern, lg size) -->
+<button class="w-full h-12 flex items-center justify-center gap-2 bg-white/5 border border-white/20
+               rounded-xl text-white font-medium transition-all hover:border-[#00B7FF]/50 hover:bg-[#00B7FF]/5">
+
+<!-- Form divider -->
+<div class="flex items-center gap-4 my-6">
+  <div class="flex-1 h-px bg-white/10"></div>
+  <span class="text-xs text-white/40">or</span>
+  <div class="flex-1 h-px bg-white/10"></div>
+</div>
+
+<!-- Form container -->
+<div class="max-w-[480px] mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
 ```
 
 ---
@@ -290,9 +402,12 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 
 ## Anti-Patterns (Never Do)
 
-**Buttons**: Never use flat solid blue (#2563eb), border-radius below 8px, or Arial/system fonts.
+**Buttons**: Never use flat solid blue (#2563eb) or flat solid cyan (#00B7FF). Always use CTA gradient for primary, secondary pattern for others. Never below 36px height. Only ONE gradient button per view.
 **Cards**: Never use solid white backgrounds, sharp corners (0px), or omit hover states.
 **Gradient text**: Never omit the cyan stop, use top-to-bottom direction, or apply to body copy.
+**Form inputs**: Never use unstyled browser defaults. Always apply dark glass background (`bg-white/5`), 12px radius, and cyan focus glow. Never use font-size below 16px (prevents iOS zoom).
+**Form buttons**: Never use flat solid colors for the primary submit — always CTA gradient, full width. OAuth/social buttons use the secondary pattern, never the gradient.
+**Logo in forms**: Never render the logo as text or from a font. Always use `<img>` with the horizontal logo asset.
 
 ---
 

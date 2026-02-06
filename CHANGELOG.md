@@ -4,6 +4,22 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [2.3.0] -- 2026-02-06
+
+### Added
+
+- **Form component patterns**: Complete specification for text inputs, labels, helper/error text, form page layouts, OAuth/social login buttons, and dividers.
+- **Button size scale**: sm (36px), md (44px, default), lg (48px) with height, padding, font size, and radius per size.
+- **Button context guide**: Which button style and size to use for form submit, OAuth, hero CTA, card actions, destructive, and tertiary.
+- **brand-manifest.json**: `formInput`, `formInputFocus`, `formInputError`, `formLabel`, `formHelperText`, `formErrorText`, `formContainer`, `formDivider`, `oauthButton`, `buttonSizes`, `buttonContextGuide` in `visualIdentity`. Form anti-patterns for inputs, buttons, and logos.
+- **SKILL.md**: Form Input, Form Page Layout, OAuth Button, and Form Divider component patterns. Button size scale table. Form-related Tailwind quick reference. Form anti-patterns.
+- **CLAUDE.md**: Form input, label, error, OAuth, divider, and container rows in Visual Rules table. Form anti-patterns in Anti-Patterns table.
+- **BRAND-GUIDELINES.md**: New "8. Form Components" section with full specification tables, button sizes, and do's/don'ts.
+- **colors/COLORS.md**: Form color usage table. New CSS custom properties: `--color-placeholder`, `--color-label`, `--color-helper`, `--focus-ring-primary`, `--focus-ring-error`.
+- **index.html**: Form Components subsection with do/don't grids for inputs, form buttons, and OAuth buttons. Button size comparison. Complete login form demo. New CSS custom properties.
+
+---
+
 ## [2.2.0] -- 2026-02-06
 
 ### Added

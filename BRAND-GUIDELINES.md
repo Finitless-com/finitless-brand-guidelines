@@ -296,6 +296,132 @@ Custom brand icons are stored in `assets/icons/` and include the infinity-N mark
 
 ---
 
+## 8. Form Components
+
+### Button Sizes
+
+Buttons come in three sizes. Use the appropriate size for the context.
+
+| Size | Height | Padding | Font Size | Radius | Usage |
+|------|--------|---------|-----------|--------|-------|
+| sm | 36px | 8px 16px | 14px | 8px | Inline actions, table rows, tight UI |
+| md (default) | 44px | 10px 24px | 15px | 12px | Navigation CTAs, card actions, general use |
+| lg | 48px | 12px 32px | 16px | 12px | Form submit, hero CTAs, full-width buttons |
+
+**Key rule**: Only ONE gradient (primary) button per view. All other buttons use secondary, tertiary, or destructive styles.
+
+### Button Styling by Context
+
+| Context | Style | Size | Width |
+|---------|-------|------|-------|
+| Form submit ("Sign In") | CTA gradient | lg (48px) | Full width |
+| OAuth / social login | Secondary (glass bg + border) | lg (48px) | Full width |
+| Hero CTA | CTA gradient | md or lg | Auto |
+| Card action | Secondary or text link | md (44px) | Auto |
+| Destructive ("Delete") | Solid #ff3b45, white text | md (44px) | Auto |
+| Tertiary / ghost | Transparent bg, text-[#00B7FF] | md (44px) | Auto |
+
+### Input Fields
+
+| Property | Value | Notes |
+|----------|-------|-------|
+| Background | `rgba(255,255,255,0.05)` | Same as card surface |
+| Border | `1px solid rgba(255,255,255,0.10)` | Same as card border |
+| Border radius | 12px | Default `md` radius |
+| Height | 48px | Comfortable touch target (WCAG 2.2 minimum 44px) |
+| Padding | 12px 16px | Spacing tokens `md` / `base` |
+| Font size | 16px | Body token. Prevents iOS zoom on focus |
+| Font weight | 400 | Regular |
+| Text color | #FFFFFF | White on dark |
+| Placeholder | `rgba(255,255,255,0.40)` | Lower opacity than muted text |
+
+### Input States
+
+| State | Border | Additional |
+|-------|--------|-----------|
+| Default | `rgba(255,255,255,0.10)` | -- |
+| Focus | `rgba(0,183,255,0.5)` | `box-shadow: 0 0 0 3px rgba(0,183,255,0.15)` |
+| Error | `#ff3b45` | `box-shadow: 0 0 0 3px rgba(255,59,69,0.15)` |
+| Disabled | Same as default | `opacity: 0.5; cursor: not-allowed` |
+
+### Labels
+
+| Property | Value |
+|----------|-------|
+| Font size | 14px (body-sm) |
+| Font weight | 600 (semibold) |
+| Color | `rgba(255,255,255,0.70)` |
+| Margin bottom | 8px |
+
+### Helper and Error Text
+
+| Property | Helper | Error |
+|----------|--------|-------|
+| Font size | 12px (caption) | 12px (caption) |
+| Color | `rgba(255,255,255,0.50)` | `#ff3b45` |
+| Margin top | 4px | 4px |
+
+### Form Page Layout
+
+For login, sign-up, and similar full-page forms:
+
+| Property | Value |
+|----------|-------|
+| Container max-width | 480px |
+| Container background | `rgba(255,255,255,0.05)` (card surface) |
+| Container border | `1px solid rgba(255,255,255,0.10)` |
+| Container radius | 16px (lg) |
+| Container padding | 32px (desktop), 24px (mobile) |
+| Field vertical gap | 16px |
+| Section gap | 24px (between input group and button) |
+| Logo | `<img>` asset, 32px height. NEVER render from font |
+
+### OAuth / Social Login Buttons
+
+OAuth buttons use the **secondary button pattern** (glass bg + border), NOT the CTA gradient. The gradient is reserved for the single primary action.
+
+| Property | Value |
+|----------|-------|
+| Background | `rgba(255,255,255,0.05)` |
+| Border | `1px solid rgba(255,255,255,0.20)` |
+| Border radius | 12px |
+| Height | 48px (lg) |
+| Width | Full width inside form container |
+| Text | 15px, weight 500, white |
+| Icon | Third-party brand mark, 20px, left-aligned with 8px gap |
+| Hover | `border-color: rgba(0,183,255,0.5); background: rgba(0,183,255,0.05)` |
+
+### Divider / "Or" Separator
+
+A horizontal line with centered text, used between OAuth and email login sections.
+
+| Element | Value |
+|---------|-------|
+| Line | `1px solid rgba(255,255,255,0.10)` (same as card border) |
+| Text | 12px (caption), `rgba(255,255,255,0.40)`, centered |
+| Vertical margin | 24px |
+
+### Form Do's
+
+- Use `<img>` with horizontal logo asset -- never render the logo from a font.
+- Use the CTA gradient for the primary submit button, full width.
+- Use the secondary button pattern for OAuth/social login buttons.
+- Apply the branded focus state (cyan border + subtle glow) on all inputs.
+- Use `font-size: 16px` on inputs to prevent iOS zoom.
+- Wrap the form in a card-like container (glass bg, border, rounded-2xl).
+
+### Form Don'ts
+
+- Don't use flat solid blue or cyan for any button.
+- Don't use the CTA gradient on more than one button per view.
+- Don't leave inputs with browser default styling.
+- Don't use white or light backgrounds on inputs.
+- Don't omit the focus state on inputs.
+- Don't use border-radius below 8px on inputs or buttons.
+- Don't render the logo as text using BEASIGNE or any font.
+
+---
+
 ## Asset Checklist
 
 Track which brand assets are present in this repository:

@@ -267,8 +267,16 @@ When generating copy for Finitless:
 | Default background | `#0a0a0a` (dark-mode-first) |
 | Card | `bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm` |
 | Card hover | `hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10` |
-| Primary button | `bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold` |
+| Primary button | `bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold` -- only ONE per view |
 | Secondary button | `border border-white/20 bg-white/5 rounded-xl text-white` |
+| Button sizes | sm: `h-9` (36px), md: `h-11` (44px, default), lg: `h-12` (48px, forms/hero) |
+| Form input | `w-full h-12 px-4 text-base text-white bg-white/5 border border-white/10 rounded-xl placeholder:text-white/40 focus:border-[#00B7FF]/50` |
+| Form label | `block text-sm font-semibold text-white/70 mb-2` |
+| Form error input | Replace default border with `border-[#ff3b45] ring-[3px] ring-[#ff3b45]/15` |
+| Form error text | `text-xs text-[#ff3b45] mt-1` |
+| OAuth / social button | Secondary button pattern: `w-full h-12 flex items-center justify-center gap-2 bg-white/5 border border-white/20 rounded-xl` |
+| Form divider | `flex items-center gap-4 my-6` with `h-px bg-white/10` lines and `text-xs text-white/40` text |
+| Form container | `max-w-[480px] mx-auto bg-white/5 border border-white/10 rounded-2xl p-8` |
 | Gradient text | `bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent` |
 | Border radius | 8px (sm), 12px (md), 16px (lg), 24px (xl) |
 | Spacing grid | 4px base (4, 8, 12, 16, 24, 32, 48, 64, 96) |
@@ -286,9 +294,12 @@ When generating copy for Finitless:
 
 | Component | Never Do |
 |-----------|----------|
-| Buttons | Flat solid blue (#2563eb), radius below 8px, Arial or system default font |
+| Buttons | Flat solid blue (#2563eb) or flat solid cyan (#00B7FF), radius below 8px, Arial/system font, height below 36px, multiple gradient buttons on one page |
 | Cards | Solid white backgrounds, sharp corners (0px radius), missing hover state |
 | Gradient text | Omit cyan stop, use top-to-bottom direction, apply to body copy |
+| Form inputs | Unstyled browser defaults, white/light backgrounds, missing focus state, font-size below 16px, radius below 8px |
+| Form buttons | Flat solid color for primary submit (use CTA gradient), gradient on OAuth buttons (use secondary pattern) |
+| Logo in forms | Rendering from a font (BEASIGNE or other) -- always use `<img>` with horizontal logo asset |
 
 ---
 

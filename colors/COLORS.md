@@ -103,6 +103,13 @@ Reference screenshot: `assets/reference/hubspot-brand-colors.png`
   --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
   --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
   --glow-primary: 0 0 20px rgba(0, 183, 255, 0.3);
+
+  /* Form tokens */
+  --color-placeholder: rgba(255, 255, 255, 0.40);
+  --color-label: rgba(255, 255, 255, 0.70);
+  --color-helper: rgba(255, 255, 255, 0.50);
+  --focus-ring-primary: 0 0 0 3px rgba(0, 183, 255, 0.15);
+  --focus-ring-error: 0 0 0 3px rgba(255, 59, 69, 0.15);
 }
 ```
 
@@ -166,3 +173,21 @@ module.exports = {
   Gradient Text
 </span>
 ```
+
+### Form Color Usage
+
+| Element | Color / Value | Tailwind | Notes |
+|---------|---------------|----------|-------|
+| Input background | `rgba(255,255,255,0.05)` | `bg-white/5` | Same as card surface |
+| Input border (default) | `rgba(255,255,255,0.10)` | `border-white/10` | Same as card border |
+| Input border (focus) | `rgba(0,183,255,0.5)` | `border-[#00B7FF]/50` | Cyan at 50% -- matches card hover |
+| Input focus ring | `rgba(0,183,255,0.15)` | `ring-[#00B7FF]/15` | 3px ring, subtle glow |
+| Input border (error) | `#ff3b45` | `border-[#ff3b45]` | Semantic error color |
+| Input error ring | `rgba(255,59,69,0.15)` | `ring-[#ff3b45]/15` | 3px ring, subtle error glow |
+| Input text | `#FFFFFF` | `text-white` | White on dark |
+| Placeholder text | `rgba(255,255,255,0.40)` | `text-white/40` | Lower opacity than muted-text |
+| Label text | `rgba(255,255,255,0.70)` | `text-white/70` | Between full white and muted |
+| Helper text | `rgba(255,255,255,0.50)` | `text-white/50` | Secondary helper |
+| Error text | `#ff3b45` | `text-[#ff3b45]` | Semantic error |
+| Divider line | `rgba(255,255,255,0.10)` | `bg-white/10` | Same as border token |
+| Divider text | `rgba(255,255,255,0.40)` | `text-white/40` | Same as placeholder |
