@@ -24,8 +24,8 @@ brand-guidelines/
 ├── CHANGELOG.md                 # Version history
 ├── README.md                    # Human-readable overview
 ├── assets/
-│   ├── icons/                   # Brand mark at various sizes (12 files)
-│   ├── logos/                   # Full logo lockups (5 files)
+│   ├── icons/                   # Brand mark in 3 variants x 12 sizes + originals (48+ files)
+│   ├── logos/                   # Logo lockups in multiple formats and sizes (31+ files)
 │   └── reference/               # Original brand PDF + HubSpot screenshot
 ├── colors/
 │   └── COLORS.md                # Full color specification
@@ -46,23 +46,47 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
 
 ## Picking the Right Logo / Icon
 
-| Context | Use This File |
-|---------|---------------|
-| Website header (dark bg) | `assets/logos/finitless-logo-horizontal-on-dark.png` |
-| Website header (light bg) | `assets/logos/finitless-logo-horizontal-on-light.png` |
-| Social media avatar | `assets/icons/finitless-icon-social-1000.png` |
-| Favicon | `assets/icons/finitless-icon-favicon-72.png` |
-| PWA / app icon | `assets/icons/finitless-icon-app-512.png` |
-| OG image / card backgrounds (dark) | `assets/logos/finitless-logo-square-on-dark.png` |
-| OG image / card backgrounds (light) | `assets/logos/finitless-logo-square-on-light.png` |
-| Print (high res) | `assets/icons/finitless-icon-print-2552.png` |
-| Any overlay / compositing | `assets/icons/finitless-icon-transparent.png` |
-| Vector / scalable source | `assets/icons/finitless-icon-master.svg` |
+### Quick Pick (most common contexts)
 
-**Rules**:
+| Context | Use This File | Size |
+|---------|---------------|------|
+| Website header (dark bg) | `assets/logos/finitless-logo-horizontal-on-dark-300w.png` | 300w |
+| Website header (light bg) | `assets/logos/finitless-logo-horizontal-on-light-300w.png` | 300w |
+| Favicon | `assets/icons/finitless-icon-on-dark-32.png` | 32px |
+| Social media avatar | `assets/icons/finitless-icon-on-dark-1000.png` | 1000px |
+| PWA / app icon | `assets/icons/finitless-icon-on-dark-512.png` | 512px |
+| Android launcher | `assets/icons/finitless-icon-on-dark-192.png` | 192px |
+| Apple App Store | `assets/icons/finitless-icon-on-dark-1024.png` | 1024px |
+| OG / Social card image | `assets/logos/finitless-logo-square-on-dark-1024.png` | 1024px |
+| Email signature | `assets/logos/finitless-logo-rect-on-dark-300w.png` | 300w |
+| Print (high res) | `assets/icons/finitless-icon-print-2552.png` | 2552px |
+| Any overlay / compositing | `assets/icons/finitless-icon-transparent-512.png` | 512px |
+| Vector / scalable source | `assets/icons/finitless-icon-master.svg` | any |
+
+### Available Icon Sizes
+
+**Naming pattern**: `assets/icons/finitless-icon-{variant}-{size}.png`
+
+- **Variants**: `on-dark` (black bg), `on-light` (white bg), `transparent`
+- **Sizes**: 16, 32, 48, 64, 72, 128, 192, 256, 384, 512, 1000, 1024
+
+### Available Logo Sizes
+
+**Horizontal** (icon + wordmark): `assets/logos/finitless-logo-horizontal-{on-dark|on-light}-{width}w.png`
+- Widths: 120, 200, 300, 480, 800, 1200
+
+**Square** (icon + wordmark, square format): `assets/logos/finitless-logo-square-{on-dark|on-light}-{size}.png`
+- Sizes: 128, 256, 512, 1024, 2000
+
+**Rectangular**: `assets/logos/finitless-logo-rect-on-dark-{width}w.png`
+- Widths: 300, 600, 1200, 1800
+
+### Rules
+
 - Never recreate or modify the logo mark. Use the supplied files only.
 - Resize proportionately. Never stretch.
 - Prefer the "on dark" variant (dark background is the brand default).
+- Use the smallest size that meets your resolution needs.
 
 ---
 
@@ -80,6 +104,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
 | white | #FFFFFF | Text on dark backgrounds |
 | error | #ff3b45 | Error states |
 | success | #22c55e | Success states |
+| warning | #f59e0b | Caution states, pending actions |
 | info | #eaf4ff | Info tints |
 
 ### CSS Custom Properties
@@ -94,6 +119,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
   --color-white: #FFFFFF;
   --color-error: #ff3b45;
   --color-success: #22c55e;
+  --color-warning: #f59e0b;
   --color-info: #eaf4ff;
   --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
   --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);

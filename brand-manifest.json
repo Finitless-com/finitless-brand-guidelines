@@ -1,6 +1,6 @@
 {
   "$schema": "https://brand-guidelines.finitless.com/schema/v1",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "lastUpdated": "2026-02-05",
 
   "company": {
@@ -69,6 +69,7 @@
     "semantic": {
       "error": { "hex": "#ff3b45", "rgb": [255, 59, 69], "usage": "Errors, alerts, problem states" },
       "success": { "hex": "#22c55e", "rgb": [34, 197, 94], "usage": "Success, positive states" },
+      "warning": { "hex": "#f59e0b", "rgb": [245, 158, 11], "usage": "Caution states, pending actions" },
       "info": { "hex": "#eaf4ff", "rgb": [234, 244, 255], "usage": "Informational, light tint" }
     },
     "gradients": {
@@ -174,26 +175,147 @@
   },
 
   "assets": {
-    "icons": [
-      { "path": "assets/icons/finitless-icon-master.svg", "format": "svg", "background": "none", "usage": "Vector master — scales to any size" },
-      { "path": "assets/icons/finitless-icon-favicon-72.png", "format": "png", "dimensions": "72x72", "usage": "Browser tab favicon" },
-      { "path": "assets/icons/finitless-icon-app-512.png", "format": "png", "dimensions": "512x512", "background": "black", "usage": "PWA icon, app stores" },
-      { "path": "assets/icons/finitless-icon-social-1000.png", "format": "png", "dimensions": "1000x1000", "background": "black", "usage": "Social media avatar" },
-      { "path": "assets/icons/finitless-icon-on-dark-2000.png", "format": "png", "dimensions": "2000x2000", "background": "black", "usage": "High-res for dark contexts" },
-      { "path": "assets/icons/finitless-icon-on-light-2000.png", "format": "png", "dimensions": "2000x2000", "background": "white", "usage": "High-res for light contexts" },
-      { "path": "assets/icons/finitless-icon-print-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print / ultra-high-res" },
-      { "path": "assets/icons/finitless-icon-print-2552-alt.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print variant" },
-      { "path": "assets/icons/finitless-icon-transparent.png", "format": "png", "dimensions": "1627x1099", "background": "transparent", "usage": "Overlay on any background" },
-      { "path": "assets/icons/finitless-icon-square-on-dark-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Square format, dark contexts" },
-      { "path": "assets/icons/finitless-icon-square-on-dark-4793.png", "format": "png", "dimensions": "4793x4793", "background": "black", "usage": "Square format, dark, largest" },
-      { "path": "assets/icons/finitless-icon-square-on-light-4793.png", "format": "png", "dimensions": "4793x4793", "background": "white", "usage": "Square format, light, largest" }
-    ],
-    "logos": [
-      { "path": "assets/logos/finitless-logo-horizontal-on-dark.png", "format": "png", "dimensions": "3653x237", "background": "transparent", "textColor": "white", "usage": "Header logo for dark backgrounds" },
-      { "path": "assets/logos/finitless-logo-horizontal-on-light.png", "format": "png", "dimensions": "3653x237", "background": "transparent", "textColor": "black", "usage": "Header logo for light backgrounds" },
-      { "path": "assets/logos/finitless-logo-square-on-dark.png", "format": "png", "dimensions": "5000x5000", "background": "black", "textColor": "white", "usage": "Square logo for dark backgrounds" },
-      { "path": "assets/logos/finitless-logo-square-on-light.png", "format": "png", "dimensions": "5000x5000", "background": "transparent", "textColor": "black", "usage": "Square logo for light backgrounds" },
-      { "path": "assets/logos/finitless-logo-rect-on-dark.png", "format": "png", "dimensions": "2885x1736", "background": "black", "textColor": "white", "usage": "Rectangle format, marketing materials" }
+    "icons": {
+      "master": {
+        "path": "assets/icons/finitless-icon-master.svg",
+        "format": "svg",
+        "background": "none",
+        "usage": "Vector master — scales to any size"
+      },
+      "onDark": {
+        "description": "Gradient icon on black (#000) background",
+        "sizes": [
+          { "path": "assets/icons/finitless-icon-on-dark-16.png", "size": 16, "usage": "Micro favicon" },
+          { "path": "assets/icons/finitless-icon-on-dark-32.png", "size": 32, "usage": "Standard favicon" },
+          { "path": "assets/icons/finitless-icon-on-dark-48.png", "size": 48, "usage": "Small UI icon" },
+          { "path": "assets/icons/finitless-icon-on-dark-64.png", "size": 64, "usage": "Desktop shortcut" },
+          { "path": "assets/icons/finitless-icon-on-dark-72.png", "size": 72, "usage": "Browser favicon" },
+          { "path": "assets/icons/finitless-icon-on-dark-128.png", "size": 128, "usage": "Browser extension" },
+          { "path": "assets/icons/finitless-icon-on-dark-192.png", "size": 192, "usage": "Android PWA icon" },
+          { "path": "assets/icons/finitless-icon-on-dark-256.png", "size": 256, "usage": "macOS app icon" },
+          { "path": "assets/icons/finitless-icon-on-dark-384.png", "size": 384, "usage": "PWA splash" },
+          { "path": "assets/icons/finitless-icon-on-dark-512.png", "size": 512, "usage": "App store / PWA" },
+          { "path": "assets/icons/finitless-icon-on-dark-1000.png", "size": 1000, "usage": "Social avatar" },
+          { "path": "assets/icons/finitless-icon-on-dark-1024.png", "size": 1024, "usage": "Apple App Store" },
+          { "path": "assets/icons/finitless-icon-on-dark-2000.png", "size": 2000, "usage": "High-res marketing" }
+        ]
+      },
+      "onLight": {
+        "description": "Gradient icon on white (#FFF) background",
+        "sizes": [
+          { "path": "assets/icons/finitless-icon-on-light-16.png", "size": 16, "usage": "Micro favicon" },
+          { "path": "assets/icons/finitless-icon-on-light-32.png", "size": 32, "usage": "Standard favicon" },
+          { "path": "assets/icons/finitless-icon-on-light-48.png", "size": 48, "usage": "Small UI icon" },
+          { "path": "assets/icons/finitless-icon-on-light-64.png", "size": 64, "usage": "Desktop shortcut" },
+          { "path": "assets/icons/finitless-icon-on-light-72.png", "size": 72, "usage": "Browser favicon" },
+          { "path": "assets/icons/finitless-icon-on-light-128.png", "size": 128, "usage": "Browser extension" },
+          { "path": "assets/icons/finitless-icon-on-light-192.png", "size": 192, "usage": "Android PWA icon" },
+          { "path": "assets/icons/finitless-icon-on-light-256.png", "size": 256, "usage": "macOS app icon" },
+          { "path": "assets/icons/finitless-icon-on-light-384.png", "size": 384, "usage": "PWA splash" },
+          { "path": "assets/icons/finitless-icon-on-light-512.png", "size": 512, "usage": "App store / PWA" },
+          { "path": "assets/icons/finitless-icon-on-light-1000.png", "size": 1000, "usage": "Social avatar" },
+          { "path": "assets/icons/finitless-icon-on-light-1024.png", "size": 1024, "usage": "Apple App Store" },
+          { "path": "assets/icons/finitless-icon-on-light-2000.png", "size": 2000, "usage": "High-res marketing" }
+        ]
+      },
+      "transparent": {
+        "description": "Gradient icon on transparent background",
+        "sizes": [
+          { "path": "assets/icons/finitless-icon-transparent-16.png", "size": 16, "usage": "Micro favicon" },
+          { "path": "assets/icons/finitless-icon-transparent-32.png", "size": 32, "usage": "Standard favicon" },
+          { "path": "assets/icons/finitless-icon-transparent-48.png", "size": 48, "usage": "Small UI icon" },
+          { "path": "assets/icons/finitless-icon-transparent-64.png", "size": 64, "usage": "Desktop shortcut" },
+          { "path": "assets/icons/finitless-icon-transparent-72.png", "size": 72, "usage": "Browser favicon" },
+          { "path": "assets/icons/finitless-icon-transparent-128.png", "size": 128, "usage": "Browser extension" },
+          { "path": "assets/icons/finitless-icon-transparent-192.png", "size": 192, "usage": "Android PWA icon" },
+          { "path": "assets/icons/finitless-icon-transparent-256.png", "size": 256, "usage": "macOS app icon" },
+          { "path": "assets/icons/finitless-icon-transparent-384.png", "size": 384, "usage": "PWA splash" },
+          { "path": "assets/icons/finitless-icon-transparent-512.png", "size": 512, "usage": "App store / PWA" },
+          { "path": "assets/icons/finitless-icon-transparent-1000.png", "size": 1000, "usage": "Social avatar" },
+          { "path": "assets/icons/finitless-icon-transparent-1024.png", "size": 1024, "usage": "Apple App Store" }
+        ]
+      },
+      "legacy": [
+        { "path": "assets/icons/finitless-icon-favicon-72.png", "format": "png", "dimensions": "72x72", "usage": "Browser tab favicon (original)" },
+        { "path": "assets/icons/finitless-icon-app-512.png", "format": "png", "dimensions": "512x512", "background": "black", "usage": "PWA icon (original)" },
+        { "path": "assets/icons/finitless-icon-social-1000.png", "format": "png", "dimensions": "1000x1000", "background": "black", "usage": "Social media avatar (original)" },
+        { "path": "assets/icons/finitless-icon-print-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print / ultra-high-res" },
+        { "path": "assets/icons/finitless-icon-print-2552-alt.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print variant" },
+        { "path": "assets/icons/finitless-icon-transparent.png", "format": "png", "dimensions": "1627x1099", "background": "transparent", "usage": "Overlay (original, non-square)" },
+        { "path": "assets/icons/finitless-icon-square-on-dark-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Square format, dark (original)" },
+        { "path": "assets/icons/finitless-icon-square-on-dark-4793.png", "format": "png", "dimensions": "4793x4793", "background": "black", "usage": "Square format, dark, largest (original)" },
+        { "path": "assets/icons/finitless-icon-square-on-light-4793.png", "format": "png", "dimensions": "4793x4793", "background": "white", "usage": "Square format, light, largest (original)" }
+      ]
+    },
+    "logos": {
+      "horizontal": {
+        "description": "Full wordmark (icon + FINITLESS text), wide format for headers and navigation",
+        "originals": [
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark.png", "dimensions": "3653x237", "background": "transparent", "textColor": "white", "usage": "Full-res header logo for dark backgrounds" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light.png", "dimensions": "3653x237", "background": "transparent", "textColor": "black", "usage": "Full-res header logo for light backgrounds" }
+        ],
+        "onDark": [
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-120w.png", "width": 120, "usage": "Small header / mobile nav" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-200w.png", "width": 200, "usage": "Standard header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-300w.png", "width": 300, "usage": "Large header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-480w.png", "width": 480, "usage": "Marketing materials" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-800w.png", "width": 800, "usage": "Hero sections" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-1200w.png", "width": 1200, "usage": "High-DPI headers" }
+        ],
+        "onLight": [
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-120w.png", "width": 120, "usage": "Small header / mobile nav" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-200w.png", "width": 200, "usage": "Standard header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-300w.png", "width": 300, "usage": "Large header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-480w.png", "width": 480, "usage": "Marketing materials" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-800w.png", "width": 800, "usage": "Hero sections" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-1200w.png", "width": 1200, "usage": "High-DPI headers" }
+        ]
+      },
+      "square": {
+        "description": "Icon + wordmark in square format for social cards, OG images, and marketing",
+        "originals": [
+          { "path": "assets/logos/finitless-logo-square-on-dark.png", "dimensions": "5000x5000", "background": "black", "textColor": "white", "usage": "Full-res square logo for dark backgrounds" },
+          { "path": "assets/logos/finitless-logo-square-on-light.png", "dimensions": "5000x5000", "background": "transparent", "textColor": "black", "usage": "Full-res square logo for light backgrounds" }
+        ],
+        "onDark": [
+          { "path": "assets/logos/finitless-logo-square-on-dark-128.png", "size": 128, "usage": "Tiny avatar" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-256.png", "size": 256, "usage": "Small card" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-512.png", "size": 512, "usage": "Social sharing" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-1024.png", "size": 1024, "usage": "OG images" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-2000.png", "size": 2000, "usage": "Print / marketing" }
+        ],
+        "onLight": [
+          { "path": "assets/logos/finitless-logo-square-on-light-128.png", "size": 128, "usage": "Tiny avatar" },
+          { "path": "assets/logos/finitless-logo-square-on-light-256.png", "size": 256, "usage": "Small card" },
+          { "path": "assets/logos/finitless-logo-square-on-light-512.png", "size": 512, "usage": "Social sharing" },
+          { "path": "assets/logos/finitless-logo-square-on-light-1024.png", "size": 1024, "usage": "OG images" },
+          { "path": "assets/logos/finitless-logo-square-on-light-2000.png", "size": 2000, "usage": "Print / marketing" }
+        ]
+      },
+      "rect": {
+        "description": "Icon + wordmark in rectangular format for email signatures and marketing",
+        "originals": [
+          { "path": "assets/logos/finitless-logo-rect-on-dark.png", "dimensions": "2885x1736", "background": "black", "textColor": "white", "usage": "Full-res rect logo for dark backgrounds" }
+        ],
+        "onDark": [
+          { "path": "assets/logos/finitless-logo-rect-on-dark-300w.png", "width": 300, "usage": "Email signature" },
+          { "path": "assets/logos/finitless-logo-rect-on-dark-600w.png", "width": 600, "usage": "Email header" },
+          { "path": "assets/logos/finitless-logo-rect-on-dark-1200w.png", "width": 1200, "usage": "OG image / marketing" },
+          { "path": "assets/logos/finitless-logo-rect-on-dark-1800w.png", "width": 1800, "usage": "Large marketing" }
+        ]
+      }
+    },
+    "quickPick": [
+      { "context": "Website header (dark bg)", "asset": "assets/logos/finitless-logo-horizontal-on-dark-300w.png", "size": "300w" },
+      { "context": "Website header (light bg)", "asset": "assets/logos/finitless-logo-horizontal-on-light-300w.png", "size": "300w" },
+      { "context": "Favicon", "asset": "assets/icons/finitless-icon-on-dark-32.png", "size": "32px" },
+      { "context": "Social media avatar", "asset": "assets/icons/finitless-icon-on-dark-1000.png", "size": "1000px" },
+      { "context": "PWA / App icon", "asset": "assets/icons/finitless-icon-on-dark-512.png", "size": "512px" },
+      { "context": "Android launcher", "asset": "assets/icons/finitless-icon-on-dark-192.png", "size": "192px" },
+      { "context": "Apple App Store", "asset": "assets/icons/finitless-icon-on-dark-1024.png", "size": "1024px" },
+      { "context": "OG / Social card image", "asset": "assets/logos/finitless-logo-square-on-dark-1024.png", "size": "1024px" },
+      { "context": "Email signature", "asset": "assets/logos/finitless-logo-rect-on-dark-300w.png", "size": "300w" },
+      { "context": "Print (high-res)", "asset": "assets/icons/finitless-icon-print-2552.png", "size": "2552px" }
     ],
     "reference": [
       { "path": "assets/reference/finitless-brand-guidelines.pdf", "description": "Original brand guidelines PDF from designer" },

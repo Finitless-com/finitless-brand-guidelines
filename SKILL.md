@@ -33,6 +33,7 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
 |-------|-----|
 | error | #ff3b45 |
 | success | #22c55e |
+| warning | #f59e0b |
 | info | #eaf4ff |
 
 ---
@@ -160,6 +161,42 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 <!-- Overline label -->
 <span class="text-xs font-semibold tracking-widest uppercase text-[#00B7FF]">
 ```
+
+---
+
+## Asset Library
+
+### Icons (pick by context)
+
+| Context | Asset Path | Size |
+|---------|-----------|------|
+| Favicon | `assets/icons/finitless-icon-on-dark-32.png` | 32px |
+| Social avatar | `assets/icons/finitless-icon-on-dark-1000.png` | 1000px |
+| PWA / App icon | `assets/icons/finitless-icon-on-dark-512.png` | 512px |
+| Android launcher | `assets/icons/finitless-icon-on-dark-192.png` | 192px |
+| Apple App Store | `assets/icons/finitless-icon-on-dark-1024.png` | 1024px |
+| Print (high-res) | `assets/icons/finitless-icon-print-2552.png` | 2552px |
+| Vector / scalable | `assets/icons/finitless-icon-master.svg` | any |
+
+**Icon naming pattern**: `finitless-icon-{variant}-{size}.png`
+- Variants: `on-dark`, `on-light`, `transparent`
+- Sizes: 16, 32, 48, 64, 72, 128, 192, 256, 384, 512, 1000, 1024
+
+### Logos (pick by context)
+
+| Context | Asset Path | Size |
+|---------|-----------|------|
+| Website header (dark) | `assets/logos/finitless-logo-horizontal-on-dark-300w.png` | 300w |
+| Website header (light) | `assets/logos/finitless-logo-horizontal-on-light-300w.png` | 300w |
+| OG / Social card | `assets/logos/finitless-logo-square-on-dark-1024.png` | 1024px |
+| Email signature | `assets/logos/finitless-logo-rect-on-dark-300w.png` | 300w |
+
+**Logo naming patterns**:
+- Horizontal: `finitless-logo-horizontal-{on-dark|on-light}-{width}w.png` (120, 200, 300, 480, 800, 1200)
+- Square: `finitless-logo-square-{on-dark|on-light}-{size}.png` (128, 256, 512, 1024, 2000)
+- Rectangular: `finitless-logo-rect-on-dark-{width}w.png` (300, 600, 1200, 1800)
+
+**Rules**: Never recreate/modify logos. Resize proportionately only. Prefer dark variant.
 
 ---
 
