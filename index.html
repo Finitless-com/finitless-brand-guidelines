@@ -19,7 +19,7 @@
       --cyan: #00B7FF;
       --purple: #7A2EFF;
       --magenta: #C300FF;
-      --blue: #377BFF;
+      --blue: #165DFC;
       --bg: #0a0a0a;
       --bg-card: rgba(255,255,255,0.05);
       --border: rgba(255,255,255,0.1);
@@ -933,13 +933,13 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
           </div>
         </div>
         <div class="color-swatch">
-          <div class="preview" style="background:#377BFF;"></div>
+          <div class="preview" style="background:#165DFC;"></div>
           <div class="info">
             <div class="name">Finitless Blue</div>
             <div class="color-values">
-              <button class="copy-btn" onclick="copyText('#377BFF','Hex')">#377BFF</button>
-              <button class="copy-btn" onclick="copyText('rgb(55, 123, 255)','RGB')">rgb(55,123,255)</button>
-              <button class="copy-btn" onclick="copyText('hsl(220, 100%, 61%)','HSL')">hsl(220,100%,61%)</button>
+              <button class="copy-btn" onclick="copyText('#165DFC','Hex')">#165DFC</button>
+              <button class="copy-btn" onclick="copyText('rgb(22, 93, 252)','RGB')">rgb(22,93,252)</button>
+              <button class="copy-btn" onclick="copyText('hsl(222, 97%, 54%)','HSL')">hsl(222,97%,54%)</button>
             </div>
           </div>
         </div>
@@ -1012,7 +1012,7 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
-  --color-blue: #377BFF;
+  --color-blue: #165DFC;
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;
@@ -1040,7 +1040,7 @@ curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CL
     cyan: '#00B7FF',
     purple: '#7A2EFF',
     magenta: '#C300FF',
-    blue: '#377BFF',
+    blue: '#165DFC',
   },
   surface: {
     DEFAULT: '#0a0a0a',
@@ -1206,7 +1206,7 @@ const inter = Inter({
             <button style="background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; padding:12px 28px; border-radius:12px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">Get Started</button>
           </div>
           <div class="demo-footer">
-            <div><span class="tag do">&#10003; DO</span> <span class="desc">CTA gradient, 12px radius, semibold</span></div>
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">CTA gradient — hero/form submit only</span></div>
             <button class="copy-btn" onclick="copyText('&lt;button style=&quot;background:linear-gradient(to right,#00B7FF,#7A2EFF);color:#fff;font-weight:600;padding:12px 28px;border-radius:12px;border:none;font-size:15px;&quot;&gt;Get Started&lt;/button&gt;','Button code')">
               <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
             </button>
@@ -1217,7 +1217,29 @@ const inter = Inter({
             <button style="background:#2563eb; color:#fff; font-weight:400; padding:8px 16px; border-radius:4px; border:none; font-size:14px; font-family:Arial,sans-serif; cursor:pointer;">Get Started</button>
           </div>
           <div class="demo-footer">
-            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Flat blue, wrong radius, wrong font</span></div>
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Non-brand blue, wrong radius, wrong font</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dodont-grid" style="margin-top:16px;">
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:#165DFC; color:#fff; font-weight:600; padding:12px 28px; border-radius:12px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">+ Create Item</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Solid Finitless Blue — preferred for actions</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;button style=&quot;background:#165DFC;color:#fff;font-weight:600;padding:12px 28px;border-radius:12px;border:none;font-size:15px;&quot;&gt;+ Create Item&lt;/button&gt;','Solid button code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:#00B7FF; color:#fff; font-weight:400; padding:12px 28px; border-radius:12px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">+ Create Item</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Flat solid cyan as button background</span></div>
           </div>
         </div>
       </div>
@@ -1627,7 +1649,7 @@ const inter = Inter({
   </main>
 
   <footer>
-    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.4.0 &middot; February 2026</span></p>
+    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.5.0 &middot; February 2026</span></p>
     <p style="margin-top:8px;">
       <a href="https://github.com/Finitless-com/brand-guidelines">GitHub</a> &middot;
       <a href="https://finitless.com">finitless.com</a> &middot;

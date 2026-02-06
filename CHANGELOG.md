@@ -4,6 +4,28 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [2.5.0] -- 2026-02-06
+
+### Changed
+
+- **Finitless Blue updated**: `#377BFF` → `#165DFC` (rgb(22, 93, 252), hsl(222, 97%, 54%)). Deeper, more saturated blue matching the Finitless Dashboard.
+- **Usage expanded**: Finitless Blue is now the **preferred color for solid action buttons** (e.g., "+ Create", "Save", "Add"), replacing the previous UI-only role.
+- CSS custom property: `--color-blue: #165DFC`
+- Tailwind config: `brand.blue: '#165DFC'`
+
+### Added
+
+- **Solid button pattern** (`buttonSolid`): New `bg-[#165DFC] rounded-xl text-white font-semibold` pattern for standard UI actions. Preferred over gradient for most buttons — gradient CTA remains for hero/form submit only.
+- **Button context**: "Standard action" row added to button context guide across all files.
+- **brand-manifest.json**: `buttonSolid` entry in `visualIdentity`, `standardAction` in `buttonContextGuide`.
+
+### Updated
+
+- Anti-patterns revised: Solid blue buttons are now allowed when using Finitless Blue (#165DFC). Only non-brand colors (#2563eb, etc.) are prohibited.
+- All files updated: brand-manifest.json, CLAUDE.md, SKILL.md, BRAND-GUIDELINES.md, colors/COLORS.md, index.html, README.md.
+
+---
+
 ## [2.4.0] -- 2026-02-06
 
 ### Added

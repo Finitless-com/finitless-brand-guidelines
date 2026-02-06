@@ -99,7 +99,7 @@ Available icon files (in `assets/icons/`):
 | Primary | Cyan | #00B7FF | rgb(0, 183, 255) | Primary accent, links, CTAs |
 | Secondary | Purple | #7A2EFF | rgb(122, 46, 255) | Gradient midpoint, secondary accent |
 | Tertiary | Magenta | #C300FF | rgb(195, 0, 255) | Gradient end, tertiary accent |
-| Quaternary | Blue | #377BFF | rgb(55, 123, 255) | UI backgrounds, link color, data visualization, alternate accent |
+| Quaternary | Blue | #165DFC | rgb(22, 93, 252) | Solid buttons (preferred), UI backgrounds, link color, data visualization |
 
 ### Neutral Palette
 
@@ -315,9 +315,10 @@ Buttons come in three sizes. Use the appropriate size for the context.
 | Context | Style | Size | Width |
 |---------|-------|------|-------|
 | Form submit ("Sign In") | CTA gradient | lg (48px) | Full width |
+| Standard action ("+ Create", "Save") | Solid Finitless Blue (#165DFC) | md (44px) | Auto |
 | OAuth / social login | Secondary (glass bg + border) | lg (48px) | Full width |
 | Hero CTA | CTA gradient | md or lg | Auto |
-| Card action | Secondary or text link | md (44px) | Auto |
+| Card action | Solid blue or secondary | md (44px) | Auto |
 | Destructive ("Delete") | Solid #ff3b45, white text | md (44px) | Auto |
 | Tertiary / ghost | Transparent bg, text-[#00B7FF] | md (44px) | Auto |
 
@@ -487,7 +488,7 @@ The placeholder option (e.g., "Please select...") should be visually distinct an
 
 ### Form Don'ts
 
-- Don't use flat solid blue or cyan for any button.
+- Don't use non-brand solid colors (#2563eb, etc.) or flat solid cyan for buttons. Use Finitless Blue (#165DFC) for solid action buttons.
 - Don't use the CTA gradient on more than one button per view.
 - Don't leave inputs with browser default styling.
 - Don't use white or light backgrounds on inputs.

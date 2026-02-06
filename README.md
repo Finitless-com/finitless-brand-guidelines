@@ -34,7 +34,7 @@ The Finitless mark merges the letter "N" with an infinity symbol into one icon, 
 | | Cyan | `#00B7FF` | Primary accent, links, CTAs |
 | | Purple | `#7A2EFF` | Gradient midpoint, secondary accent |
 | | Magenta | `#C300FF` | Gradient end, tertiary accent |
-| | Blue | `#377BFF` | UI backgrounds, link color, data viz |
+| | Blue | `#165DFC` | Solid buttons (preferred), UI backgrounds, link color |
 | | Background | `#0a0a0a` | Near-black, primary background |
 | | White | `#FFFFFF` | Primary text on dark backgrounds |
 | | Error | `#ff3b45` | Error states |

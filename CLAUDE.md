@@ -112,7 +112,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
 | primary (cyan) | #00B7FF | Links, CTAs, primary accent |
 | secondary (purple) | #7A2EFF | Gradient midpoint, secondary accent |
 | tertiary (magenta) | #C300FF | Gradient end, decorative |
-| blue | #377BFF | UI backgrounds, link color, data viz, alternate accent |
+| blue | #165DFC | Solid buttons (preferred), UI backgrounds, link color, data viz |
 | background | #0a0a0a | Primary dark background |
 | black | #000000 | Maximum contrast |
 | white | #FFFFFF | Text on dark backgrounds |
@@ -128,7 +128,7 @@ If a `brand-manifest.json` file exists at the repository root or is deployed to 
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
-  --color-blue: #377BFF;
+  --color-blue: #165DFC;
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;
@@ -156,7 +156,7 @@ colors: {
     cyan: '#00B7FF',
     purple: '#7A2EFF',
     magenta: '#C300FF',
-    blue: '#377BFF',
+    blue: '#165DFC',
   },
   surface: {
     DEFAULT: '#0a0a0a',
@@ -172,7 +172,7 @@ const brandColors = {
   primary: '#00B7FF',
   secondary: '#7A2EFF',
   tertiary: '#C300FF',
-  blue: '#377BFF',
+  blue: '#165DFC',
   background: '#0a0a0a',
   white: '#FFFFFF',
   error: '#ff3b45',
@@ -267,7 +267,8 @@ When generating copy for Finitless:
 | Default background | `#0a0a0a` (dark-mode-first) |
 | Card | `bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm` |
 | Card hover | `hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10` |
-| Primary button | `bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold` -- only ONE per view |
+| Primary button (gradient) | `bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold` -- only ONE per view (hero/form submit) |
+| Solid button (preferred) | `bg-[#165DFC] rounded-xl text-white font-semibold` -- preferred for standard actions (+ Create, Save, Add) |
 | Secondary button | `border border-white/20 bg-white/5 rounded-xl text-white` |
 | Button sizes | sm: `h-9` (36px), md: `h-11` (44px, default), lg: `h-12` (48px, forms/hero) |
 | Form input | `w-full h-12 px-4 text-base text-white bg-white/5 border border-white/10 rounded-xl placeholder:text-white/40 focus:border-[#00B7FF]/50` |
@@ -297,11 +298,11 @@ When generating copy for Finitless:
 
 | Component | Never Do |
 |-----------|----------|
-| Buttons | Flat solid blue (#2563eb) or flat solid cyan (#00B7FF), radius below 8px, Arial/system font, height below 36px, multiple gradient buttons on one page |
+| Buttons | Non-brand solid colors (#2563eb, etc.) or flat solid cyan (#00B7FF) as button bg, radius below 8px, Arial/system font, height below 36px, multiple gradient buttons on one page. Use Finitless Blue (#165DFC) for solid buttons. |
 | Cards | Solid white backgrounds, sharp corners (0px radius), missing hover state |
 | Gradient text | Omit cyan stop, use top-to-bottom direction, apply to body copy |
 | Form inputs | Unstyled browser defaults, white/light backgrounds, missing focus state, font-size below 16px, radius below 8px |
-| Form buttons | Flat solid color for primary submit (use CTA gradient), gradient on OAuth buttons (use secondary pattern) |
+| Form buttons | Flat solid cyan or non-brand color for primary submit (use CTA gradient), gradient on OAuth buttons (use secondary pattern). Finitless Blue (#165DFC) is for standard actions, not form submit. |
 | Logo in forms | Rendering from a font (BEASIGNE or other) -- always use `<img>` with horizontal logo asset |
 | Select / Dropdown | Native browser `<select>` without custom styling, brand gradient as hover/selected bg on options, same background as page for dropdown panel, missing option padding |
 

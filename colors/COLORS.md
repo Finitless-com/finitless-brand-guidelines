@@ -11,7 +11,7 @@ Complete color specification for the Finitless brand. This document covers the p
 | Primary | Cyan | #00B7FF | rgb(0, 183, 255) | hsl(197, 100%, 50%) | Main brand color, links, CTAs, primary accent |
 | Secondary | Purple | #7A2EFF | rgb(122, 46, 255) | hsl(262, 100%, 59%) | Gradient midpoint, secondary accent, hover states |
 | Tertiary | Magenta | #C300FF | rgb(195, 0, 255) | hsl(286, 100%, 50%) | Gradient end, tertiary accent, decorative elements |
-| Quaternary | Blue | #377BFF | rgb(55, 123, 255) | hsl(220, 100%, 61%) | UI backgrounds, link color, data visualization, alternate accent |
+| Quaternary | Blue | #165DFC | rgb(22, 93, 252) | hsl(222, 97%, 54%) | Solid buttons (preferred), UI backgrounds, link color, data visualization |
 
 ### Original Designer Specification (from brand PDF)
 
@@ -83,7 +83,7 @@ Reference screenshot: `assets/reference/hubspot-brand-colors.png`
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
-  --color-blue: #377BFF;
+  --color-blue: #165DFC;
 
   /* Neutral */
   --color-background: #0a0a0a;
@@ -127,7 +127,7 @@ module.exports = {
           cyan: '#00B7FF',
           purple: '#7A2EFF',
           magenta: '#C300FF',
-          blue: '#377BFF',
+          blue: '#165DFC',
         },
         surface: {
           DEFAULT: '#0a0a0a',

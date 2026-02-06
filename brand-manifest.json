@@ -1,6 +1,6 @@
 {
   "$schema": "https://brand-guidelines.finitless.com/schema/v1",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "lastUpdated": "2026-02-06",
   "baseUrl": "https://brand.finitless.com/",
 
@@ -61,7 +61,7 @@
       "cyan": { "hex": "#00B7FF", "rgb": [0, 183, 255], "hsl": [197, 100, 50], "name": "Finitless Cyan", "usage": "Primary accent, links, CTAs, gradient start" },
       "purple": { "hex": "#7A2EFF", "rgb": [122, 46, 255], "hsl": [262, 100, 59], "name": "Finitless Purple", "usage": "Gradient midpoint, secondary accent" },
       "magenta": { "hex": "#C300FF", "rgb": [195, 0, 255], "hsl": [286, 100, 50], "name": "Finitless Magenta", "usage": "Gradient end, tertiary accent" },
-      "blue": { "hex": "#377BFF", "rgb": [55, 123, 255], "hsl": [220, 100, 61], "name": "Finitless Blue", "usage": "UI backgrounds, link color, data visualization, alternate accent" }
+      "blue": { "hex": "#165DFC", "rgb": [22, 93, 252], "hsl": [222, 97, 54], "name": "Finitless Blue", "usage": "Solid buttons (preferred), UI backgrounds, link color, data visualization" }
     },
     "neutral": {
       "black": { "hex": "#000000", "rgb": [0, 0, 0], "usage": "Pure black, maximum contrast" },
@@ -184,6 +184,11 @@
       "tailwind": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold",
       "css": "background: linear-gradient(to right, #00B7FF, #7A2EFF); border-radius: 12px; color: #fff; font-weight: 600;"
     },
+    "buttonSolid": {
+      "tailwind": "bg-[#165DFC] rounded-xl text-white font-semibold",
+      "css": "background: #165DFC; border-radius: 12px; color: #fff; font-weight: 600;",
+      "note": "Preferred for standard action buttons. Use instead of gradient for most UI buttons."
+    },
     "buttonSecondary": {
       "tailwind": "border border-white/20 bg-white/5 rounded-xl text-white",
       "css": "border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); border-radius: 12px; color: #fff;"
@@ -195,9 +200,10 @@
     },
     "buttonContextGuide": {
       "formSubmit": { "style": "buttonPrimary (CTA gradient)", "size": "lg", "width": "full", "note": "Only ONE gradient button per view — the primary action" },
+      "standardAction": { "style": "buttonSolid (Finitless Blue #165DFC)", "size": "md", "width": "auto", "note": "Preferred for most UI buttons — e.g. + Create, Save, Add" },
       "oauthSocial": { "style": "buttonSecondary (glass bg + border)", "size": "lg", "width": "full" },
       "heroCTA": { "style": "buttonPrimary (CTA gradient)", "size": "md or lg", "width": "auto" },
-      "cardAction": { "style": "buttonSecondary or text link", "size": "md", "width": "auto" },
+      "cardAction": { "style": "buttonSolid or buttonSecondary", "size": "md", "width": "auto" },
       "destructive": { "style": "bg-[#ff3b45] solid, white text", "size": "md", "width": "auto" },
       "tertiary": { "style": "transparent bg, text-[#00B7FF]", "size": "md", "width": "auto" }
     },
@@ -284,7 +290,7 @@
     "glowEffect": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)",
     "antiPatterns": {
       "buttons": [
-        "Never use flat solid blue (#2563eb) — always use CTA gradient",
+        "Never use non-brand solid colors (#2563eb, etc.) — use Finitless Blue (#165DFC) for solid buttons or CTA gradient for primary actions",
         "Never use border-radius below 8px — minimum is 8px, default 12px",
         "Never use Arial or system default — always use Inter"
       ],
@@ -306,7 +312,7 @@
         "Never use font-size below 16px in inputs — prevents iOS zoom"
       ],
       "formButtons": [
-        "Never use flat solid blue or flat solid cyan for the primary submit — always use CTA gradient",
+        "Never use flat solid cyan or non-brand blues for the primary submit — always use CTA gradient. Finitless Blue (#165DFC) is for standard actions, not form submit",
         "Never use the CTA gradient for OAuth/social buttons — those use the secondary button pattern",
         "Never place multiple gradient buttons on one page — only ONE gradient button (primary action)",
         "Never use colors outside the brand palette for any button",

@@ -35,7 +35,7 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
 | cyan (primary) | #00B7FF | rgb(0, 183, 255) |
 | purple (secondary) | #7A2EFF | rgb(122, 46, 255) |
 | magenta (tertiary) | #C300FF | rgb(195, 0, 255) |
-| blue | #377BFF | rgb(55, 123, 255) |
+| blue | #165DFC | rgb(22, 93, 252) |
 
 *The brand gradient uses cyan, purple, and magenta (see Gradients section below).*
 
@@ -71,7 +71,7 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
   --color-primary: #00B7FF;
   --color-secondary: #7A2EFF;
   --color-tertiary: #C300FF;
-  --color-blue: #377BFF;
+  --color-blue: #165DFC;
   --color-background: #0a0a0a;
   --color-black: #000000;
   --color-white: #FFFFFF;
@@ -135,8 +135,9 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 1. **Dark-mode-first**: Always default to `background-color: #0a0a0a` with white text.
 2. **Cards**: Use `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.1)`, `border-radius: 12px`, and `backdrop-filter: blur(4px)`.
 3. **Hover states**: On cards, add `border-color: rgba(0,183,255,0.5)` and `box-shadow: 0 4px 20px rgba(0,183,255,0.1)`.
-4. **Primary buttons**: Use the CTA gradient (`#00B7FF` to `#7A2EFF`), `border-radius: 12px`, white text, `font-weight: 600`. Only ONE gradient button per view.
-5. **Secondary buttons**: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.2)`, `border-radius: 12px`, white text.
+4. **Primary buttons (gradient)**: Use the CTA gradient (`#00B7FF` to `#7A2EFF`), `border-radius: 12px`, white text, `font-weight: 600`. Only ONE gradient button per view (hero/form submit).
+5. **Solid buttons (preferred)**: Use Finitless Blue (`#165DFC`), `border-radius: 12px`, white text, `font-weight: 600`. Preferred for standard UI actions (+ Create, Save, Add).
+6. **Secondary buttons**: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.2)`, `border-radius: 12px`, white text.
 6. **Button sizes**: sm `36px` / md `44px` (default) / lg `48px` (forms, hero). Full-width in forms and modals.
 7. **Form inputs**: `bg-white/5`, `border-white/10`, `rounded-xl`, `h-12`, `text-base`, `placeholder:text-white/40`. Focus: cyan border glow.
 8. **Form labels**: `text-sm font-semibold text-white/70 mb-2`.
@@ -309,8 +310,11 @@ Custom-styled dropdowns. Never use native browser `<select>` without restyling.
 <div class="bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm p-6
             hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10 transition-all">
 
-<!-- Primary button -->
+<!-- Primary button (gradient — hero/form submit, ONE per view) -->
 <button class="bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold px-6 py-3">
+
+<!-- Solid button (PREFERRED for standard actions) -->
+<button class="bg-[#165DFC] rounded-xl text-white font-semibold px-6 py-3">
 
 <!-- Secondary button -->
 <button class="border border-white/20 bg-white/5 rounded-xl text-white px-6 py-3">
@@ -447,12 +451,12 @@ Custom-styled dropdowns. Never use native browser `<select>` without restyling.
 
 ## Anti-Patterns (Never Do)
 
-**Buttons**: Never use flat solid blue (#2563eb) or flat solid cyan (#00B7FF). Always use CTA gradient for primary, secondary pattern for others. Never below 36px height. Only ONE gradient button per view.
+**Buttons**: Never use non-brand solid colors (#2563eb, etc.) or flat solid cyan (#00B7FF) as button bg. Use Finitless Blue (#165DFC) for solid action buttons, CTA gradient for primary hero/form submit. Never below 36px height. Only ONE gradient button per view.
 **Cards**: Never use solid white backgrounds, sharp corners (0px), or omit hover states.
 **Gradient text**: Never omit the cyan stop, use top-to-bottom direction, or apply to body copy.
 **Form inputs**: Never use unstyled browser defaults. Always apply dark glass background (`bg-white/5`), 12px radius, and cyan focus glow. Never use font-size below 16px (prevents iOS zoom).
 **Select / Dropdown**: Never use the native browser `<select>` without custom styling. Never use the brand gradient as hover/selected background on options -- use subtle `bg-[#00B7FF]/12` tint. Dropdown panel must be elevated (`bg-white/[0.08]`, not same as page). Always include padding between options.
-**Form buttons**: Never use flat solid colors for the primary submit — always CTA gradient, full width. OAuth/social buttons use the secondary pattern, never the gradient.
+**Form buttons**: Never use flat solid colors for the primary form submit — always CTA gradient, full width. Finitless Blue (#165DFC) is for standard actions, not form submit. OAuth/social buttons use the secondary pattern, never the gradient.
 **Logo in forms**: Never render the logo as text or from a font. Always use `<img>` with the horizontal logo asset.
 
 ---
