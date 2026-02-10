@@ -45,8 +45,7 @@ const DropdownMenuSubContent = React.forwardRef<
     ref={ref}
     className={cn(
       'z-50 min-w-[8rem] overflow-hidden',
-      'bg-surface-hover/95 backdrop-blur-xl',
-      'border border-border-strong rounded-[12px]',
+      'bg-background-surface border border-border-strong rounded-[12px]',
       'p-1 shadow-dropdown',
       'data-[state=open]:animate-in data-[state=closed]:animate-out',
       'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
@@ -72,8 +71,7 @@ const DropdownMenuContent = React.forwardRef<
       sideOffset={sideOffset}
       className={cn(
         'z-50 min-w-[8rem] overflow-hidden',
-        'bg-surface-hover/95 backdrop-blur-xl',
-        'border border-border-strong rounded-[12px]',
+        'bg-background-surface border border-border-strong rounded-[12px]',
         'p-1 shadow-dropdown',
         'data-[state=open]:animate-in data-[state=closed]:animate-out',
         'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',

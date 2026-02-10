@@ -48,11 +48,11 @@ export function Navigation() {
         <div className="flex items-center justify-between px-4 h-14">
           <Link href="/">
             <img
-              src={`${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-200w.png`}
+              src={`${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png`}
               srcSet={`
-                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-200w.png 1x,
-                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-300w.png 1.5x,
-                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png 2x
+                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-300w.png 1x,
+                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png 1.5x,
+                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-800w.png 2x
               `}
               alt="Finitless"
               className="h-6 w-auto"
@@ -124,14 +124,14 @@ export function Navigation() {
         <div className="h-16 flex items-center px-6 border-b border-border">
           <Link href="/">
             <img
-              src={`${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-200w.png`}
+              src={`${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png`}
               srcSet={`
-                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-200w.png 1x,
-                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-300w.png 1.5x,
-                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png 2x
+                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-300w.png 1x,
+                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png 1.5x,
+                ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-800w.png 2x
               `}
               alt="Finitless"
-              className="h-6 w-auto"
+              className="max-w-full h-auto"
             />
           </Link>
         </div>

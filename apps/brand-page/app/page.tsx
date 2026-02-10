@@ -149,7 +149,7 @@ export default function OverviewPage() {
       {/* Hero */}
       <section className="py-16 lg:py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="primary" className="mb-6">v4.0.0</Badge>
+          <Badge variant="primary" className="mb-6">v0.0.1</Badge>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
             <GradientText>Finitless Design System</GradientText>
           </h1>
@@ -253,18 +253,8 @@ export default {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <img
-            src={`${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-200w.png`}
-            srcSet={`
-              ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-200w.png 1x,
-              ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-300w.png 1.5x,
-              ${BRAND_BASE_URL}/assets/logos/finitless-logo-horizontal-on-dark-480w.png 2x
-            `}
-            alt="Finitless"
-            className="h-6 w-auto"
-          />
+      <footer className="py-8 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto text-center">
           <p className="text-sm text-text-muted">
             &copy; {new Date().getFullYear()} Finitless. All rights reserved.
           </p>

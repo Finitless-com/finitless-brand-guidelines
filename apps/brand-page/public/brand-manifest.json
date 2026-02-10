@@ -1,6 +1,6 @@
 {
-  "$schema": "https://brand.finitless.com/schema/v4",
-  "version": "4.0.0",
+  "$schema": "https://brand.finitless.com/schema/v0",
+  "version": "0.0.1",
   "lastUpdated": "2026-02-10",
   "baseUrl": "https://brand.finitless.com/",
 
@@ -99,7 +99,7 @@
     "xl": "24px",
     "full": "9999px",
     "default": "12px",
-    "note": "v4.0.0: Simplified scale. Universal default is 12px."
+    "note": "v0.0.1: Simplified scale. Universal default is 12px."
   },
 
   "motion": {

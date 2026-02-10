@@ -107,7 +107,7 @@ export default function SpacingPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Border Radius</h2>
           <p className="text-text-muted mb-6">
-            Simplified in v4.0.0 — the universal default is 12px for all UI elements.
+            Simplified in v0.0.1 — the universal default is 12px for all UI elements.
           </p>
           <GlassCard>
             <div className="space-y-4">
@@ -213,7 +213,7 @@ export default function SpacingPage() {
   --space-3xl: 64px;
   --space-4xl: 96px;
 
-  /* Border Radius (v4.0.0) */
+  /* Border Radius (v0.0.1) */
   --radius-sm: 8px;
   --radius-md: 12px;    /* Universal default */
   --radius-lg: 16px;

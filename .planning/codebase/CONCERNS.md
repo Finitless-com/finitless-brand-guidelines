@@ -79,7 +79,7 @@
 **Missing NPM Package Deployment Workflow:**
 - Issue: Design system should be published to npm, but no CI/CD pipeline configured
 - Files: `packages/design-system/package.json` (version 0.0.1 - never published)
-- Impact: Latest design system (v4.0.0) not available to other projects; must depend on local workspace
+- Impact: Latest design system (v0.0.1) not available to other projects; must depend on local workspace
 - Current state: Last published version is v0.0.1 (per package.json)
 - Fix approach: Add GitHub Actions workflow to publish to npm on version bump or tag
 - Priority: **MEDIUM** - blocks external project usage

@@ -319,7 +319,7 @@ export default function ComponentsPage() {
                 <pre className="bg-background-deep rounded-lg p-4 overflow-x-auto text-sm">
 {`import { Badge, StatusBadge } from '@finitless/design-system';
 
-<Badge variant="primary">v4.0.0</Badge>
+<Badge variant="primary">v0.0.1</Badge>
 <StatusBadge status="live" />
 <StatusBadge status="error">Connection Failed</StatusBadge>`}
                 </pre>
