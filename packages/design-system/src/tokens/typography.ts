@@ -1,8 +1,8 @@
 /**
- * Finitless Design System - Typography Tokens
+ * Finitless Design System - Typography Tokens v0.1.0
  *
- * The Finitless brand uses Inter as the primary typeface.
- * These tokens define the complete type scale.
+ * Enhanced typography system with Geist-inspired numbered heading scale,
+ * button typography, label typography, and copy typography.
  */
 
 // ============================================================================
@@ -17,7 +17,7 @@ export const fontFamily = {
 } as const;
 
 // ============================================================================
-// FONT SIZES
+// FONT SIZES (Standard Scale)
 // ============================================================================
 
 export const fontSize = {
@@ -105,18 +105,190 @@ export const fontWeight = {
 // ============================================================================
 
 export const letterSpacing = {
-  /** Tight - Headlines */
-  tight: '-0.025em',
+  /** Tightest - Large display */
+  tightest: '-0.04em',
+  /** Tighter - Large headings */
+  tighter: '-0.03em',
+  /** Tight - Medium headings */
+  tight: '-0.02em',
+  /** Slightly tight - Small headings */
+  snug: '-0.01em',
   /** Normal - Body text */
   normal: '0',
   /** Wide - Uppercase labels */
-  wide: '0.025em',
+  wide: '0.02em',
   /** Wider - All caps, small text */
   wider: '0.05em',
 } as const;
 
 // ============================================================================
-// TYPE SCALE PRESETS
+// HEADING SCALE (Geist-Inspired Numbered System)
+// ============================================================================
+
+export const heading = {
+  /** 72px - Hero display */
+  72: {
+    fontSize: '72px',
+    lineHeight: '76px',
+    letterSpacing: '-0.04em',
+    fontWeight: 700,
+  },
+  /** 64px - Large hero */
+  64: {
+    fontSize: '64px',
+    lineHeight: '68px',
+    letterSpacing: '-0.04em',
+    fontWeight: 700,
+  },
+  /** 56px - Hero secondary */
+  56: {
+    fontSize: '56px',
+    lineHeight: '60px',
+    letterSpacing: '-0.03em',
+    fontWeight: 700,
+  },
+  /** 48px - Page title */
+  48: {
+    fontSize: '48px',
+    lineHeight: '52px',
+    letterSpacing: '-0.03em',
+    fontWeight: 700,
+  },
+  /** 40px - Large section */
+  40: {
+    fontSize: '40px',
+    lineHeight: '44px',
+    letterSpacing: '-0.02em',
+    fontWeight: 600,
+  },
+  /** 32px - Section heading */
+  32: {
+    fontSize: '32px',
+    lineHeight: '40px',
+    letterSpacing: '-0.02em',
+    fontWeight: 600,
+  },
+  /** 24px - Subsection */
+  24: {
+    fontSize: '24px',
+    lineHeight: '32px',
+    letterSpacing: '-0.01em',
+    fontWeight: 600,
+  },
+  /** 20px - Card title */
+  20: {
+    fontSize: '20px',
+    lineHeight: '28px',
+    letterSpacing: '-0.01em',
+    fontWeight: 500,
+  },
+  /** 16px - Component title */
+  16: {
+    fontSize: '16px',
+    lineHeight: '24px',
+    letterSpacing: '0',
+    fontWeight: 500,
+  },
+  /** 14px - Small title */
+  14: {
+    fontSize: '14px',
+    lineHeight: '20px',
+    letterSpacing: '0',
+    fontWeight: 500,
+  },
+} as const;
+
+// ============================================================================
+// BUTTON TYPOGRAPHY
+// ============================================================================
+
+export const button = {
+  /** 16px - Large button */
+  16: {
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontWeight: 600,
+  },
+  /** 14px - Default button */
+  14: {
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: 600,
+  },
+  /** 12px - Small/inline button */
+  12: {
+    fontSize: '12px',
+    lineHeight: '16px',
+    fontWeight: 600,
+  },
+} as const;
+
+// ============================================================================
+// LABEL TYPOGRAPHY
+// ============================================================================
+
+export const label = {
+  /** 16px - Large label */
+  16: {
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontWeight: 500,
+  },
+  /** 14px - Default label */
+  14: {
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: 500,
+  },
+  /** 12px - Small label */
+  12: {
+    fontSize: '12px',
+    lineHeight: '16px',
+    fontWeight: 500,
+    letterSpacing: '0.02em',
+  },
+  /** 11px - Micro label */
+  11: {
+    fontSize: '11px',
+    lineHeight: '14px',
+    fontWeight: 500,
+    letterSpacing: '0.02em',
+  },
+} as const;
+
+// ============================================================================
+// COPY TYPOGRAPHY (Paragraphs)
+// ============================================================================
+
+export const copy = {
+  /** 20px - Lead paragraph */
+  20: {
+    fontSize: '20px',
+    lineHeight: '32px',
+    fontWeight: 400,
+  },
+  /** 16px - Default paragraph */
+  16: {
+    fontSize: '16px',
+    lineHeight: '26px',
+    fontWeight: 400,
+  },
+  /** 14px - Secondary paragraph */
+  14: {
+    fontSize: '14px',
+    lineHeight: '22px',
+    fontWeight: 400,
+  },
+  /** 12px - Small text */
+  12: {
+    fontSize: '12px',
+    lineHeight: '18px',
+    fontWeight: 400,
+  },
+} as const;
+
+// ============================================================================
+// TYPE SCALE PRESETS (Legacy compatibility)
 // ============================================================================
 
 export const typePresets = {
@@ -125,14 +297,14 @@ export const typePresets = {
     fontSize: fontSize['6xl'].size,
     fontWeight: fontWeight.extrabold,
     lineHeight: fontSize['6xl'].lineHeight,
-    letterSpacing: letterSpacing.tight,
+    letterSpacing: letterSpacing.tightest,
   },
   /** Page headline - 48px bold */
   h1: {
     fontSize: fontSize['5xl'].size,
     fontWeight: fontWeight.bold,
     lineHeight: fontSize['5xl'].lineHeight,
-    letterSpacing: letterSpacing.tight,
+    letterSpacing: letterSpacing.tighter,
   },
   /** Section headline - 36px bold */
   h2: {
@@ -146,24 +318,28 @@ export const typePresets = {
     fontSize: fontSize['3xl'].size,
     fontWeight: fontWeight.semibold,
     lineHeight: fontSize['3xl'].lineHeight,
+    letterSpacing: letterSpacing.snug,
   },
   /** Card headline - 24px semibold */
   h4: {
     fontSize: fontSize['2xl'].size,
     fontWeight: fontWeight.semibold,
     lineHeight: fontSize['2xl'].lineHeight,
+    letterSpacing: letterSpacing.snug,
   },
   /** Component headline - 20px semibold */
   h5: {
     fontSize: fontSize.xl.size,
     fontWeight: fontWeight.semibold,
     lineHeight: fontSize.xl.lineHeight,
+    letterSpacing: letterSpacing.normal,
   },
   /** Small headline - 18px semibold */
   h6: {
     fontSize: fontSize.lg.size,
     fontWeight: fontWeight.semibold,
     lineHeight: fontSize.lg.lineHeight,
+    letterSpacing: letterSpacing.normal,
   },
   /** Lead paragraph - 18px normal */
   lead: {
@@ -224,8 +400,44 @@ export const cssSnippets = {
   cssImport: `@import url('${googleFontsUrl}');`,
 
   /** CSS font-family declaration */
-  fontFamilyCSS: `font-family: ${fontFamily.sans.map(f => f.includes(' ') ? `'${f}'` : f).join(', ')};`,
+  fontFamilyCSS: `font-family: ${fontFamily.sans.map((f) => (f.includes(' ') ? `'${f}'` : f)).join(', ')};`,
 };
+
+// ============================================================================
+// TAILWIND CLASS HELPERS
+// ============================================================================
+
+/**
+ * Get Tailwind class for heading size
+ * @example getHeadingClass(32) // 'text-heading-32'
+ */
+export function getHeadingClass(size: keyof typeof heading): string {
+  return `text-heading-${size}`;
+}
+
+/**
+ * Get Tailwind class for button typography
+ * @example getButtonClass(14) // 'text-button-14'
+ */
+export function getButtonClass(size: keyof typeof button): string {
+  return `text-button-${size}`;
+}
+
+/**
+ * Get Tailwind class for label typography
+ * @example getLabelClass(12) // 'text-label-12'
+ */
+export function getLabelClass(size: keyof typeof label): string {
+  return `text-label-${size}`;
+}
+
+/**
+ * Get Tailwind class for copy typography
+ * @example getCopyClass(16) // 'text-copy-16'
+ */
+export function getCopyClass(size: keyof typeof copy): string {
+  return `text-copy-${size}`;
+}
 
 // ============================================================================
 // EXPORTS
@@ -236,9 +448,21 @@ export const typography = {
   fontSize,
   fontWeight,
   letterSpacing,
+  // New Geist-inspired scales
+  heading,
+  button,
+  label,
+  copy,
+  // Legacy presets
   presets: typePresets,
+  // Utilities
   googleFontsUrl,
   cssSnippets,
+  // Helpers
+  getHeadingClass,
+  getButtonClass,
+  getLabelClass,
+  getCopyClass,
 } as const;
 
 export default typography;

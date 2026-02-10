@@ -79,3 +79,34 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
 } from './dropdown-menu';
+
+// New v0.1.0 components
+export {
+  Progress,
+  CircularProgress,
+  progressVariants,
+  progressIndicatorVariants,
+  type ProgressProps,
+  type CircularProgressProps,
+} from './progress';
+
+export { ScrollArea, type ScrollAreaProps } from './scroll-area';
+
+export {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  type CollapsibleProps,
+  type CollapsibleTriggerProps,
+  type CollapsibleContentProps,
+  type AccordionProps,
+  type AccordionItemProps,
+  type AccordionTriggerProps,
+} from './collapsible';
+
+// Re-export LoadingSpinner from button
+export { LoadingSpinner } from './button';

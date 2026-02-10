@@ -117,6 +117,36 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
+
+  // Progress
+  Progress,
+  CircularProgress,
+  progressVariants,
+  progressIndicatorVariants,
+  type ProgressProps,
+  type CircularProgressProps,
+
+  // ScrollArea
+  ScrollArea,
+  type ScrollAreaProps,
+
+  // Collapsible/Accordion
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  type CollapsibleProps,
+  type CollapsibleTriggerProps,
+  type CollapsibleContentProps,
+  type AccordionProps,
+  type AccordionItemProps,
+  type AccordionTriggerProps,
+
+  // Utility components
+  LoadingSpinner,
 } from './components/ui';
 
 // ============================================================================
@@ -161,6 +191,17 @@ export {
   semantic,
   gradients,
   cssVariables,
+  // v0.1.0 color scales
+  gray,
+  grayAlpha,
+  blue,
+  cyan,
+  purple,
+  magenta,
+  red,
+  green,
+  amber,
+  teal,
 } from './tokens/colors';
 
 export {
@@ -172,7 +213,28 @@ export {
   typePresets,
   googleFontsUrl,
   cssSnippets,
+  // v0.1.0 typography scales
+  heading,
+  button,
+  label,
+  copy,
+  getHeadingClass,
+  getButtonClass,
+  getLabelClass,
+  getCopyClass,
 } from './tokens/typography';
+
+export {
+  motion,
+  duration,
+  easing,
+  transition,
+  animation,
+  delay,
+  spring,
+  keyframes,
+  getAnimationClass,
+} from './tokens/motion';
 
 export {
   layout,
