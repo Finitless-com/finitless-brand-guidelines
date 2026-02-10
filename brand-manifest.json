@@ -1,7 +1,7 @@
 {
   "$schema": "https://brand-guidelines.finitless.com/schema/v1",
-  "version": "2.5.0",
-  "lastUpdated": "2026-02-06",
+  "version": "3.0.0",
+  "lastUpdated": "2026-02-10",
   "baseUrl": "https://brand.finitless.com/",
 
   "company": {
@@ -65,12 +65,17 @@
     },
     "neutral": {
       "black": { "hex": "#000000", "rgb": [0, 0, 0], "usage": "Pure black, maximum contrast" },
-      "background": { "hex": "#0a0a0a", "rgb": [10, 10, 10], "usage": "Primary dark background" },
-      "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "Primary text on dark, light backgrounds" }
+      "backgroundDeep": { "hex": "#08080a", "rgb": [8, 8, 10], "tailwind": "bg-[#08080a]", "usage": "Sidebar, navigation, deepest layer" },
+      "background": { "hex": "#0e0e10", "rgb": [14, 14, 16], "tailwind": "bg-[#0e0e10]", "usage": "Primary page background (warmer than pure black)" },
+      "backgroundElevated": { "hex": "#151517", "rgb": [21, 21, 23], "tailwind": "bg-[#151517]", "usage": "Cards, modals, elevated surfaces" },
+      "backgroundSurface": { "hex": "#1c1c1f", "rgb": [28, 28, 31], "tailwind": "bg-[#1c1c1f]", "usage": "Dropdown panels, popovers, highest elevation" },
+      "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "Primary text on dark, light backgrounds" },
+      "legacyBackground": { "hex": "#0a0a0a", "rgb": [10, 10, 10], "usage": "DEPRECATED: Use background (#0e0e10) instead" }
     },
     "surface": {
-      "cardBackground": { "value": "rgba(255,255,255,0.05)", "tailwind": "bg-white/5" },
-      "border": { "value": "rgba(255,255,255,0.10)", "tailwind": "border-white/10" },
+      "cardBackground": { "value": "rgba(255,255,255,0.04)", "tailwind": "bg-white/[0.04]", "note": "Updated from 5% to 4% for subtler glass effect" },
+      "border": { "value": "rgba(255,255,255,0.06)", "tailwind": "border-white/[0.06]", "note": "Updated from 10% to 6% for subtler borders" },
+      "borderStrong": { "value": "rgba(255,255,255,0.10)", "tailwind": "border-white/10", "note": "Use for emphasis or dividers" },
       "mutedText": { "value": "rgba(255,255,255,0.60)", "tailwind": "text-white/60" }
     },
     "semantic": {
@@ -170,15 +175,23 @@
 
   "visualIdentity": {
     "theme": "Dark-mode-first",
-    "backgrounds": ["#000000 (pure black)", "#0a0a0a (near-black, preferred)"],
+    "backgrounds": {
+      "note": "Layered background system for visual depth. Warmer off-black is easier on eyes and feels more premium.",
+      "deep": "#08080a",
+      "base": "#0e0e10",
+      "elevated": "#151517",
+      "surface": "#1c1c1f",
+      "legacy": "#0a0a0a"
+    },
     "preferGradientFor": ["Hero headings", "Primary CTAs", "Brand accent moments"],
     "cardStyle": {
-      "tailwind": "bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm",
-      "css": "background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(4px);"
+      "tailwind": "bg-white/[0.04] border border-white/[0.06] rounded-2xl backdrop-blur-lg",
+      "css": "background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; backdrop-filter: blur(8px);",
+      "note": "v3.0.0: Updated to 18px radius, 8px blur, subtler opacity"
     },
     "hoverStyle": {
-      "tailwind": "hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10",
-      "css": "border-color: rgba(0,183,255,0.5); box-shadow: 0 4px 20px rgba(0,183,255,0.1);"
+      "tailwind": "hover:border-[#00B7FF]/40 hover:shadow-lg hover:shadow-[#00B7FF]/10",
+      "css": "border-color: rgba(0,183,255,0.4); box-shadow: 0 4px 20px rgba(0,183,255,0.1);"
     },
     "buttonPrimary": {
       "tailwind": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold",
@@ -285,9 +298,114 @@
       "css": "background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;",
       "usage": "Hero headings and key brand moments only — never on body text"
     },
-    "borderRadius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "24px" },
+    "borderRadius": {
+      "xs": "6px",
+      "sm": "10px",
+      "md": "14px",
+      "lg": "18px",
+      "xl": "24px",
+      "2xl": "32px",
+      "full": "9999px",
+      "note": "v3.0.0: Increased defaults. Cards use lg (18px), inputs/buttons use md (14px)"
+    },
     "spacing": "4px grid: 4, 8, 12, 16, 24, 32, 48, 64, 96",
-    "glowEffect": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)",
+    "glowEffect": {
+      "default": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)",
+      "cta": "box-shadow: 0 0 40px -10px rgba(0, 183, 255, 0.3)",
+      "aiActive": "box-shadow: 0 0 30px rgba(0, 183, 255, 0.15)",
+      "subtle": "box-shadow: inset 0 0 20px rgba(0, 183, 255, 0.08)",
+      "note": "v3.0.0: Added strategic glow variants for AI elements"
+    },
+    "statCard": {
+      "note": "Stat card with left accent border for dashboard metrics",
+      "tailwind": "bg-white/[0.04] border border-white/[0.06] border-l-4 rounded-2xl p-5",
+      "css": "background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid var(--accent-color); border-radius: 18px; padding: 20px;",
+      "accentColors": {
+        "cyan": { "hex": "#00B7FF", "usage": "Revenue, orders, primary metrics" },
+        "success": { "hex": "#22c55e", "usage": "Growth, positive change" },
+        "purple": { "hex": "#7A2EFF", "usage": "AI-related metrics" },
+        "blue": { "hex": "#165DFC", "usage": "General info, neutral metrics" },
+        "warning": { "hex": "#f59e0b", "usage": "Pending, needs attention" },
+        "error": { "hex": "#ff3b45", "usage": "Negative change, problems" }
+      },
+      "example": "<div class=\"bg-white/[0.04] border border-white/[0.06] border-l-4 border-l-[#00B7FF] rounded-2xl p-5\">...</div>"
+    },
+    "iconContainer": {
+      "note": "Icons inside colored semi-transparent containers",
+      "sizes": {
+        "sm": { "container": "36px", "icon": "18px", "tailwind": "w-9 h-9", "iconTailwind": "w-[18px] h-[18px]" },
+        "md": { "container": "48px", "icon": "24px", "tailwind": "w-12 h-12", "iconTailwind": "w-6 h-6" },
+        "lg": { "container": "56px", "icon": "28px", "tailwind": "w-14 h-14", "iconTailwind": "w-7 h-7" }
+      },
+      "backgroundOpacity": "12%",
+      "radius": "14px",
+      "tailwind": "rounded-[14px] flex items-center justify-center",
+      "variants": {
+        "cyan": { "tailwind": "bg-[#00B7FF]/[0.12] text-[#00B7FF]" },
+        "success": { "tailwind": "bg-[#22c55e]/[0.12] text-[#22c55e]" },
+        "purple": { "tailwind": "bg-[#7A2EFF]/[0.12] text-[#7A2EFF]" },
+        "blue": { "tailwind": "bg-[#165DFC]/[0.12] text-[#165DFC]" },
+        "warning": { "tailwind": "bg-[#f59e0b]/[0.12] text-[#f59e0b]" },
+        "error": { "tailwind": "bg-[#ff3b45]/[0.12] text-[#ff3b45]" }
+      }
+    },
+    "periodSelector": {
+      "note": "Tab-style pill buttons for period/filter selection",
+      "container": {
+        "tailwind": "inline-flex bg-white/[0.02] rounded-full p-1 gap-0.5",
+        "css": "display: inline-flex; background: rgba(255,255,255,0.02); border-radius: 9999px; padding: 4px; gap: 2px;"
+      },
+      "tab": {
+        "default": {
+          "tailwind": "px-4 py-2 text-sm font-medium text-white/60 rounded-full transition-colors hover:text-white/80",
+          "css": "padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.60); border-radius: 9999px; transition: color 150ms ease;"
+        },
+        "active": {
+          "tailwind": "px-4 py-2 text-sm font-semibold text-[#00B7FF] bg-[#00B7FF]/[0.12] rounded-full",
+          "css": "padding: 8px 16px; font-size: 14px; font-weight: 600; color: #00B7FF; background: rgba(0,183,255,0.12); border-radius: 9999px;"
+        }
+      }
+    },
+    "sidebar": {
+      "note": "Dashboard sidebar navigation pattern",
+      "container": {
+        "tailwind": "w-60 bg-[#08080a] border-r border-white/[0.04]",
+        "css": "width: 240px; background: #08080a; border-right: 1px solid rgba(255,255,255,0.04);"
+      },
+      "navItem": {
+        "default": {
+          "tailwind": "flex items-center gap-3 h-11 px-4 rounded-xl text-white/60 hover:bg-white/[0.04] hover:text-white/80 font-medium text-[15px] transition-colors",
+          "css": "display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 16px; border-radius: 12px; color: rgba(255,255,255,0.60); font-weight: 500; font-size: 15px; transition: all 150ms ease;"
+        },
+        "active": {
+          "tailwind": "flex items-center gap-3 h-11 px-4 rounded-xl bg-[#00B7FF]/[0.10] text-[#00B7FF] font-medium text-[15px]",
+          "css": "display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 16px; border-radius: 12px; background: rgba(0,183,255,0.10); color: #00B7FF; font-weight: 500; font-size: 15px;"
+        }
+      }
+    },
+    "liveBadge": {
+      "note": "Green pulsing badge for real-time/live status",
+      "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#22c55e]/[0.12] text-[#22c55e] text-xs font-semibold",
+      "css": "display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 9999px; background: rgba(34,197,94,0.12); color: #22c55e; font-size: 12px; font-weight: 600;",
+      "dot": {
+        "tailwind": "w-2 h-2 rounded-full bg-[#22c55e] animate-pulse",
+        "css": "width: 8px; height: 8px; border-radius: 9999px; background: #22c55e; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"
+      }
+    },
+    "changeIndicator": {
+      "note": "Percentage change indicator with directional icon",
+      "positive": {
+        "tailwind": "inline-flex items-center gap-0.5 text-sm font-medium text-[#22c55e]",
+        "badgeTailwind": "inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#22c55e]/[0.12] text-sm font-medium text-[#22c55e]"
+      },
+      "negative": {
+        "tailwind": "inline-flex items-center gap-0.5 text-sm font-medium text-[#ff3b45]",
+        "badgeTailwind": "inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#ff3b45]/[0.12] text-sm font-medium text-[#ff3b45]"
+      },
+      "neutral": {
+        "tailwind": "inline-flex items-center gap-0.5 text-sm font-medium text-white/40"
+      }
+    },
     "antiPatterns": {
       "buttons": [
         "Never use non-brand solid colors (#2563eb, etc.) — use Finitless Blue (#165DFC) for solid buttons or CTA gradient for primary actions",
@@ -366,7 +484,7 @@
     "textures": {
       "patterns": "Subtle dot-grid or line patterns at 5-10% opacity for background texture.",
       "gradientMesh": "Brand colors at 10-20% opacity for depth.",
-      "glassmorphism": "backdrop-filter: blur(4px) with bg-white/5 and border-white/10."
+      "glassmorphism": "backdrop-filter: blur(8px) with bg-white/[0.04] and border-white/[0.06]. v3.0.0: Increased blur for premium frosted glass effect."
     }
   },
 

@@ -502,6 +502,133 @@ The placeholder option (e.g., "Please select...") should be visually distinct an
 
 ---
 
+## 9. Dashboard Components (v3.0.0)
+
+Modern patterns for data-rich dashboard interfaces. Based on 2026 SaaS design trends (Linear, Vercel, Raycast aesthetic).
+
+### Background Layers
+
+Warmer off-black backgrounds create visual depth without shadows. Easier on eyes, more premium feel.
+
+| Layer | Hex | Tailwind | Usage |
+|-------|-----|----------|-------|
+| Deep | #08080a | `bg-[#08080a]` | Sidebar, navigation |
+| Base | #0e0e10 | `bg-[#0e0e10]` | Main page background |
+| Elevated | #151517 | `bg-[#151517]` | Cards, modals |
+| Surface | #1c1c1f | `bg-[#1c1c1f]` | Dropdowns, popovers |
+
+### Updated Surface Tokens
+
+| Token | Old (v2.x) | New (v3.0.0) | Tailwind |
+|-------|-----------|--------------|----------|
+| Card surface | 5% | 4% | `bg-white/[0.04]` |
+| Border | 10% | 6% | `border-white/[0.06]` |
+| Glassmorphism blur | 4px | 8px | `backdrop-blur-lg` |
+
+### Updated Border Radius Scale
+
+| Token | Old (v2.x) | New (v3.0.0) | Usage |
+|-------|-----------|--------------|-------|
+| xs | -- | 6px | Tags, tiny badges |
+| sm | 8px | 10px | Small elements |
+| md | 12px | 14px | Inputs, buttons |
+| lg | 16px | 18px | Cards, panels |
+| xl | 24px | 24px | Large cards, hero |
+| 2xl | -- | 32px | Modals, sheets |
+
+### Stat Card with Accent Border
+
+Cards with left accent borders indicate semantic meaning. Icon containers use 12% opacity backgrounds.
+
+| Property | Value |
+|----------|-------|
+| Background | `rgba(255,255,255,0.04)` |
+| Border | `1px solid rgba(255,255,255,0.06)` |
+| Left border | `4px solid [accent-color]` |
+| Border radius | 18px |
+| Padding | 24px |
+
+**Accent colors by semantic meaning:**
+
+| Meaning | Color | Hex |
+|---------|-------|-----|
+| Primary metrics, revenue | Cyan | #00B7FF |
+| Success, growth | Green | #22c55e |
+| AI-related | Purple | #7A2EFF |
+| General info | Blue | #165DFC |
+| Warning, pending | Amber | #f59e0b |
+| Error, negative | Red | #ff3b45 |
+
+### Icon Containers
+
+Icons inside semi-transparent colored containers.
+
+| Size | Dimensions | Radius |
+|------|------------|--------|
+| sm | 36px | 10px |
+| md | 48px | 14px |
+| lg | 56px | 16px |
+
+| Property | Value |
+|----------|-------|
+| Background | `rgba([icon-color-rgb], 0.12)` |
+| Icon size | 24px (stroke-based, 1.5px width) |
+| Icon color | Same as background accent |
+
+### Period Selector Pills
+
+Tab-style buttons with full pill radius for date range selection.
+
+| Property | Value |
+|----------|-------|
+| Container background | `rgba(255,255,255,0.02)` |
+| Container radius | 9999px (full pill) |
+| Container padding | 4px |
+| Tab padding | 8px 16px |
+| Tab radius | 9999px |
+| Active tab background | `rgba(0,183,255,0.12)` |
+| Active tab color | #00B7FF |
+| Inactive tab color | `rgba(255,255,255,0.6)` |
+
+### Live Badge
+
+Pulsing indicator for real-time status.
+
+| Property | Value |
+|----------|-------|
+| Background | `rgba(34,197,94,0.2)` |
+| Text color | #22c55e |
+| Border radius | 9999px |
+| Padding | 4px 10px |
+| Font size | 12px |
+| Dot size | 6px |
+| Dot animation | pulse 2s infinite |
+
+### Glow System
+
+Strategic glow effects for CTAs and AI elements.
+
+| Element | CSS |
+|---------|-----|
+| CTA glow | `box-shadow: 0 0 40px -10px rgba(0,183,255,0.3)` |
+| AI active glow | `box-shadow: 0 0 30px rgba(0,183,255,0.15)` |
+| Subtle inner glow | `box-shadow: inset 0 0 20px rgba(0,183,255,0.08)` |
+
+### Sidebar Navigation
+
+| Property | Value |
+|----------|-------|
+| Background | #08080a (deep) |
+| Border right | `1px solid rgba(255,255,255,0.04)` |
+| Nav item radius | 12px |
+| Nav item padding | 10px 14px |
+| Hover background | `rgba(255,255,255,0.04)` |
+| Active background | `rgba(0,183,255,0.1)` |
+| Active text color | #00B7FF |
+| Inactive text color | `rgba(255,255,255,0.6)` |
+
+---
+
 ## Asset Checklist
 
 Track which brand assets are present in this repository:
@@ -524,7 +651,7 @@ Track which brand assets are present in this repository:
 - [x] HubSpot color reference screenshot (`assets/reference/hubspot-brand-colors.png`)
 - [x] Icon variants: on-dark, on-light, transparent at 12 sizes each (16-1024px)
 - [x] Logo size variants: horizontal (6 widths), square (5 sizes), rect (4 widths)
-- [x] brand-manifest.json -- machine-readable brand identity (v2.0.0)
+- [x] brand-manifest.json -- machine-readable brand identity (v3.0.0)
 - [x] Interactive brand guidelines page (`index.html`) with copy-to-clipboard and downloads
 - [ ] Logo -- SVG versions of all lockups
 - [ ] Logo -- monochrome (black on white) standalone file

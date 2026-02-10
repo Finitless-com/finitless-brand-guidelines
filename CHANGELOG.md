@@ -4,6 +4,55 @@ All notable changes to the Finitless Brand Guidelines repository.
 
 ---
 
+## [3.0.0] -- 2026-02-10
+
+### Major Visual Update
+
+This release modernizes the design system based on 2026 SaaS design trends (Linear, Vercel, Raycast aesthetic). Key changes include warmer backgrounds, larger border radius, enhanced glassmorphism, and new dashboard component patterns.
+
+### Changed
+
+- **Background system**: Replaced flat `#0a0a0a` with layered warm off-black system:
+  - Deep: `#08080a` (sidebar, navigation)
+  - Base: `#0e0e10` (main page background)
+  - Elevated: `#151517` (cards, modals)
+  - Surface: `#1c1c1f` (dropdowns, popovers)
+- **Border radius scale**: Increased defaults for softer, more modern feel:
+  - xs: 6px, sm: 10px, md: 14px, lg: 18px (cards), xl: 24px, 2xl: 32px
+- **Card surface opacity**: Reduced from 5% to 4% for subtler glass effect
+- **Border opacity**: Reduced from 10% to 6% for cleaner appearance
+- **Glassmorphism blur**: Increased from `blur(4px)` to `blur(8px)` for premium feel
+
+### Added
+
+- **Stat Card with Accent Border**: Card pattern with 4px colored left border indicating semantic meaning (cyan for revenue, green for success, purple for AI, etc.)
+- **Icon Containers**: Icons inside 12% opacity colored backgrounds. Sizes: 36px (sm), 48px (md), 56px (lg)
+- **Period Selector Pills**: Tab-style buttons with full pill radius for date range selection
+- **Live Badge**: Pulsing green badge for real-time status indicators
+- **Change Indicator**: Positive/negative percentage display with directional icons
+- **Sidebar Navigation**: Deep background pattern with hover/active states
+- **Glow System**: Strategic glow variants for CTAs and AI elements:
+  - CTA glow: `box-shadow: 0 0 40px -10px rgba(0,183,255,0.3)`
+  - AI active glow: `box-shadow: 0 0 30px rgba(0,183,255,0.15)`
+  - Subtle inner glow: `box-shadow: inset 0 0 20px rgba(0,183,255,0.08)`
+- **Dashboard Components section** in index.html with live demos
+
+### Updated
+
+- brand-manifest.json: Added backgrounds object, updated borderRadius scale, added statCard/iconContainer/periodSelector/sidebar/liveBadge/changeIndicator patterns
+- index.html: New CSS variables, Dashboard Components section, updated navigation
+- CLAUDE.md: Updated Visual Rules table (pending)
+- SKILL.md: Added dashboard patterns (pending)
+- colors/COLORS.md: Added background layers (pending)
+
+### Design Research Sources
+
+- [UI Design Trends 2026 - Landdding](https://landdding.com/blog/ui-design-trends-2026)
+- [The Linear Look - Frontend Horse](https://frontend.horse/articles/the-linear-look/)
+- [SaaS Design Trends 2026 - EnviznLabs](https://enviznlabs.com/blogs/7-emerging-web-design-trends-for-saas-in-2026-ai-layouts-glow-effects-and-beyond)
+
+---
+
 ## [2.5.0] -- 2026-02-06
 
 ### Changed

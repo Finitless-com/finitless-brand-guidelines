@@ -264,8 +264,11 @@ When generating copy for Finitless:
 
 | Element | Pattern |
 |---------|---------|
-| Default background | `#0a0a0a` (dark-mode-first) |
-| Card | `bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm` |
+| Background (deep) | `#08080a` -- sidebar, navigation |
+| Background (base) | `#0e0e10` -- main page background (v3.0.0) |
+| Background (elevated) | `#151517` -- cards, modals |
+| Background (surface) | `#1c1c1f` -- dropdowns, popovers |
+| Card | `bg-white/[0.04] border border-white/[0.06] rounded-[18px] backdrop-blur-lg` (v3.0.0 updated) |
 | Card hover | `hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10` |
 | Primary button (gradient) | `bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold` -- only ONE per view (hero/form submit) |
 | Solid button (preferred) | `bg-[#165DFC] rounded-xl text-white font-semibold` -- preferred for standard actions (+ Create, Save, Add) |
@@ -282,8 +285,14 @@ When generating copy for Finitless:
 | Dropdown panel | `bg-white/[0.08] border-white/[0.12] rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl max-h-80 overflow-y-auto p-1` |
 | Dropdown option | `px-4 py-3 text-[15px] text-white/80 rounded-lg`. Hover: `bg-[#00B7FF]/[0.12]`. Selected: `bg-[#00B7FF]/[0.15] text-white` |
 | Gradient text | `bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent` |
-| Border radius | 8px (sm), 12px (md), 16px (lg), 24px (xl) |
+| Border radius | 6px (xs), 10px (sm), 14px (md), 18px (lg/cards), 24px (xl), 32px (2xl) -- v3.0.0 updated |
 | Spacing grid | 4px base (4, 8, 12, 16, 24, 32, 48, 64, 96) |
+| Stat card | `bg-white/[0.04] border-white/[0.06] rounded-[18px] border-l-4 border-l-[accent-color]` |
+| Icon container | `w-12 h-12 rounded-[14px] bg-[accent-color]/[0.12] flex items-center justify-center` |
+| Period selector | Pill tabs: `rounded-full bg-white/[0.02] p-1`, active: `bg-[#00B7FF]/[0.12] text-[#00B7FF]` |
+| Live badge | `bg-[#22c55e]/20 text-[#22c55e] rounded-full px-2 py-0.5` with pulsing dot |
+| CTA glow | `box-shadow: 0 0 40px -10px rgba(0,183,255,0.3)` |
+| Glassmorphism | `backdrop-filter: blur(8px)` (increased from 4px in v3.0.0) |
 | Transition (fast) | `transition: all 150ms ease` -- hover states, button feedback |
 | Transition (normal) | `transition: all 250ms ease` -- card hovers, panel reveals |
 | Focus outline | `:focus-visible { outline: 2px solid #00B7FF; outline-offset: 2px; }` |
@@ -321,7 +330,7 @@ When generating copy for Finitless:
 
 - **Photography**: Dark, high-contrast, selective brand color accents. Restaurant environments, tech in use.
 - **Illustrations**: Geometric, minimal, gradient fills from the brand palette on dark backgrounds.
-- **Textures**: Dot-grid or line patterns at 5-10% opacity. Gradient mesh at 10-20%. Glassmorphism: `backdrop-filter: blur(4px)` + `bg-white/5` + `border-white/10`.
+- **Textures**: Dot-grid or line patterns at 5-10% opacity. Gradient mesh at 10-20%. Glassmorphism: `backdrop-filter: blur(8px)` + `bg-white/[0.04]` + `border-white/[0.06]` (v3.0.0 updated).
 
 ---
 

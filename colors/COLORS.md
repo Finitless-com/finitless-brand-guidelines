@@ -30,12 +30,27 @@ The digital/web palette above (#00B7FF, #7A2EFF, #C300FF) is the production adap
 
 | Role | Name | Hex | RGB | Usage |
 |------|------|-----|-----|-------|
-| Background | Near Black | #0a0a0a | rgb(10, 10, 10) | Primary background (dark mode default) |
-| Pure Black | Black | #000000 | rgb(0, 0, 0) | Maximum contrast backgrounds, logo backgrounds |
+| Pure Black | Black | #000000 | rgb(0, 0, 0) | Maximum contrast, logo backgrounds |
 | White | White | #FFFFFF | rgb(255, 255, 255) | Primary text on dark backgrounds |
-| Card surface | White 5% | rgba(255, 255, 255, 0.05) | -- | Card and panel backgrounds |
-| Border | White 10% | rgba(255, 255, 255, 0.10) | -- | Borders, dividers |
-| Muted text | White 60% | rgba(255, 255, 255, 0.60) | -- | Secondary / muted text |
+
+### Background Layers (v3.0.0)
+
+Warmer off-black backgrounds create visual depth without shadows. Easier on eyes, more premium feel.
+
+| Layer | Name | Hex | Tailwind | Usage |
+|-------|------|-----|----------|-------|
+| Deep | bg-deep | #08080a | `bg-[#08080a]` | Sidebar, navigation |
+| Base | bg-base | #0e0e10 | `bg-[#0e0e10]` | Main page background |
+| Elevated | bg-elevated | #151517 | `bg-[#151517]` | Cards, modals |
+| Surface | bg-surface | #1c1c1f | `bg-[#1c1c1f]` | Dropdowns, popovers |
+
+### Surface / Opacity Tokens (v3.0.0 updated)
+
+| Role | Value | Tailwind | Notes |
+|------|-------|----------|-------|
+| Card surface | rgba(255, 255, 255, 0.04) | `bg-white/[0.04]` | Subtler glass effect (was 5%) |
+| Border | rgba(255, 255, 255, 0.06) | `border-white/[0.06]` | Cleaner appearance (was 10%) |
+| Muted text | rgba(255, 255, 255, 0.60) | `text-white/60` | Secondary / muted text |
 
 ---
 
@@ -85,12 +100,18 @@ Reference screenshot: `assets/reference/hubspot-brand-colors.png`
   --color-tertiary: #C300FF;
   --color-blue: #165DFC;
 
+  /* Background Layers (v3.0.0) */
+  --bg-deep: #08080a;
+  --bg-base: #0e0e10;
+  --bg-elevated: #151517;
+  --bg-surface: #1c1c1f;
+
   /* Neutral */
-  --color-background: #0a0a0a;
+  --color-background: #0e0e10;  /* Updated to warmer base in v3.0.0 */
   --color-black: #000000;
   --color-white: #FFFFFF;
-  --color-card-surface: rgba(255, 255, 255, 0.05);
-  --color-border: rgba(255, 255, 255, 0.10);
+  --color-card-surface: rgba(255, 255, 255, 0.04);  /* Subtler in v3.0.0 */
+  --color-border: rgba(255, 255, 255, 0.06);  /* Cleaner in v3.0.0 */
   --color-muted-text: rgba(255, 255, 255, 0.60);
 
   /* Semantic */

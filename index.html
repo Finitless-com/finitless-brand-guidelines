@@ -16,13 +16,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      /* v3.0.0: Updated background system - warmer off-black for premium feel */
       --cyan: #00B7FF;
       --purple: #7A2EFF;
       --magenta: #C300FF;
       --blue: #165DFC;
-      --bg: #0a0a0a;
-      --bg-card: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.1);
+      --bg-deep: #08080a;
+      --bg: #0e0e10;
+      --bg-elevated: #151517;
+      --bg-surface: #1c1c1f;
+      --bg-card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.06);
+      --border-strong: rgba(255,255,255,0.10);
       --text: #FFFFFF;
       --text-secondary: rgba(255,255,255,0.6);
       --error: #ff3b45;
@@ -36,6 +41,13 @@
       --color-helper: rgba(255,255,255,0.50);
       --focus-ring-primary: 0 0 0 3px rgba(0,183,255,0.15);
       --focus-ring-error: 0 0 0 3px rgba(255,59,69,0.15);
+      /* v3.0.0: Updated radius scale */
+      --radius-xs: 6px;
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-2xl: 32px;
     }
 
     body {
@@ -54,7 +66,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10,10,10,0.85);
+      background: rgba(14,14,16,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -127,16 +139,17 @@
       display: inline-flex; align-items: center; gap: 8px;
       background: linear-gradient(to right, var(--cyan), var(--purple));
       color: #fff; font-weight: 600; font-size: 15px;
-      padding: 12px 28px; border-radius: 12px; text-decoration: none;
+      padding: 12px 28px; border-radius: var(--radius-md); text-decoration: none;
       border: none; cursor: pointer;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
+      box-shadow: 0 0 40px -10px rgba(0, 183, 255, 0.3);
+      transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
     }
-    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 0 50px -8px rgba(0, 183, 255, 0.4); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--bg-card); border: 1px solid rgba(255,255,255,0.2);
+      background: var(--bg-card); border: 1px solid rgba(255,255,255,0.15);
       color: #fff; font-weight: 500; font-size: 15px;
-      padding: 12px 28px; border-radius: 12px; text-decoration: none;
+      padding: 12px 28px; border-radius: var(--radius-md); text-decoration: none;
       cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);
     }
     .btn-secondary:hover { border-color: var(--cyan); background: rgba(0,183,255,0.05); }
@@ -159,9 +172,11 @@
     .llm-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       padding: 28px;
       position: relative;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       transition: border-color var(--transition-normal);
     }
     .llm-card:hover { border-color: rgba(0,183,255,0.3); }
@@ -181,7 +196,7 @@
     }
     .logo-card {
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
       transition: border-color 0.3s;
     }
@@ -625,6 +640,7 @@
       <a class="nav-link" href="#colors">Colors</a>
       <a class="nav-link" href="#typography">Typography</a>
       <a class="nav-link" href="#components">Components</a>
+      <a class="nav-link" href="#dashboard">Dashboard</a>
       <a class="nav-link" href="#voice">Voice</a>
       <a class="nav-link" href="#developers">Developers</a>
     </div>
@@ -635,7 +651,7 @@
     <div class="hero-logo-wrap">
       <img src="assets/logos/finitless-logo-horizontal-on-dark.png" alt="Finitless Logo">
     </div>
-    <span class="overline">Brand Guidelines v2.2</span>
+    <span class="overline">Brand Guidelines v3.0.0</span>
     <h1><span class="gradient-text">Brand Guidelines</span></h1>
     <p>The single source of truth for the Finitless brand identity. For humans and AI agents.</p>
     <div class="hero-ctas">
@@ -1537,7 +1553,148 @@ const inter = Inter({
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
         <button class="copy-btn" onclick="copyText('4, 8, 12, 16, 24, 32, 48, 64, 96','Spacing scale')">4 &middot; 8 &middot; 12 &middot; 16 &middot; 24 &middot; 32 &middot; 48 &middot; 64 &middot; 96</button>
       </div>
-      <p style="color:var(--text-secondary); font-size:14px; margin-top:16px;"><strong style="color:var(--text)">Border radius:</strong> 8px (sm), 12px (default), 16px (lg), 24px (xl)</p>
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:16px;"><strong style="color:var(--text)">Border radius:</strong> 6px (xs), 10px (sm), 14px (md), 18px (lg), 24px (xl), 32px (2xl) <span style="color:var(--cyan); font-size:12px; margin-left:8px;">v3.0.0 updated</span></p>
+    </section>
+
+    <!-- ════════════════════════════ DASHBOARD COMPONENTS (v3.0.0) ════════════════════════════ -->
+    <section id="dashboard">
+      <h2>Dashboard Components <span style="font-size:14px; font-weight:500; color:var(--cyan); vertical-align:middle;">v3.0.0</span></h2>
+      <p class="section-subtitle">New patterns for data-rich dashboard interfaces. Based on modern SaaS design trends.</p>
+
+      <!-- Background Layers -->
+      <h3>Background Layers</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Warmer off-black backgrounds create visual depth without shadows. Easier on eyes, more premium feel.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px;">
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#08080a; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Deep</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#08080a</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#0e0e10; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Base</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#0e0e10</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#151517; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Elevated</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#151517</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#1c1c1f; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Surface</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#1c1c1f</div>
+        </div>
+      </div>
+
+      <!-- Stat Card -->
+      <h3>Stat Card with Accent Border</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Cards with left accent borders indicate semantic meaning. Icon containers use 12% opacity backgrounds.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <!-- Cyan stat card -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #00B7FF; border-radius:18px; padding:20px; backdrop-filter:blur(8px);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:4px;">Total Orders</div>
+              <div style="font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.02em;">1,234</div>
+              <div style="display:flex; align-items:center; gap:4px; margin-top:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                <span style="font-size:14px; font-weight:500; color:#22c55e;">+12.5%</span>
+                <span style="font-size:13px; color:rgba(255,255,255,0.4);">vs last week</span>
+              </div>
+            </div>
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(0,183,255,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B7FF" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Success stat card -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #22c55e; border-radius:18px; padding:20px; backdrop-filter:blur(8px);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:4px;">Revenue</div>
+              <div style="font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.02em;">$8,420</div>
+              <div style="display:flex; align-items:center; gap:4px; margin-top:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                <span style="font-size:14px; font-weight:500; color:#22c55e;">+8.3%</span>
+              </div>
+            </div>
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(34,197,94,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Purple stat card -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #7A2EFF; border-radius:18px; padding:20px; backdrop-filter:blur(8px);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:4px;">AI Conversations</div>
+              <div style="font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.02em;">847</div>
+              <div style="display:flex; align-items:center; gap:4px; margin-top:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                <span style="font-size:14px; font-weight:500; color:#22c55e;">+24.1%</span>
+              </div>
+            </div>
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(122,46,255,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A2EFF" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Period Selector & Live Badge -->
+      <h3>Period Selector & Live Badge</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Tab-style pills for date filtering. Live badges for real-time status.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center;">
+        <!-- Period selector -->
+        <div style="display:inline-flex; background:rgba(255,255,255,0.02); border-radius:9999px; padding:4px; gap:2px;">
+          <button style="padding:8px 16px; font-size:14px; font-weight:600; color:#00B7FF; background:rgba(0,183,255,0.12); border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">Today</button>
+          <button style="padding:8px 16px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">Yesterday</button>
+          <button style="padding:8px 16px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">This Week</button>
+          <button style="padding:8px 16px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">This Month</button>
+        </div>
+        <!-- Live badge -->
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:9999px; background:rgba(34,197,94,0.12); color:#22c55e; font-size:12px; font-weight:600;">
+          <span style="width:8px; height:8px; border-radius:9999px; background:#22c55e; animation:pulse 2s ease-in-out infinite;"></span>
+          Live
+        </div>
+      </div>
+      <style>@keyframes pulse { 0%, 100% { opacity:1; } 50% { opacity:0.5; } }</style>
+
+      <!-- Icon Containers -->
+      <h3>Icon Containers</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Icons inside 12% opacity colored containers. Sizes: 36px (sm), 48px (md), 56px (lg).</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+        <div style="width:36px; height:36px; border-radius:10px; background:rgba(0,183,255,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B7FF" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(34,197,94,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div style="width:56px; height:56px; border-radius:16px; background:rgba(122,46,255,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7A2EFF" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(22,93,252,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#165DFC" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(245,158,11,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(255,59,69,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff3b45" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+      </div>
+
+      <!-- Glow Effects -->
+      <h3>Glow Effects</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Subtle glows for CTAs and AI-related elements. Use strategically, not everywhere.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <button style="background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; padding:12px 28px; border-radius:14px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer; box-shadow:0 0 40px -10px rgba(0,183,255,0.4);">CTA Glow</button>
+        <button style="background:#165DFC; color:#fff; font-weight:600; padding:12px 28px; border-radius:14px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer; box-shadow:0 0 30px rgba(22,93,252,0.2);">Subtle Glow</button>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 24px; box-shadow:inset 0 0 20px rgba(0,183,255,0.08);">
+          <span style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.8);">Inner Glow Card</span>
+        </div>
+      </div>
     </section>
 
     <!-- ════════════════════════════ VOICE & TONE ════════════════════════════ -->
@@ -1649,7 +1806,7 @@ const inter = Inter({
   </main>
 
   <footer>
-    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v2.5.0 &middot; February 2026</span></p>
+    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v3.0.0 &middot; February 2026</span></p>
     <p style="margin-top:8px;">
       <a href="https://github.com/Finitless-com/brand-guidelines">GitHub</a> &middot;
       <a href="https://finitless.com">finitless.com</a> &middot;

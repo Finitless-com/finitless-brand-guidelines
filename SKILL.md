@@ -39,13 +39,16 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
 
 *The brand gradient uses cyan, purple, and magenta (see Gradients section below).*
 
-### Neutrals
+### Neutrals & Background Layers (v3.0.0)
 
-| Token | Hex |
-|-------|-----|
-| background | #0a0a0a |
-| black | #000000 |
-| white | #FFFFFF |
+| Token | Hex | Usage |
+|-------|-----|-------|
+| bg-deep | #08080a | Sidebar, navigation |
+| bg-base | #0e0e10 | Main page background |
+| bg-elevated | #151517 | Cards, modals |
+| bg-surface | #1c1c1f | Dropdowns, popovers |
+| black | #000000 | Maximum contrast |
+| white | #FFFFFF | Text on dark
 
 ### Semantic
 
@@ -56,12 +59,12 @@ Apply these rules whenever generating HTML, CSS, React components, or any visual
 | warning | #f59e0b |
 | info | #eaf4ff |
 
-### Surface / Opacity Tokens
+### Surface / Opacity Tokens (v3.0.0 updated)
 
 | Token | Value | Tailwind |
 |-------|-------|----------|
-| card-surface | rgba(255,255,255,0.05) | bg-white/5 |
-| border | rgba(255,255,255,0.10) | border-white/10 |
+| card-surface | rgba(255,255,255,0.04) | bg-white/[0.04] |
+| border | rgba(255,255,255,0.06) | border-white/[0.06] |
 | muted-text | rgba(255,255,255,0.60) | text-white/60 |
 
 ### CSS Custom Properties
@@ -132,8 +135,8 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 
 ## Visual Rules
 
-1. **Dark-mode-first**: Always default to `background-color: #0a0a0a` with white text.
-2. **Cards**: Use `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.1)`, `border-radius: 12px`, and `backdrop-filter: blur(4px)`.
+1. **Dark-mode-first**: Always default to `background-color: #0e0e10` (warmer off-black) with white text. Use layered backgrounds for depth.
+2. **Cards**: Use `background: rgba(255,255,255,0.04)`, `border: 1px solid rgba(255,255,255,0.06)`, `border-radius: 18px`, and `backdrop-filter: blur(8px)` (v3.0.0 updated).
 3. **Hover states**: On cards, add `border-color: rgba(0,183,255,0.5)` and `box-shadow: 0 4px 20px rgba(0,183,255,0.1)`.
 4. **Primary buttons (gradient)**: Use the CTA gradient (`#00B7FF` to `#7A2EFF`), `border-radius: 12px`, white text, `font-weight: 600`. Only ONE gradient button per view (hero/form submit).
 5. **Solid buttons (preferred)**: Use Finitless Blue (`#165DFC`), `border-radius: 12px`, white text, `font-weight: 600`. Preferred for standard UI actions (+ Create, Save, Add).
@@ -143,9 +146,10 @@ box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
 8. **Form labels**: `text-sm font-semibold text-white/70 mb-2`.
 9. **Logo in forms**: ALWAYS use `<img>` with a horizontal logo asset. NEVER render from font.
 6. **Gradient text**: Apply the full brand gradient as `background-image`, then `background-clip: text` and `color: transparent`.
-7. **Border radius**: 8px (small), 12px (default), 16px (large), 24px (extra-large).
+7. **Border radius**: 6px (xs), 10px (sm), 14px (md), 18px (lg/cards), 24px (xl), 32px (2xl). Default cards use 18px (v3.0.0 updated).
 8. **Spacing**: 4px grid -- use multiples of 4 (4, 8, 12, 16, 24, 32, 48, 64, 96).
 9. **Font smoothing**: Apply `-webkit-font-smoothing: antialiased` on body.
+10. **Glow effects**: Use `box-shadow: 0 0 40px -10px rgba(0,183,255,0.3)` for CTAs, `inset 0 0 20px rgba(0,183,255,0.08)` for subtle inner glow.
 
 ---
 
@@ -458,6 +462,78 @@ Custom-styled dropdowns. Never use native browser `<select>` without restyling.
 **Select / Dropdown**: Never use the native browser `<select>` without custom styling. Never use the brand gradient as hover/selected background on options -- use subtle `bg-[#00B7FF]/12` tint. Dropdown panel must be elevated (`bg-white/[0.08]`, not same as page). Always include padding between options.
 **Form buttons**: Never use flat solid colors for the primary form submit — always CTA gradient, full width. Finitless Blue (#165DFC) is for standard actions, not form submit. OAuth/social buttons use the secondary pattern, never the gradient.
 **Logo in forms**: Never render the logo as text or from a font. Always use `<img>` with the horizontal logo asset.
+
+---
+
+## Dashboard Component Patterns (v3.0.0)
+
+### Stat Card with Accent Border
+
+```html
+<div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+            border-left: 4px solid #00B7FF; border-radius: 18px; padding: 24px;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <div>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 8px;">Total Orders</p>
+      <p style="font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px;">1,234</p>
+      <p style="font-size: 14px; color: #22c55e;">+12.5% vs last week</p>
+    </div>
+    <!-- Icon container -->
+    <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(0,183,255,0.12);
+                display: flex; align-items: center; justify-content: center;">
+      <!-- Icon here -->
+    </div>
+  </div>
+</div>
+```
+
+**Accent colors by meaning**: Cyan (#00B7FF) for primary metrics, Green (#22c55e) for success, Purple (#7A2EFF) for AI-related, Blue (#165DFC) for info, Amber (#f59e0b) for warning, Red (#ff3b45) for error.
+
+### Icon Container
+
+```html
+<!-- Sizes: 36px (sm), 48px (md), 56px (lg) -->
+<div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(0,183,255,0.12);
+            display: flex; align-items: center; justify-content: center;">
+  <svg width="24" height="24" stroke="#00B7FF"><!-- icon --></svg>
+</div>
+```
+
+### Period Selector Pills
+
+```html
+<div style="display: flex; background: rgba(255,255,255,0.02); border-radius: 9999px; padding: 4px;">
+  <button style="padding: 8px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;
+                 background: rgba(0,183,255,0.12); color: #00B7FF;">Today</button>
+  <button style="padding: 8px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;
+                 background: transparent; color: rgba(255,255,255,0.6);">This Week</button>
+</div>
+```
+
+### Live Badge
+
+```html
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
+             background: rgba(34,197,94,0.2); color: #22c55e; border-radius: 9999px; font-size: 12px;">
+  <span style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite;"></span>
+  Live
+</span>
+```
+
+### Sidebar Navigation
+
+```html
+<nav style="background: #08080a; border-right: 1px solid rgba(255,255,255,0.04); padding: 16px;">
+  <a style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px;
+            background: rgba(0,183,255,0.1); color: #00B7FF;"><!-- Active -->
+    <!-- icon --> Dashboard
+  </a>
+  <a style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px;
+            color: rgba(255,255,255,0.6);"><!-- Inactive, hover: bg-white/[0.04] -->
+    <!-- icon --> Orders
+  </a>
+</nav>
+```
 
 ---
 
