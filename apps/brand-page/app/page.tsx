@@ -135,9 +135,11 @@ export default function BrandPage() {
                 <Sparkles className="h-5 w-5" />
                 Get Started
               </CTAButton>
-              <Button variant="secondary" size="lg" className="gap-2">
-                <Code2 className="h-5 w-5" />
-                View Storybook
+              <Button variant="secondary" size="lg" className="gap-2" asChild>
+                <a href="http://localhost:6006" target="_blank" rel="noopener noreferrer">
+                  <Code2 className="h-5 w-5" />
+                  View Storybook
+                </a>
               </Button>
             </div>
           </div>

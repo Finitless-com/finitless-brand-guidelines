@@ -18,7 +18,7 @@ export const iconContainerVariants = cva(
         lg: 'w-12 h-12',
         xl: 'w-16 h-16',
       },
-      color: {
+      colorScheme: {
         primary: 'bg-brand-primary/[0.12] text-brand-primary',
         link: 'bg-brand-link/[0.12] text-brand-link',
         success: 'bg-semantic-success/[0.12] text-semantic-success',
@@ -29,14 +29,17 @@ export const iconContainerVariants = cva(
     },
     defaultVariants: {
       size: 'lg',
-      color: 'primary',
+      colorScheme: 'primary',
     },
   }
 );
 
 export interface IconContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof iconContainerVariants> {}
+    VariantProps<typeof iconContainerVariants> {
+  /** @deprecated Use colorScheme instead */
+  color?: 'primary' | 'link' | 'success' | 'warning' | 'error' | 'muted';
+}
 
 /**
  * IconContainer component for wrapping icons with colored backgrounds.
@@ -69,11 +72,13 @@ export interface IconContainerProps
  * ```
  */
 const IconContainer = React.forwardRef<HTMLDivElement, IconContainerProps>(
-  ({ className, size, color, ...props }, ref) => {
+  ({ className, size, colorScheme, color, ...props }, ref) => {
+    // Support both color and colorScheme props (color is deprecated)
+    const scheme = colorScheme || color;
     return (
       <div
         ref={ref}
-        className={cn(iconContainerVariants({ size, color }), className)}
+        className={cn(iconContainerVariants({ size, colorScheme: scheme }), className)}
         {...props}
       />
     );

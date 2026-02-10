@@ -34,7 +34,7 @@ export const gradientTextVariants = cva(
 );
 
 export interface GradientTextProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
+  extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof gradientTextVariants> {
   /** Render as a different element */
   as?: 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
@@ -62,19 +62,25 @@ export interface GradientTextProps
  * </GradientText>
  * ```
  */
-const GradientText = React.forwardRef<HTMLSpanElement, GradientTextProps>(
-  ({ className, gradient, weight, as: Component = 'span', children, ...props }, ref) => {
-    return (
-      <Component
-        ref={ref as React.Ref<HTMLSpanElement>}
-        className={cn(gradientTextVariants({ gradient, weight }), className)}
-        {...props}
-      >
-        {children}
-      </Component>
-    );
-  }
-);
+function GradientTextInner(
+  { className, gradient, weight, as: Component = 'span', children, ...props }: GradientTextProps,
+  ref: React.ForwardedRef<HTMLElement>
+) {
+  return (
+    <Component
+      // @ts-expect-error - polymorphic ref type
+      ref={ref}
+      className={cn(gradientTextVariants({ gradient, weight }), className)}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+}
+
+const GradientText = React.forwardRef(GradientTextInner) as React.ForwardRefExoticComponent<
+  GradientTextProps & React.RefAttributes<HTMLElement>
+>;
 
 GradientText.displayName = 'GradientText';
 
