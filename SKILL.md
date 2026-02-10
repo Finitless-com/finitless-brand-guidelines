@@ -1,553 +1,199 @@
----
-name: finitless-brand-guidelines
-description: Applies Finitless brand colors, typography, and dark-mode styling to artifacts. Use this skill whenever building UI, generating code, or creating content for Finitless.
----
+# Finitless Brand Styling
 
-# Finitless Brand Styling Skill
+Apply Finitless brand identity to any React/Tailwind project.
 
-Apply these rules whenever generating HTML, CSS, React components, or any visual output for Finitless.
+## Quick Reference
 
----
+### Package Installation
 
-## Resources
+```bash
+npm install @finitless/design-system
+```
 
-| Resource | URL |
-|----------|-----|
-| Brand guidelines site | https://brand.finitless.com/ |
-| brand-manifest.json | https://brand.finitless.com/brand-manifest.json |
-| CLAUDE.md (full agent instructions) | https://brand.finitless.com/CLAUDE.md |
-| GitHub repository | https://github.com/Finitless-com/finitless-brand-guidelines |
+### Tailwind Setup
 
-**This skill is a concise reference.** For deeper info:
-- **Complete specifications** -- fetch `brand-manifest.json` (structured JSON with every token, asset path, and pattern)
-- **Logo/icon assets** -- browse `https://brand.finitless.com/` for visual picker with downloads
-- **Full voice guide with examples** -- see BRAND-VOICE.md in the repo
-- **Full color spec with HSL** -- see colors/COLORS.md in the repo
+```typescript
+// tailwind.config.ts
+import { finitlessPreset } from '@finitless/design-system/tailwind';
+
+export default {
+  presets: [finitlessPreset],
+  content: ['./src/**/*.{ts,tsx}', './node_modules/@finitless/design-system/dist/**/*.{js,mjs}'],
+};
+```
 
 ---
 
-## Colors
+## Design Tokens
 
-### Primary Palette
+### Colors
 
-| Token | Hex | RGB |
-|-------|-----|-----|
-| cyan (primary) | #00B7FF | rgb(0, 183, 255) |
-| purple (secondary) | #7A2EFF | rgb(122, 46, 255) |
-| magenta (tertiary) | #C300FF | rgb(195, 0, 255) |
-| blue | #165DFC | rgb(22, 93, 252) |
+| Token | Hex | Tailwind Class | Usage |
+|-------|-----|----------------|-------|
+| Finitless Blue | `#165DFC` | `bg-brand-primary` | Solid buttons, active states |
+| Cyan | `#00B7FF` | `text-brand-link` | Links, focus rings, gradient start |
+| Purple | `#7A2EFF` | (gradient only) | Never use standalone |
+| Magenta | `#C300FF` | (gradient only) | Never use standalone |
+| Background | `#0e0e10` | `bg-background-base` | Page background |
+| Elevated | `#151517` | `bg-background-elevated` | Cards, modals |
+| Card surface | `rgba(255,255,255,0.05)` | `bg-surface-card` | Glass effect |
+| Border | `rgba(255,255,255,0.10)` | `border-border` | Default borders |
+| Error | `#ff3b45` | `text-semantic-error` | Error states |
+| Success | `#22c55e` | `text-semantic-success` | Success states |
 
-*The brand gradient uses cyan, purple, and magenta (see Gradients section below).*
+### Border Radius
 
-### Neutrals & Background Layers (v3.0.0)
+| Token | Value | Class |
+|-------|-------|-------|
+| Small | `8px` | `rounded-sm` |
+| Default | `12px` | `rounded` or `rounded-md` |
+| Large | `16px` | `rounded-lg` |
+| XL | `24px` | `rounded-xl` |
+| Full | `9999px` | `rounded-full` |
 
-| Token | Hex | Usage |
-|-------|-----|-------|
-| bg-deep | #08080a | Sidebar, navigation |
-| bg-base | #0e0e10 | Main page background |
-| bg-elevated | #151517 | Cards, modals |
-| bg-surface | #1c1c1f | Dropdowns, popovers |
-| black | #000000 | Maximum contrast |
-| white | #FFFFFF | Text on dark
-
-### Semantic
-
-| Token | Hex |
-|-------|-----|
-| error | #ff3b45 |
-| success | #22c55e |
-| warning | #f59e0b |
-| info | #eaf4ff |
-
-### Surface / Opacity Tokens (v3.0.0 updated)
-
-| Token | Value | Tailwind |
-|-------|-------|----------|
-| card-surface | rgba(255,255,255,0.04) | bg-white/[0.04] |
-| border | rgba(255,255,255,0.06) | border-white/[0.06] |
-| muted-text | rgba(255,255,255,0.60) | text-white/60 |
-
-### CSS Custom Properties
+### Gradients
 
 ```css
-:root {
-  --color-primary: #00B7FF;
-  --color-secondary: #7A2EFF;
-  --color-tertiary: #C300FF;
-  --color-blue: #165DFC;
-  --color-background: #0a0a0a;
-  --color-black: #000000;
-  --color-white: #FFFFFF;
-  --color-card-surface: rgba(255, 255, 255, 0.05);
-  --color-border: rgba(255, 255, 255, 0.10);
-  --color-muted-text: rgba(255, 255, 255, 0.60);
-  --color-error: #ff3b45;
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --color-info: #eaf4ff;
-  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
-  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
-  --glow-primary: 0 0 20px rgba(0, 183, 255, 0.3);
-  --transition-fast: 150ms ease;
-  --transition-normal: 250ms ease;
-}
+/* Brand gradient (full spectrum) */
+background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
+/* Tailwind: bg-gradient-brand */
+
+/* CTA gradient */
+background: linear-gradient(to right, #00B7FF, #7A2EFF);
+/* Tailwind: bg-gradient-cta */
+```
+
+---
+
+## Components
+
+### Import Pattern
+
+```tsx
+import {
+  Button, Input, Label, Select, Dialog, Tabs,
+  GlassCard, CTAButton, GradientText, Logo, StatusBadge,
+} from '@finitless/design-system';
+```
+
+### Button Variants
+
+```tsx
+// Primary (default) - Finitless Blue solid
+<Button>Save Changes</Button>
+
+// CTA - Gradient with glow (ONLY ONE PER PAGE)
+<CTAButton size="lg">Get Started Free</CTAButton>
+
+// Secondary - Glass background
+<Button variant="secondary">Cancel</Button>
+
+// Ghost - Transparent
+<Button variant="ghost">Learn More</Button>
+
+// Destructive - Red
+<Button variant="destructive">Delete</Button>
+```
+
+### Form Pattern
+
+```tsx
+<FormContainer>
+  <Logo variant="horizontal" size="sm" className="mb-8" />
+
+  <div className="space-y-4">
+    <div className="space-y-2">
+      <Label htmlFor="email" required>Email</Label>
+      <Input id="email" type="email" placeholder="you@example.com" />
+    </div>
+
+    <CTAButton type="submit" fullWidth>Sign In</CTAButton>
+  </div>
+
+  <FormDivider />
+
+  <OAuthButton provider="Google" icon={<GoogleIcon />}>
+    Continue with Google
+  </OAuthButton>
+</FormContainer>
+```
+
+### Card Pattern
+
+```tsx
+// Basic glass card
+<GlassCard>
+  <h3 className="text-lg font-semibold">Card Title</h3>
+  <p className="text-text-muted">Card content</p>
+</GlassCard>
+
+// Stat card with accent
+<GlassCard highlight="primary">
+  <div className="flex items-start gap-4">
+    <IconContainer color="primary">
+      <DollarSign className="h-6 w-6" />
+    </IconContainer>
+    <div>
+      <div className="text-2xl font-bold">$31,000</div>
+      <div className="text-text-muted">Revenue recovered</div>
+    </div>
+  </div>
+</GlassCard>
 ```
 
 ---
 
 ## Typography
 
-**Font**: Inter (Google Fonts) -- weights 400, 600, 700, 800
-**Fallback**: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
-**Mono**: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace
+**Font**: Inter (Google Fonts)
 
-### Scale
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+```
 
-| Token | Size | Weight | Line Height |
-|-------|------|--------|-------------|
-| display | 72px | 800 | 1.1 |
-| h1 | 48px | 800 | 1.2 |
-| h2 | 36px | 700 | 1.25 |
-| h3 | 24px | 700 | 1.3 |
-| h4 | 20px | 600 | 1.4 |
-| body-lg | 18px | 400 | 1.6 |
-| body | 16px | 400 | 1.6 |
-| body-sm | 14px | 400 | 1.5 |
-| caption | 12px | 400 | 1.5 |
-| overline | 12px | 600 | 1.5 |
+| Level | Size | Weight | Class |
+|-------|------|--------|-------|
+| Hero | 60px | 800 | `text-6xl font-extrabold` |
+| H1 | 48px | 700 | `text-5xl font-bold` |
+| H2 | 36px | 700 | `text-4xl font-bold` |
+| H3 | 30px | 600 | `text-3xl font-semibold` |
+| Body | 16px | 400 | `text-base` |
+| Small | 14px | 400 | `text-sm` |
 
----
+### Gradient Text
 
-## Gradients
-
-```css
-/* Full brand gradient (3-stop) */
-background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
-
-/* CTA / button gradient (2-stop) */
-background: linear-gradient(to right, #00B7FF, #7A2EFF);
-
-/* Glow effect */
-box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
+```tsx
+<GradientText as="h1" className="text-5xl">
+  Never Miss a Sale
+</GradientText>
 ```
 
 ---
 
-## Visual Rules
+## Brand Rules
 
-1. **Dark-mode-first**: Always default to `background-color: #0e0e10` (warmer off-black) with white text. Use layered backgrounds for depth.
-2. **Cards**: Use `background: rgba(255,255,255,0.04)`, `border: 1px solid rgba(255,255,255,0.06)`, `border-radius: 18px`, and `backdrop-filter: blur(8px)` (v3.0.0 updated).
-3. **Hover states**: On cards, add `border-color: rgba(0,183,255,0.5)` and `box-shadow: 0 4px 20px rgba(0,183,255,0.1)`.
-4. **Primary buttons (gradient)**: Use the CTA gradient (`#00B7FF` to `#7A2EFF`), `border-radius: 12px`, white text, `font-weight: 600`. Only ONE gradient button per view (hero/form submit).
-5. **Solid buttons (preferred)**: Use Finitless Blue (`#165DFC`), `border-radius: 12px`, white text, `font-weight: 600`. Preferred for standard UI actions (+ Create, Save, Add).
-6. **Secondary buttons**: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.2)`, `border-radius: 12px`, white text.
-6. **Button sizes**: sm `36px` / md `44px` (default) / lg `48px` (forms, hero). Full-width in forms and modals.
-7. **Form inputs**: `bg-white/5`, `border-white/10`, `rounded-xl`, `h-12`, `text-base`, `placeholder:text-white/40`. Focus: cyan border glow.
-8. **Form labels**: `text-sm font-semibold text-white/70 mb-2`.
-9. **Logo in forms**: ALWAYS use `<img>` with a horizontal logo asset. NEVER render from font.
-6. **Gradient text**: Apply the full brand gradient as `background-image`, then `background-clip: text` and `color: transparent`.
-7. **Border radius**: 6px (xs), 10px (sm), 14px (md), 18px (lg/cards), 24px (xl), 32px (2xl). Default cards use 18px (v3.0.0 updated).
-8. **Spacing**: 4px grid -- use multiples of 4 (4, 8, 12, 16, 24, 32, 48, 64, 96).
-9. **Font smoothing**: Apply `-webkit-font-smoothing: antialiased` on body.
-10. **Glow effects**: Use `box-shadow: 0 0 40px -10px rgba(0,183,255,0.3)` for CTAs, `inset 0 0 20px rgba(0,183,255,0.08)` for subtle inner glow.
+### DO
 
----
+- Use Finitless Blue (`#165DFC`) for solid buttons
+- Use ONE gradient CTA button per page
+- Use glass cards (`bg-surface-card border-border backdrop-blur`)
+- Use cyan (`#00B7FF`) for links and focus states
+- Use 12px border radius as default
 
-## Component Patterns
+### DON'T
 
-### Hero Section
-
-```html
-<section style="background: #0a0a0a; padding: 96px 24px; text-align: center;">
-  <p style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #00B7FF; margin-bottom: 16px;">
-    AI Ordering Agents
-  </p>
-  <h1 style="font-size: 72px; font-weight: 800; line-height: 1.1; color: #FFFFFF; margin-bottom: 24px;">
-    Never Miss a Sale. Ever.
-  </h1>
-  <p style="font-size: 18px; color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto 32px;">
-    AI-powered voice and WhatsApp agents that capture every order, 24/7.
-  </p>
-  <a href="#" style="display: inline-block; background: linear-gradient(to right, #00B7FF, #7A2EFF); color: #FFFFFF; font-weight: 600; padding: 14px 32px; border-radius: 12px; text-decoration: none;">
-    Get Started
-  </a>
-</section>
-```
-
-### Card
-
-```html
-<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; backdrop-filter: blur(4px);">
-  <h3 style="font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">
-    Voice Agent
-  </h3>
-  <p style="font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.6;">
-    Answers every call. Takes every order. Never puts a customer on hold.
-  </p>
-</div>
-```
-
-### Stat Block
-
-```html
-<div style="text-align: center;">
-  <p style="font-size: 48px; font-weight: 800; background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px;">
-    $31,000
-  </p>
-  <p style="font-size: 14px; color: rgba(255,255,255,0.6);">
-    Average annual revenue recovered per location
-  </p>
-</div>
-```
-
-### Form Input
-
-```html
-<div style="margin-bottom: 16px;">
-  <label style="display: block; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.70); margin-bottom: 8px;">
-    Email address
-  </label>
-  <input type="email" placeholder="you@example.com"
-    style="width: 100%; height: 48px; padding: 12px 16px; font-size: 16px; font-family: 'Inter', sans-serif;
-           color: #FFFFFF; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
-           border-radius: 12px; outline: none; transition: all 150ms ease;">
-  <!-- Focus state: border-color: rgba(0,183,255,0.5); box-shadow: 0 0 0 3px rgba(0,183,255,0.15); -->
-  <!-- Error state: border-color: #ff3b45; box-shadow: 0 0 0 3px rgba(255,59,69,0.15); -->
-</div>
-```
-
-### Form Page Layout (Login / Sign-Up)
-
-```html
-<div style="max-width: 480px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; padding: 32px;">
-  <!-- Logo: ALWAYS use an <img> asset, NEVER render from font -->
-  <img src="assets/logos/finitless-logo-horizontal-on-dark-200w.png" alt="Finitless"
-       style="height: 32px; margin-bottom: 32px;">
-  <h2 style="font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">
-    Sign in to your account
-  </h2>
-  <p style="font-size: 14px; color: rgba(255,255,255,0.60); margin-bottom: 32px;">
-    Enter your email and password to continue.
-  </p>
-  <!-- Form fields here (see Form Input pattern above) -->
-  <!-- Primary submit: ALWAYS use CTA gradient, full width, 48px height -->
-  <button style="width: 100%; height: 48px; background: linear-gradient(to right, #00B7FF, #7A2EFF);
-                 color: #fff; font-weight: 600; font-size: 16px; border: none; border-radius: 12px;
-                 cursor: pointer; font-family: 'Inter', sans-serif;">
-    Sign In
-  </button>
-</div>
-```
-
-### OAuth / Social Login Button
-
-Use the **secondary button pattern** (glass bg + border). NEVER use the CTA gradient for OAuth buttons.
-
-```html
-<button style="width: 100%; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px;
-               background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.20);
-               border-radius: 12px; color: #FFFFFF; font-size: 15px; font-weight: 500;
-               font-family: 'Inter', sans-serif; cursor: pointer; transition: all 150ms ease;">
-  <img src="google-g-icon.svg" alt="" style="width: 20px; height: 20px;">
-  Continue with Google
-</button>
-<!-- Hover: border-color: rgba(0,183,255,0.5); background: rgba(0,183,255,0.05); -->
-```
-
-### Form Divider ("or" separator)
-
-```html
-<div style="display: flex; align-items: center; gap: 16px; margin: 24px 0;">
-  <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.10);"></div>
-  <span style="font-size: 12px; color: rgba(255,255,255,0.40);">or</span>
-  <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.10);"></div>
-</div>
-```
-
-### Select / Dropdown
-
-Custom-styled dropdowns. Never use native browser `<select>` without restyling.
-
-**Trigger (closed):** Same as text input (`bg-white/5`, `border-white/10`, `rounded-xl`, `h-12`). Right-aligned chevron in `text-white/50`.
-
-**Dropdown panel (open):**
-```html
-<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4); backdrop-filter: blur(12px);
-            max-height: 320px; overflow-y: auto; padding: 4px; margin-top: 4px;">
-  <!-- Options go here -->
-</div>
-```
-
-**Option items:**
-```html
-<div style="padding: 12px 16px; font-size: 15px; color: rgba(255,255,255,0.80);
-            border-radius: 8px; cursor: pointer; transition: background 150ms ease;">
-  Option text
-</div>
-<!-- Hover: background: rgba(0,183,255,0.12) -->
-<!-- Selected: background: rgba(0,183,255,0.15); color: #FFFFFF; + check icon -->
-<!-- Disabled/Placeholder: color: rgba(255,255,255,0.40); no hover -->
-```
+- Multiple gradient buttons on one page
+- Purple or magenta as standalone colors
+- White or light backgrounds
+- Native browser form elements without styling
+- Sharp corners (0px radius)
+- Rendering logo from font (use `<Logo />` component)
 
 ---
 
-## Button Size Scale
+## Resources
 
-| Size | Height | Padding | Font Size | Radius | Usage |
-|------|--------|---------|-----------|--------|-------|
-| sm | 36px | 8px 16px | 14px | 8px | Inline actions, table rows |
-| md | 44px | 10px 24px | 15px | 12px | Nav CTAs, card actions (DEFAULT) |
-| lg | 48px | 12px 32px | 16px | 12px | Form submit, hero CTAs, full-width |
-
-**Rule**: Full-width buttons (`w-full`) in forms/modals use `lg`. Only ONE gradient button per view.
-
----
-
-## Tailwind Quick Reference
-
-```html
-<!-- Background -->
-<div class="bg-[#0a0a0a] text-white min-h-screen">
-
-<!-- Card -->
-<div class="bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm p-6
-            hover:border-[#00B7FF]/50 hover:shadow-lg hover:shadow-[#00B7FF]/10 transition-all">
-
-<!-- Primary button (gradient — hero/form submit, ONE per view) -->
-<button class="bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold px-6 py-3">
-
-<!-- Solid button (PREFERRED for standard actions) -->
-<button class="bg-[#165DFC] rounded-xl text-white font-semibold px-6 py-3">
-
-<!-- Secondary button -->
-<button class="border border-white/20 bg-white/5 rounded-xl text-white px-6 py-3">
-
-<!-- Gradient text -->
-<span class="bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent">
-
-<!-- Overline label -->
-<span class="text-xs font-semibold tracking-widest uppercase text-[#00B7FF]">
-
-<!-- Form label -->
-<label class="block text-sm font-semibold text-white/70 mb-2">Email</label>
-
-<!-- Form input -->
-<input class="w-full h-12 px-4 text-base text-white bg-white/5 border border-white/10 rounded-xl
-              placeholder:text-white/40 focus:border-[#00B7FF]/50 focus:outline-none transition-all"
-       placeholder="you@example.com">
-
-<!-- Error input -->
-<input class="w-full h-12 px-4 text-base text-white bg-white/5 border border-[#ff3b45] rounded-xl
-              ring-[3px] ring-[#ff3b45]/15 focus:outline-none transition-all">
-
-<!-- Error text -->
-<p class="text-xs text-[#ff3b45] mt-1">Please enter a valid email address.</p>
-
-<!-- Full-width CTA in form (lg size) -->
-<button class="w-full h-12 bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold text-base">
-
-<!-- OAuth / social button (secondary pattern, lg size) -->
-<button class="w-full h-12 flex items-center justify-center gap-2 bg-white/5 border border-white/20
-               rounded-xl text-white font-medium transition-all hover:border-[#00B7FF]/50 hover:bg-[#00B7FF]/5">
-
-<!-- Form divider -->
-<div class="flex items-center gap-4 my-6">
-  <div class="flex-1 h-px bg-white/10"></div>
-  <span class="text-xs text-white/40">or</span>
-  <div class="flex-1 h-px bg-white/10"></div>
-</div>
-
-<!-- Form container -->
-<div class="max-w-[480px] mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
-
-<!-- Select trigger (same as input, add chevron) -->
-<button class="w-full h-12 px-4 pr-10 text-base text-left text-white bg-white/5 border border-white/10 rounded-xl
-               focus:border-[#00B7FF]/50 focus:outline-none transition-all relative">
-  <span class="text-white/40">Select an option</span>
-  <!-- Chevron icon right-aligned, text-white/50 -->
-</button>
-
-<!-- Dropdown panel -->
-<div class="bg-white/[0.08] border border-white/[0.12] rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]
-            backdrop-blur-xl max-h-80 overflow-y-auto p-1 mt-1">
-  <!-- Option: default -->
-  <div class="px-4 py-3 text-[15px] text-white/80 rounded-lg cursor-pointer transition-colors
-              hover:bg-[#00B7FF]/[0.12] hover:text-white/90">Option text</div>
-  <!-- Option: selected -->
-  <div class="px-4 py-3 text-[15px] text-white rounded-lg bg-[#00B7FF]/[0.15]">Selected option</div>
-  <!-- Option: disabled/placeholder -->
-  <div class="px-4 py-3 text-[15px] text-white/40 rounded-lg cursor-not-allowed">Placeholder</div>
-</div>
-```
-
----
-
-## Asset Library
-
-### Icons (pick by context)
-
-| Context | Asset Path | Size |
-|---------|-----------|------|
-| Favicon | `assets/icons/finitless-icon-on-dark-32.png` | 32px |
-| Social avatar | `assets/icons/finitless-icon-on-dark-1000.png` | 1000px |
-| PWA / App icon | `assets/icons/finitless-icon-on-dark-512.png` | 512px |
-| Android launcher | `assets/icons/finitless-icon-on-dark-192.png` | 192px |
-| Apple App Store | `assets/icons/finitless-icon-on-dark-1024.png` | 1024px |
-| Print (high-res) | `assets/icons/finitless-icon-print-2552.png` | 2552px |
-| Vector / scalable | `assets/icons/finitless-icon-master.svg` | any |
-
-**Icon naming pattern**: `finitless-icon-{variant}-{size}.png`
-- Variants: `on-dark`, `on-light`, `transparent`
-- Sizes: 16, 32, 48, 64, 72, 128, 192, 256, 384, 512, 1000, 1024
-
-### Logos (pick by context)
-
-| Context | Asset Path | Size |
-|---------|-----------|------|
-| Website header (dark) | `assets/logos/finitless-logo-horizontal-on-dark-300w.png` | 300w |
-| Website header (light) | `assets/logos/finitless-logo-horizontal-on-light-300w.png` | 300w |
-| OG / Social card | `assets/logos/finitless-logo-square-on-dark-1024.png` | 1024px |
-| Email signature | `assets/logos/finitless-logo-rect-on-dark-300w.png` | 300w |
-
-**Logo naming patterns**:
-- Horizontal: `finitless-logo-horizontal-{on-dark|on-light}-{width}w.png` (120, 200, 300, 480, 800, 1200)
-- Square: `finitless-logo-square-{on-dark|on-light}-{size}.png` (128, 256, 512, 1024, 2000)
-- Rectangular: `finitless-logo-rect-on-dark-{width}w.png` (300, 600, 1200, 1800)
-
-**Logo background types**:
-- Horizontal (on-dark, on-light): transparent background -- place on any color
-- Square on-light: transparent background
-- Square on-dark, Rect on-dark: solid black background (baked in)
-- For overlaying on custom backgrounds, use horizontal or square-on-light variants
-
-**Rules**: Never recreate/modify logos. Resize proportionately only. Prefer dark variant.
-
----
-
-## Brand Voice (for content generation)
-
-- **Confident, not arrogant.** State facts. Let results speak.
-- **Practical, not visionary.** Talk about what the product does today.
-- **Direct, not salesy.** No fluff. Get to the point.
-- Use specific numbers: $31,000/year, 40% missed calls, 24/7.
-- Words to use: AI agents, AI ordering agents, AI-powered, recover, capture, own, direct, efficient, 24/7, never miss, revenue, every order.
-- Words to avoid: chatbot, bot, artificial intelligence (say "AI"), smart, virtual assistant, disrupt, maybe, try, revolutionize, leverage, synergy, hopefully.
-
----
-
-## Transitions & Motion
-
-- **Fast** (150ms ease): Hover states, button feedback, small UI changes.
-- **Normal** (250ms ease): Card hovers, panel reveals, nav transitions.
-- **Reduced motion**: Respect `prefers-reduced-motion: reduce` -- collapse all durations to near-zero.
-- **Focus**: `:focus-visible { outline: 2px solid #00B7FF; outline-offset: 2px; }`
-- **Font smoothing**: `-webkit-font-smoothing: antialiased` on body.
-
----
-
-## Responsive Breakpoints
-
-- **768px** (tablet): Hero padding shrinks, h1 → 36px, h2 → 28px, grids collapse to single column.
-- **640px** (mobile): Word panels and side-by-side layouts stack vertically.
-
----
-
-## Anti-Patterns (Never Do)
-
-**Buttons**: Never use non-brand solid colors (#2563eb, etc.) or flat solid cyan (#00B7FF) as button bg. Use Finitless Blue (#165DFC) for solid action buttons, CTA gradient for primary hero/form submit. Never below 36px height. Only ONE gradient button per view.
-**Cards**: Never use solid white backgrounds, sharp corners (0px), or omit hover states.
-**Gradient text**: Never omit the cyan stop, use top-to-bottom direction, or apply to body copy.
-**Form inputs**: Never use unstyled browser defaults. Always apply dark glass background (`bg-white/5`), 12px radius, and cyan focus glow. Never use font-size below 16px (prevents iOS zoom).
-**Select / Dropdown**: Never use the native browser `<select>` without custom styling. Never use the brand gradient as hover/selected background on options -- use subtle `bg-[#00B7FF]/12` tint. Dropdown panel must be elevated (`bg-white/[0.08]`, not same as page). Always include padding between options.
-**Form buttons**: Never use flat solid colors for the primary form submit — always CTA gradient, full width. Finitless Blue (#165DFC) is for standard actions, not form submit. OAuth/social buttons use the secondary pattern, never the gradient.
-**Logo in forms**: Never render the logo as text or from a font. Always use `<img>` with the horizontal logo asset.
-
----
-
-## Dashboard Component Patterns (v3.0.0)
-
-### Stat Card with Accent Border
-
-```html
-<div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
-            border-left: 4px solid #00B7FF; border-radius: 18px; padding: 24px;">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-    <div>
-      <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 8px;">Total Orders</p>
-      <p style="font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px;">1,234</p>
-      <p style="font-size: 14px; color: #22c55e;">+12.5% vs last week</p>
-    </div>
-    <!-- Icon container -->
-    <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(0,183,255,0.12);
-                display: flex; align-items: center; justify-content: center;">
-      <!-- Icon here -->
-    </div>
-  </div>
-</div>
-```
-
-**Accent colors by meaning**: Cyan (#00B7FF) for primary metrics, Green (#22c55e) for success, Purple (#7A2EFF) for AI-related, Blue (#165DFC) for info, Amber (#f59e0b) for warning, Red (#ff3b45) for error.
-
-### Icon Container
-
-```html
-<!-- Sizes: 36px (sm), 48px (md), 56px (lg) -->
-<div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(0,183,255,0.12);
-            display: flex; align-items: center; justify-content: center;">
-  <svg width="24" height="24" stroke="#00B7FF"><!-- icon --></svg>
-</div>
-```
-
-### Period Selector Pills
-
-```html
-<div style="display: flex; background: rgba(255,255,255,0.02); border-radius: 9999px; padding: 4px;">
-  <button style="padding: 8px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;
-                 background: rgba(0,183,255,0.12); color: #00B7FF;">Today</button>
-  <button style="padding: 8px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;
-                 background: transparent; color: rgba(255,255,255,0.6);">This Week</button>
-</div>
-```
-
-### Live Badge
-
-```html
-<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
-             background: rgba(34,197,94,0.2); color: #22c55e; border-radius: 9999px; font-size: 12px;">
-  <span style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite;"></span>
-  Live
-</span>
-```
-
-### Sidebar Navigation
-
-```html
-<nav style="background: #08080a; border-right: 1px solid rgba(255,255,255,0.04); padding: 16px;">
-  <a style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px;
-            background: rgba(0,183,255,0.1); color: #00B7FF;"><!-- Active -->
-    <!-- icon --> Dashboard
-  </a>
-  <a style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px;
-            color: rgba(255,255,255,0.6);"><!-- Inactive, hover: bg-white/[0.04] -->
-    <!-- icon --> Orders
-  </a>
-</nav>
-```
-
----
-
-## Icon Style
-
-- **Style**: Outlined, 1.5px stroke width.
-- **Default size**: 24px. Grid: 16px (sm), 24px (md), 32px (lg).
-- **Colors**: White (#FFFFFF) on dark backgrounds, #0a0a0a on light. Brand gradient for emphasis.
-- **Library**: Lucide Icons for standard UI patterns.
-
----
-
-## Imagery
-
-- **Photography**: Dark, high-contrast, selective brand color accents. Restaurant environments, tech in use.
-- **Illustrations**: Geometric, minimal, gradient fills from the brand palette on dark backgrounds.
-- **Textures**: Dot-grid or line patterns at 5-10% opacity. Gradient mesh at 10-20% opacity. Glassmorphism with `backdrop-filter: blur(4px)`, `bg-white/5`, `border-white/10`.
+- **Brand Page**: https://brand.finitless.com
+- **NPM Package**: `@finitless/design-system`
+- **Storybook**: https://storybook.brand.finitless.com
+- **GitHub**: https://github.com/Finitless-com/finitless-brand-guidelines
