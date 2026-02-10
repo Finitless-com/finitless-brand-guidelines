@@ -1,0 +1,186 @@
+{
+  "$schema": "https://brand.finitless.com/schema/v4",
+  "version": "4.0.0",
+  "lastUpdated": "2026-02-10",
+  "baseUrl": "https://brand.finitless.com/",
+
+  "company": {
+    "name": "Finitless",
+    "legalName": "Finitless",
+    "tagline": "Never Miss a Sale. Ever.",
+    "description": "AI ordering agents that recover missed revenue for restaurants via voice, WhatsApp, and web chat.",
+    "website": "https://finitless.com",
+    "founder": "Sergio Khoury",
+    "industry": "Restaurant Technology / AI",
+    "targetAudience": "Restaurant owners and operators"
+  },
+
+  "colors": {
+    "brand": {
+      "primary": { "hex": "#165DFC", "name": "Finitless Blue", "usage": "Solid buttons, UI backgrounds" },
+      "link": { "hex": "#00B7FF", "name": "Cyan", "usage": "Links, CTAs, gradient start" },
+      "purple": { "hex": "#7A2EFF", "name": "Purple", "usage": "Gradient midpoint only" },
+      "magenta": { "hex": "#C300FF", "name": "Magenta", "usage": "Gradient end only" }
+    },
+    "background": {
+      "deep": { "hex": "#08080a", "usage": "Sidebar, navigation" },
+      "base": { "hex": "#0e0e10", "usage": "Page background" },
+      "elevated": { "hex": "#151517", "usage": "Cards, modals" },
+      "surface": { "hex": "#1c1c1f", "usage": "Dropdowns, popovers" }
+    },
+    "surface": {
+      "card": { "value": "rgba(255,255,255,0.05)", "tailwind": "bg-white/[0.05]" },
+      "border": { "value": "rgba(255,255,255,0.10)", "tailwind": "border-white/[0.10]" },
+      "borderSubtle": { "value": "rgba(255,255,255,0.06)", "tailwind": "border-white/[0.06]" },
+      "mutedText": { "value": "rgba(255,255,255,0.60)", "tailwind": "text-white/60" }
+    },
+    "semantic": {
+      "error": { "hex": "#ff3b45", "usage": "Errors, alerts" },
+      "success": { "hex": "#22c55e", "usage": "Success states" },
+      "warning": { "hex": "#f59e0b", "usage": "Caution states" }
+    },
+    "gradients": {
+      "brand": {
+        "css": "linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)",
+        "stops": ["#00B7FF", "#7A2EFF", "#C300FF"],
+        "usage": "Hero text, brand accents"
+      },
+      "cta": {
+        "css": "linear-gradient(to right, #00B7FF, #7A2EFF)",
+        "stops": ["#00B7FF", "#7A2EFF"],
+        "usage": "Primary buttons, CTAs"
+      }
+    }
+  },
+
+  "typography": {
+    "uiFont": {
+      "family": "Inter",
+      "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "weights": [400, 500, 600, 700, 800],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    },
+    "logoFont": {
+      "family": "BEASIGNE",
+      "note": "Logo wordmark only — never use for UI text"
+    },
+    "scale": {
+      "display": { "size": "72px", "weight": 800, "lineHeight": 1.1 },
+      "h1": { "size": "48px", "weight": 800, "lineHeight": 1.2 },
+      "h2": { "size": "36px", "weight": 700, "lineHeight": 1.25 },
+      "h3": { "size": "24px", "weight": 700, "lineHeight": 1.3 },
+      "h4": { "size": "20px", "weight": 600, "lineHeight": 1.4 },
+      "bodyLg": { "size": "18px", "weight": 400, "lineHeight": 1.6 },
+      "body": { "size": "16px", "weight": 400, "lineHeight": 1.6 },
+      "bodySm": { "size": "14px", "weight": 400, "lineHeight": 1.5 },
+      "caption": { "size": "12px", "weight": 400, "lineHeight": 1.5 }
+    }
+  },
+
+  "spacing": {
+    "grid": "4px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "base": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "48px",
+      "3xl": "64px",
+      "4xl": "96px"
+    }
+  },
+
+  "borderRadius": {
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px",
+    "default": "12px",
+    "note": "v4.0.0: Simplified scale. Universal default is 12px."
+  },
+
+  "motion": {
+    "transitionFast": { "duration": "150ms", "easing": "ease" },
+    "transitionNormal": { "duration": "250ms", "easing": "ease" },
+    "transitionSlow": { "duration": "400ms", "easing": "ease-out" }
+  },
+
+  "glowEffect": {
+    "default": "0 0 20px rgba(0, 183, 255, 0.3)",
+    "cta": "0 0 40px -10px rgba(0, 183, 255, 0.3)",
+    "aiActive": "0 0 30px rgba(0, 183, 255, 0.15)",
+    "subtle": "inset 0 0 20px rgba(0, 183, 255, 0.08)"
+  },
+
+  "accessibility": {
+    "focusOutline": "2px solid #00B7FF",
+    "focusOffset": "2px",
+    "minContrastRatio": "4.5:1",
+    "minTouchTarget": "44px"
+  },
+
+  "voice": {
+    "personality": [
+      "Confident, not arrogant",
+      "Revolutionary, not combative",
+      "Practical, not visionary",
+      "Direct, not salesy"
+    ],
+    "wordsWeUse": ["AI agents", "AI ordering agents", "AI-powered", "recover", "capture", "own", "direct", "efficient", "24/7", "never miss", "revenue", "every order"],
+    "wordsWeAvoid": ["chatbot", "bot", "artificial intelligence", "smart", "virtual assistant", "disrupt", "leverage", "synergy"]
+  },
+
+  "assets": {
+    "quickPick": [
+      { "context": "Website header (dark bg)", "asset": "assets/logos/finitless-logo-horizontal-on-dark-300w.png", "size": "300w" },
+      { "context": "Website header (light bg)", "asset": "assets/logos/finitless-logo-horizontal-on-light-300w.png", "size": "300w" },
+      { "context": "Favicon", "asset": "assets/icons/finitless-icon-on-dark-32.png", "size": "32px" },
+      { "context": "Social media avatar", "asset": "assets/icons/finitless-icon-on-dark-1000.png", "size": "1000px" },
+      { "context": "PWA / App icon", "asset": "assets/icons/finitless-icon-on-dark-512.png", "size": "512px" },
+      { "context": "Android launcher", "asset": "assets/icons/finitless-icon-on-dark-192.png", "size": "192px" },
+      { "context": "Apple App Store", "asset": "assets/icons/finitless-icon-on-dark-1024.png", "size": "1024px" },
+      { "context": "OG / Social card image", "asset": "assets/logos/finitless-logo-square-on-dark-1024.png", "size": "1024px" },
+      { "context": "Email signature", "asset": "assets/logos/finitless-logo-rect-on-dark-300w.png", "size": "300w" },
+      { "context": "Print (high-res)", "asset": "assets/icons/finitless-icon-print-2552.png", "size": "2552px" }
+    ],
+    "icons": {
+      "sizes": [16, 32, 48, 64, 72, 128, 192, 256, 384, 512, 1000, 1024],
+      "variants": ["on-dark", "on-light", "transparent"]
+    },
+    "logos": {
+      "horizontal": { "sizes": ["120w", "200w", "300w", "480w", "800w", "1200w"] },
+      "square": { "sizes": ["128", "256", "512", "1024", "2000"] },
+      "rect": { "sizes": ["300w", "600w", "1200w", "1800w"] }
+    }
+  },
+
+  "antiPatterns": {
+    "buttons": [
+      "Never use non-brand solid colors — use Finitless Blue (#165DFC)",
+      "Never use border-radius below 8px — default is 12px",
+      "Never use multiple gradient buttons on one page"
+    ],
+    "cards": [
+      "Never use solid white backgrounds — use rgba(255,255,255,0.05)",
+      "Never use sharp corners (0px radius)",
+      "Always include a hover state with cyan border glow"
+    ],
+    "gradientText": [
+      "Never omit the cyan stop — all three stops required",
+      "Never use top-to-bottom direction — always left-to-right",
+      "Never apply gradient text to body copy — headings only"
+    ],
+    "formInputs": [
+      "Never use white or light backgrounds — use dark glass",
+      "Never omit focus state — always show cyan border glow",
+      "Never use font-size below 16px — prevents iOS zoom"
+    ],
+    "logo": [
+      "Never render from BEASIGNE font — use image assets",
+      "Never stretch — resize proportionately only"
+    ]
+  }
+}
