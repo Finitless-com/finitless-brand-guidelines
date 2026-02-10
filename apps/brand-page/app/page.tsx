@@ -81,7 +81,7 @@ const sections = [
     href: '/components',
     icon: Layout,
     title: 'Components',
-    description: '45+ UI components: buttons, inputs, dialogs, tables, calendars, and more.',
+    description: '50+ UI components: buttons, inputs, dialogs, tables, calendars, and more.',
     color: 'text-brand-primary',
     bgColor: 'bg-brand-primary/10',
   },

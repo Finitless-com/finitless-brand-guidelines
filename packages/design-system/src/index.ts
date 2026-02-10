@@ -309,6 +309,11 @@ export {
 
   // Utility components
   LoadingSpinner,
+
+  // Text component
+  Text,
+  textVariants,
+  type TextProps,
 } from './components/ui';
 
 // ============================================================================
@@ -322,8 +327,22 @@ export {
   gradientTextVariants,
   type GradientTextProps,
   GlassCard,
+  GlassCardHeader,
+  GlassCardBody,
+  GlassCardFooter,
+  GlassCardDivider,
+  GlassCardTitle,
+  GlassCardDescription,
+  CollapsibleGlassCard,
   glassCardVariants,
   type GlassCardProps,
+  type GlassCardHeaderProps,
+  type GlassCardBodyProps,
+  type GlassCardFooterProps,
+  type GlassCardDividerProps,
+  type GlassCardTitleProps,
+  type GlassCardDescriptionProps,
+  type CollapsibleGlassCardProps,
   CTAButton,
   type CTAButtonProps,
   OAuthButton,

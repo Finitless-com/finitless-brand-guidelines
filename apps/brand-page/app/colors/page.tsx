@@ -6,8 +6,19 @@ import {
   GradientText,
   Button,
   IconContainer,
+  Badge,
+  gray,
+  grayAlpha,
+  blue,
+  cyan,
+  purple,
+  magenta,
+  red,
+  green,
+  amber,
+  teal,
 } from '@finitless/design-system';
-import { Palette, Copy, Check } from 'lucide-react';
+import { Palette, Copy, Check, Sparkles } from 'lucide-react';
 
 function CopyButton({ text, label }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
@@ -62,6 +73,50 @@ function ColorSwatch({
   );
 }
 
+function ColorScale({
+  name,
+  scale,
+  prefix,
+  note,
+}: {
+  name: string;
+  scale: Record<string, string>;
+  prefix: string;
+  note?: string;
+}) {
+  const steps = Object.entries(scale).filter(([key]) => !isNaN(Number(key)));
+
+  return (
+    <div className="mb-8 last:mb-0">
+      <div className="flex items-center gap-3 mb-4">
+        <h3 className="text-lg font-semibold">{name}</h3>
+        {note && <Badge variant="secondary" size="sm">{note}</Badge>}
+      </div>
+      <div className="flex gap-1 mb-3">
+        {steps.map(([step, value]) => (
+          <div key={step} className="flex-1 group relative">
+            <div
+              className="h-12 rounded-lg border border-white/10 transition-transform hover:scale-105 cursor-pointer"
+              style={{ backgroundColor: value }}
+              title={`${prefix}-${step}: ${value}`}
+              onClick={() => navigator.clipboard.writeText(`${prefix}-${step}`)}
+            />
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              {step}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="mt-8 text-sm text-text-muted flex items-center gap-2">
+        <span className="font-mono">{prefix}-100</span>
+        <span className="text-border">→</span>
+        <span className="font-mono">{prefix}-1000</span>
+        <span className="ml-auto text-xs">Click to copy class</span>
+      </div>
+    </div>
+  );
+}
+
 const brandColors = [
   { name: 'Finitless Blue', value: '#165DFC', token: 'bg-brand-primary', description: 'Solid buttons, UI backgrounds' },
   { name: 'Cyan (Links)', value: '#00B7FF', token: 'text-brand-link', description: 'Links, CTAs, gradient start' },
@@ -101,9 +156,10 @@ export default function ColorsPage() {
           <h1 className="text-3xl lg:text-4xl font-bold">
             <GradientText>Colors</GradientText>
           </h1>
+          <Badge variant="primary" className="ml-2">v0.1.0</Badge>
         </div>
         <p className="text-lg text-text-muted mb-12 max-w-2xl">
-          The Finitless color system. All colors are available as Tailwind classes via the design system preset.
+          The Finitless color system with 10-step color scales. All colors are available as Tailwind classes via the design system preset.
         </p>
 
         {/* Brand Primary */}
@@ -130,6 +186,61 @@ export default function ColorsPage() {
                 <ColorSwatch key={color.name} {...color} />
               ))}
             </div>
+          </GlassCard>
+        </section>
+
+        {/* 10-Step Color Scales - NEW in v0.1.0 */}
+        <section className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <h2 className="text-2xl font-bold">10-Step Color Scales</h2>
+            <Badge variant="primary" size="sm" className="gap-1">
+              <Sparkles className="h-3 w-3" />
+              New in v0.1.0
+            </Badge>
+          </div>
+          <p className="text-text-muted mb-6">
+            Geist-inspired color scales with 10 steps from light (100) to dark (1000).
+            Click any swatch to copy its Tailwind class.
+          </p>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Gray" scale={gray} prefix="bg-gray" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Gray Alpha" scale={grayAlpha} prefix="bg-grayAlpha" note="Transparent" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Blue" scale={blue} prefix="bg-blue" note="Brand Primary" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Cyan" scale={cyan} prefix="bg-cyan" note="Links" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Purple" scale={purple} prefix="bg-purple" note="Gradients Only" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Magenta" scale={magenta} prefix="bg-magenta" note="Gradients Only" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Red" scale={red} prefix="bg-red" note="Error" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Green" scale={green} prefix="bg-green" note="Success" />
+          </GlassCard>
+
+          <GlassCard className="mb-6">
+            <ColorScale name="Amber" scale={amber} prefix="bg-amber" note="Warning" />
+          </GlassCard>
+
+          <GlassCard>
+            <ColorScale name="Teal" scale={teal} prefix="bg-teal" note="Accent" />
           </GlassCard>
         </section>
 
@@ -213,59 +324,26 @@ export default function ColorsPage() {
         {/* CSS Custom Properties */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">CSS Custom Properties</h2>
+          <p className="text-text-muted mb-6">
+            Import CSS variables for use without Tailwind. Available at <code className="font-mono text-brand-link">@finitless/design-system/styles</code>.
+          </p>
           <GlassCard>
             <pre className="bg-background-deep rounded-lg p-4 overflow-x-auto text-sm">
-{`:root {
-  /* Brand Primary */
-  --color-primary: #00B7FF;
-  --color-secondary: #7A2EFF;
-  --color-tertiary: #C300FF;
-  --color-blue: #165DFC;
+{`/* Import standalone CSS variables */
+@import '@finitless/design-system/styles/variables.css';
 
-  /* Background Layers */
-  --bg-deep: #08080a;
-  --bg-base: #0e0e10;
-  --bg-elevated: #151517;
-  --bg-surface: #1c1c1f;
+/* Use in your styles */
+.my-element {
+  background: var(--color-brand-primary);
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+}
 
-  /* Surface / Opacity */
-  --color-card-surface: rgba(255, 255, 255, 0.05);
-  --color-border: rgba(255, 255, 255, 0.10);
-  --color-muted-text: rgba(255, 255, 255, 0.60);
-
-  /* Semantic */
-  --color-error: #ff3b45;
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-
-  /* Gradients */
-  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
-  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
-}`}
+/* Color scales available */
+var(--color-gray-100) through var(--color-gray-1000)
+var(--color-blue-100) through var(--color-blue-1000)
+/* ... all 10 color scales */`}
             </pre>
-            <div className="mt-4 flex justify-end">
-              <CopyButton
-                text={`:root {
-  --color-primary: #00B7FF;
-  --color-secondary: #7A2EFF;
-  --color-tertiary: #C300FF;
-  --color-blue: #165DFC;
-  --bg-deep: #08080a;
-  --bg-base: #0e0e10;
-  --bg-elevated: #151517;
-  --bg-surface: #1c1c1f;
-  --color-card-surface: rgba(255, 255, 255, 0.05);
-  --color-border: rgba(255, 255, 255, 0.10);
-  --color-muted-text: rgba(255, 255, 255, 0.60);
-  --color-error: #ff3b45;
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
-  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
-}`}
-                label="Copy all"
-              />
-            </div>
           </GlassCard>
         </section>
 
@@ -286,7 +364,7 @@ export default {
 };`}
             </pre>
             <p className="text-sm text-text-muted mt-4">
-              The preset includes all brand colors, backgrounds, gradients, and semantic tokens.
+              The preset includes all brand colors, 10-step scales, backgrounds, gradients, and semantic tokens.
             </p>
           </GlassCard>
         </section>

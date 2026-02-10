@@ -1,0 +1,366 @@
+/**
+ * Finitless Design System - CSS Custom Properties v0.1.0
+ *
+ * This file exports all design tokens as CSS custom properties for runtime theming.
+ * Import this file if you need the variables without the full Tailwind setup.
+ *
+ * Usage:
+ *   @import '@finitless/design-system/styles/variables.css';
+ *
+ *   .my-element {
+ *     background: var(--color-brand-primary);
+ *     border-radius: var(--radius-md);
+ *   }
+ */
+
+:root {
+  /* ==========================================================================
+     BRAND COLORS
+     ========================================================================== */
+  --color-brand-primary: #165DFC;
+  --color-brand-link: #00B7FF;
+  --color-brand-purple: #7A2EFF;
+  --color-brand-magenta: #C300FF;
+
+  /* ==========================================================================
+     GRAY SCALE (100-1000)
+     ========================================================================== */
+  --color-gray-100: #fafafa;
+  --color-gray-200: #eaeaea;
+  --color-gray-300: #999999;
+  --color-gray-400: #888888;
+  --color-gray-500: #666666;
+  --color-gray-600: #444444;
+  --color-gray-700: #333333;
+  --color-gray-800: #222222;
+  --color-gray-900: #111111;
+  --color-gray-1000: #000000;
+
+  /* ==========================================================================
+     GRAY ALPHA SCALE (Transparent whites)
+     ========================================================================== */
+  --color-gray-alpha-100: rgba(255, 255, 255, 0.03);
+  --color-gray-alpha-200: rgba(255, 255, 255, 0.06);
+  --color-gray-alpha-300: rgba(255, 255, 255, 0.09);
+  --color-gray-alpha-400: rgba(255, 255, 255, 0.12);
+  --color-gray-alpha-500: rgba(255, 255, 255, 0.18);
+  --color-gray-alpha-600: rgba(255, 255, 255, 0.24);
+  --color-gray-alpha-700: rgba(255, 255, 255, 0.36);
+  --color-gray-alpha-800: rgba(255, 255, 255, 0.48);
+  --color-gray-alpha-900: rgba(255, 255, 255, 0.64);
+  --color-gray-alpha-1000: rgba(255, 255, 255, 0.80);
+
+  /* ==========================================================================
+     BLUE SCALE (Brand Primary Extended)
+     ========================================================================== */
+  --color-blue-100: #e6f0ff;
+  --color-blue-200: #cce0ff;
+  --color-blue-300: #99c2ff;
+  --color-blue-400: #66a3ff;
+  --color-blue-500: #3385ff;
+  --color-blue-600: #165DFC; /* = brand.primary */
+  --color-blue-700: #1250d4;
+  --color-blue-800: #0e3fa8;
+  --color-blue-900: #0a2e7c;
+  --color-blue-1000: #061d50;
+
+  /* ==========================================================================
+     CYAN SCALE (Link Color Extended)
+     ========================================================================== */
+  --color-cyan-100: #e0f7ff;
+  --color-cyan-200: #b3ecff;
+  --color-cyan-300: #80dfff;
+  --color-cyan-400: #4dd2ff;
+  --color-cyan-500: #1ac5ff;
+  --color-cyan-600: #00B7FF; /* = brand.link */
+  --color-cyan-700: #009dd9;
+  --color-cyan-800: #0082b3;
+  --color-cyan-900: #00678c;
+  --color-cyan-1000: #004c66;
+
+  /* ==========================================================================
+     PURPLE SCALE (Gradient Midpoint - USE IN GRADIENTS ONLY)
+     ========================================================================== */
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e4ccff;
+  --color-purple-300: #c99aff;
+  --color-purple-400: #ae68ff;
+  --color-purple-500: #9447ff;
+  --color-purple-600: #7A2EFF; /* = brand.purple */
+  --color-purple-700: #6625d9;
+  --color-purple-800: #521cb3;
+  --color-purple-900: #3e138c;
+  --color-purple-1000: #2a0a66;
+
+  /* ==========================================================================
+     MAGENTA SCALE (Gradient End - USE IN GRADIENTS ONLY)
+     ========================================================================== */
+  --color-magenta-100: #fce8ff;
+  --color-magenta-200: #f7ccff;
+  --color-magenta-300: #ef99ff;
+  --color-magenta-400: #e766ff;
+  --color-magenta-500: #df33ff;
+  --color-magenta-600: #C300FF; /* = brand.magenta */
+  --color-magenta-700: #a600d9;
+  --color-magenta-800: #8900b3;
+  --color-magenta-900: #6c008c;
+  --color-magenta-1000: #4f0066;
+
+  /* ==========================================================================
+     RED SCALE (Error/Destructive)
+     ========================================================================== */
+  --color-red-100: #fff0f0;
+  --color-red-200: #ffcccc;
+  --color-red-300: #ff9999;
+  --color-red-400: #ff6666;
+  --color-red-500: #ff4d4d;
+  --color-red-600: #ff3b45; /* = semantic.error */
+  --color-red-700: #d92d36;
+  --color-red-800: #b32027;
+  --color-red-900: #8c1419;
+  --color-red-1000: #66080b;
+
+  /* ==========================================================================
+     GREEN SCALE (Success)
+     ========================================================================== */
+  --color-green-100: #ecfdf5;
+  --color-green-200: #d1fae5;
+  --color-green-300: #a7f3d0;
+  --color-green-400: #6ee7b7;
+  --color-green-500: #34d399;
+  --color-green-600: #22c55e; /* = semantic.success */
+  --color-green-700: #16a34a;
+  --color-green-800: #15803d;
+  --color-green-900: #166534;
+  --color-green-1000: #14532d;
+
+  /* ==========================================================================
+     AMBER SCALE (Warning)
+     ========================================================================== */
+  --color-amber-100: #fffbeb;
+  --color-amber-200: #fef3c7;
+  --color-amber-300: #fde68a;
+  --color-amber-400: #fcd34d;
+  --color-amber-500: #fbbf24;
+  --color-amber-600: #f59e0b; /* = semantic.warning */
+  --color-amber-700: #d97706;
+  --color-amber-800: #b45309;
+  --color-amber-900: #92400e;
+  --color-amber-1000: #78350f;
+
+  /* ==========================================================================
+     TEAL SCALE (Accent)
+     ========================================================================== */
+  --color-teal-100: #f0fdfa;
+  --color-teal-200: #ccfbf1;
+  --color-teal-300: #99f6e4;
+  --color-teal-400: #5eead4;
+  --color-teal-500: #2dd4bf;
+  --color-teal-600: #14b8a6;
+  --color-teal-700: #0d9488;
+  --color-teal-800: #0f766e;
+  --color-teal-900: #115e59;
+  --color-teal-1000: #134e4a;
+
+  /* ==========================================================================
+     BACKGROUND HIERARCHY
+     ========================================================================== */
+  --color-bg-deep: #08080a;
+  --color-bg-base: #0e0e10;
+  --color-bg-elevated: #151517;
+  --color-bg-surface: #1c1c1f;
+
+  /* ==========================================================================
+     SURFACE OVERLAYS
+     ========================================================================== */
+  --color-surface-card: rgba(255, 255, 255, 0.05);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-surface-active: rgba(255, 255, 255, 0.12);
+
+  /* ==========================================================================
+     BORDERS
+     ========================================================================== */
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.20);
+
+  /* ==========================================================================
+     TEXT
+     ========================================================================== */
+  --color-text-primary: #FFFFFF;
+  --color-text-muted: rgba(255, 255, 255, 0.60);
+  --color-text-placeholder: rgba(255, 255, 255, 0.40);
+  --color-text-disabled: rgba(255, 255, 255, 0.30);
+
+  /* ==========================================================================
+     SEMANTIC COLORS
+     ========================================================================== */
+  --color-error: #ff3b45;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-info: #eaf4ff;
+
+  /* ==========================================================================
+     GRADIENTS
+     ========================================================================== */
+  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
+  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
+  --gradient-text: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
+
+  /* ==========================================================================
+     TYPOGRAPHY - FONT FAMILIES
+     ========================================================================== */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+
+  /* ==========================================================================
+     TYPOGRAPHY - FONT SIZES
+     ========================================================================== */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-6xl: 3.75rem;   /* 60px */
+
+  /* ==========================================================================
+     TYPOGRAPHY - FONT WEIGHTS
+     ========================================================================== */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* ==========================================================================
+     TYPOGRAPHY - LINE HEIGHTS
+     ========================================================================== */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* ==========================================================================
+     TYPOGRAPHY - LETTER SPACING
+     ========================================================================== */
+  --letter-spacing-tightest: -0.04em;
+  --letter-spacing-tighter: -0.03em;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-snug: -0.01em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+  --letter-spacing-wider: 0.05em;
+
+  /* ==========================================================================
+     SPACING
+     ========================================================================== */
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+
+  /* ==========================================================================
+     BORDER RADIUS
+     ========================================================================== */
+  --radius-none: 0px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     SHADOWS
+     ========================================================================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.45);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.5);
+  --shadow-dropdown: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px -10px rgba(0, 183, 255, 0.3);
+  --shadow-focus: 0 0 0 3px rgba(0, 183, 255, 0.25);
+
+  /* ==========================================================================
+     BLUR
+     ========================================================================== */
+  --blur-none: 0;
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 12px;
+  --blur-xl: 16px;
+  --blur-2xl: 24px;
+  --blur-glass: 8px;
+
+  /* ==========================================================================
+     Z-INDEX
+     ========================================================================== */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-toast: 700;
+
+  /* ==========================================================================
+     MOTION - DURATIONS
+     ========================================================================== */
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 150ms;
+  --duration-default: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 400ms;
+  --duration-slowest: 500ms;
+
+  /* ==========================================================================
+     MOTION - EASINGS
+     ========================================================================== */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ==========================================================================
+     MOTION - TRANSITIONS
+     ========================================================================== */
+  --transition-fade: opacity var(--duration-default) var(--ease-out);
+  --transition-scale: transform var(--duration-default) var(--ease-spring);
+  --transition-slide: transform var(--duration-slow) var(--ease-out);
+  --transition-color: color var(--duration-normal) var(--ease-in-out), background-color var(--duration-normal) var(--ease-in-out);
+  --transition-all: all var(--duration-default) var(--ease-out);
+  --transition-fast: all var(--duration-normal) var(--ease-out);
+
+  /* ==========================================================================
+     BREAKPOINTS (as reference values)
+     ========================================================================== */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
