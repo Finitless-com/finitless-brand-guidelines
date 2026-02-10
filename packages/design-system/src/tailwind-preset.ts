@@ -473,14 +473,14 @@ export const finitlessPreset: Config = {
           from: { backgroundPosition: '-200% 0' },
           to: { backgroundPosition: '200% 0' },
         },
-        // Dialog/Modal animations
+        // Dialog/Modal animations (include centering to avoid transform conflicts)
         'dialog-in': {
-          '0%': { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
-          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+          '0%': { opacity: '0', transform: 'translate(-50%, -50%) scale(0.96)' },
+          '100%': { opacity: '1', transform: 'translate(-50%, -50%) scale(1)' },
         },
         'dialog-out': {
-          '0%': { opacity: '1', transform: 'scale(1) translateY(0)' },
-          '100%': { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
+          '0%': { opacity: '1', transform: 'translate(-50%, -50%) scale(1)' },
+          '100%': { opacity: '0', transform: 'translate(-50%, -50%) scale(0.96)' },
         },
         'overlay-in': {
           '0%': { opacity: '0' },
