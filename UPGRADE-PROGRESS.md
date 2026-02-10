@@ -3,6 +3,7 @@
 **Started**: 2026-02-10
 **Current Version**: v0.1.0 ✅
 **Build Status**: PASSING ✅
+**Total Components**: 45+ (up from 26)
 
 ---
 
@@ -27,33 +28,47 @@
 - [x] Copy typography (20, 16, 14, 12)
 - [x] Helper functions (getHeadingClass, etc.)
 
-### Phase 4.1: Button Enhancements ✅ COMPLETE
-- [x] Added `outline` variant
-- [x] Added `warning` variant
-- [x] Added sizes: `xs`, `xl`, `2xl`
-- [x] Added icon sizes: `icon-xs`, `icon-lg`, `icon-xl`
-- [x] Added `shape` prop: `default`, `square`, `pill`
-- [x] Added `prefixIcon`/`suffixIcon`
-- [x] Active press effect
+### Phase 3: New Components ✅ COMPLETE
+- [x] Table (striped, sortable, selectable, empty state)
+- [x] Toast (Sonner integration with showToast utility)
+- [x] Sheet (slide-out panel, 4 directions, 5 sizes)
+- [x] Popover (arrow, header/title/description)
+- [x] Slider (range, marks, orientation)
+- [x] Command (cmdk-style command palette)
+- [x] Calendar (react-day-picker v9)
+- [x] Context Menu (submenus, checkboxes, radio items)
+- [x] Breadcrumb (ellipsis collapse)
+- [x] Pagination (first/last, prev/next, ellipsis)
+- [x] Toggle Group (single/multiple selection)
+- [x] Hover Card (rich preview cards)
+- [x] Aspect Ratio (preset ratios)
+- [x] Progress (linear + circular)
+- [x] ScrollArea (custom scrollbars)
+- [x] Collapsible + Accordion
 
-### Phase 4.2: Input Enhancements ✅ COMPLETE
-- [x] Prefix/suffix slots
-- [x] Error message slot
-- [x] Helper text slot
-- [x] Character count
-- [x] Clear button
+### Phase 4: Enhanced Existing Components ✅ COMPLETE
+- [x] Button: outline/warning variants, xs/xl/2xl sizes, shape prop, prefix/suffix icons
+- [x] Input: prefix/suffix slots, error/helper text, character count, clear button
+- [x] Dialog: 8 size variants, sticky header/footer, scrollable, showClose prop
+- [x] Badge: outline/gradient variants, pill/square shapes, xs size, removable, icon prop
+- [x] Avatar: ring prop, status indicator, avatar group, getInitials utility, 2xl size
 
 ### Phase 5: Animation & Motion System ✅ COMPLETE
-- [x] Created `motion.ts` tokens file
-- [x] Entrance animations (10+)
-- [x] Exit animations (8+)
-- [x] Feedback animations (5)
-- [x] Loading animations
-- [x] Dialog/Modal animations
-- [x] Accordion animations
-- [x] Tooltip animations
+- [x] Motion tokens file with durations, easings, springs
+- [x] Entrance animations (fade-in, slide-in, scale-in, etc.)
+- [x] Exit animations (fade-out, slide-out, scale-out)
+- [x] Feedback animations (pulse, shake, bounce)
+- [x] Loading animations (spin, shimmer)
+- [x] Component-specific animations (dialog, accordion, tooltip)
 - [x] Animation delay utilities
-- [x] Spring configurations
+
+### Phase 6: Grid System & Layout ✅ COMPLETE
+- [x] Grid (12-column, responsive)
+- [x] GridItem (span, start, responsive)
+- [x] Container (size presets: form, card, content, wide, full, site)
+- [x] Stack, HStack, VStack (gap, alignment, wrap)
+- [x] Spacer (fixed and flexible)
+- [x] Center (horizontal/vertical centering)
 
 ### Phase 11: Quality & Polish ✅ COMPLETE
 - [x] Focus ring utilities
@@ -67,12 +82,6 @@
 - [x] Z-index scale
 - [x] Shadow system (glow, focus, inner)
 
-### Phase 3: New Components (Partial) ✅ COMPLETE
-- [x] Progress (linear + circular)
-- [x] ScrollArea
-- [x] Collapsible
-- [x] Accordion
-
 ---
 
 ## Files Modified/Created
@@ -85,9 +94,26 @@
 | `src/tailwind-preset.ts` | ✅ Enhanced with all tokens |
 | `src/components/ui/button.tsx` | ✅ Enhanced |
 | `src/components/ui/input.tsx` | ✅ Enhanced |
+| `src/components/ui/dialog.tsx` | ✅ Enhanced |
+| `src/components/ui/badge.tsx` | ✅ Enhanced |
+| `src/components/ui/avatar.tsx` | ✅ Enhanced |
+| `src/components/ui/table.tsx` | ✅ NEW |
+| `src/components/ui/toast.tsx` | ✅ NEW |
+| `src/components/ui/sheet.tsx` | ✅ NEW |
+| `src/components/ui/popover.tsx` | ✅ NEW |
+| `src/components/ui/slider.tsx` | ✅ NEW |
+| `src/components/ui/command.tsx` | ✅ NEW |
+| `src/components/ui/calendar.tsx` | ✅ NEW |
+| `src/components/ui/context-menu.tsx` | ✅ NEW |
+| `src/components/ui/breadcrumb.tsx` | ✅ NEW |
+| `src/components/ui/pagination.tsx` | ✅ NEW |
+| `src/components/ui/toggle-group.tsx` | ✅ NEW |
+| `src/components/ui/hover-card.tsx` | ✅ NEW |
+| `src/components/ui/aspect-ratio.tsx` | ✅ NEW |
 | `src/components/ui/progress.tsx` | ✅ NEW |
 | `src/components/ui/scroll-area.tsx` | ✅ NEW |
 | `src/components/ui/collapsible.tsx` | ✅ NEW (includes Accordion) |
+| `src/components/ui/layout.tsx` | ✅ NEW |
 | `src/components/ui/index.ts` | ✅ Updated exports |
 | `src/index.ts` | ✅ Updated exports |
 | `package.json` | ✅ Version 0.1.0 |
@@ -95,6 +121,40 @@
 ---
 
 ## New Exports in v0.1.0
+
+### New Components
+```typescript
+import {
+  // Phase 3 Components
+  Table, TableHeader, TableBody, TableRow, TableHead, TableCell, TableCaption, TableEmpty,
+  Toaster, showToast, toast,
+  Sheet, SheetTrigger, SheetContent, SheetHeader, SheetBody, SheetFooter,
+  Popover, PopoverTrigger, PopoverContent, PopoverHeader,
+  Slider, RangeSlider,
+  Command, CommandDialog, CommandInput, CommandList, CommandGroup, CommandItem,
+  Calendar,
+  ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem,
+  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage,
+  Pagination, PaginationContent, PaginationItem, PaginationLink,
+  ToggleGroup, ToggleGroupItem,
+  HoverCard, HoverCardTrigger, HoverCardContent,
+  AspectRatio,
+  Progress, CircularProgress,
+  ScrollArea,
+  Collapsible, CollapsibleTrigger, CollapsibleContent,
+  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
+
+  // Phase 6 Layout
+  Grid, GridItem,
+  Container,
+  Stack, HStack, VStack,
+  Spacer, Center,
+
+  // Utilities
+  LoadingSpinner,
+  getInitials,
+} from '@finitless/design-system';
+```
 
 ### Color Scales
 ```typescript
@@ -117,17 +177,6 @@ import {
 import {
   motion, duration, easing, transition, animation,
   delay, spring, keyframes, getAnimationClass
-} from '@finitless/design-system';
-```
-
-### New Components
-```typescript
-import {
-  Progress, CircularProgress,
-  ScrollArea,
-  Collapsible, CollapsibleTrigger, CollapsibleContent,
-  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
-  LoadingSpinner
 } from '@finitless/design-system';
 ```
 
@@ -169,38 +218,35 @@ import {
 
 ## Remaining Phases for Future
 
-### Phase 3: New Components (Remaining)
-- [ ] Table
-- [ ] Toast (Sonner integration)
-- [ ] Sheet (slide-out panel)
-- [ ] Popover
-- [ ] Slider
-- [ ] Command (cmdk-style)
-- [ ] Calendar
-- [ ] Context Menu
-- [ ] Breadcrumb
-- [ ] Pagination
-- [ ] Toggle Group
-- [ ] Hover Card
+### Phase 4: Enhanced Existing Components (Optional)
+- [ ] Select (searchable, multi-select) - could use cmdk integration
+- [ ] GlassCard (header/footer compound components, collapsible variant)
 
-### Phase 4: Enhanced Existing Components (Remaining)
-- [ ] Select (searchable, multi-select)
-- [ ] Dialog (sizes, sticky header/footer)
-- [ ] Badge (dot indicator, pulse)
-- [ ] Avatar (group, status indicator)
-- [ ] GlassCard (header/footer, collapsible)
+### Phase 7: Documentation & Storybook (Partial)
+- [x] Storybook stories for major components (Dialog, Sheet, Table, Toast, Progress, Avatar, Calendar, Command, Slider, Badge, Input, Layout)
+- [ ] "Show Code" pattern for all stories
+- [ ] Component API documentation
+- [ ] Accessibility documentation per component
+- [ ] Pattern stories (real-world examples)
 
-### Phase 6: Grid System & Layout
-- [ ] Grid component
-- [ ] Container component
-- [ ] Stack component
-- [ ] Spacer component
+### Phase 8: Brand Page Enhancements
+- [ ] Interactive component playground
+- [ ] Component API tables
+- [ ] "Show Code" feature
+- [ ] Search (Command Palette)
+- [ ] Component status indicators
 
-### Phase 7-10: Documentation, DX, Testing
-- [ ] Storybook enhancements
-- [ ] Brand page updates
-- [ ] CLI tool
-- [ ] Unit tests
+### Phase 9: Developer Experience
+- [ ] CLI tool for adding components
+- [ ] VS Code extension (optional)
+- [ ] CSS Custom Properties export
+- [ ] JSON Token export
+
+### Phase 10: Testing & Quality
+- [ ] Unit tests for all components
+- [ ] Visual regression tests
+- [ ] Accessibility audit
+- [ ] Bundle size monitoring
 
 ---
 
@@ -210,11 +256,20 @@ None - all changes are backwards compatible.
 
 ---
 
+## Dependencies Added
+
+- `sonner` - Toast notifications
+- `cmdk` - Command palette
+- `react-day-picker` - Calendar component
+- `date-fns` - Date utilities for calendar
+
+---
+
 ## Resume Instructions
 
 To continue this upgrade in a new session:
 1. Read this file to understand current progress
-2. Check remaining phases above
-3. Install additional Radix dependencies as needed
-4. Continue implementing from where we left off
+2. Check remaining phases above (7-10 are documentation/tooling focused)
+3. The core component library is feature-complete
+4. Focus on Storybook stories if continuing development
 5. Update this document as progress is made
