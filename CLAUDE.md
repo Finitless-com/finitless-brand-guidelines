@@ -1,6 +1,6 @@
-# CLAUDE.md -- Finitless Design System
+# CLAUDE.md
 
-Instructions for AI agents consuming this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ---
 
@@ -212,20 +212,86 @@ className="rounded rounded-sm rounded-lg rounded-xl rounded-full"
 ## Development Commands
 
 ```bash
-# Install all dependencies
+# Install all dependencies (from root)
 npm install
 
-# Start Storybook (design system dev)
+# Start Storybook for design system development
 npm run storybook
 
 # Start brand page dev server
 npm run dev
 
-# Build all packages
+# Build all packages (design-system then brand-page)
 npm run build
 
 # Build Storybook static
 npm run build-storybook
+
+# Lint all packages
+npm run lint
+
+# Clean all build artifacts and node_modules
+npm run clean
+```
+
+### Workspace-Specific Commands
+
+```bash
+# Design system only
+npm run build --workspace=packages/design-system
+npm run lint --workspace=packages/design-system
+npm run dev --workspace=packages/design-system  # watch mode
+
+# Brand page only
+npm run build --workspace=apps/brand-page
+npm run dev --workspace=apps/brand-page
+npm run lint --workspace=apps/brand-page
+```
+
+### Type Checking
+
+```bash
+# From packages/design-system
+cd packages/design-system && tsc --noEmit
+
+# From apps/brand-page
+cd apps/brand-page && npx tsc --noEmit
+```
+
+---
+
+## Architecture Notes
+
+### Monorepo Structure
+- Uses npm workspaces (configured in root `package.json`)
+- `packages/design-system` builds first, `apps/brand-page` depends on it via `"@finitless/design-system": "*"`
+- Shared dependencies hoisted to root `node_modules`
+
+### Build System
+The design system uses Vite with dual entry points:
+- `index` → Main components and tokens (`@finitless/design-system`)
+- `tailwind` → Tailwind preset only (`@finitless/design-system/tailwind`)
+
+Outputs both ESM (`.js`) and CommonJS (`.cjs`) formats with TypeScript declarations.
+
+### Component Patterns
+- **UI components** (`components/ui/`) - Radix primitives with CVA variants
+- **Brand components** (`components/brand/`) - Finitless-specific with brand styling baked in
+- All components use `cn()` utility for class merging (clsx + tailwind-merge)
+
+---
+
+## Publishing to NPM
+
+```bash
+cd packages/design-system
+
+# Bump version in package.json
+npm version patch  # or minor/major
+
+# Build and publish
+npm run build
+npm publish --access public
 ```
 
 ---
