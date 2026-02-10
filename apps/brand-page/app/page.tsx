@@ -81,7 +81,7 @@ const sections = [
     href: '/components',
     icon: Layout,
     title: 'Components',
-    description: 'Buttons, inputs, cards, badges, and more UI primitives.',
+    description: '45+ UI components: buttons, inputs, dialogs, tables, calendars, and more.',
     color: 'text-brand-primary',
     bgColor: 'bg-brand-primary/10',
   },
@@ -149,7 +149,7 @@ export default function OverviewPage() {
       {/* Hero */}
       <section className="py-16 lg:py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="primary" className="mb-6">v0.0.1</Badge>
+          <Badge variant="primary" className="mb-6">v0.1.0</Badge>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
             <GradientText>Finitless Design System</GradientText>
           </h1>

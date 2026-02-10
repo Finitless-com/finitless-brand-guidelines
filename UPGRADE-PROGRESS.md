@@ -230,7 +230,9 @@ import {
 - [ ] Pattern stories (real-world examples)
 
 ### Phase 8: Brand Page Enhancements
-- [ ] Interactive component playground
+- [x] Updated homepage with v0.1.0 badge and 45+ components
+- [x] Components page with interactive demos (Dialogs, Data Display, Feedback tabs)
+- [ ] Interactive component playground (advanced props control)
 - [ ] Component API tables
 - [ ] "Show Code" feature
 - [ ] Search (Command Palette)
