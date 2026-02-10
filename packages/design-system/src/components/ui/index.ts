@@ -285,3 +285,6 @@ export {
 
 // Re-export LoadingSpinner from button
 export { LoadingSpinner } from './button';
+
+// Text component - v0.1.0
+export { Text, textVariants, type TextProps } from './text';
