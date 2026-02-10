@@ -1,179 +1,198 @@
-# Finitless Brand Guidelines
+# @finitless/design-system
 
-The single source of truth for the Finitless brand identity -- logos, colors, typography, voice, and visual patterns.
+Finitless Design System - Brand tokens, React components, and Tailwind preset for building consistent Finitless applications.
 
-**Finitless** builds AI ordering agents for restaurants (voice, WhatsApp, web chat).
-Tagline: **"Never Miss a Sale. Ever."**
+## Features
 
----
+- **Design Tokens** - Colors, typography, spacing, and effects as JavaScript constants and Tailwind config
+- **React Components** - Radix UI-based accessible components styled to brand specs
+- **Tailwind Preset** - Drop-in preset for any Tailwind project
+- **Storybook Documentation** - Interactive component playground and usage examples
 
-## Logo
+## Installation
 
-The Finitless mark merges the letter "N" with an infinity symbol into one icon, rendered with a cyan-to-magenta gradient. The wordmark uses the BEASIGNE font in all caps.
+```bash
+npm install @finitless/design-system
+```
 
-### Preferred: Color on Dark
+## Quick Start
 
-![Finitless Logo on Dark](assets/logos/finitless-logo-horizontal-on-dark.png)
+### 1. Add the Tailwind Preset
 
-### Color on Light
+```typescript
+// tailwind.config.ts
+import { finitlessPreset } from '@finitless/design-system/tailwind';
 
-![Finitless Logo on Light](assets/logos/finitless-logo-horizontal-on-light.png)
+export default {
+  presets: [finitlessPreset],
+  content: [
+    './src/**/*.{ts,tsx}',
+    './node_modules/@finitless/design-system/dist/**/*.{js,mjs}',
+  ],
+};
+```
 
-### Brand Mark
+### 2. Import Global Styles
 
-![Finitless Icon](assets/icons/finitless-icon-on-dark-2000.png)
+```typescript
+// app/layout.tsx or _app.tsx
+import '@finitless/design-system/styles';
+```
 
-> See `BRAND-GUIDELINES.md` for full logo usage rules, variant descriptions, and do's/don'ts.
+### 3. Use Components
 
----
+```tsx
+import { Button, GlassCard, CTAButton, GradientText } from '@finitless/design-system';
 
-## Color Palette
+export function Hero() {
+  return (
+    <GlassCard>
+      <GradientText as="h1" className="text-5xl">
+        Never Miss a Sale
+      </GradientText>
+      <p className="text-text-muted">
+        AI ordering agents for restaurants.
+      </p>
+      <CTAButton size="lg">Get Started</CTAButton>
+    </GlassCard>
+  );
+}
+```
 
-| Swatch | Name | Hex | Usage |
-|--------|------|-----|-------|
-| | Cyan | `#00B7FF` | Primary accent, links, CTAs |
-| | Purple | `#7A2EFF` | Gradient midpoint, secondary accent |
-| | Magenta | `#C300FF` | Gradient end, tertiary accent |
-| | Blue | `#165DFC` | Solid buttons (preferred), UI backgrounds, link color |
-| | Background | `#0a0a0a` | Near-black, primary background |
-| | White | `#FFFFFF` | Primary text on dark backgrounds |
-| | Error | `#ff3b45` | Error states |
-| | Success | `#22c55e` | Success states |
-| | Warning | `#f59e0b` | Warning / caution states |
+## Components
 
-**Brand gradient (CSS)**: `linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)`
+### UI Primitives
+- `Button` - Primary, CTA, secondary, ghost, destructive, link variants
+- `Input` - Text inputs with error states and icons
+- `Label` - Form labels with required indicator
+- `Textarea` - Multi-line text input
+- `Select` - Dropdown select with search
+- `Checkbox` - Checkbox with indeterminate state
+- `Switch` - Toggle switch
+- `RadioGroup` - Radio button group
+- `Dialog` - Modal dialogs
+- `Tabs` - Tab navigation
+- `Tooltip` - Hover tooltips
+- `Alert` - Status messages
+- `Badge` - Labels and tags
+- `Avatar` - User avatars
+- `Skeleton` - Loading placeholders
+- `Separator` - Visual dividers
+- `DropdownMenu` - Context menus
 
-> See `colors/COLORS.md` for full spec with RGB, HSL, CSS variables, and Tailwind config.
+### Brand Components
+- `Logo` - Finitless logo with variants and sizes
+- `GradientText` - Brand gradient text effect
+- `GlassCard` - Glass-morphism card container
+- `CTAButton` - Call-to-action button with glow (ONE per page!)
+- `OAuthButton` - Social login buttons
+- `FormContainer` - Form wrapper with divider
+- `StatusBadge` - Live, active, pending, error states
+- `IconContainer` - Colored icon backgrounds
 
----
+## Design Tokens
 
-## Typography
+### Colors
 
-| Role | Font | Weights |
-|------|------|---------|
-| Logo / Wordmark | BEASIGNE | Regular (logo only) |
-| UI / Body / Headings | Inter (Google Fonts) | 400, 600, 700, 800 |
+```typescript
+import { colors, gradients } from '@finitless/design-system';
 
-> See `typography/TYPOGRAPHY.md` for the full type scale, CSS implementation, and Tailwind config.
+// Brand colors
+colors.brand.primary    // #165DFC - Finitless Blue
+colors.brand.link       // #00B7FF - Cyan (links, focus)
+colors.brand.purple     // #7A2EFF - Gradient only
+colors.brand.magenta    // #C300FF - Gradient only
 
----
+// Background hierarchy
+colors.background.deep      // #08080a - Sidebar, nav
+colors.background.base      // #0e0e10 - Page background
+colors.background.elevated  // #151517 - Cards, modals
+colors.background.surface   // #1c1c1f - Dropdowns
 
-## Form Components (v2.3.0)
+// Semantic
+colors.semantic.error     // #ff3b45
+colors.semantic.success   // #22c55e
+colors.semantic.warning   // #f59e0b
 
-Specifications for login pages, sign-up flows, and any form UI.
+// Gradients
+gradients.brand  // cyan → purple → magenta
+gradients.cta    // cyan → purple
+```
 
-| Element | Pattern |
-|---------|---------|
-| Input field | `bg-white/5 border-white/10 rounded-xl h-12` -- focus: cyan border glow |
-| Label | `text-sm font-semibold text-white/70 mb-2` |
-| Form submit | CTA gradient, full width, 48px height. **Only ONE gradient button per view.** |
-| OAuth button | Secondary pattern (glass bg + border). **Never** use the CTA gradient. |
-| Divider ("or") | `h-px bg-white/10` lines with `text-xs text-white/40` text |
-| Form container | `max-w-[480px] mx-auto bg-white/5 border-white/10 rounded-2xl p-8` |
-| Logo in forms | Always `<img>` asset -- never render from a font |
+### Typography
 
-### Button Sizes
+```typescript
+import { typography } from '@finitless/design-system';
 
-| Size | Height | Usage |
-|------|--------|-------|
-| sm | 36px | Inline actions, table rows |
-| md (default) | 44px | Nav CTAs, card actions |
-| lg | 48px | Form submit, hero CTAs |
+typography.fontFamily.sans  // Inter stack
+typography.fontFamily.mono  // Monospace stack
+typography.fontSize.base    // 16px
+typography.fontWeight.semibold // 600
+```
 
-> See `BRAND-GUIDELINES.md` Section 8 for full form specs, input states, and do's/don'ts.
+### Spacing & Radius
 
----
+```typescript
+import { borderRadius, spacing } from '@finitless/design-system';
 
-## Brand Voice
+borderRadius.sm      // 8px
+borderRadius.DEFAULT // 12px (universal default)
+borderRadius.lg      // 16px
+borderRadius.xl      // 24px
+```
 
-Finitless is **confident, not arrogant** -- **practical, not visionary** -- **direct, not salesy**.
+## Project Structure
 
-Target audience: Restaurant owners and operators.
-Key metrics: $31,000/year in missed orders, 40% of calls go unanswered during peak hours.
+```
+├── packages/
+│   └── design-system/       # @finitless/design-system package
+│       ├── src/
+│       │   ├── components/  # React components
+│       │   ├── tokens/      # Design tokens
+│       │   ├── lib/         # Utilities
+│       │   └── styles/      # CSS
+│       ├── stories/         # Storybook stories
+│       └── .storybook/      # Storybook config
+├── apps/
+│   └── brand-page/          # brand.finitless.com (Next.js)
+├── assets/                  # Canonical logo/icon files
+└── archive/
+    └── v3.0.0/              # Previous implementation
+```
 
-### AI Terminology
+## Development
 
-We say **AI agents** and **AI ordering agents** -- never "chatbot," "bot," "artificial intelligence," or "virtual assistant."
+```bash
+# Install dependencies
+npm install
 
-| Use | Avoid |
-|-----|-------|
-| AI agents | chatbot, bot |
-| AI ordering agents | artificial intelligence (say "AI") |
-| AI-powered (as modifier) | smart, virtual assistant |
+# Start Storybook
+npm run storybook
 
-**Rule**: Lead with what the product does, not the technology category. Restaurant owners care about revenue, not labels.
+# Start brand page dev server
+npm run dev
 
-> See `voice/BRAND-VOICE.md` for the full voice guide with tone-by-context examples and copy templates.
+# Build all packages
+npm run build
+```
 
----
+## Brand Page
 
-## Interactive Brand Guidelines
+The brand page is deployed at [brand.finitless.com](https://brand.finitless.com).
 
-Open `index.html` (or visit the deployed Vercel URL) for an interactive brand guidelines viewer with:
+It provides:
+- Interactive component demos
+- Color palette with copy buttons
+- Typography scale reference
+- Logo and icon downloads
+- Code snippets for integration
 
-- **Copy-to-clipboard** on all color values, code blocks, and asset paths
-- **Asset downloads** with size picker for every icon and logo variant
-- **"Copy Everything" button** to feed SKILL.md + CLAUDE.md to any LLM in one click
-- **Live do's and don'ts** component examples (buttons, cards, gradient text, form inputs, OAuth buttons)
-- **Complete login form demo** showing all form patterns applied together
-- **LLM integration guide** with quick-start code for manifest fetching
+## Resources
 
----
+- [Storybook](https://storybook.brand.finitless.com) - Interactive component playground
+- [Brand Page](https://brand.finitless.com) - Visual brand guide
+- [GitHub](https://github.com/Finitless-com/finitless-brand-guidelines) - Source code
 
-## Asset Locations
+## License
 
-| Asset | Path | Count |
-|-------|------|-------|
-| Logo lockups (PNG) | `assets/logos/` | 31+ files |
-| Icons and brand mark (SVG + PNG) | `assets/icons/` | 48+ files |
-| Reference materials | `assets/reference/` | 2 files (brand PDF + HubSpot screenshot) |
-| Color specification | `colors/COLORS.md` | -- |
-| Typography specification | `typography/TYPOGRAPHY.md` | -- |
-| Voice and tone guide | `voice/BRAND-VOICE.md` | -- |
-| Complete brand guide | `BRAND-GUIDELINES.md` | -- |
-
----
-
-## For AI Agents
-
-This repository is designed to be consumed by AI coding agents and LLMs.
-
-| Resource | Purpose |
-|----------|---------|
-| `CLAUDE.md` | Instructions for AI agents -- how to find assets, apply colors, load fonts, follow voice rules |
-| `SKILL.md` | Reusable LLM skill definition for applying Finitless brand styling to generated artifacts |
-| `brand-manifest.json` | Machine-readable brand data (when deployed) |
-
-### Quick Start for Agents
-
-1. Read `CLAUDE.md` for orientation.
-2. Use `colors/COLORS.md` for exact color values and CSS/Tailwind snippets.
-3. Use `typography/TYPOGRAPHY.md` for font loading and type scale.
-4. Use `voice/BRAND-VOICE.md` when generating any copy or content.
-5. Pick logo/icon files from `assets/` based on the context table in `CLAUDE.md`.
-
----
-
-## Deployment
-
-This repository is connected to Vercel and **deploys automatically** on every push to `main`. No manual steps needed.
-
-Once deployed, assets are available at their Vercel URL paths (e.g., `/assets/logos/finitless-logo-horizontal-on-dark.png`).
-
----
-
-## Documentation
-
-| File | Description |
-|------|-------------|
-| `BRAND-GUIDELINES.md` | Complete brand guide -- all sections in one document |
-| `colors/COLORS.md` | Full color spec (hex, RGB, HSL, CSS vars, Tailwind) |
-| `typography/TYPOGRAPHY.md` | Font families, type scale, CSS and Tailwind implementation |
-| `voice/BRAND-VOICE.md` | Brand personality, tone by context, words to use/avoid |
-| `CLAUDE.md` | AI agent consumption instructions |
-| `SKILL.md` | LLM skill definition for brand styling |
-| `CHANGELOG.md` | Version history |
-
----
-
-All assets in this repository are proprietary to Finitless. Do not use without authorization.
+Proprietary - Finitless, Inc.

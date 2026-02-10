@@ -1,0 +1,652 @@
+{
+  "$schema": "https://brand-guidelines.finitless.com/schema/v1",
+  "version": "3.0.0",
+  "lastUpdated": "2026-02-10",
+  "baseUrl": "https://brand.finitless.com/",
+
+  "company": {
+    "name": "Finitless",
+    "legalName": "Finitless",
+    "tagline": "Never Miss a Sale. Ever.",
+    "description": "AI ordering agents that recover missed revenue for restaurants via voice, WhatsApp, and web chat.",
+    "website": "https://finitless.com",
+    "founder": "Sergio Khoury",
+    "industry": "Restaurant Technology / AI",
+    "targetAudience": "Restaurant owners and operators"
+  },
+
+  "logo": {
+    "concept": "Letter N merged with the infinity symbol. Two interlocking angular shapes with a cyan-to-magenta gradient.",
+    "wordmark": "FINITLESS in BEASIGNE font, all caps, geometric sans-serif with distinctive letter cuts.",
+    "rules": {
+      "clearSpace": "Minimum 50% of icon height on all sides",
+      "minimumSize": "24px height for icon, 80px width for full logo",
+      "restrictions": [
+        "Never stretch — resize proportionately only",
+        "Never modify or recreate the icon",
+        "Use only supplied brand stamp files",
+        "Never add effects (shadows, outlines, glow) to the logo itself"
+      ]
+    },
+    "variants": {
+      "colorOnDark": {
+        "description": "Full gradient icon + white wordmark on dark background (PREFERRED)",
+        "icon": "assets/icons/finitless-icon-on-dark-2000.png",
+        "logo": "assets/logos/finitless-logo-horizontal-on-dark.png"
+      },
+      "colorOnLight": {
+        "description": "Full gradient icon + black wordmark on light background",
+        "icon": "assets/icons/finitless-icon-on-light-2000.png",
+        "logo": "assets/logos/finitless-logo-horizontal-on-light.png"
+      },
+      "monochromeWhite": {
+        "description": "All-white version for dark backgrounds",
+        "logo": "assets/logos/finitless-logo-square-on-dark.png"
+      },
+      "monochromeBlack": {
+        "description": "All-black version for light backgrounds",
+        "logo": "assets/logos/finitless-logo-square-on-light.png"
+      }
+    }
+  },
+
+  "colors": {
+    "designerOriginal": {
+      "note": "Original 2-stop gradient specified by the brand designer (for print/reference)",
+      "gradientStart": { "hex": "#00CCFF", "rgb": [0, 204, 255], "name": "Cyan" },
+      "gradientEnd": { "hex": "#FF00FF", "rgb": [255, 0, 255], "name": "Magenta" }
+    },
+    "primary": {
+      "note": "Web-adapted 3-stop gradient (recommended for all digital use)",
+      "cyan": { "hex": "#00B7FF", "rgb": [0, 183, 255], "hsl": [197, 100, 50], "name": "Finitless Cyan", "usage": "Primary accent, links, CTAs, gradient start" },
+      "purple": { "hex": "#7A2EFF", "rgb": [122, 46, 255], "hsl": [262, 100, 59], "name": "Finitless Purple", "usage": "Gradient midpoint, secondary accent" },
+      "magenta": { "hex": "#C300FF", "rgb": [195, 0, 255], "hsl": [286, 100, 50], "name": "Finitless Magenta", "usage": "Gradient end, tertiary accent" },
+      "blue": { "hex": "#165DFC", "rgb": [22, 93, 252], "hsl": [222, 97, 54], "name": "Finitless Blue", "usage": "Solid buttons (preferred), UI backgrounds, link color, data visualization" }
+    },
+    "neutral": {
+      "black": { "hex": "#000000", "rgb": [0, 0, 0], "usage": "Pure black, maximum contrast" },
+      "backgroundDeep": { "hex": "#08080a", "rgb": [8, 8, 10], "tailwind": "bg-[#08080a]", "usage": "Sidebar, navigation, deepest layer" },
+      "background": { "hex": "#0e0e10", "rgb": [14, 14, 16], "tailwind": "bg-[#0e0e10]", "usage": "Primary page background (warmer than pure black)" },
+      "backgroundElevated": { "hex": "#151517", "rgb": [21, 21, 23], "tailwind": "bg-[#151517]", "usage": "Cards, modals, elevated surfaces" },
+      "backgroundSurface": { "hex": "#1c1c1f", "rgb": [28, 28, 31], "tailwind": "bg-[#1c1c1f]", "usage": "Dropdown panels, popovers, highest elevation" },
+      "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "usage": "Primary text on dark, light backgrounds" },
+      "legacyBackground": { "hex": "#0a0a0a", "rgb": [10, 10, 10], "usage": "DEPRECATED: Use background (#0e0e10) instead" }
+    },
+    "surface": {
+      "cardBackground": { "value": "rgba(255,255,255,0.04)", "tailwind": "bg-white/[0.04]", "note": "Updated from 5% to 4% for subtler glass effect" },
+      "border": { "value": "rgba(255,255,255,0.06)", "tailwind": "border-white/[0.06]", "note": "Updated from 10% to 6% for subtler borders" },
+      "borderStrong": { "value": "rgba(255,255,255,0.10)", "tailwind": "border-white/10", "note": "Use for emphasis or dividers" },
+      "mutedText": { "value": "rgba(255,255,255,0.60)", "tailwind": "text-white/60" }
+    },
+    "semantic": {
+      "error": { "hex": "#ff3b45", "rgb": [255, 59, 69], "usage": "Errors, alerts, problem states" },
+      "success": { "hex": "#22c55e", "rgb": [34, 197, 94], "usage": "Success, positive states" },
+      "warning": { "hex": "#f59e0b", "rgb": [245, 158, 11], "usage": "Caution states, pending actions" },
+      "info": { "hex": "#eaf4ff", "rgb": [234, 244, 255], "usage": "Informational, light tint" }
+    },
+    "gradients": {
+      "brand": {
+        "css": "linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)",
+        "tailwind": "bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF]",
+        "stops": ["#00B7FF", "#7A2EFF", "#C300FF"],
+        "usage": "Hero text, logo accent, key brand moments"
+      },
+      "cta": {
+        "css": "linear-gradient(to right, #00B7FF, #7A2EFF)",
+        "tailwind": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF]",
+        "stops": ["#00B7FF", "#7A2EFF"],
+        "usage": "Buttons, interactive elements, CTAs"
+      },
+      "glow": {
+        "css": "linear-gradient(to right, rgba(0,183,255,0.2), rgba(122,46,255,0.2))",
+        "tailwind": "bg-gradient-to-r from-[#00B7FF]/20 to-[#7A2EFF]/20",
+        "usage": "Background tints, hover states, subtle accents"
+      }
+    },
+    "platformDiscrepancies": {
+      "hubspot": {
+        "note": "HubSpot has incorrect values — should be updated to match canonical colors",
+        "current": { "primary": "#18a3f5", "secondary": "#5c53eb", "accent": "#d93bff" },
+        "shouldBe": { "primary": "#00B7FF", "secondary": "#7A2EFF", "accent": "#C300FF" }
+      },
+      "salesPresentations": {
+        "note": "Sales presentation uses 2-stop gradient — should add purple midpoint",
+        "current": { "cyan": "#00D4FF", "magenta": "#DD00FF" },
+        "shouldBe": { "cyan": "#00B7FF", "purple": "#7A2EFF", "magenta": "#C300FF" }
+      }
+    }
+  },
+
+  "typography": {
+    "logoFont": {
+      "family": "BEASIGNE",
+      "weight": "Regular",
+      "usage": "Logo wordmark only — never use for body text or UI",
+      "case": "All caps (uppercase) for logo, Sentence case available"
+    },
+    "uiFont": {
+      "family": "Inter",
+      "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "weights": { "regular": 400, "semibold": 600, "bold": 700, "extrabold": 800 },
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap",
+      "usage": "All UI text, headings, body, captions"
+    },
+    "monoFont": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace",
+      "usage": "Code blocks, technical content"
+    },
+    "scale": {
+      "display": { "size": "72px", "weight": 800, "lineHeight": 1.1, "tailwind": "text-7xl font-extrabold", "usage": "Hero headings" },
+      "h1": { "size": "48px", "weight": 800, "lineHeight": 1.2, "tailwind": "text-5xl font-extrabold", "usage": "Page titles" },
+      "h2": { "size": "36px", "weight": 700, "lineHeight": 1.25, "tailwind": "text-4xl font-bold", "usage": "Section headings" },
+      "h3": { "size": "24px", "weight": 700, "lineHeight": 1.3, "tailwind": "text-2xl font-bold", "usage": "Sub-section headings" },
+      "h4": { "size": "20px", "weight": 600, "lineHeight": 1.4, "tailwind": "text-xl font-semibold", "usage": "Card titles" },
+      "bodyLg": { "size": "18px", "weight": 400, "lineHeight": 1.6, "tailwind": "text-lg", "usage": "Lead text, intros" },
+      "body": { "size": "16px", "weight": 400, "lineHeight": 1.6, "tailwind": "text-base", "usage": "Default body text" },
+      "bodySm": { "size": "14px", "weight": 400, "lineHeight": 1.5, "tailwind": "text-sm", "usage": "Secondary text" },
+      "caption": { "size": "12px", "weight": 400, "lineHeight": 1.5, "tailwind": "text-xs", "usage": "Labels, fine print" },
+      "overline": { "size": "12px", "weight": 600, "lineHeight": 1.5, "letterSpacing": "0.05em", "tailwind": "text-xs font-semibold uppercase tracking-wider", "usage": "Category labels" }
+    }
+  },
+
+  "voice": {
+    "personality": [
+      "Confident, not arrogant — we know this works",
+      "Revolutionary, not combative — empowering, not attacking",
+      "Practical, not visionary — dollars saved today, not distant future",
+      "Direct, not salesy — straight talk about ROI and results"
+    ],
+    "targetAudience": "Restaurant owners and operators who lose revenue to missed calls, high commissions, and understaffing",
+    "toneByContext": {
+      "marketing": "Bold, results-focused, data-driven. Use specific numbers. Example: 'Stop losing $31,000/year to missed calls.'",
+      "product": "Clear, helpful, efficient. No jargon. Example: 'Order placed successfully. The customer will receive confirmation on WhatsApp.'",
+      "support": "Warm, patient, solution-oriented. Example: 'Let me help you get that sorted out right away.'",
+      "error": "Honest, reassuring, actionable. Example: 'Something went wrong with the order sync. We're reconnecting now — your orders are safe.'"
+    },
+    "keyThemes": [
+      "Revenue recovery — every missed call is lost money",
+      "Ownership — own your customers, don't rent marketplace space",
+      "Always-on — 24/7, never sick, never quits",
+      "Measurable ROI — specific dollar amounts, not vague promises"
+    ],
+    "wordsWeUse": ["AI agents", "AI ordering agents", "AI-powered", "recover", "capture", "own", "direct", "efficient", "24/7", "never miss", "revenue", "every order"],
+    "wordsWeAvoid": ["chatbot", "bot", "artificial intelligence", "smart", "virtual assistant", "disrupt", "leverage", "synergy", "maybe", "try", "revolutionize", "hopefully"]
+  },
+
+  "visualIdentity": {
+    "theme": "Dark-mode-first",
+    "backgrounds": {
+      "note": "Layered background system for visual depth. Warmer off-black is easier on eyes and feels more premium.",
+      "deep": "#08080a",
+      "base": "#0e0e10",
+      "elevated": "#151517",
+      "surface": "#1c1c1f",
+      "legacy": "#0a0a0a"
+    },
+    "preferGradientFor": ["Hero headings", "Primary CTAs", "Brand accent moments"],
+    "cardStyle": {
+      "tailwind": "bg-white/[0.04] border border-white/[0.06] rounded-2xl backdrop-blur-lg",
+      "css": "background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; backdrop-filter: blur(8px);",
+      "note": "v3.0.0: Updated to 18px radius, 8px blur, subtler opacity"
+    },
+    "hoverStyle": {
+      "tailwind": "hover:border-[#00B7FF]/40 hover:shadow-lg hover:shadow-[#00B7FF]/10",
+      "css": "border-color: rgba(0,183,255,0.4); box-shadow: 0 4px 20px rgba(0,183,255,0.1);"
+    },
+    "buttonPrimary": {
+      "tailwind": "bg-gradient-to-r from-[#00B7FF] to-[#7A2EFF] rounded-xl text-white font-semibold",
+      "css": "background: linear-gradient(to right, #00B7FF, #7A2EFF); border-radius: 12px; color: #fff; font-weight: 600;"
+    },
+    "buttonSolid": {
+      "tailwind": "bg-[#165DFC] rounded-xl text-white font-semibold",
+      "css": "background: #165DFC; border-radius: 12px; color: #fff; font-weight: 600;",
+      "note": "Preferred for standard action buttons. Use instead of gradient for most UI buttons."
+    },
+    "buttonSecondary": {
+      "tailwind": "border border-white/20 bg-white/5 rounded-xl text-white",
+      "css": "border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); border-radius: 12px; color: #fff;"
+    },
+    "buttonSizes": {
+      "sm": { "height": "36px", "padding": "8px 16px", "fontSize": "14px", "radius": "8px", "tailwind": "h-9 px-4 text-sm rounded-lg", "usage": "Inline actions, table rows, tight UI" },
+      "md": { "height": "44px", "padding": "10px 24px", "fontSize": "15px", "radius": "12px", "tailwind": "h-11 px-6 text-[15px] rounded-xl", "usage": "Navigation CTAs, card actions, general use (DEFAULT)" },
+      "lg": { "height": "48px", "padding": "12px 32px", "fontSize": "16px", "radius": "12px", "tailwind": "h-12 px-8 text-base rounded-xl", "usage": "Form submit, hero CTAs, full-width buttons" }
+    },
+    "buttonContextGuide": {
+      "formSubmit": { "style": "buttonPrimary (CTA gradient)", "size": "lg", "width": "full", "note": "Only ONE gradient button per view — the primary action" },
+      "standardAction": { "style": "buttonSolid (Finitless Blue #165DFC)", "size": "md", "width": "auto", "note": "Preferred for most UI buttons — e.g. + Create, Save, Add" },
+      "oauthSocial": { "style": "buttonSecondary (glass bg + border)", "size": "lg", "width": "full" },
+      "heroCTA": { "style": "buttonPrimary (CTA gradient)", "size": "md or lg", "width": "auto" },
+      "cardAction": { "style": "buttonSolid or buttonSecondary", "size": "md", "width": "auto" },
+      "destructive": { "style": "bg-[#ff3b45] solid, white text", "size": "md", "width": "auto" },
+      "tertiary": { "style": "transparent bg, text-[#00B7FF]", "size": "md", "width": "auto" }
+    },
+    "formInput": {
+      "tailwind": "w-full h-12 px-4 text-base text-white bg-white/5 border border-white/10 rounded-xl placeholder:text-white/40 focus:border-[#00B7FF]/50 focus:outline-none transition-all",
+      "css": "width: 100%; height: 48px; padding: 12px 16px; font-size: 16px; color: #FFFFFF; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; outline: none; transition: all 150ms ease; font-family: 'Inter', -apple-system, sans-serif;"
+    },
+    "formInputFocus": {
+      "tailwind": "border-[#00B7FF]/50 ring-[3px] ring-[#00B7FF]/15",
+      "css": "border-color: rgba(0,183,255,0.5); box-shadow: 0 0 0 3px rgba(0,183,255,0.15);"
+    },
+    "formInputError": {
+      "tailwind": "border-[#ff3b45] ring-[3px] ring-[#ff3b45]/15",
+      "css": "border-color: #ff3b45; box-shadow: 0 0 0 3px rgba(255,59,69,0.15);"
+    },
+    "formLabel": {
+      "tailwind": "block text-sm font-semibold text-white/70 mb-2",
+      "css": "display: block; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.70); margin-bottom: 8px;"
+    },
+    "formHelperText": {
+      "tailwind": "text-xs text-white/50 mt-1",
+      "css": "font-size: 12px; color: rgba(255,255,255,0.50); margin-top: 4px;"
+    },
+    "formErrorText": {
+      "tailwind": "text-xs text-[#ff3b45] mt-1",
+      "css": "font-size: 12px; color: #ff3b45; margin-top: 4px;"
+    },
+    "formContainer": {
+      "tailwind": "max-w-[480px] mx-auto bg-white/5 border border-white/10 rounded-2xl p-8",
+      "css": "max-width: 480px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; padding: 32px;"
+    },
+    "formDivider": {
+      "tailwind": "flex items-center gap-4 my-6",
+      "css": "display: flex; align-items: center; gap: 16px; margin: 24px 0;",
+      "lineStyle": { "tailwind": "flex-1 h-px bg-white/10", "css": "flex: 1; height: 1px; background: rgba(255,255,255,0.10);" },
+      "textStyle": { "tailwind": "text-xs text-white/40", "css": "font-size: 12px; color: rgba(255,255,255,0.40);" }
+    },
+    "formSelect": {
+      "trigger": {
+        "note": "Same as formInput, with right-aligned chevron",
+        "tailwind": "w-full h-12 px-4 pr-10 text-base text-left text-white bg-white/5 border border-white/10 rounded-xl focus:border-[#00B7FF]/50 focus:outline-none transition-all",
+        "css": "width: 100%; height: 48px; padding: 12px 16px; padding-right: 40px; font-size: 16px; color: #FFFFFF; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; outline: none; transition: all 150ms ease; text-align: left;",
+        "chevron": { "color": "rgba(255,255,255,0.50)", "size": "16px" },
+        "placeholder": { "color": "rgba(255,255,255,0.40)" }
+      },
+      "panel": {
+        "tailwind": "bg-white/[0.08] border border-white/[0.12] rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl max-h-80 overflow-y-auto p-1 mt-1",
+        "css": "background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); backdrop-filter: blur(12px); max-height: 320px; overflow-y: auto; padding: 4px; margin-top: 4px;"
+      },
+      "option": {
+        "tailwind": "px-4 py-3 text-[15px] text-white/80 rounded-lg cursor-pointer transition-colors",
+        "css": "padding: 12px 16px; font-size: 15px; color: rgba(255,255,255,0.80); border-radius: 8px; cursor: pointer; transition: background 150ms ease;"
+      },
+      "optionHover": {
+        "tailwind": "bg-[#00B7FF]/[0.12] text-white/90",
+        "css": "background: rgba(0,183,255,0.12); color: rgba(255,255,255,0.90);"
+      },
+      "optionSelected": {
+        "tailwind": "bg-[#00B7FF]/[0.15] text-white",
+        "css": "background: rgba(0,183,255,0.15); color: #FFFFFF;"
+      },
+      "optionDisabled": {
+        "tailwind": "text-white/40 cursor-not-allowed",
+        "css": "color: rgba(255,255,255,0.40); cursor: not-allowed;"
+      },
+      "scrollbar": {
+        "width": "thin",
+        "trackColor": "transparent",
+        "thumbColor": "rgba(255,255,255,0.15)",
+        "thumbHoverColor": "rgba(255,255,255,0.25)"
+      }
+    },
+    "oauthButton": {
+      "tailwind": "w-full h-12 flex items-center justify-center gap-2 bg-white/5 border border-white/20 rounded-xl text-white font-medium transition-all hover:border-[#00B7FF]/50 hover:bg-[#00B7FF]/5",
+      "css": "width: 100%; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.20); border-radius: 12px; color: #FFFFFF; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 150ms ease;"
+    },
+    "gradientText": {
+      "tailwind": "bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF] bg-clip-text text-transparent",
+      "css": "background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;",
+      "usage": "Hero headings and key brand moments only — never on body text"
+    },
+    "borderRadius": {
+      "xs": "6px",
+      "sm": "10px",
+      "md": "14px",
+      "lg": "18px",
+      "xl": "24px",
+      "2xl": "32px",
+      "full": "9999px",
+      "note": "v3.0.0: Increased defaults. Cards use lg (18px), inputs/buttons use md (14px)"
+    },
+    "spacing": "4px grid: 4, 8, 12, 16, 24, 32, 48, 64, 96",
+    "glowEffect": {
+      "default": "box-shadow: 0 0 20px rgba(0, 183, 255, 0.3)",
+      "cta": "box-shadow: 0 0 40px -10px rgba(0, 183, 255, 0.3)",
+      "aiActive": "box-shadow: 0 0 30px rgba(0, 183, 255, 0.15)",
+      "subtle": "box-shadow: inset 0 0 20px rgba(0, 183, 255, 0.08)",
+      "note": "v3.0.0: Added strategic glow variants for AI elements"
+    },
+    "statCard": {
+      "note": "Stat card with left accent border for dashboard metrics",
+      "tailwind": "bg-white/[0.04] border border-white/[0.06] border-l-4 rounded-2xl p-5",
+      "css": "background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid var(--accent-color); border-radius: 18px; padding: 20px;",
+      "accentColors": {
+        "cyan": { "hex": "#00B7FF", "usage": "Revenue, orders, primary metrics" },
+        "success": { "hex": "#22c55e", "usage": "Growth, positive change" },
+        "purple": { "hex": "#7A2EFF", "usage": "AI-related metrics" },
+        "blue": { "hex": "#165DFC", "usage": "General info, neutral metrics" },
+        "warning": { "hex": "#f59e0b", "usage": "Pending, needs attention" },
+        "error": { "hex": "#ff3b45", "usage": "Negative change, problems" }
+      },
+      "example": "<div class=\"bg-white/[0.04] border border-white/[0.06] border-l-4 border-l-[#00B7FF] rounded-2xl p-5\">...</div>"
+    },
+    "iconContainer": {
+      "note": "Icons inside colored semi-transparent containers",
+      "sizes": {
+        "sm": { "container": "36px", "icon": "18px", "tailwind": "w-9 h-9", "iconTailwind": "w-[18px] h-[18px]" },
+        "md": { "container": "48px", "icon": "24px", "tailwind": "w-12 h-12", "iconTailwind": "w-6 h-6" },
+        "lg": { "container": "56px", "icon": "28px", "tailwind": "w-14 h-14", "iconTailwind": "w-7 h-7" }
+      },
+      "backgroundOpacity": "12%",
+      "radius": "14px",
+      "tailwind": "rounded-[14px] flex items-center justify-center",
+      "variants": {
+        "cyan": { "tailwind": "bg-[#00B7FF]/[0.12] text-[#00B7FF]" },
+        "success": { "tailwind": "bg-[#22c55e]/[0.12] text-[#22c55e]" },
+        "purple": { "tailwind": "bg-[#7A2EFF]/[0.12] text-[#7A2EFF]" },
+        "blue": { "tailwind": "bg-[#165DFC]/[0.12] text-[#165DFC]" },
+        "warning": { "tailwind": "bg-[#f59e0b]/[0.12] text-[#f59e0b]" },
+        "error": { "tailwind": "bg-[#ff3b45]/[0.12] text-[#ff3b45]" }
+      }
+    },
+    "periodSelector": {
+      "note": "Tab-style pill buttons for period/filter selection",
+      "container": {
+        "tailwind": "inline-flex bg-white/[0.02] rounded-full p-1 gap-0.5",
+        "css": "display: inline-flex; background: rgba(255,255,255,0.02); border-radius: 9999px; padding: 4px; gap: 2px;"
+      },
+      "tab": {
+        "default": {
+          "tailwind": "px-4 py-2 text-sm font-medium text-white/60 rounded-full transition-colors hover:text-white/80",
+          "css": "padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.60); border-radius: 9999px; transition: color 150ms ease;"
+        },
+        "active": {
+          "tailwind": "px-4 py-2 text-sm font-semibold text-[#00B7FF] bg-[#00B7FF]/[0.12] rounded-full",
+          "css": "padding: 8px 16px; font-size: 14px; font-weight: 600; color: #00B7FF; background: rgba(0,183,255,0.12); border-radius: 9999px;"
+        }
+      }
+    },
+    "sidebar": {
+      "note": "Dashboard sidebar navigation pattern",
+      "container": {
+        "tailwind": "w-60 bg-[#08080a] border-r border-white/[0.04]",
+        "css": "width: 240px; background: #08080a; border-right: 1px solid rgba(255,255,255,0.04);"
+      },
+      "navItem": {
+        "default": {
+          "tailwind": "flex items-center gap-3 h-11 px-4 rounded-xl text-white/60 hover:bg-white/[0.04] hover:text-white/80 font-medium text-[15px] transition-colors",
+          "css": "display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 16px; border-radius: 12px; color: rgba(255,255,255,0.60); font-weight: 500; font-size: 15px; transition: all 150ms ease;"
+        },
+        "active": {
+          "tailwind": "flex items-center gap-3 h-11 px-4 rounded-xl bg-[#00B7FF]/[0.10] text-[#00B7FF] font-medium text-[15px]",
+          "css": "display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 16px; border-radius: 12px; background: rgba(0,183,255,0.10); color: #00B7FF; font-weight: 500; font-size: 15px;"
+        }
+      }
+    },
+    "liveBadge": {
+      "note": "Green pulsing badge for real-time/live status",
+      "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#22c55e]/[0.12] text-[#22c55e] text-xs font-semibold",
+      "css": "display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 9999px; background: rgba(34,197,94,0.12); color: #22c55e; font-size: 12px; font-weight: 600;",
+      "dot": {
+        "tailwind": "w-2 h-2 rounded-full bg-[#22c55e] animate-pulse",
+        "css": "width: 8px; height: 8px; border-radius: 9999px; background: #22c55e; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"
+      }
+    },
+    "changeIndicator": {
+      "note": "Percentage change indicator with directional icon",
+      "positive": {
+        "tailwind": "inline-flex items-center gap-0.5 text-sm font-medium text-[#22c55e]",
+        "badgeTailwind": "inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#22c55e]/[0.12] text-sm font-medium text-[#22c55e]"
+      },
+      "negative": {
+        "tailwind": "inline-flex items-center gap-0.5 text-sm font-medium text-[#ff3b45]",
+        "badgeTailwind": "inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#ff3b45]/[0.12] text-sm font-medium text-[#ff3b45]"
+      },
+      "neutral": {
+        "tailwind": "inline-flex items-center gap-0.5 text-sm font-medium text-white/40"
+      }
+    },
+    "antiPatterns": {
+      "buttons": [
+        "Never use non-brand solid colors (#2563eb, etc.) — use Finitless Blue (#165DFC) for solid buttons or CTA gradient for primary actions",
+        "Never use border-radius below 8px — minimum is 8px, default 12px",
+        "Never use Arial or system default — always use Inter"
+      ],
+      "cards": [
+        "Never use solid white backgrounds — use rgba(255,255,255,0.05)",
+        "Never use sharp corners (0px radius) — minimum is 8px",
+        "Always include a hover state with cyan border glow"
+      ],
+      "gradientText": [
+        "Never omit the cyan stop — all three stops required (cyan, purple, magenta)",
+        "Never use top-to-bottom direction — always left-to-right",
+        "Never apply gradient text to body copy — headings and hero text only"
+      ],
+      "formInputs": [
+        "Never use unstyled browser defaults — always apply dark glass background and branded focus state",
+        "Never use white or light backgrounds on inputs — use rgba(255,255,255,0.05)",
+        "Never omit focus state — always show cyan border glow on focus",
+        "Never use border-radius below 8px on inputs — default is 12px",
+        "Never use font-size below 16px in inputs — prevents iOS zoom"
+      ],
+      "formButtons": [
+        "Never use flat solid cyan or non-brand blues for the primary submit — always use CTA gradient. Finitless Blue (#165DFC) is for standard actions, not form submit",
+        "Never use the CTA gradient for OAuth/social buttons — those use the secondary button pattern",
+        "Never place multiple gradient buttons on one page — only ONE gradient button (primary action)",
+        "Never use colors outside the brand palette for any button",
+        "Never use button height below 36px — minimum is sm (36px)"
+      ],
+      "formSelects": [
+        "Never use the native browser <select> without custom styling — it renders with OS-default light styling",
+        "Never use the brand gradient (cyan→purple) as hover/selected background on dropdown options — kills text readability, use subtle rgba(0,183,255,0.12) tint",
+        "Never use the same background as the page for the dropdown panel — must appear elevated with bg rgba(255,255,255,0.08) minimum",
+        "Never omit padding between dropdown option items — use 12px 16px per option",
+        "Never let the placeholder option be selectable — disable it and style as rgba(255,255,255,0.40)"
+      ],
+      "formLogos": [
+        "Never render the logo as text using BEASIGNE or any font — always use the supplied image asset from assets/logos/",
+        "Always use the horizontal logo at an appropriate size (120w-300w for forms)"
+      ]
+    }
+  },
+
+  "motion": {
+    "transitionFast": { "duration": "150ms", "easing": "ease", "css": "transition: all 150ms ease;", "usage": "Hover states, button feedback, small UI changes" },
+    "transitionNormal": { "duration": "250ms", "easing": "ease", "css": "transition: all 250ms ease;", "usage": "Card hovers, panel reveals, nav transitions" },
+    "reducedMotion": { "css": "@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }" }
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "tablet": { "maxWidth": "768px", "adjustments": ["Hero padding: 64px 16px", "h1: 36px", "h2: 28px", "Single-column grids"] },
+      "mobile": { "maxWidth": "640px", "adjustments": ["Word panels stack to single column", "Reduce font sizes further"] }
+    }
+  },
+
+  "accessibility": {
+    "focusOutline": { "css": ":focus-visible { outline: 2px solid #00B7FF; outline-offset: 2px; }", "usage": "All interactive elements" },
+    "reducedMotion": "See motion.reducedMotion",
+    "fontSmoothing": { "css": "-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;", "usage": "Apply to body element" },
+    "minContrastRatio": "4.5:1 for text, 3:1 for large text (WCAG AA)"
+  },
+
+  "imagery": {
+    "photography": {
+      "tone": "Dark, modern, tech-forward. High contrast with selective color accents.",
+      "subjects": ["Restaurant environments", "Technology in use", "Food ordering in action", "Busy kitchens", "Happy restaurant owners"],
+      "colorTreatment": "Desaturated backgrounds with brand-colored highlights (cyan/purple glow). Dark-mode aesthetic."
+    },
+    "illustrations": {
+      "style": "Geometric, minimal, line-based with gradient fills using the brand palette.",
+      "colorUsage": "Use the brand gradient (cyan to magenta) on dark backgrounds.",
+      "avoid": "Hand-drawn, cartoonish, or overly detailed styles."
+    },
+    "textures": {
+      "patterns": "Subtle dot-grid or line patterns at 5-10% opacity for background texture.",
+      "gradientMesh": "Brand colors at 10-20% opacity for depth.",
+      "glassmorphism": "backdrop-filter: blur(8px) with bg-white/[0.04] and border-white/[0.06]. v3.0.0: Increased blur for premium frosted glass effect."
+    }
+  },
+
+  "iconStyle": {
+    "style": "Outlined (stroke-based)",
+    "strokeWidth": "1.5px",
+    "defaultSize": "24px",
+    "sizeGrid": { "sm": "16px", "md": "24px", "lg": "32px" },
+    "colors": {
+      "onDark": "#FFFFFF",
+      "onLight": "#0a0a0a",
+      "accent": "Brand gradient for emphasis"
+    },
+    "library": "Lucide Icons (lucide.dev) for standard UI patterns, supplemented by custom brand icons"
+  },
+
+  "assets": {
+    "icons": {
+      "master": {
+        "path": "assets/icons/finitless-icon-master.svg",
+        "format": "svg",
+        "background": "none",
+        "usage": "Vector master — scales to any size"
+      },
+      "onDark": {
+        "description": "Gradient icon on black (#000) background",
+        "sizes": [
+          { "path": "assets/icons/finitless-icon-on-dark-16.png", "size": 16, "usage": "Micro favicon" },
+          { "path": "assets/icons/finitless-icon-on-dark-32.png", "size": 32, "usage": "Standard favicon" },
+          { "path": "assets/icons/finitless-icon-on-dark-48.png", "size": 48, "usage": "Small UI icon" },
+          { "path": "assets/icons/finitless-icon-on-dark-64.png", "size": 64, "usage": "Desktop shortcut" },
+          { "path": "assets/icons/finitless-icon-on-dark-72.png", "size": 72, "usage": "Browser favicon" },
+          { "path": "assets/icons/finitless-icon-on-dark-128.png", "size": 128, "usage": "Browser extension" },
+          { "path": "assets/icons/finitless-icon-on-dark-192.png", "size": 192, "usage": "Android PWA icon" },
+          { "path": "assets/icons/finitless-icon-on-dark-256.png", "size": 256, "usage": "macOS app icon" },
+          { "path": "assets/icons/finitless-icon-on-dark-384.png", "size": 384, "usage": "PWA splash" },
+          { "path": "assets/icons/finitless-icon-on-dark-512.png", "size": 512, "usage": "App store / PWA" },
+          { "path": "assets/icons/finitless-icon-on-dark-1000.png", "size": 1000, "usage": "Social avatar" },
+          { "path": "assets/icons/finitless-icon-on-dark-1024.png", "size": 1024, "usage": "Apple App Store" },
+          { "path": "assets/icons/finitless-icon-on-dark-2000.png", "size": 2000, "usage": "High-res marketing" }
+        ]
+      },
+      "onLight": {
+        "description": "Gradient icon on white (#FFF) background",
+        "sizes": [
+          { "path": "assets/icons/finitless-icon-on-light-16.png", "size": 16, "usage": "Micro favicon" },
+          { "path": "assets/icons/finitless-icon-on-light-32.png", "size": 32, "usage": "Standard favicon" },
+          { "path": "assets/icons/finitless-icon-on-light-48.png", "size": 48, "usage": "Small UI icon" },
+          { "path": "assets/icons/finitless-icon-on-light-64.png", "size": 64, "usage": "Desktop shortcut" },
+          { "path": "assets/icons/finitless-icon-on-light-72.png", "size": 72, "usage": "Browser favicon" },
+          { "path": "assets/icons/finitless-icon-on-light-128.png", "size": 128, "usage": "Browser extension" },
+          { "path": "assets/icons/finitless-icon-on-light-192.png", "size": 192, "usage": "Android PWA icon" },
+          { "path": "assets/icons/finitless-icon-on-light-256.png", "size": 256, "usage": "macOS app icon" },
+          { "path": "assets/icons/finitless-icon-on-light-384.png", "size": 384, "usage": "PWA splash" },
+          { "path": "assets/icons/finitless-icon-on-light-512.png", "size": 512, "usage": "App store / PWA" },
+          { "path": "assets/icons/finitless-icon-on-light-1000.png", "size": 1000, "usage": "Social avatar" },
+          { "path": "assets/icons/finitless-icon-on-light-1024.png", "size": 1024, "usage": "Apple App Store" },
+          { "path": "assets/icons/finitless-icon-on-light-2000.png", "size": 2000, "usage": "High-res marketing" }
+        ]
+      },
+      "transparent": {
+        "description": "Gradient icon on transparent background",
+        "sizes": [
+          { "path": "assets/icons/finitless-icon-transparent-16.png", "size": 16, "usage": "Micro favicon" },
+          { "path": "assets/icons/finitless-icon-transparent-32.png", "size": 32, "usage": "Standard favicon" },
+          { "path": "assets/icons/finitless-icon-transparent-48.png", "size": 48, "usage": "Small UI icon" },
+          { "path": "assets/icons/finitless-icon-transparent-64.png", "size": 64, "usage": "Desktop shortcut" },
+          { "path": "assets/icons/finitless-icon-transparent-72.png", "size": 72, "usage": "Browser favicon" },
+          { "path": "assets/icons/finitless-icon-transparent-128.png", "size": 128, "usage": "Browser extension" },
+          { "path": "assets/icons/finitless-icon-transparent-192.png", "size": 192, "usage": "Android PWA icon" },
+          { "path": "assets/icons/finitless-icon-transparent-256.png", "size": 256, "usage": "macOS app icon" },
+          { "path": "assets/icons/finitless-icon-transparent-384.png", "size": 384, "usage": "PWA splash" },
+          { "path": "assets/icons/finitless-icon-transparent-512.png", "size": 512, "usage": "App store / PWA" },
+          { "path": "assets/icons/finitless-icon-transparent-1000.png", "size": 1000, "usage": "Social avatar" },
+          { "path": "assets/icons/finitless-icon-transparent-1024.png", "size": 1024, "usage": "Apple App Store" }
+        ]
+      },
+      "legacy": [
+        { "path": "assets/icons/finitless-icon-favicon-72.png", "format": "png", "dimensions": "72x72", "usage": "Browser tab favicon (original)" },
+        { "path": "assets/icons/finitless-icon-app-512.png", "format": "png", "dimensions": "512x512", "background": "black", "usage": "PWA icon (original)" },
+        { "path": "assets/icons/finitless-icon-social-1000.png", "format": "png", "dimensions": "1000x1000", "background": "black", "usage": "Social media avatar (original)" },
+        { "path": "assets/icons/finitless-icon-print-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print / ultra-high-res" },
+        { "path": "assets/icons/finitless-icon-print-2552-alt.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Print variant" },
+        { "path": "assets/icons/finitless-icon-transparent.png", "format": "png", "dimensions": "1627x1099", "background": "transparent", "usage": "Overlay (original, non-square)" },
+        { "path": "assets/icons/finitless-icon-square-on-dark-2552.png", "format": "png", "dimensions": "2552x2552", "background": "black", "usage": "Square format, dark (original)" },
+        { "path": "assets/icons/finitless-icon-square-on-dark-4793.png", "format": "png", "dimensions": "4793x4793", "background": "black", "usage": "Square format, dark, largest (original)" },
+        { "path": "assets/icons/finitless-icon-square-on-light-4793.png", "format": "png", "dimensions": "4793x4793", "background": "white", "usage": "Square format, light, largest (original)" }
+      ]
+    },
+    "logos": {
+      "horizontal": {
+        "description": "Full wordmark (icon + FINITLESS text), wide format for headers and navigation",
+        "originals": [
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark.png", "dimensions": "3653x237", "background": "transparent", "textColor": "white", "usage": "Full-res header logo for dark backgrounds" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light.png", "dimensions": "3653x237", "background": "transparent", "textColor": "black", "usage": "Full-res header logo for light backgrounds" }
+        ],
+        "onDark": [
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-120w.png", "width": 120, "usage": "Small header / mobile nav" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-200w.png", "width": 200, "usage": "Standard header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-300w.png", "width": 300, "usage": "Large header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-480w.png", "width": 480, "usage": "Marketing materials" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-800w.png", "width": 800, "usage": "Hero sections" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-dark-1200w.png", "width": 1200, "usage": "High-DPI headers" }
+        ],
+        "onLight": [
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-120w.png", "width": 120, "usage": "Small header / mobile nav" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-200w.png", "width": 200, "usage": "Standard header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-300w.png", "width": 300, "usage": "Large header" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-480w.png", "width": 480, "usage": "Marketing materials" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-800w.png", "width": 800, "usage": "Hero sections" },
+          { "path": "assets/logos/finitless-logo-horizontal-on-light-1200w.png", "width": 1200, "usage": "High-DPI headers" }
+        ]
+      },
+      "square": {
+        "description": "Icon + wordmark in square format for social cards, OG images, and marketing",
+        "originals": [
+          { "path": "assets/logos/finitless-logo-square-on-dark.png", "dimensions": "5000x5000", "background": "black", "textColor": "white", "usage": "Full-res square logo for dark backgrounds" },
+          { "path": "assets/logos/finitless-logo-square-on-light.png", "dimensions": "5000x5000", "background": "transparent", "textColor": "black", "usage": "Full-res square logo for light backgrounds" }
+        ],
+        "onDark": [
+          { "path": "assets/logos/finitless-logo-square-on-dark-128.png", "size": 128, "usage": "Tiny avatar" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-256.png", "size": 256, "usage": "Small card" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-512.png", "size": 512, "usage": "Social sharing" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-1024.png", "size": 1024, "usage": "OG images" },
+          { "path": "assets/logos/finitless-logo-square-on-dark-2000.png", "size": 2000, "usage": "Print / marketing" }
+        ],
+        "onLight": [
+          { "path": "assets/logos/finitless-logo-square-on-light-128.png", "size": 128, "usage": "Tiny avatar" },
+          { "path": "assets/logos/finitless-logo-square-on-light-256.png", "size": 256, "usage": "Small card" },
+          { "path": "assets/logos/finitless-logo-square-on-light-512.png", "size": 512, "usage": "Social sharing" },
+          { "path": "assets/logos/finitless-logo-square-on-light-1024.png", "size": 1024, "usage": "OG images" },
+          { "path": "assets/logos/finitless-logo-square-on-light-2000.png", "size": 2000, "usage": "Print / marketing" }
+        ]
+      },
+      "rect": {
+        "description": "Icon + wordmark in rectangular format for email signatures and marketing",
+        "originals": [
+          { "path": "assets/logos/finitless-logo-rect-on-dark.png", "dimensions": "2885x1736", "background": "black", "textColor": "white", "usage": "Full-res rect logo for dark backgrounds" }
+        ],
+        "onDark": [
+          { "path": "assets/logos/finitless-logo-rect-on-dark-300w.png", "width": 300, "usage": "Email signature" },
+          { "path": "assets/logos/finitless-logo-rect-on-dark-600w.png", "width": 600, "usage": "Email header" },
+          { "path": "assets/logos/finitless-logo-rect-on-dark-1200w.png", "width": 1200, "usage": "OG image / marketing" },
+          { "path": "assets/logos/finitless-logo-rect-on-dark-1800w.png", "width": 1800, "usage": "Large marketing" }
+        ]
+      }
+    },
+    "quickPick": [
+      { "context": "Website header (dark bg)", "asset": "assets/logos/finitless-logo-horizontal-on-dark-300w.png", "size": "300w" },
+      { "context": "Website header (light bg)", "asset": "assets/logos/finitless-logo-horizontal-on-light-300w.png", "size": "300w" },
+      { "context": "Favicon", "asset": "assets/icons/finitless-icon-on-dark-32.png", "size": "32px" },
+      { "context": "Social media avatar", "asset": "assets/icons/finitless-icon-on-dark-1000.png", "size": "1000px" },
+      { "context": "PWA / App icon", "asset": "assets/icons/finitless-icon-on-dark-512.png", "size": "512px" },
+      { "context": "Android launcher", "asset": "assets/icons/finitless-icon-on-dark-192.png", "size": "192px" },
+      { "context": "Apple App Store", "asset": "assets/icons/finitless-icon-on-dark-1024.png", "size": "1024px" },
+      { "context": "OG / Social card image", "asset": "assets/logos/finitless-logo-square-on-dark-1024.png", "size": "1024px" },
+      { "context": "Email signature", "asset": "assets/logos/finitless-logo-rect-on-dark-300w.png", "size": "300w" },
+      { "context": "Print (high-res)", "asset": "assets/icons/finitless-icon-print-2552.png", "size": "2552px" }
+    ],
+    "reference": [
+      { "path": "assets/reference/finitless-brand-guidelines.pdf", "description": "Original brand guidelines PDF from designer" },
+      { "path": "assets/reference/hubspot-brand-colors.png", "description": "Screenshot of HubSpot brand color configuration (needs updating)" }
+    ]
+  }
+}

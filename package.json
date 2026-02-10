@@ -1,0 +1,24 @@
+{
+  "name": "finitless-design-system-monorepo",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "npm@10.2.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/brand-page",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "storybook": "npm run storybook --workspace=packages/design-system",
+    "build-storybook": "npm run build-storybook --workspace=packages/design-system",
+    "clean": "rm -rf node_modules packages/*/node_modules apps/*/node_modules packages/*/dist apps/*/.next"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finitless Brand Guidelines</title>
+  <meta name="description" content="The single source of truth for the Finitless brand identity. Colors, typography, logos, voice, and developer resources.">
+  <meta property="og:title" content="Finitless Brand Guidelines">
+  <meta property="og:description" content="The single source of truth for the Finitless brand identity. For humans and AI agents.">
+  <meta property="og:image" content="assets/logos/finitless-logo-rect-on-dark.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/finitless-icon-favicon-72.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* v3.0.0: Updated background system - warmer off-black for premium feel */
+      --cyan: #00B7FF;
+      --purple: #7A2EFF;
+      --magenta: #C300FF;
+      --blue: #165DFC;
+      --bg-deep: #08080a;
+      --bg: #0e0e10;
+      --bg-elevated: #151517;
+      --bg-surface: #1c1c1f;
+      --bg-card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.06);
+      --border-strong: rgba(255,255,255,0.10);
+      --text: #FFFFFF;
+      --text-secondary: rgba(255,255,255,0.6);
+      --error: #ff3b45;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --info: #eaf4ff;
+      --transition-fast: 150ms ease;
+      --transition-normal: 250ms ease;
+      --color-placeholder: rgba(255,255,255,0.40);
+      --color-label: rgba(255,255,255,0.70);
+      --color-helper: rgba(255,255,255,0.50);
+      --focus-ring-primary: 0 0 0 3px rgba(0,183,255,0.15);
+      --focus-ring-error: 0 0 0 3px rgba(255,59,69,0.15);
+      /* v3.0.0: Updated radius scale */
+      --radius-xs: 6px;
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-2xl: 32px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14,14,16,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    .nav-bar.visible { transform: translateY(0); }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 52px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-inner img { height: 22px; margin-right: 12px; flex-shrink: 0; }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: color var(--transition-fast), background var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-link.active { color: var(--cyan); background: rgba(0,183,255,0.08); }
+
+    /* ── Hero ── */
+    .hero { text-align: center; padding: 96px 24px 64px; }
+    .hero-logo-wrap {
+      display: inline-block;
+      padding: 4px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(0,183,255,0.15), rgba(122,46,255,0.15), rgba(195,0,255,0.15));
+      margin-bottom: 32px;
+      animation: glow-border 6s linear infinite;
+    }
+    @keyframes glow-border {
+      0%, 100% { background: linear-gradient(135deg, rgba(0,183,255,0.2), rgba(122,46,255,0.1), rgba(195,0,255,0.05)); }
+      33% { background: linear-gradient(135deg, rgba(0,183,255,0.05), rgba(122,46,255,0.2), rgba(195,0,255,0.1)); }
+      66% { background: linear-gradient(135deg, rgba(0,183,255,0.1), rgba(122,46,255,0.05), rgba(195,0,255,0.2)); }
+    }
+    .hero-logo-wrap img { max-width: 280px; height: auto; display: block; }
+    .hero .overline {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .gradient-text {
+      background: linear-gradient(to right, var(--cyan), var(--purple), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; }
+    .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(to right, var(--cyan), var(--purple));
+      color: #fff; font-weight: 600; font-size: 15px;
+      padding: 12px 28px; border-radius: var(--radius-md); text-decoration: none;
+      border: none; cursor: pointer;
+      box-shadow: 0 0 40px -10px rgba(0, 183, 255, 0.3);
+      transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 0 50px -8px rgba(0, 183, 255, 0.4); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg-card); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-weight: 500; font-size: 15px;
+      padding: 12px 28px; border-radius: var(--radius-md); text-decoration: none;
+      cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .btn-secondary:hover { border-color: var(--cyan); background: rgba(0,183,255,0.05); }
+
+    /* ── Sections ── */
+    section { padding: 72px 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .section-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; }
+    section h3 { font-size: 20px; font-weight: 600; margin-bottom: 16px; margin-top: 40px; }
+    section h3:first-of-type { margin-top: 0; }
+    section p, section li { color: var(--text-secondary); margin-bottom: 12px; }
+    section ul { list-style: none; }
+
+    /* ── LLM Guide Cards ── */
+    .llm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .llm-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: border-color var(--transition-normal);
+    }
+    .llm-card:hover { border-color: rgba(0,183,255,0.3); }
+    .llm-card .overline {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;
+    }
+    .llm-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .llm-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+    .llm-card .note { font-size: 12px; color: var(--text-secondary); margin-top: 12px; opacity: 0.7; }
+
+    /* ── Logo & Asset Grid ── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .logo-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .logo-card:hover { border-color: rgba(0,183,255,0.3); }
+    .logo-card .preview {
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+    }
+    .logo-card .preview.dark { background: #000; }
+    .logo-card .preview.light { background: #fff; }
+    .logo-card .preview.checkerboard {
+      background-image: linear-gradient(45deg, #222 25%, transparent 25%),
+                        linear-gradient(-45deg, #222 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #222 75%),
+                        linear-gradient(-45deg, transparent 75%, #222 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+      background-color: #333;
+    }
+    .logo-card .preview img { max-width: 100%; max-height: 120px; }
+    .logo-card .card-footer {
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .logo-card .card-footer .label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ── Size Picker ── */
+    .size-picker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 16px 0;
+    }
+    .size-pill {
+      font-size: 12px;
+      font-family: ui-monospace, monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .size-pill:hover { border-color: var(--cyan); color: var(--text); }
+    .size-pill.active { border-color: var(--cyan); color: var(--cyan); background: rgba(0,183,255,0.08); }
+
+    /* Variant tabs */
+    .variant-tabs {
+      display: flex;
+      gap: 2px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      padding: 2px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .variant-tab {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .variant-tab:hover { color: var(--text); }
+    .variant-tab.active { background: var(--bg-card); color: var(--text); border: 1px solid var(--border); }
+
+    /* ── Quick-Pick Table ── */
+    .pick-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .pick-table th {
+      text-align: left; font-size: 12px; font-weight: 600;
+      color: var(--text-secondary); text-transform: uppercase;
+      letter-spacing: 0.05em; padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pick-table td {
+      font-size: 14px; color: var(--text-secondary); padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .pick-table code {
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* ── Color Swatches ── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .color-swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: border-color var(--transition-normal);
+    }
+    .color-swatch:hover { border-color: rgba(0,183,255,0.3); }
+    .color-swatch .preview { height: 100px; }
+    .color-swatch .info { padding: 12px; background: var(--bg-card); }
+    .color-swatch .info .name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+    .color-swatch .color-values {
+      display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+    }
+
+    /* ── Gradient Bar ── */
+    .gradient-bar {
+      height: 80px;
+      border-radius: 16px;
+      background: linear-gradient(to right, var(--cyan), var(--purple), var(--magenta));
+      margin-bottom: 16px;
+    }
+    .gradient-label {
+      font-family: ui-monospace, monospace;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+    .gradient-snippets {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center; margin-top: 12px;
+    }
+
+    /* ── Typography ── */
+    .type-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .type-meta {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 8px; flex-wrap: wrap;
+    }
+    .type-meta .token {
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      background: rgba(0,183,255,0.08);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .type-meta .font-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .type-meta .size-label {
+      font-size: 12px;
+      font-family: ui-monospace, monospace;
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+    .type-sample { color: var(--text); overflow-wrap: break-word; }
+
+    .font-display {
+      margin-bottom: 32px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--bg-card);
+    }
+    .font-display h3 {
+      font-size: 64px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      line-height: 1;
+    }
+    .font-display .weights {
+      display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px;
+    }
+    .font-display .weight-item {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .font-display .weight-item span { color: var(--text); font-weight: 600; }
+
+    /* ── Code Block ── */
+    .code-block {
+      position: relative;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-x: auto;
+      color: var(--text-secondary);
+      margin: 16px 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .code-block .copy-corner {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+    .code-block .code-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--cyan);
+      margin-bottom: 8px;
+      display: block;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Copy & Download Buttons ── */
+    .copy-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 10px; border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--text-secondary);
+      font-family: ui-monospace, monospace; font-size: 12px;
+      cursor: pointer; transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .copy-btn:hover { border-color: var(--cyan); color: var(--text); background: rgba(0,183,255,0.05); }
+    .copy-btn.copied { border-color: var(--success); color: var(--success); }
+
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-secondary);
+      font-size: 13px; text-decoration: none;
+      cursor: pointer; transition: all var(--transition-fast);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .download-btn:hover { background: rgba(0,183,255,0.08); border-color: var(--cyan); color: var(--text); }
+
+    /* ── Do/Don't ── */
+    .dodont-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .dodont-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .dodont-card .demo {
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      background: var(--bg);
+    }
+    .dodont-card .demo-footer {
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .dodont-card .demo-footer .tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .dodont-card .demo-footer .tag.do { color: var(--success); }
+    .dodont-card .demo-footer .tag.dont { color: var(--error); }
+    .dodont-card .demo-footer .desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* ── Voice Cards ── */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .voice-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .voice-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .voice-card p { font-size: 14px; margin-bottom: 0; }
+    .voice-card .example { font-size: 13px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+    .voice-card .yes { color: var(--success); }
+    .voice-card .no { color: var(--error); opacity: 0.8; }
+
+    /* ── Word Pills ── */
+    .word-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 640px) { .word-panels { grid-template-columns: 1fr; } }
+    .word-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .word-panel h4 { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+    .word-panel.use { border-color: rgba(34,197,94,0.2); }
+    .word-panel.use h4 { color: var(--success); }
+    .word-panel.avoid { border-color: rgba(255,59,69,0.2); }
+    .word-panel.avoid h4 { color: var(--error); }
+    .word-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .word-pill {
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .word-panel.use .word-pill { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+    .word-panel.avoid .word-pill { border-color: rgba(255,59,69,0.2); color: var(--text-secondary); text-decoration: line-through; }
+
+    /* ── API Banner ── */
+    .api-banner {
+      background: linear-gradient(135deg, rgba(0,183,255,0.08), rgba(122,46,255,0.08));
+      border: 1px solid rgba(0,183,255,0.15);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .api-banner h3 { margin-top: 0; color: var(--text); }
+    .api-banner a { color: var(--cyan); text-decoration: none; font-family: ui-monospace, monospace; }
+    .api-banner a:hover { text-decoration: underline; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; bottom: 32px; left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(10,10,10,0.9);
+      border: 1px solid rgba(0,183,255,0.3);
+      border-radius: 12px;
+      padding: 10px 24px;
+      font-size: 14px; color: var(--text);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      transition: opacity 250ms, transform 250ms;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── Footer ── */
+    footer {
+      padding: 48px 0; text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 14px;
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Do/Don't Logo Rules ── */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 640px) { .rules-grid { grid-template-columns: 1fr; } }
+    .rule-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--text-secondary);
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+    .rule-icon { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+    .rule-icon.do { color: var(--success); }
+    .rule-icon.dont { color: var(--error); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero { padding: 64px 16px 48px; }
+      .hero h1 { font-size: 36px; }
+      section h2 { font-size: 28px; }
+      .llm-grid { grid-template-columns: 1fr; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .dodont-grid { grid-template-columns: 1fr; }
+      .font-display h3 { font-size: 40px; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; color: #000; }
+      .nav-bar, .copy-btn, .download-btn, .toast, .hero-ctas, .variant-tabs, .size-picker { display: none !important; }
+      section { border-top: 1px solid #ccc; }
+      .code-block { border-color: #ccc; background: #f5f5f5; color: #333; }
+      a { color: #00B7FF; }
+    }
+
+    /* ── Reduced Motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ── Focus ── */
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+    button:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Icon Defs -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+    </symbol>
+  </svg>
+
+  <!-- Nav -->
+  <nav class="nav-bar" id="navbar" role="navigation" aria-label="Section navigation">
+    <div class="nav-inner">
+      <img src="assets/icons/finitless-icon-on-dark-2000.png" alt="Finitless" loading="lazy">
+      <a class="nav-link" href="#llm-guide">LLM Guide</a>
+      <a class="nav-link" href="#logos">Logos & Icons</a>
+      <a class="nav-link" href="#colors">Colors</a>
+      <a class="nav-link" href="#typography">Typography</a>
+      <a class="nav-link" href="#components">Components</a>
+      <a class="nav-link" href="#dashboard">Dashboard</a>
+      <a class="nav-link" href="#voice">Voice</a>
+      <a class="nav-link" href="#developers">Developers</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero" id="hero">
+    <div class="hero-logo-wrap">
+      <img src="assets/logos/finitless-logo-horizontal-on-dark.png" alt="Finitless Logo">
+    </div>
+    <span class="overline">Brand Guidelines v3.0.0</span>
+    <h1><span class="gradient-text">Brand Guidelines</span></h1>
+    <p>The single source of truth for the Finitless brand identity. For humans and AI agents.</p>
+    <div class="hero-ctas">
+      <a href="#llm-guide" class="btn-primary">
+        <svg width="16" height="16"><use href="#icon-external"/></svg>
+        Feed to Your LLM
+      </a>
+      <a href="#logos" class="btn-secondary">
+        <svg width="16" height="16"><use href="#icon-download"/></svg>
+        Download Assets
+      </a>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- ════════════════════════════ LLM GUIDE ════════════════════════════ -->
+    <section id="llm-guide">
+      <h2>Feed This Brand to Your LLM</h2>
+      <p class="section-subtitle">Get brand-consistent output from Claude, GPT, or any AI coding agent. Copy everything at once or pick a specific file.</p>
+
+      <!-- Copy Everything Button -->
+      <div style="margin-bottom:40px; text-align:center;">
+        <button class="cta-btn" onclick="copyAllBrandFiles()" style="font-size:16px; padding:16px 40px; display:inline-flex; align-items:center; gap:10px;">
+          <svg width="18" height="18"><use href="#icon-copy"/></svg>
+          Copy Everything to Clipboard
+        </button>
+        <p style="font-size:13px; color:var(--text-secondary); margin-top:12px;">Copies SKILL.md + CLAUDE.md combined. Paste directly into any LLM prompt.</p>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-secondary); margin-bottom:16px;">Or copy individual files:</p>
+      <div class="llm-grid">
+        <!-- Card 1: SKILL.md -->
+        <div class="llm-card">
+          <div class="overline">Recommended</div>
+          <h4>SKILL.md</h4>
+          <p>Add as a custom skill in Claude Code, or paste into any LLM's system prompt. Contains colors, typography, gradients, visual rules, and component patterns.</p>
+          <button class="copy-btn" onclick="copyFileContents('SKILL.md', 'SKILL.md')">
+            <svg width="14" height="14"><use href="#icon-copy"/></svg>
+            Copy SKILL.md
+          </button>
+          <div class="note">Works with: Claude Code skills, ChatGPT custom instructions, Cursor rules</div>
+        </div>
+
+        <!-- Card 2: brand-manifest.json -->
+        <div class="llm-card">
+          <div class="overline">For Programmatic Use</div>
+          <h4>brand-manifest.json</h4>
+          <p>Fetch the complete brand identity as structured JSON from any origin. CORS enabled.</p>
+          <button class="copy-btn" onclick="copyText(window.location.origin + '/brand-manifest.json', 'Manifest URL')">
+            <svg width="14" height="14"><use href="#icon-copy"/></svg>
+            Copy URL
+          </button>
+          <div class="note">Returns: colors, typography, assets, voice, gradients</div>
+        </div>
+
+        <!-- Card 3: CLAUDE.md -->
+        <div class="llm-card">
+          <div class="overline">For Deep Integration</div>
+          <h4>CLAUDE.md</h4>
+          <p>Drop into your project root. Any AI agent (Claude Code, Copilot, Cursor) will automatically pick it up and apply brand rules.</p>
+          <button class="copy-btn" onclick="copyFileContents('CLAUDE.md', 'CLAUDE.md')">
+            <svg width="14" height="14"><use href="#icon-copy"/></svg>
+            Copy CLAUDE.md
+          </button>
+          <div class="note">Covers: logo selection, colors, fonts, voice rules, visual patterns</div>
+        </div>
+      </div>
+
+      <h3>Quick Start</h3>
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText(document.getElementById('quickstart-code').textContent, 'Quick start code')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>
+          Copy
+        </button>
+<span id="quickstart-code"><span style="color:var(--text-secondary)"># Option 1: Fetch manifest in your code</span>
+fetch('<span style="color:var(--cyan)">https://brand.finitless.com/brand-manifest.json</span>')
+  .then(r => r.json())
+  .then(brand => console.log(brand.colors.primary));
+
+<span style="color:var(--text-secondary)"># Option 2: Add CLAUDE.md to your repo</span>
+curl -o CLAUDE.md <span style="color:var(--cyan)">https://brand.finitless.com/CLAUDE.md</span></span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ LOGOS & ICONS ════════════════════════════ -->
+    <section id="logos">
+      <h2>Logos & Icons</h2>
+      <p class="section-subtitle">The Finitless mark combines the letter <strong style="color:var(--text)">N</strong> with the <strong style="color:var(--text)">infinity symbol</strong>. The wordmark uses the BEASIGNE typeface.</p>
+
+      <h3>Logo Lockups</h3>
+
+      <!-- Horizontal Logos -->
+      <p style="font-size:14px; color:var(--cyan); font-weight:600; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em;">Horizontal</p>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="preview checkerboard">
+            <img src="assets/logos/finitless-logo-horizontal-on-dark.png" alt="Logo on dark" loading="lazy">
+          </div>
+          <div class="card-footer">
+            <span class="label">On dark (preferred) <span style="font-size:11px; opacity:0.5; font-weight:400">· transparent bg</span></span>
+            <a href="assets/logos/finitless-logo-horizontal-on-dark.png" download class="download-btn" onclick="showToast('Downloading logo')">
+              <svg width="14" height="14"><use href="#icon-download"/></svg>PNG
+            </a>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="preview checkerboard">
+            <img src="assets/logos/finitless-logo-horizontal-on-light.png" alt="Logo on light" loading="lazy">
+          </div>
+          <div class="card-footer">
+            <span class="label">On light <span style="font-size:11px; opacity:0.5; font-weight:400">· transparent bg</span></span>
+            <a href="assets/logos/finitless-logo-horizontal-on-light.png" download class="download-btn" onclick="showToast('Downloading logo')">
+              <svg width="14" height="14"><use href="#icon-download"/></svg>PNG
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Square Logos -->
+      <p style="font-size:14px; color:var(--cyan); font-weight:600; margin:24px 0 12px; text-transform:uppercase; letter-spacing:0.05em;">Square</p>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="preview dark">
+            <img src="assets/logos/finitless-logo-square-on-dark.png" alt="Square logo on dark" style="max-height:140px" loading="lazy">
+          </div>
+          <div class="card-footer">
+            <span class="label">Square on dark <span style="font-size:11px; opacity:0.5; font-weight:400">· black bg</span></span>
+            <a href="assets/logos/finitless-logo-square-on-dark.png" download class="download-btn" onclick="showToast('Downloading logo')">
+              <svg width="14" height="14"><use href="#icon-download"/></svg>PNG
+            </a>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="preview light">
+            <img src="assets/logos/finitless-logo-square-on-light.png" alt="Square logo on light" style="max-height:140px" loading="lazy">
+          </div>
+          <div class="card-footer">
+            <span class="label">Square on light <span style="font-size:11px; opacity:0.5; font-weight:400">· transparent bg</span></span>
+            <a href="assets/logos/finitless-logo-square-on-light.png" download class="download-btn" onclick="showToast('Downloading logo')">
+              <svg width="14" height="14"><use href="#icon-download"/></svg>PNG
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rect Logo -->
+      <p style="font-size:14px; color:var(--cyan); font-weight:600; margin:24px 0 12px; text-transform:uppercase; letter-spacing:0.05em;">Rectangular</p>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="preview dark">
+            <img src="assets/logos/finitless-logo-rect-on-dark.png" alt="Rect logo on dark" style="max-height:140px" loading="lazy">
+          </div>
+          <div class="card-footer">
+            <span class="label">Rect on dark <span style="font-size:11px; opacity:0.5; font-weight:400">· black bg</span></span>
+            <a href="assets/logos/finitless-logo-rect-on-dark.png" download class="download-btn" onclick="showToast('Downloading logo')">
+              <svg width="14" height="14"><use href="#icon-download"/></svg>PNG
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Size Variants -->
+      <h3>Logo Size Variants</h3>
+      <p>Download logos at the exact size you need. All generated from high-resolution sources.</p>
+      <p style="font-size:13px; color:var(--text-secondary); margin-top:8px;">All horizontal and square-on-light variants have <strong style="color:var(--cyan)">transparent backgrounds</strong>. Square-on-dark and rect-on-dark have <strong>solid black backgrounds</strong> (baked in).</p>
+      <div id="logo-sizes-container">
+        <!-- Populated by JS -->
+      </div>
+
+      <h3>Brand Icon</h3>
+      <p>The Finitless mark available at every size you need, in dark, light, and transparent variants.</p>
+
+      <!-- Icon size picker -->
+      <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:24px; margin-top:16px;">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
+          <div class="variant-tabs" id="icon-variant-tabs">
+            <button class="variant-tab active" data-variant="on-dark" onclick="setIconVariant('on-dark')">Dark</button>
+            <button class="variant-tab" data-variant="on-light" onclick="setIconVariant('on-light')">Light</button>
+            <button class="variant-tab" data-variant="transparent" onclick="setIconVariant('transparent')">Transparent</button>
+          </div>
+          <a href="assets/icons/finitless-icon-master.svg" download class="download-btn" style="margin-left:auto">
+            <svg width="14" height="14"><use href="#icon-download"/></svg>SVG Master (scales to any size)
+          </a>
+        </div>
+
+        <div class="size-picker" id="icon-size-picker">
+          <!-- Populated by JS -->
+        </div>
+
+        <div id="icon-preview" style="display:flex; align-items:center; justify-content:center; min-height:160px; border-radius:12px; margin:16px 0; background:#000; padding:24px;">
+          <img id="icon-preview-img" src="assets/icons/finitless-icon-on-dark-2000.png" alt="Icon preview" style="max-width:200px; max-height:200px;" loading="lazy">
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+          <span id="icon-filename" style="font-family:ui-monospace,monospace; font-size:13px; color:var(--text-secondary);">finitless-icon-on-dark-512.png</span>
+          <div style="display:flex; gap:8px;">
+            <button class="copy-btn" id="icon-copy-path" onclick="copyIconPath()">
+              <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy Path
+            </button>
+            <a id="icon-download-btn" href="assets/icons/finitless-icon-on-dark-2000.png" download class="download-btn">
+              <svg width="14" height="14"><use href="#icon-download"/></svg>Download
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Pick Table -->
+      <h3>Quick Pick</h3>
+      <p>Which asset to use for common contexts.</p>
+      <div style="overflow-x:auto;">
+        <table class="pick-table">
+          <thead>
+            <tr><th>Context</th><th>Recommended Asset</th><th>Size</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Website header (dark bg)</td><td><code>finitless-logo-horizontal-on-dark.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-horizontal-on-dark-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Website header (light bg)</td><td><code>finitless-logo-horizontal-on-light.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-horizontal-on-light-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Favicon</td><td><code>finitless-icon-on-dark-32.png</code></td><td>32px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-32.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Social media avatar</td><td><code>finitless-icon-on-dark-1000.png</code></td><td>1000px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-1000.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>PWA / App icon</td><td><code>finitless-icon-on-dark-512.png</code></td><td>512px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-512.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Android launcher</td><td><code>finitless-icon-on-dark-192.png</code></td><td>192px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-192.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Apple App Store</td><td><code>finitless-icon-on-dark-1024.png</code></td><td>1024px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-on-dark-1024.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>OG / Social card image</td><td><code>finitless-logo-square-on-dark-1024.png</code></td><td>1024px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-square-on-dark-1024.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Print (high-res)</td><td><code>finitless-icon-print-2552.png</code></td><td>2552px</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/icons/finitless-icon-print-2552.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+            <tr><td>Overlay / custom bg</td><td><code>finitless-logo-horizontal-on-dark.png</code></td><td>300w</td><td><button class="copy-btn" onclick="copyText(BRAND_BASE_URL+'assets/logos/finitless-logo-horizontal-on-dark-300w.png','Path')"><svg width="12" height="12"><use href="#icon-copy"/></svg></button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Logo Rules -->
+      <h3>Usage Rules</h3>
+      <div class="rules-grid">
+        <div class="rule-item"><span class="rule-icon do">&#10003;</span> Always resize proportionately</div>
+        <div class="rule-item"><span class="rule-icon dont">&#10007;</span> Never stretch or distort the logo</div>
+        <div class="rule-item"><span class="rule-icon do">&#10003;</span> Use supplied files only</div>
+        <div class="rule-item"><span class="rule-icon dont">&#10007;</span> Never modify or recreate the icon</div>
+        <div class="rule-item"><span class="rule-icon do">&#10003;</span> Maintain 50% icon-height clear space</div>
+        <div class="rule-item"><span class="rule-icon dont">&#10007;</span> Never place on clashing backgrounds</div>
+        <div class="rule-item"><span class="rule-icon do">&#10003;</span> Prefer dark variant as default</div>
+        <div class="rule-item"><span class="rule-icon dont">&#10007;</span> Never use below 24px (icon) / 80px (logo)</div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ COLORS ════════════════════════════ -->
+    <section id="colors">
+      <h2>Colors</h2>
+      <p class="section-subtitle">Click any value to copy it to your clipboard.</p>
+
+      <h3>Brand Gradient</h3>
+      <div class="gradient-bar"></div>
+      <div class="gradient-label">linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)</div>
+      <div class="gradient-snippets">
+        <button class="copy-btn" onclick="copyText('linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF)', 'CSS gradient')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>CSS
+        </button>
+        <button class="copy-btn" onclick="copyText('bg-gradient-to-r from-[#00B7FF] via-[#7A2EFF] to-[#C300FF]', 'Tailwind gradient')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Tailwind
+        </button>
+      </div>
+
+      <h3>Primary Palette</h3>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="preview" style="background:#00B7FF;"></div>
+          <div class="info">
+            <div class="name">Finitless Cyan</div>
+            <div class="color-values">
+              <button class="copy-btn" onclick="copyText('#00B7FF','Hex')">#00B7FF</button>
+              <button class="copy-btn" onclick="copyText('rgb(0, 183, 255)','RGB')">rgb(0,183,255)</button>
+              <button class="copy-btn" onclick="copyText('hsl(197, 100%, 50%)','HSL')">hsl(197,100%,50%)</button>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#7A2EFF;"></div>
+          <div class="info">
+            <div class="name">Finitless Purple</div>
+            <div class="color-values">
+              <button class="copy-btn" onclick="copyText('#7A2EFF','Hex')">#7A2EFF</button>
+              <button class="copy-btn" onclick="copyText('rgb(122, 46, 255)','RGB')">rgb(122,46,255)</button>
+              <button class="copy-btn" onclick="copyText('hsl(262, 100%, 59%)','HSL')">hsl(262,100%,59%)</button>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#C300FF;"></div>
+          <div class="info">
+            <div class="name">Finitless Magenta</div>
+            <div class="color-values">
+              <button class="copy-btn" onclick="copyText('#C300FF','Hex')">#C300FF</button>
+              <button class="copy-btn" onclick="copyText('rgb(195, 0, 255)','RGB')">rgb(195,0,255)</button>
+              <button class="copy-btn" onclick="copyText('hsl(286, 100%, 50%)','HSL')">hsl(286,100%,50%)</button>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#165DFC;"></div>
+          <div class="info">
+            <div class="name">Finitless Blue</div>
+            <div class="color-values">
+              <button class="copy-btn" onclick="copyText('#165DFC','Hex')">#165DFC</button>
+              <button class="copy-btn" onclick="copyText('rgb(22, 93, 252)','RGB')">rgb(22,93,252)</button>
+              <button class="copy-btn" onclick="copyText('hsl(222, 97%, 54%)','HSL')">hsl(222,97%,54%)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Neutral Palette</h3>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="preview" style="background:#000;border-bottom:1px solid var(--border);"></div>
+          <div class="info">
+            <div class="name">Black</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#000000','Hex')">#000000</button></div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#0a0a0a;border-bottom:1px solid var(--border);"></div>
+          <div class="info">
+            <div class="name">Background</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#0a0a0a','Hex')">#0a0a0a</button></div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#fff;"></div>
+          <div class="info">
+            <div class="name">White</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#FFFFFF','Hex')">#FFFFFF</button></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Semantic Colors</h3>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="preview" style="background:#ff3b45;"></div>
+          <div class="info">
+            <div class="name">Error / Alert</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#ff3b45','Hex')">#ff3b45</button></div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#22c55e;"></div>
+          <div class="info">
+            <div class="name">Success</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#22c55e','Hex')">#22c55e</button></div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#f59e0b;"></div>
+          <div class="info">
+            <div class="name">Warning</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#f59e0b','Hex')">#f59e0b</button></div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="preview" style="background:#eaf4ff;"></div>
+          <div class="info">
+            <div class="name">Info Tint</div>
+            <div class="color-values"><button class="copy-btn" onclick="copyText('#eaf4ff','Hex')">#eaf4ff</button></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>CSS Custom Properties</h3>
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText(document.getElementById('css-vars-code').textContent,'CSS variables')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy
+        </button>
+        <span class="code-label">CSS</span>
+<span id="css-vars-code">:root {
+  --color-primary: #00B7FF;
+  --color-secondary: #7A2EFF;
+  --color-tertiary: #C300FF;
+  --color-blue: #165DFC;
+  --color-background: #0a0a0a;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-card-surface: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-muted-text: rgba(255, 255, 255, 0.60);
+  --color-error: #ff3b45;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-info: #eaf4ff;
+  --gradient-brand: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);
+  --gradient-cta: linear-gradient(to right, #00B7FF, #7A2EFF);
+  --glow-primary: 0 0 20px rgba(0, 183, 255, 0.3);
+}</span>
+      </div>
+
+      <h3>Tailwind Config</h3>
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText(document.getElementById('tw-colors-code').textContent,'Tailwind config')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy
+        </button>
+        <span class="code-label">tailwind.config.js</span>
+<span id="tw-colors-code">colors: {
+  brand: {
+    cyan: '#00B7FF',
+    purple: '#7A2EFF',
+    magenta: '#C300FF',
+    blue: '#165DFC',
+  },
+  surface: {
+    DEFAULT: '#0a0a0a',
+    black: '#000000',
+  },
+  semantic: {
+    error: '#ff3b45',
+    success: '#22c55e',
+    warning: '#f59e0b',
+    info: '#eaf4ff',
+  },
+}</span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ TYPOGRAPHY ════════════════════════════ -->
+    <section id="typography">
+      <h2>Typography</h2>
+      <p class="section-subtitle">All UI text uses <strong style="color:var(--text)">Inter</strong> from Google Fonts. The logo uses BEASIGNE (render from image assets only).</p>
+
+      <!-- Font Display -->
+      <div class="font-display">
+        <h3 style="font-size:clamp(40px,8vw,72px);">Inter</h3>
+        <p style="color:var(--text-secondary); font-size:16px; margin:0;">Google Fonts &mdash; Variable weight font</p>
+        <div class="weights">
+          <div class="weight-item"><span>400</span> Regular</div>
+          <div class="weight-item"><span>600</span> Semi-Bold</div>
+          <div class="weight-item"><span>700</span> Bold</div>
+          <div class="weight-item"><span>800</span> Extra-Bold</div>
+        </div>
+      </div>
+
+      <!-- Font Loading Code -->
+      <h3>Font Loading</h3>
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText(document.getElementById('font-html-code').textContent,'Font HTML')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy
+        </button>
+        <span class="code-label">HTML</span>
+<span id="font-html-code">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"&gt;</span>
+      </div>
+
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText(document.getElementById('font-next-code').textContent,'Next.js font')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy
+        </button>
+        <span class="code-label">Next.js (App Router)</span>
+<span id="font-next-code">import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  display: 'swap',
+});</span>
+      </div>
+
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText(document.getElementById('font-css-code').textContent,'CSS fallback')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy
+        </button>
+        <span class="code-label">CSS Fallback Stack</span>
+<span id="font-css-code">font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</span>
+      </div>
+
+      <!-- Type Scale -->
+      <h3>Type Scale</h3>
+      <div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">display</span>
+            <span class="font-label">Inter Extra-Bold</span>
+            <span class="size-label">72px / 800 / 1.1</span>
+          </div>
+          <div class="type-sample" style="font-size:clamp(36px,8vw,72px); font-weight:800; line-height:1.1; letter-spacing:-0.02em;">Never Miss</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">h1</span>
+            <span class="font-label">Inter Extra-Bold</span>
+            <span class="size-label">48px / 800 / 1.2</span>
+          </div>
+          <div class="type-sample" style="font-size:clamp(32px,6vw,48px); font-weight:800; line-height:1.2; letter-spacing:-0.01em;">Brand Guidelines</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">h2</span>
+            <span class="font-label">Inter Bold</span>
+            <span class="size-label">36px / 700 / 1.25</span>
+          </div>
+          <div class="type-sample" style="font-size:clamp(28px,5vw,36px); font-weight:700; line-height:1.25; letter-spacing:-0.005em;">Section Heading</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">h3</span>
+            <span class="font-label">Inter Bold</span>
+            <span class="size-label">24px / 700 / 1.3</span>
+          </div>
+          <div class="type-sample" style="font-size:24px; font-weight:700; line-height:1.3;">Sub-Section Heading</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">h4</span>
+            <span class="font-label">Inter Semi-Bold</span>
+            <span class="size-label">20px / 600 / 1.4</span>
+          </div>
+          <div class="type-sample" style="font-size:20px; font-weight:600; line-height:1.4;">Card Title</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">body-lg</span>
+            <span class="font-label">Inter Regular</span>
+            <span class="size-label">18px / 400 / 1.6</span>
+          </div>
+          <div class="type-sample" style="font-size:18px; font-weight:400; line-height:1.6;">AI-powered voice and WhatsApp agents that capture every order, 24/7.</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">body</span>
+            <span class="font-label">Inter Regular</span>
+            <span class="size-label">16px / 400 / 1.6</span>
+          </div>
+          <div class="type-sample" style="font-size:16px; font-weight:400; line-height:1.6;">Default body text for paragraphs and descriptions.</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">body-sm</span>
+            <span class="font-label">Inter Regular</span>
+            <span class="size-label">14px / 400 / 1.5</span>
+          </div>
+          <div class="type-sample" style="font-size:14px; font-weight:400; line-height:1.5;">Secondary text and descriptions.</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">caption</span>
+            <span class="font-label">Inter Regular</span>
+            <span class="size-label">12px / 400 / 1.5</span>
+          </div>
+          <div class="type-sample" style="font-size:12px; font-weight:400; line-height:1.5;">Labels and fine print</div>
+        </div>
+        <div class="type-item">
+          <div class="type-meta">
+            <span class="token">overline</span>
+            <span class="font-label">Inter Semi-Bold</span>
+            <span class="size-label">12px / 600 / uppercase / 0.05em</span>
+          </div>
+          <div class="type-sample" style="font-size:12px; font-weight:600; line-height:1.5; text-transform:uppercase; letter-spacing:0.05em;">Category Label</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ COMPONENTS ════════════════════════════ -->
+    <section id="components">
+      <h2>Component Patterns</h2>
+      <p class="section-subtitle">Do's and Don'ts for building with the Finitless brand system. Each correct example includes copyable code.</p>
+
+      <!-- Buttons -->
+      <h3>Buttons</h3>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; padding:12px 28px; border-radius:12px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">Get Started</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">CTA gradient — hero/form submit only</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;button style=&quot;background:linear-gradient(to right,#00B7FF,#7A2EFF);color:#fff;font-weight:600;padding:12px 28px;border-radius:12px;border:none;font-size:15px;&quot;&gt;Get Started&lt;/button&gt;','Button code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:#2563eb; color:#fff; font-weight:400; padding:8px 16px; border-radius:4px; border:none; font-size:14px; font-family:Arial,sans-serif; cursor:pointer;">Get Started</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Non-brand blue, wrong radius, wrong font</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dodont-grid" style="margin-top:16px;">
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:#165DFC; color:#fff; font-weight:600; padding:12px 28px; border-radius:12px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">+ Create Item</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Solid Finitless Blue — preferred for actions</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;button style=&quot;background:#165DFC;color:#fff;font-weight:600;padding:12px 28px;border-radius:12px;border:none;font-size:15px;&quot;&gt;+ Create Item&lt;/button&gt;','Solid button code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:#00B7FF; color:#fff; font-weight:400; padding:12px 28px; border-radius:12px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">+ Create Item</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Flat solid cyan as button background</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dodont-grid" style="margin-top:16px;">
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.2); color:#fff; font-weight:500; padding:12px 28px; border-radius:12px; font-size:15px; font-family:Inter,sans-serif; cursor:pointer;">Learn More</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Glass bg, subtle border, 12px radius</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;button style=&quot;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.2);color:#fff;font-weight:500;padding:12px 28px;border-radius:12px;&quot;&gt;Learn More&lt;/button&gt;','Button code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo">
+            <button style="background:transparent; border:2px solid #00B7FF; color:#00B7FF; font-weight:400; padding:8px 16px; border-radius:0; font-size:14px; font-family:Arial,sans-serif; cursor:pointer;">Learn More</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Hard border, no radius, wrong font</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <h3>Cards</h3>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo">
+            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px; backdrop-filter:blur(4px); max-width:260px; transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,183,255,0.5)';this.style.boxShadow='0 4px 20px rgba(0,183,255,0.1)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.boxShadow='none'">
+              <div style="font-size:16px; font-weight:700; margin-bottom:6px;">Voice Agent</div>
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); line-height:1.5;">Answers every call. Takes every order.</div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Glass bg, cyan hover glow, 12px radius</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;div style=&quot;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;backdrop-filter:blur(4px);&quot;&gt;\n  Content\n&lt;/div&gt;','Card code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo">
+            <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:0; padding:20px; max-width:260px;">
+              <div style="font-size:16px; font-weight:700; color:#111; margin-bottom:6px;">Voice Agent</div>
+              <div style="font-size:14px; color:#666; line-height:1.5;">Answers every call. Takes every order.</div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">White bg, sharp corners, no hover</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gradient Text -->
+      <h3>Gradient Text</h3>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo">
+            <span style="font-size:32px; font-weight:800; background:linear-gradient(to right,#00B7FF,#7A2EFF,#C300FF); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Never Miss</span>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">3-stop brand gradient, left-to-right</span></div>
+            <button class="copy-btn" onclick="copyText('background: linear-gradient(to right, #00B7FF, #7A2EFF, #C300FF);\n-webkit-background-clip: text;\n-webkit-text-fill-color: transparent;','Gradient text CSS')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo">
+            <span style="font-size:32px; font-weight:800; background:linear-gradient(to bottom,#7A2EFF,#C300FF); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Never Miss</span>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Missing cyan, wrong direction</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Components -->
+      <h3>Form Components</h3>
+
+      <!-- Form Input Do/Don't -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;"><strong style="color:var(--text)">Inputs:</strong> Glass background, cyan focus glow, 12px radius, 48px height.</p>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <div style="width:100%; max-width:320px;">
+              <label style="display:block; font-size:14px; font-weight:600; color:rgba(255,255,255,0.70); margin-bottom:8px;">Email address</label>
+              <input type="email" placeholder="you@example.com" readonly
+                style="width:100%; height:48px; padding:12px 16px; font-size:16px; font-family:Inter,sans-serif;
+                       color:#fff; background:rgba(255,255,255,0.05); border:1px solid rgba(0,183,255,0.5);
+                       border-radius:12px; outline:none; box-shadow:0 0 0 3px rgba(0,183,255,0.15);">
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Glass bg, cyan focus glow, 12px radius</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;input style=&quot;width:100%;height:48px;padding:12px 16px;font-size:16px;color:#fff;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:12px;&quot;&gt;','Input code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <div style="width:100%; max-width:320px;">
+              <label style="display:block; font-size:14px; font-weight:400; color:rgba(255,255,255,0.50); margin-bottom:4px;">Email address</label>
+              <input type="email" placeholder="you@example.com" readonly
+                style="width:100%; height:36px; padding:6px 8px; font-size:14px; font-family:Arial,sans-serif;
+                       color:#ccc; background:#1a1a1a; border:1px solid #333; border-radius:4px; outline:none;">
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Unstyled, no focus glow, wrong radius</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Button Do/Don't -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:24px; margin-bottom:16px;"><strong style="color:var(--text)">Form submit:</strong> Always CTA gradient, full width, 48px height. Only ONE gradient button per view.</p>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <button style="width:100%; max-width:320px; height:48px; background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; font-size:16px; border:none; border-radius:12px; font-family:Inter,sans-serif; cursor:pointer;">Sign In</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">CTA gradient, full width, 48px height</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;button style=&quot;width:100%;height:48px;background:linear-gradient(to right,#00B7FF,#7A2EFF);color:#fff;font-weight:600;font-size:16px;border:none;border-radius:12px;&quot;&gt;Sign In&lt;/button&gt;','Form button code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <button style="width:100%; max-width:320px; height:48px; background:#00B7FF; color:#fff; font-weight:400; font-size:14px; border:none; border-radius:12px; font-family:Arial,sans-serif; cursor:pointer;">Continue</button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Flat solid cyan, wrong font & weight</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OAuth Button Do/Don't -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:24px; margin-bottom:16px;"><strong style="color:var(--text)">OAuth / social buttons:</strong> Use secondary button pattern (glass bg + border). Never use CTA gradient.</p>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <button style="width:100%; max-width:320px; height:48px; display:flex; align-items:center; justify-content:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.20); border-radius:12px; color:#fff; font-size:15px; font-weight:500; font-family:Inter,sans-serif; cursor:pointer;">
+              <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              Continue with Google
+            </button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Secondary pattern: glass bg + border</span></div>
+            <button class="copy-btn" onclick="copyText('&lt;button style=&quot;width:100%;height:48px;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.20);border-radius:12px;color:#fff;font-size:15px;font-weight:500;&quot;&gt;Continue with Google&lt;/button&gt;','OAuth button code')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <button style="width:100%; max-width:320px; height:48px; display:flex; align-items:center; justify-content:center; gap:8px; background:linear-gradient(to right,#00B7FF,#7A2EFF); border:none; border-radius:12px; color:#fff; font-size:15px; font-weight:500; font-family:Inter,sans-serif; cursor:pointer;">
+              <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#fff" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#fff" opacity="0.8" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#fff" opacity="0.6" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#fff" opacity="0.7" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              Continue with Google
+            </button>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">CTA gradient on OAuth (steals focus from primary)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select / Dropdown Do/Don't -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:24px; margin-bottom:16px;"><strong style="color:var(--text)">Select / Dropdown:</strong> Elevated panel, subtle cyan hover, comfortable option padding. Never use native browser select or gradient hover.</p>
+      <div class="dodont-grid">
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <div style="width:100%; max-width:320px; position:relative;">
+              <div style="width:100%; height:48px; padding:12px 16px; padding-right:40px; font-size:16px; font-family:Inter,sans-serif;
+                         color:rgba(255,255,255,0.40); background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);
+                         border-radius:12px 12px 0 0; display:flex; align-items:center; position:relative;">
+                Select an option
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.50)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:50%; transform:translateY(-50%);">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:0 0 12px 12px;
+                         box-shadow:0 8px 32px rgba(0,0,0,0.4); padding:4px; overflow:hidden;">
+                <div style="padding:12px 16px; font-size:15px; color:rgba(255,255,255,0.80); border-radius:8px; cursor:pointer;">Option One</div>
+                <div style="padding:12px 16px; font-size:15px; color:rgba(255,255,255,0.90); border-radius:8px; background:rgba(0,183,255,0.12); cursor:pointer;">Option Two (hover)</div>
+                <div style="padding:12px 16px; font-size:15px; color:#fff; border-radius:8px; background:rgba(0,183,255,0.15); cursor:pointer; display:flex; align-items:center; justify-content:space-between;">Option Three (selected) <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B7FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div style="padding:12px 16px; font-size:15px; color:rgba(255,255,255,0.80); border-radius:8px; cursor:pointer;">Option Four</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag do">&#10003; DO</span> <span class="desc">Elevated panel, subtle cyan hover, padded options</span></div>
+            <button class="copy-btn" onclick="copyText('/* Panel */ background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.4); backdrop-filter:blur(12px);\n/* Option hover */ background:rgba(0,183,255,0.12);\n/* Option selected */ background:rgba(0,183,255,0.15); color:#FFFFFF;','Dropdown CSS')">
+              <svg width="12" height="12"><use href="#icon-copy"/></svg>Code
+            </button>
+          </div>
+        </div>
+        <div class="dodont-card">
+          <div class="demo" style="padding:24px;">
+            <div style="width:100%; max-width:320px; position:relative;">
+              <div style="width:100%; height:48px; padding:12px 16px; padding-right:40px; font-size:16px; font-family:Inter,sans-serif;
+                         color:rgba(255,255,255,0.40); background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);
+                         border-radius:12px 12px 0 0; display:flex; align-items:center; position:relative;">
+                Select an option
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.50)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:50%; transform:translateY(-50%);">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:0 0 12px 12px; padding:0; overflow:hidden;">
+                <div style="padding:8px 16px; font-size:15px; color:rgba(255,255,255,0.80); cursor:pointer;">Option One</div>
+                <div style="padding:8px 16px; font-size:15px; color:#fff; background:linear-gradient(to right,#00B7FF,#7A2EFF); cursor:pointer;">Option Two (hover)</div>
+                <div style="padding:8px 16px; font-size:15px; color:rgba(255,255,255,0.80); cursor:pointer;">Option Three</div>
+                <div style="padding:8px 16px; font-size:15px; color:rgba(255,255,255,0.80); cursor:pointer;">Option Four</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div><span class="tag dont">&#10007; DON'T</span> <span class="desc">Gradient hover, flat panel, cramped options</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button Sizes -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:24px; margin-bottom:16px;"><strong style="color:var(--text)">Button sizes:</strong> sm (36px), md (44px, default), lg (48px). Use lg for forms and hero CTAs.</p>
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:12px;">
+        <button style="height:36px; padding:8px 16px; font-size:14px; background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; border:none; border-radius:8px; font-family:Inter,sans-serif; cursor:pointer;">sm (36px)</button>
+        <button style="height:44px; padding:10px 24px; font-size:15px; background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; border:none; border-radius:12px; font-family:Inter,sans-serif; cursor:pointer;">md (44px)</button>
+        <button style="height:48px; padding:12px 32px; font-size:16px; background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; border:none; border-radius:12px; font-family:Inter,sans-serif; cursor:pointer;">lg (48px)</button>
+      </div>
+
+      <!-- Complete Login Form Demo -->
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:32px; margin-bottom:16px;"><strong style="color:var(--text)">Complete example:</strong> Login form following all brand guidelines.</p>
+      <div style="max-width:480px; margin:0 auto; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); border-radius:16px; padding:32px;">
+        <img src="assets/logos/finitless-logo-horizontal-on-dark-200w.png" alt="Finitless" style="height:32px; margin-bottom:32px;">
+        <h4 style="font-size:24px; font-weight:700; color:#fff; margin-bottom:8px;">Sign in to your account</h4>
+        <p style="font-size:14px; color:rgba(255,255,255,0.60); margin-bottom:24px;">Enter your email and password to continue.</p>
+
+        <!-- OAuth -->
+        <button style="width:100%; height:48px; display:flex; align-items:center; justify-content:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.20); border-radius:12px; color:#fff; font-size:15px; font-weight:500; font-family:Inter,sans-serif; cursor:pointer; transition:all 150ms ease;"
+          onmouseover="this.style.borderColor='rgba(0,183,255,0.5)'; this.style.background='rgba(0,183,255,0.05)'"
+          onmouseout="this.style.borderColor='rgba(255,255,255,0.20)'; this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          Continue with Google
+        </button>
+
+        <!-- Divider -->
+        <div style="display:flex; align-items:center; gap:16px; margin:24px 0;">
+          <div style="flex:1; height:1px; background:rgba(255,255,255,0.10);"></div>
+          <span style="font-size:12px; color:rgba(255,255,255,0.40);">or</span>
+          <div style="flex:1; height:1px; background:rgba(255,255,255,0.10);"></div>
+        </div>
+
+        <!-- Email -->
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-size:14px; font-weight:600; color:rgba(255,255,255,0.70); margin-bottom:8px;">Email address</label>
+          <input type="email" placeholder="you@example.com" readonly
+            style="width:100%; height:48px; padding:12px 16px; font-size:16px; font-family:Inter,sans-serif;
+                   color:#fff; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);
+                   border-radius:12px; outline:none; transition:all 150ms ease;"
+            onfocus="this.style.borderColor='rgba(0,183,255,0.5)'; this.style.boxShadow='0 0 0 3px rgba(0,183,255,0.15)'"
+            onblur="this.style.borderColor='rgba(255,255,255,0.10)'; this.style.boxShadow='none'">
+        </div>
+
+        <!-- Password -->
+        <div style="margin-bottom:24px;">
+          <label style="display:block; font-size:14px; font-weight:600; color:rgba(255,255,255,0.70); margin-bottom:8px;">Password</label>
+          <input type="password" placeholder="Enter your password" readonly
+            style="width:100%; height:48px; padding:12px 16px; font-size:16px; font-family:Inter,sans-serif;
+                   color:#fff; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);
+                   border-radius:12px; outline:none; transition:all 150ms ease;"
+            onfocus="this.style.borderColor='rgba(0,183,255,0.5)'; this.style.boxShadow='0 0 0 3px rgba(0,183,255,0.15)'"
+            onblur="this.style.borderColor='rgba(255,255,255,0.10)'; this.style.boxShadow='none'">
+        </div>
+
+        <!-- Submit -->
+        <button style="width:100%; height:48px; background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; font-size:16px; border:none; border-radius:12px; font-family:Inter,sans-serif; cursor:pointer; transition:all 150ms ease;"
+          onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          Sign In
+        </button>
+
+        <!-- Footer -->
+        <p style="font-size:14px; color:rgba(255,255,255,0.60); text-align:center; margin-top:24px;">
+          Don't have an account? <a href="#" style="color:#00B7FF; text-decoration:none; font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Sign up</a>
+        </p>
+      </div>
+
+      <!-- Spacing -->
+      <h3>Spacing</h3>
+      <p style="color:var(--text-secondary); font-size:14px;">Use a <strong style="color:var(--text)">4px grid</strong>. All spacing values are multiples of 4.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+        <button class="copy-btn" onclick="copyText('4, 8, 12, 16, 24, 32, 48, 64, 96','Spacing scale')">4 &middot; 8 &middot; 12 &middot; 16 &middot; 24 &middot; 32 &middot; 48 &middot; 64 &middot; 96</button>
+      </div>
+      <p style="color:var(--text-secondary); font-size:14px; margin-top:16px;"><strong style="color:var(--text)">Border radius:</strong> 6px (xs), 10px (sm), 14px (md), 18px (lg), 24px (xl), 32px (2xl) <span style="color:var(--cyan); font-size:12px; margin-left:8px;">v3.0.0 updated</span></p>
+    </section>
+
+    <!-- ════════════════════════════ DASHBOARD COMPONENTS (v3.0.0) ════════════════════════════ -->
+    <section id="dashboard">
+      <h2>Dashboard Components <span style="font-size:14px; font-weight:500; color:var(--cyan); vertical-align:middle;">v3.0.0</span></h2>
+      <p class="section-subtitle">New patterns for data-rich dashboard interfaces. Based on modern SaaS design trends.</p>
+
+      <!-- Background Layers -->
+      <h3>Background Layers</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Warmer off-black backgrounds create visual depth without shadows. Easier on eyes, more premium feel.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px;">
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#08080a; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Deep</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#08080a</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#0e0e10; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Base</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#0e0e10</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#151517; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Elevated</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#151517</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:100%; height:80px; background:#1c1c1f; border:1px solid var(--border); border-radius:var(--radius-md); margin-bottom:8px;"></div>
+          <div style="font-size:12px; font-weight:600; color:var(--text);">Surface</div>
+          <div style="font-size:11px; color:var(--text-secondary);">#1c1c1f</div>
+        </div>
+      </div>
+
+      <!-- Stat Card -->
+      <h3>Stat Card with Accent Border</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Cards with left accent borders indicate semantic meaning. Icon containers use 12% opacity backgrounds.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <!-- Cyan stat card -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #00B7FF; border-radius:18px; padding:20px; backdrop-filter:blur(8px);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:4px;">Total Orders</div>
+              <div style="font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.02em;">1,234</div>
+              <div style="display:flex; align-items:center; gap:4px; margin-top:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                <span style="font-size:14px; font-weight:500; color:#22c55e;">+12.5%</span>
+                <span style="font-size:13px; color:rgba(255,255,255,0.4);">vs last week</span>
+              </div>
+            </div>
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(0,183,255,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B7FF" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Success stat card -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #22c55e; border-radius:18px; padding:20px; backdrop-filter:blur(8px);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:4px;">Revenue</div>
+              <div style="font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.02em;">$8,420</div>
+              <div style="display:flex; align-items:center; gap:4px; margin-top:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                <span style="font-size:14px; font-weight:500; color:#22c55e;">+8.3%</span>
+              </div>
+            </div>
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(34,197,94,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Purple stat card -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #7A2EFF; border-radius:18px; padding:20px; backdrop-filter:blur(8px);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:4px;">AI Conversations</div>
+              <div style="font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.02em;">847</div>
+              <div style="display:flex; align-items:center; gap:4px; margin-top:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                <span style="font-size:14px; font-weight:500; color:#22c55e;">+24.1%</span>
+              </div>
+            </div>
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(122,46,255,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A2EFF" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Period Selector & Live Badge -->
+      <h3>Period Selector & Live Badge</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Tab-style pills for date filtering. Live badges for real-time status.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center;">
+        <!-- Period selector -->
+        <div style="display:inline-flex; background:rgba(255,255,255,0.02); border-radius:9999px; padding:4px; gap:2px;">
+          <button style="padding:8px 16px; font-size:14px; font-weight:600; color:#00B7FF; background:rgba(0,183,255,0.12); border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">Today</button>
+          <button style="padding:8px 16px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">Yesterday</button>
+          <button style="padding:8px 16px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">This Week</button>
+          <button style="padding:8px 16px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border-radius:9999px; border:none; cursor:pointer; font-family:Inter,sans-serif;">This Month</button>
+        </div>
+        <!-- Live badge -->
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:9999px; background:rgba(34,197,94,0.12); color:#22c55e; font-size:12px; font-weight:600;">
+          <span style="width:8px; height:8px; border-radius:9999px; background:#22c55e; animation:pulse 2s ease-in-out infinite;"></span>
+          Live
+        </div>
+      </div>
+      <style>@keyframes pulse { 0%, 100% { opacity:1; } 50% { opacity:0.5; } }</style>
+
+      <!-- Icon Containers -->
+      <h3>Icon Containers</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Icons inside 12% opacity colored containers. Sizes: 36px (sm), 48px (md), 56px (lg).</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+        <div style="width:36px; height:36px; border-radius:10px; background:rgba(0,183,255,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B7FF" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(34,197,94,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div style="width:56px; height:56px; border-radius:16px; background:rgba(122,46,255,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7A2EFF" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(22,93,252,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#165DFC" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(245,158,11,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:14px; background:rgba(255,59,69,0.12); display:flex; align-items:center; justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff3b45" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+      </div>
+
+      <!-- Glow Effects -->
+      <h3>Glow Effects</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:16px;">Subtle glows for CTAs and AI-related elements. Use strategically, not everywhere.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <button style="background:linear-gradient(to right,#00B7FF,#7A2EFF); color:#fff; font-weight:600; padding:12px 28px; border-radius:14px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer; box-shadow:0 0 40px -10px rgba(0,183,255,0.4);">CTA Glow</button>
+        <button style="background:#165DFC; color:#fff; font-weight:600; padding:12px 28px; border-radius:14px; border:none; font-size:15px; font-family:Inter,sans-serif; cursor:pointer; box-shadow:0 0 30px rgba(22,93,252,0.2);">Subtle Glow</button>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 24px; box-shadow:inset 0 0 20px rgba(0,183,255,0.08);">
+          <span style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.8);">Inner Glow Card</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ VOICE & TONE ════════════════════════════ -->
+    <section id="voice">
+      <h2>Voice & Tone</h2>
+      <p class="section-subtitle">How we communicate across every touchpoint.</p>
+
+      <h3>Personality</h3>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <h4>Confident, not arrogant</h4>
+          <p>We state facts and let results speak.</p>
+          <div class="example">
+            <div class="yes">&#10003; "Finitless captures orders your staff would miss."</div>
+            <div class="no">&#10007; "We are the best AI company in the restaurant industry."</div>
+          </div>
+        </div>
+        <div class="voice-card">
+          <h4>Revolutionary, not combative</h4>
+          <p>We empower restaurants. We don't attack platforms.</p>
+          <div class="example">
+            <div class="yes">&#10003; "The future of restaurant ordering is already here."</div>
+            <div class="no">&#10007; "Traditional ordering systems are dead."</div>
+          </div>
+        </div>
+        <div class="voice-card">
+          <h4>Practical, not visionary</h4>
+          <p>Dollars saved today, not a distant future.</p>
+          <div class="example">
+            <div class="yes">&#10003; "Recover $31,000 in missed orders this year."</div>
+            <div class="no">&#10007; "Imagine a world where every restaurant uses AI."</div>
+          </div>
+        </div>
+        <div class="voice-card">
+          <h4>Direct, not salesy</h4>
+          <p>Straight talk about ROI and results.</p>
+          <div class="example">
+            <div class="yes">&#10003; "You miss 40% of calls. That is $31,000 walking out the door."</div>
+            <div class="no">&#10007; "Do not miss this incredible limited-time opportunity!"</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Words We Use vs. Avoid</h3>
+      <div class="word-panels">
+        <div class="word-panel use">
+          <h4>&#10003; Words We Use</h4>
+          <div class="word-pills">
+            <span class="word-pill">AI agents</span>
+            <span class="word-pill">AI ordering agents</span>
+            <span class="word-pill">AI-powered</span>
+            <span class="word-pill">recover</span>
+            <span class="word-pill">capture</span>
+            <span class="word-pill">own</span>
+            <span class="word-pill">direct</span>
+            <span class="word-pill">efficient</span>
+            <span class="word-pill">24/7</span>
+            <span class="word-pill">never miss</span>
+            <span class="word-pill">revenue</span>
+            <span class="word-pill">every order</span>
+          </div>
+        </div>
+        <div class="word-panel avoid">
+          <h4>&#10007; Words We Avoid</h4>
+          <div class="word-pills">
+            <span class="word-pill">chatbot</span>
+            <span class="word-pill">bot</span>
+            <span class="word-pill">artificial intelligence</span>
+            <span class="word-pill">smart</span>
+            <span class="word-pill">virtual assistant</span>
+            <span class="word-pill">disrupt</span>
+            <span class="word-pill">maybe</span>
+            <span class="word-pill">try</span>
+            <span class="word-pill">revolutionize</span>
+            <span class="word-pill">leverage</span>
+            <span class="word-pill">synergy</span>
+            <span class="word-pill">hopefully</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ FOR DEVELOPERS ════════════════════════════ -->
+    <section id="developers">
+      <h2>For Developers</h2>
+      <p class="section-subtitle">Machine-readable brand identity. Fetch everything in one request.</p>
+
+      <div class="code-block">
+        <button class="copy-btn copy-corner" onclick="copyText('GET /brand-manifest.json','API endpoint')">
+          <svg width="14" height="14"><use href="#icon-copy"/></svg>Copy
+        </button>
+        <span style="color: var(--cyan);">GET</span> /brand-manifest.json
+
+<span style="color: var(--text-secondary);">// Returns: colors, typography, assets, voice, gradients &mdash; everything.</span>
+<span style="color: var(--text-secondary);">// CORS enabled. Accessible from any origin.</span>
+      </div>
+
+      <div class="api-banner">
+        <h3>brand-manifest.json</h3>
+        <p>Complete brand identity for programmatic consumption.</p>
+        <p><a href="brand-manifest.json">View the manifest &rarr;</a></p>
+      </div>
+
+      <p style="margin-top: 24px;">
+        Full documentation: <a href="https://github.com/Finitless-com/brand-guidelines" style="color: var(--cyan);">GitHub Repository <svg width="12" height="12" style="vertical-align:middle"><use href="#icon-external"/></svg></a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Finitless. All rights reserved. <span style="opacity:0.5">&middot; v3.0.0 &middot; February 2026</span></p>
+    <p style="margin-top:8px;">
+      <a href="https://github.com/Finitless-com/brand-guidelines">GitHub</a> &middot;
+      <a href="https://finitless.com">finitless.com</a> &middot;
+      <a href="brand-manifest.json">brand-manifest.json</a>
+    </p>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Brand Base URL ──
+    const BRAND_BASE_URL = 'https://brand.finitless.com/';
+
+    // ── Toast ──
+    let toastTimeout;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('visible');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => t.classList.remove('visible'), 2000);
+    }
+
+    // ── Copy to clipboard ──
+    function copyText(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied ' + (label || ''));
+      });
+    }
+
+    async function copyFileContents(url, label) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        await navigator.clipboard.writeText(text);
+        showToast('Copied ' + label + ' contents');
+      } catch (e) {
+        showToast('Failed to copy — try downloading instead');
+      }
+    }
+
+    async function copyAllBrandFiles() {
+      try {
+        const [skill, claude] = await Promise.all([
+          fetch('SKILL.md').then(r => r.text()),
+          fetch('CLAUDE.md').then(r => r.text())
+        ]);
+        const combined = '# ═══ SKILL.md (Brand Styling Rules) ═══\n\n' + skill + '\n\n\n# ═══ CLAUDE.md (Full Brand Guidelines) ═══\n\n' + claude;
+        await navigator.clipboard.writeText(combined);
+        showToast('Copied SKILL.md + CLAUDE.md to clipboard');
+      } catch (e) {
+        showToast('Failed to copy — try individual files instead');
+      }
+    }
+
+    // ── Nav scroll spy ──
+    const navbar = document.getElementById('navbar');
+    const hero = document.getElementById('hero');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Show/hide nav
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      navbar.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
+    heroObserver.observe(hero);
+
+    // Highlight current section
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '-80px 0px -50% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, null, a.getAttribute('href'));
+        }
+      });
+    });
+
+    // ── Icon Size Picker ──
+    const iconSizes = [16, 32, 48, 64, 72, 128, 192, 256, 384, 512, 1000, 1024];
+    let currentIconVariant = 'on-dark';
+    let currentIconSize = 512;
+
+    function initIconPicker() {
+      const picker = document.getElementById('icon-size-picker');
+      iconSizes.forEach(size => {
+        const pill = document.createElement('button');
+        pill.className = 'size-pill' + (size === currentIconSize ? ' active' : '');
+        pill.textContent = size + 'px';
+        pill.onclick = () => setIconSize(size);
+        picker.appendChild(pill);
+      });
+      updateIconPreview();
+    }
+
+    function setIconVariant(variant) {
+      currentIconVariant = variant;
+      document.querySelectorAll('#icon-variant-tabs .variant-tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.variant === variant);
+      });
+      const preview = document.getElementById('icon-preview');
+      if (variant === 'on-light') preview.style.background = '#fff';
+      else if (variant === 'transparent') preview.style.background = '';
+      else preview.style.background = '#000';
+      if (variant === 'transparent') preview.className = 'checkerboard';
+      else preview.className = '';
+      preview.style.display = 'flex';
+      preview.style.alignItems = 'center';
+      preview.style.justifyContent = 'center';
+      preview.style.minHeight = '160px';
+      preview.style.borderRadius = '12px';
+      preview.style.margin = '16px 0';
+      preview.style.padding = '24px';
+      updateIconPreview();
+    }
+
+    function setIconSize(size) {
+      currentIconSize = size;
+      document.querySelectorAll('#icon-size-picker .size-pill').forEach(p => {
+        p.classList.toggle('active', p.textContent === size + 'px');
+      });
+      updateIconPreview();
+    }
+
+    function updateIconPreview() {
+      const filename = 'finitless-icon-' + currentIconVariant + '-' + currentIconSize + '.png';
+      const path = 'assets/icons/' + filename;
+      document.getElementById('icon-preview-img').src = path;
+      document.getElementById('icon-preview-img').alt = filename;
+      document.getElementById('icon-filename').textContent = BRAND_BASE_URL + 'assets/icons/' + filename;
+      document.getElementById('icon-download-btn').href = path;
+      document.getElementById('icon-download-btn').download = filename;
+    }
+
+    function copyIconPath() {
+      const filename = 'finitless-icon-' + currentIconVariant + '-' + currentIconSize + '.png';
+      copyText(BRAND_BASE_URL + 'assets/icons/' + filename, 'icon path');
+    }
+
+    // ── Logo Size Variants ──
+    function initLogoSizes() {
+      const container = document.getElementById('logo-sizes-container');
+
+      const logoTypes = [
+        {
+          label: 'Horizontal',
+          prefix: 'finitless-logo-horizontal',
+          sizes: [120, 200, 300, 480, 800, 1200],
+          heights: {120:8, 200:13, 300:19, 480:31, 800:52, 1200:78},
+          suffix: 'w',
+          variants: ['on-dark', 'on-light'],
+          dir: 'assets/logos/'
+        },
+        {
+          label: 'Square',
+          prefix: 'finitless-logo-square',
+          sizes: [128, 256, 512, 1024, 2000],
+          heights: {128:128, 256:256, 512:512, 1024:1024, 2000:2000},
+          suffix: '',
+          variants: ['on-dark', 'on-light'],
+          dir: 'assets/logos/'
+        },
+        {
+          label: 'Rectangular',
+          prefix: 'finitless-logo-rect',
+          sizes: [300, 600, 1200, 1800],
+          heights: {300:181, 600:361, 1200:722, 1800:1083},
+          suffix: 'w',
+          variants: ['on-dark'],
+          dir: 'assets/logos/'
+        }
+      ];
+
+      logoTypes.forEach(type => {
+        const group = document.createElement('div');
+        group.style.marginBottom = '24px';
+
+        const title = document.createElement('p');
+        title.style.cssText = 'font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.05em;';
+        title.textContent = type.label + ' Sizes';
+        group.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;';
+
+        type.variants.forEach(variant => {
+          type.sizes.forEach(size => {
+            const sizeLabel = type.suffix ? size + type.suffix : size;
+            const filename = type.prefix + '-' + variant + '-' + sizeLabel + '.png';
+            const path = type.dir + filename;
+
+            const h = type.heights[size];
+            const pxLabel = ' (' + size + '\u00D7' + h + 'px)';
+
+            const btn = document.createElement('a');
+            btn.href = path;
+            btn.download = filename;
+            btn.className = 'download-btn';
+            btn.innerHTML = '<svg width="12" height="12"><use href="#icon-download"/></svg>' +
+              (variant === 'on-dark' ? 'Dark' : 'Light') + ' ' + sizeLabel +
+              '<span style="opacity:0.5;font-size:11px">' + pxLabel + '</span>';
+            btn.onclick = () => showToast('Downloading ' + filename);
+            grid.appendChild(btn);
+          });
+        });
+
+        group.appendChild(grid);
+        container.appendChild(group);
+      });
+    }
+
+    // ── Init ──
+    initIconPicker();
+    initLogoSizes();
+  </script>
+</body>
+</html>
