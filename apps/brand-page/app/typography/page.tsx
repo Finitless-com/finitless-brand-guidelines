@@ -7,25 +7,20 @@ import {
   Button,
   IconContainer,
   Badge,
-  Text,
-  heading,
-  button as buttonTypo,
-  label as labelTypo,
-  copy,
 } from '@finitless/design-system';
-import { Type, Copy, Check, AlertCircle, Sparkles } from 'lucide-react';
+import { Type, Copy, Check, AlertCircle } from 'lucide-react';
 
 function CopyButton({ text, label }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
 
-  const copyText = async () => {
+  const copy = async () => {
     await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <Button variant="ghost" size="sm" onClick={copyText} className="gap-2">
+    <Button variant="ghost" size="sm" onClick={copy} className="gap-2">
       {copied ? (
         <>
           <Check className="h-4 w-4 text-semantic-success" />
@@ -41,38 +36,17 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
   );
 }
 
-// Geist-inspired heading scale
-const headingScale = [
-  { name: 'heading-72', size: '72px', lineHeight: '76px', tracking: '-0.04em', weight: 'Bold', tailwind: 'text-heading-72', usage: 'Hero headlines' },
-  { name: 'heading-64', size: '64px', lineHeight: '68px', tracking: '-0.04em', weight: 'Bold', tailwind: 'text-heading-64', usage: 'Major section titles' },
-  { name: 'heading-56', size: '56px', lineHeight: '60px', tracking: '-0.03em', weight: 'Bold', tailwind: 'text-heading-56', usage: 'Section headers' },
-  { name: 'heading-48', size: '48px', lineHeight: '52px', tracking: '-0.03em', weight: 'Bold', tailwind: 'text-heading-48', usage: 'Page titles' },
-  { name: 'heading-40', size: '40px', lineHeight: '44px', tracking: '-0.02em', weight: 'Semibold', tailwind: 'text-heading-40', usage: 'Large headings' },
-  { name: 'heading-32', size: '32px', lineHeight: '40px', tracking: '-0.02em', weight: 'Semibold', tailwind: 'text-heading-32', usage: 'Section headings' },
-  { name: 'heading-24', size: '24px', lineHeight: '32px', tracking: '-0.01em', weight: 'Semibold', tailwind: 'text-heading-24', usage: 'Card titles' },
-  { name: 'heading-20', size: '20px', lineHeight: '28px', tracking: '-0.01em', weight: 'Semibold', tailwind: 'text-heading-20', usage: 'Subsection headings' },
-  { name: 'heading-16', size: '16px', lineHeight: '24px', tracking: '0', weight: 'Semibold', tailwind: 'text-heading-16', usage: 'Component titles' },
-  { name: 'heading-14', size: '14px', lineHeight: '20px', tracking: '0', weight: 'Semibold', tailwind: 'text-heading-14', usage: 'Small headings, labels' },
-];
-
-const buttonScale = [
-  { name: 'button-16', size: '16px', lineHeight: '24px', weight: 'Medium', tailwind: 'text-button-16', usage: 'Large buttons' },
-  { name: 'button-14', size: '14px', lineHeight: '20px', weight: 'Medium', tailwind: 'text-button-14', usage: 'Default buttons' },
-  { name: 'button-12', size: '12px', lineHeight: '16px', weight: 'Medium', tailwind: 'text-button-12', usage: 'Small buttons' },
-];
-
-const labelScale = [
-  { name: 'label-16', size: '16px', lineHeight: '24px', weight: 'Medium', tailwind: 'text-label-16', usage: 'Form labels' },
-  { name: 'label-14', size: '14px', lineHeight: '20px', weight: 'Medium', tailwind: 'text-label-14', usage: 'Default labels' },
-  { name: 'label-12', size: '12px', lineHeight: '16px', weight: 'Medium', tailwind: 'text-label-12', usage: 'Small labels' },
-  { name: 'label-11', size: '11px', lineHeight: '14px', weight: 'Medium', tailwind: 'text-label-11', usage: 'Micro labels' },
-];
-
-const copyScale = [
-  { name: 'copy-20', size: '20px', lineHeight: '32px', weight: 'Normal', tailwind: 'text-copy-20', usage: 'Lead paragraphs' },
-  { name: 'copy-16', size: '16px', lineHeight: '26px', weight: 'Normal', tailwind: 'text-copy-16', usage: 'Body text' },
-  { name: 'copy-14', size: '14px', lineHeight: '22px', weight: 'Normal', tailwind: 'text-copy-14', usage: 'Secondary text' },
-  { name: 'copy-12', size: '12px', lineHeight: '18px', weight: 'Normal', tailwind: 'text-copy-12', usage: 'Captions, fine print' },
+const typeScale = [
+  { name: 'Display', size: '72px', weight: '800', lineHeight: '1.1', tailwind: 'text-7xl font-extrabold', usage: 'Hero headings' },
+  { name: 'H1', size: '48px', weight: '800', lineHeight: '1.2', tailwind: 'text-5xl font-extrabold', usage: 'Page titles' },
+  { name: 'H2', size: '36px', weight: '700', lineHeight: '1.25', tailwind: 'text-4xl font-bold', usage: 'Section headings' },
+  { name: 'H3', size: '24px', weight: '700', lineHeight: '1.3', tailwind: 'text-2xl font-bold', usage: 'Sub-section headings' },
+  { name: 'H4', size: '20px', weight: '600', lineHeight: '1.4', tailwind: 'text-xl font-semibold', usage: 'Card titles' },
+  { name: 'Body Large', size: '18px', weight: '400', lineHeight: '1.6', tailwind: 'text-lg', usage: 'Lead text, intros' },
+  { name: 'Body', size: '16px', weight: '400', lineHeight: '1.6', tailwind: 'text-base', usage: 'Default body text' },
+  { name: 'Body Small', size: '14px', weight: '400', lineHeight: '1.5', tailwind: 'text-sm', usage: 'Secondary text' },
+  { name: 'Caption', size: '12px', weight: '400', lineHeight: '1.5', tailwind: 'text-xs', usage: 'Labels, fine print' },
+  { name: 'Overline', size: '12px', weight: '600', lineHeight: '1.5', tailwind: 'text-xs font-semibold uppercase tracking-wider', usage: 'Category labels' },
 ];
 
 const fontWeights = [
@@ -95,10 +69,9 @@ export default function TypographyPage() {
           <h1 className="text-3xl lg:text-4xl font-bold">
             <GradientText>Typography</GradientText>
           </h1>
-          <Badge variant="primary" className="ml-2">v0.1.0</Badge>
         </div>
         <p className="text-lg text-text-muted mb-12 max-w-2xl">
-          Geist-inspired typography system with numbered heading scales, button/label/copy variants, and the Text component.
+          Finitless uses Inter for all UI text. The type scale is designed for dark backgrounds with excellent readability.
         </p>
 
         {/* Font Family */}
@@ -145,41 +118,34 @@ export default function TypographyPage() {
           </GlassCard>
         </section>
 
-        {/* Heading Scale - NEW in v0.1.0 */}
+        {/* Type Scale */}
         <section className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <h2 className="text-2xl font-bold">Heading Scale</h2>
-            <Badge variant="primary" size="sm" className="gap-1">
-              <Sparkles className="h-3 w-3" />
-              Geist-inspired
-            </Badge>
-          </div>
-          <p className="text-text-muted mb-6">
-            Numbered heading scale from 72px to 14px with precise line-height and letter-spacing for each size.
-          </p>
+          <h2 className="text-2xl font-bold mb-6">Type Scale</h2>
           <GlassCard>
-            <div className="space-y-6">
-              {headingScale.map((item) => (
+            <div className="space-y-8">
+              {typeScale.map((item) => (
                 <div key={item.name} className="border-b border-border pb-6 last:border-0 last:pb-0">
                   <div className="flex flex-col lg:flex-row lg:items-baseline gap-4 mb-3">
-                    <div className="lg:w-36 shrink-0">
+                    <div className="lg:w-32 shrink-0">
                       <Badge variant="default">{item.name}</Badge>
                     </div>
-                    <Text
-                      variant={item.name as any}
-                      className="flex-1 truncate"
+                    <p
+                      className="flex-1 text-white"
+                      style={{
+                        fontSize: item.size,
+                        fontWeight: Number(item.weight),
+                        lineHeight: item.lineHeight,
+                      }}
                     >
-                      {item.name.includes('72') || item.name.includes('64') || item.name.includes('56')
+                      {item.name === 'Display' || item.name === 'H1' || item.name === 'H2'
                         ? 'Never Miss a Sale'
                         : 'The quick brown fox jumps over the lazy dog'}
-                    </Text>
+                    </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-4 text-sm text-text-muted">
-                    <span>{item.size} / {item.lineHeight}</span>
+                    <span>{item.size} / {item.weight}</span>
                     <span className="text-border">•</span>
-                    <span>Tracking: {item.tracking}</span>
-                    <span className="text-border">•</span>
-                    <span>{item.weight}</span>
+                    <span>Line height: {item.lineHeight}</span>
                     <span className="text-border">•</span>
                     <span>{item.usage}</span>
                     <div className="ml-auto">
@@ -188,116 +154,6 @@ export default function TypographyPage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </GlassCard>
-        </section>
-
-        {/* Button Typography */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Button Typography</h2>
-          <GlassCard>
-            <div className="space-y-6">
-              {buttonScale.map((item) => (
-                <div key={item.name} className="flex items-center gap-6">
-                  <Badge variant="secondary" className="w-28 justify-center">{item.name}</Badge>
-                  <Text variant={item.name as any} className="flex-1">
-                    Button Text
-                  </Text>
-                  <span className="text-sm text-text-muted hidden sm:block">{item.size}</span>
-                  <span className="text-sm text-text-muted hidden md:block">{item.usage}</span>
-                  <CopyButton text={item.tailwind} label="Copy" />
-                </div>
-              ))}
-            </div>
-          </GlassCard>
-        </section>
-
-        {/* Label Typography */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Label Typography</h2>
-          <GlassCard>
-            <div className="space-y-6">
-              {labelScale.map((item) => (
-                <div key={item.name} className="flex items-center gap-6">
-                  <Badge variant="secondary" className="w-28 justify-center">{item.name}</Badge>
-                  <Text variant={item.name as any} className="flex-1">
-                    Label Text
-                  </Text>
-                  <span className="text-sm text-text-muted hidden sm:block">{item.size}</span>
-                  <span className="text-sm text-text-muted hidden md:block">{item.usage}</span>
-                  <CopyButton text={item.tailwind} label="Copy" />
-                </div>
-              ))}
-            </div>
-          </GlassCard>
-        </section>
-
-        {/* Copy Typography */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Copy Typography</h2>
-          <GlassCard>
-            <div className="space-y-6">
-              {copyScale.map((item) => (
-                <div key={item.name} className="flex items-center gap-6">
-                  <Badge variant="secondary" className="w-28 justify-center">{item.name}</Badge>
-                  <Text variant={item.name as any} className="flex-1">
-                    The quick brown fox jumps over the lazy dog.
-                  </Text>
-                  <span className="text-sm text-text-muted hidden sm:block">{item.size}</span>
-                  <span className="text-sm text-text-muted hidden md:block">{item.usage}</span>
-                  <CopyButton text={item.tailwind} label="Copy" />
-                </div>
-              ))}
-            </div>
-          </GlassCard>
-        </section>
-
-        {/* Text Component */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <h2 className="text-2xl font-bold">Text Component</h2>
-            <Badge variant="primary" size="sm" className="gap-1">
-              <Sparkles className="h-3 w-3" />
-              New in v0.1.0
-            </Badge>
-          </div>
-          <p className="text-text-muted mb-6">
-            The <code className="font-mono text-brand-link">Text</code> component provides type-safe access to all typography variants.
-          </p>
-          <GlassCard>
-            <pre className="bg-background-deep rounded-lg p-4 overflow-x-auto text-sm mb-6">
-{`import { Text } from '@finitless/design-system';
-
-// Heading variants
-<Text variant="heading-48">Page Title</Text>
-<Text variant="heading-24">Card Title</Text>
-
-// With semantic element
-<Text variant="heading-32" as="h1">Main Heading</Text>
-
-// Button/Label variants
-<Text variant="button-14">Button Label</Text>
-<Text variant="label-12">Form Label</Text>
-
-// Copy variants with color
-<Text variant="copy-16">Body text</Text>
-<Text variant="copy-14" color="muted">Secondary text</Text>
-
-// Modifiers
-<Text variant="copy-16" weight="semibold">Bold text</Text>
-<Text variant="heading-24" color="link">Link colored</Text>`}
-            </pre>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <Badge variant="default">Live Demo</Badge>
-              </div>
-              <div className="p-6 bg-background-deep rounded-lg space-y-4">
-                <Text variant="heading-32">Heading 32</Text>
-                <Text variant="heading-20" color="muted">Heading 20 (muted)</Text>
-                <Text variant="copy-16">This is body copy at 16px with comfortable line height.</Text>
-                <Text variant="copy-14" color="muted">Secondary text in muted color at 14px.</Text>
-                <Text variant="label-12" color="link">Label styled as link</Text>
-              </div>
             </div>
           </GlassCard>
         </section>
@@ -321,27 +177,6 @@ export default function TypographyPage() {
                 </div>
               ))}
             </div>
-          </GlassCard>
-        </section>
-
-        {/* Helper Functions */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Helper Functions</h2>
-          <GlassCard>
-            <pre className="bg-background-deep rounded-lg p-4 overflow-x-auto text-sm">
-{`import {
-  getHeadingClass,
-  getButtonClass,
-  getLabelClass,
-  getCopyClass,
-} from '@finitless/design-system';
-
-// Get Tailwind classes for any typography style
-getHeadingClass(48)  // Returns class string for heading-48
-getButtonClass(14)   // Returns class string for button-14
-getLabelClass(12)    // Returns class string for label-12
-getCopyClass(16)     // Returns class string for copy-16`}
-            </pre>
           </GlassCard>
         </section>
 
@@ -390,7 +225,7 @@ export default function RootLayout({ children }) {
               <ul className="space-y-3 text-text-muted">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-brand-link mt-2 shrink-0" />
-                  <span>Use heading-72/64 for hero sections only</span>
+                  <span>Use Display/H1 for hero sections only</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-brand-link mt-2 shrink-0" />
@@ -398,7 +233,7 @@ export default function RootLayout({ children }) {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-brand-link mt-2 shrink-0" />
-                  <span>Use copy variants for body text, not headings</span>
+                  <span>Use muted text color for secondary content</span>
                 </li>
               </ul>
             </GlassCard>
