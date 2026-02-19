@@ -1,0 +1,48 @@
+# Finitless Brand Guidelines
+# https://brand.finitless.com
+
+> Finitless is an AI ordering agent platform for restaurants.
+> This site contains our official brand guidelines and design system.
+
+## Brand Guidelines (Markdown)
+For complete brand guidelines in AI-readable format:
+https://brand.finitless.com/BRAND-GUIDELINES.md
+
+## Brand Manifest (JSON)
+For machine-readable tokens (colors, fonts, spacing):
+https://brand.finitless.com/brand-manifest.json
+
+## Key Information
+
+Company: Finitless
+Website: https://finitless.com
+Product: AI ordering agents for restaurants (voice, WhatsApp, web chat)
+Tagline: "Never Miss a Sale. Ever."
+
+### Primary Colors
+- Finitless Blue: #165DFC (primary buttons)
+- Cyan: #00B7FF (links, gradient start)
+- Purple: #7A2EFF (gradient midpoint ONLY)
+- Magenta: #C300FF (gradient end ONLY)
+
+### Background Colors
+- Base: #0e0e10 (page background)
+- Elevated: #151517 (cards, modals)
+
+### Typography
+- Font: Inter (Google Fonts)
+- Weights: 400, 600, 700, 800
+
+### Border Radius
+- Default: 12px
+- Small: 8px
+- Large: 16px
+
+### Critical Rules
+1. ONE gradient CTA button per page
+2. Purple and Magenta are gradient-only (never standalone)
+3. Always use logo from image assets (never render from font)
+4. OAuth buttons use secondary style (never gradient)
+
+## Contact
+For questions about brand usage, contact Sergio Khoury at Finitless.

@@ -25,6 +25,8 @@ import {
   AlertTriangle,
   Building2,
   ArrowRight,
+  Bot,
+  FileText,
 } from 'lucide-react';
 
 const BRAND_BASE_URL = 'https://brand.finitless.com';
@@ -246,6 +248,41 @@ export default {
                     View
                   </Button>
                 </a>
+              </div>
+            </div>
+          </GlassCard>
+        </div>
+      </section>
+
+      {/* For AI */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <GlassCard className="border-brand-link/20">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-lg bg-brand-link/10 flex items-center justify-center shrink-0">
+                <Bot className="h-6 w-6 text-brand-link" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-semibold mb-2">For AI Assistants</h2>
+                <p className="text-text-muted mb-4">
+                  Using Claude, ChatGPT, or other AI to build Finitless applications?
+                  Point them to our AI-readable brand guidelines for accurate styling.
+                </p>
+                <div className="bg-background-deep rounded-lg p-4 font-mono text-sm flex items-center justify-between mb-4">
+                  <code className="truncate">{BRAND_BASE_URL}/BRAND-GUIDELINES.md</code>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <CopyButton text={`${BRAND_BASE_URL}/BRAND-GUIDELINES.md`} label="Copy" />
+                    <a href="/BRAND-GUIDELINES.md" target="_blank" rel="noopener noreferrer">
+                      <Button variant="secondary" size="sm" className="gap-2">
+                        <FileText className="h-4 w-4" />
+                        View
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+                <p className="text-sm text-text-muted">
+                  This markdown file contains all colors, typography, components, and usage rules in a format optimized for LLMs.
+                </p>
               </div>
             </div>
           </GlassCard>

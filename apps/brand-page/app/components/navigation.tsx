@@ -19,6 +19,7 @@ import {
   Menu,
   X,
   ExternalLink,
+  Bot,
 } from 'lucide-react';
 
 const BRAND_BASE_URL = 'https://brand.finitless.com';
@@ -35,6 +36,7 @@ const navItems = [
   { href: '/accessibility', label: 'Accessibility', icon: Eye },
   { href: '/patterns', label: 'Patterns', icon: AlertTriangle },
   { href: '/about', label: 'About', icon: Building2 },
+  { href: '/BRAND-GUIDELINES.md', label: 'For AI', icon: Bot, external: true },
 ];
 
 export function Navigation() {
@@ -86,16 +88,35 @@ export function Navigation() {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
+            const linkClass = `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              isActive
+                ? 'bg-brand-link/10 text-brand-link'
+                : 'text-text-muted hover:text-white hover:bg-white/5'
+            }`;
+
+            if ('external' in item && item.external) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={linkClass}
+                >
+                  <Icon className="h-4 w-4" />
+                  {item.label}
+                  <ExternalLink className="h-3 w-3 ml-auto opacity-50" />
+                </a>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'bg-brand-link/10 text-brand-link'
-                    : 'text-text-muted hover:text-white hover:bg-white/5'
-                }`}
+                className={linkClass}
               >
                 <Icon className="h-4 w-4" />
                 {item.label}
@@ -141,15 +162,33 @@ export function Navigation() {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
+            const linkClass = `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              isActive
+                ? 'bg-brand-link/10 text-brand-link'
+                : 'text-text-muted hover:text-white hover:bg-white/5'
+            }`;
+
+            if ('external' in item && item.external) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  <Icon className="h-4 w-4" />
+                  {item.label}
+                  <ExternalLink className="h-3 w-3 ml-auto opacity-50" />
+                </a>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'bg-brand-link/10 text-brand-link'
-                    : 'text-text-muted hover:text-white hover:bg-white/5'
-                }`}
+                className={linkClass}
               >
                 <Icon className="h-4 w-4" />
                 {item.label}

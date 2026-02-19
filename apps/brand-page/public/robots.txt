@@ -1,0 +1,36 @@
+# Finitless Brand Guidelines - robots.txt
+# Allow all crawlers including AI assistants
+
+User-agent: *
+Allow: /
+
+# Specifically allow AI crawlers and assistants
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap location
+Sitemap: https://brand.finitless.com/sitemap.xml
+
+# Direct link to AI-readable brand guidelines
+# https://brand.finitless.com/BRAND-GUIDELINES.md
