@@ -55,3 +55,17 @@ cd packages/design-system && npm version patch && npm run build && npm publish
 - Token definitions: `packages/design-system/src/tokens/`
 - Component examples: `npm run storybook`
 - Full brand guide: `archive/v3.0.0/BRAND-GUIDELINES.md`
+
+
+## Task Manager Usage (Mandatory)
+
+**Always use the built-in task manager** (TaskCreate, TaskUpdate, TaskList) when working on any task:
+
+1. **Before starting work**: Create a task list breaking down all steps needed. Create as many tasks as necessary — it is better to over-decompose than to forget something.
+2. **While working**: Mark tasks as `in_progress` before starting each one, and `completed` when done. This keeps the user informed of real-time progress.
+3. **When discovering new work**: Add new tasks immediately so nothing is forgotten.
+4. **After completing work**: Verify all tasks are marked completed and summarize results.
+
+**Why this matters**: The task manager is visible to the user and serves as a live progress tracker. It ensures organized, transparent work and prevents steps from being skipped or forgotten.
+
+**Rule**: If a task involves more than one step, use the task manager. No exceptions.
