@@ -36,6 +36,9 @@ Thumbs.db
 # Vercel
 .vercel/
 
+# Cloudflare
+.wrangler/
+
 # TypeScript
 *.tsbuildinfo
 
