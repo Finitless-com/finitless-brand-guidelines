@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "npm run dev --workspace=apps/brand-page",
     "build": "npm run build --workspaces --if-present",
+    "deploy:cloudflare": "npx --yes wrangler@4.151.3 deploy",
+    "preview:cloudflare": "npx --yes wrangler@4.151.3 preview",
     "lint": "npm run lint --workspaces --if-present",
     "storybook": "npm run storybook --workspace=packages/design-system",
     "build-storybook": "npm run build-storybook --workspace=packages/design-system",

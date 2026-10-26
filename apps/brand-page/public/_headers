@@ -1,0 +1,7 @@
+/assets/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+/brand-manifest.json
+  Access-Control-Allow-Origin: *
+  Content-Type: application/json
