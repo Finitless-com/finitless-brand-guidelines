@@ -36,9 +36,25 @@ assets/                       # Logo source files
 npm install              # Install deps
 npm run dev              # Brand page dev
 npm run storybook        # Design system dev
-npm run build            # Build all
+npm run build            # Build all, including the static export in apps/brand-page/out
 npm run lint             # Lint all
+npm run deploy:cloudflare    # Production Worker deploy (Wrangler 4.151.3)
+npm run preview:cloudflare   # Pull request Preview
 ```
+
+## Deploy
+Production and pull request previews are Cloudflare Workers Builds, not Vercel and not GitHub Actions. `vercel.json` skips every Vercel build. Disconnect the GitHub repository in the Vercel project so the Vercel check stops appearing on pull requests.
+
+Workers Builds, production branch `main`, root directory `/`:
+
+- Build command: `npm run build`
+- Deploy command: `npm run deploy:cloudflare`
+- Preview command: `npm run preview:cloudflare`
+- Preview builds: enabled
+
+`npm run preview:cloudflare` runs `wrangler preview`. That creates the branch Preview and the pull request URL. `preview_urls` stays false. The empty `previews` block in `wrangler.jsonc` keeps production routes off those Previews.
+
+`brand.finitless.com` is the public hostname. Its DNS is a Route 53 CNAME to Vercel (`70dbcf230fe9ccc5.vercel-dns-017.com`). `finitless.com` is not a Cloudflare zone, so the Worker cannot take that hostname until the CNAME moves to a hostname on a Cloudflare zone and the certificate is issued there. Pull request Previews use their own URL and do not serve this domain.
 
 ## Tailwind
 ```ts
